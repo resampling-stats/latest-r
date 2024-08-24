@@ -4,9 +4,9 @@
     "href": "index.html",
     "title": "Resampling statistics",
     "section": "",
-    "text": "R edition\nThere are two editions of this book; one with examples in the R programming language 1, and another with examples in the Python language 2.\nThis is the R edition.\nThe files on this website are free to view and download. We release the content under the Creative Commons Attribution / No Derivatives 4.0 License. If you’d like a physical copy of the book, you should be able to order it from Sage, when it is published.\nWe wrote this book in RMarkdown with Quarto. It is automatically rebuilt from source by Github",
+    "text": "R version\nThere are two versions of this book; one with examples in the R programming language 1, and another with examples in the Python language 2.\nThis is the R version.\nThe files on this website are free to view and download. We release the content under the Creative Commons Attribution / No Derivatives 4.0 License. If you’d like a physical copy of the book, you should be able to order it from Sage, when it is published.\nWe wrote this book in RMarkdown with Quarto. It is automatically rebuilt from source by Github",
     "crumbs": [
-      "R edition"
+      "R version"
     ]
   },
   {
@@ -16,7 +16,7 @@
     "section": "",
     "text": "https://www.r-project.org↩︎\nhttps://www.python.org↩︎",
     "crumbs": [
-      "R edition"
+      "R version"
     ]
   },
   {

@@ -90,8 +90,8 @@ render-id="quarto-int-prev"><span class="chapter-number">26</span> 
 <span class="chapter-title">Confidence Intervals, Part 1: Assessing the
 Accuracy of Samples</span></span>
 <span class="hidden quarto-markdown-envelope-contents"
-render-id="quarto-int-sidebar:/index.html{{&lt;-var-lang-&gt;}}-edition">R
-edition</span> <span class="hidden quarto-markdown-envelope-contents"
+render-id="quarto-int-sidebar:/index.html{{&lt;-var-lang-&gt;}}-version">R
+version</span> <span class="hidden quarto-markdown-envelope-contents"
 render-id="quarto-int-sidebar:/preface_third.htmlPreface-to-the-third-edition">Preface
 to the third edition</span>
 <span class="hidden quarto-markdown-envelope-contents"
