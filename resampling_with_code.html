@@ -465,7 +465,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#sum-adding-all-the-values" id="toc-sum-adding-all-the-values" class="nav-link" data-scroll-target="#sum-adding-all-the-values"><span class="header-section-number">5.11.1</span> <code>sum</code> — adding all the values</a></li>
   </ul></li>
-  <li><a href="#counting-results" id="toc-counting-results" class="nav-link" data-scroll-target="#counting-results"><span class="header-section-number">5.12</span> Counting results</a>
+  <li><a href="#sec-counting-results" id="toc-sec-counting-results" class="nav-link" data-scroll-target="#sec-counting-results"><span class="header-section-number">5.12</span> Counting results</a>
   <ul class="collapse">
   <li><a href="#comparison" id="toc-comparison" class="nav-link" data-scroll-target="#comparison"><span class="header-section-number">5.12.1</span> Comparison</a></li>
   </ul></li>
@@ -527,7 +527,7 @@ window.Quarto = {
 <p>At this stage you might and should ask, what could we possibly mean by “surprised”? That is a good and important question, and we will discuss that much more in the chapters to come. For now, please bear with us as we do a thought experiment.</p>
 <p>Let us forget the 17 out of 17 result of the NCI study for a moment. Imagine that there is another hospital, called Saint Hypothetical General, just down the road from the NCI, that was also treating 17 patients with Burkitt lymphoma. Saint Hypothetical were not using the NCI treatment, they were using the standard treatment.</p>
 <p>We already know that each patient given the standard treatment has a 90% chance of cure. Given that 90% cure rate, what is the chance that 17 out of 17 of the Hypothetical group will be cured?</p>
-<p>You may notice that this question about the Hypothetical group is similar to the problem of the 16 ambulances in Chapter <a href="resampling_method.html" class="quarto-xref"><span>Chapter 2</span></a>. In that problem, we were interested to know how likely it was that 3 or more of 16 ambulances would be out of action on any one day, given that each ambulance had a 10% chance of being out of action. Here we would like to know the chances that all 17 patients would be cured, given that each patient has a 90% chance of being cured (and a 10% chance of relapse).</p>
+<p>You may notice that this question about the Hypothetical group is similar to the problem of the 16 ambulances in <a href="resampling_method.html" class="quarto-xref"><span>Chapter 2</span></a>. In that problem, we were interested to know how likely it was that 3 or more of 16 ambulances would be out of action on any one day, given that each ambulance had a 10% chance of being out of action. Here we would like to know the chances that all 17 patients would be cured, given that each patient has a 90% chance of being cured (and a 10% chance of relapse).</p>
 </section>
 <section id="a-physical-model-of-the-hypothetical-hospital" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="a-physical-model-of-the-hypothetical-hospital"><span class="header-section-number">5.3</span> A physical model of the hypothetical hospital</h2>
@@ -924,8 +924,8 @@ Figure&nbsp;5.6: Example run of the <code>sample</code> function
 </div>
 </section>
 </section>
-<section id="counting-results" class="level2" data-number="5.12">
-<h2 data-number="5.12" class="anchored" data-anchor-id="counting-results"><span class="header-section-number">5.12</span> Counting results</h2>
+<section id="sec-counting-results" class="level2" data-number="5.12">
+<h2 data-number="5.12" class="anchored" data-anchor-id="sec-counting-results"><span class="header-section-number">5.12</span> Counting results</h2>
 <p>We now have the code to do the equivalent of throwing 17 ten-sided dice. This is the basis for one simulated trial in the world of Saint Hypothetical General.</p>
 <p>Our next job is to get the code to count the number of numbers that are not zero in the vector <code>a</code>. That will give us the number of patients who were cured in simulated trial.</p>
 <p>Another way of asking this question, is to ask how many elements in <code>a</code> are greater than zero.</p>

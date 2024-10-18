@@ -991,10 +991,10 @@ Table&nbsp;31.1: Probabilities for Genetic Character of Mice Offspring
 <p>One can calculate, as Fisher <span class="citation" data-cites="fisher1959statistical">(<a href="references.html#ref-fisher1959statistical" role="doc-biblioref">1959, 19</a>)</span> did, the probabilities after seeing the data (we call this the <em>posterior</em> probability). This is typically done using using Bayes’ rule.</p>
 <p>But instead of doing that, let’s take the easy route out and simulate the situation instead.</p>
 <ol type="1">
-<li><p>We begin, as do Box and Tiao, by restricting our attention to the third line in Table <a href="#tbl-mice-genetics" class="quarto-xref">Table&nbsp;<span>31.1</span></a>. We draw a mouse with label ‘BB’, ‘Bb’, or ‘bb’, using those probabilities. We were told that the “test mouse” is black, so if we draw ‘bb’, we try again. (Alternatively, we could draw ‘BB’ and ‘Bb’ with probabilities of 1/3 and 2/3 respectively.)</p></li>
+<li><p>We begin, as do Box and Tiao, by restricting our attention to the third line in <a href="#tbl-mice-genetics" class="quarto-xref">Table&nbsp;<span>31.1</span></a>. We draw a mouse with label ‘BB’, ‘Bb’, or ‘bb’, using those probabilities. We were told that the “test mouse” is black, so if we draw ‘bb’, we try again. (Alternatively, we could draw ‘BB’ and ‘Bb’ with probabilities of 1/3 and 2/3 respectively.)</p></li>
 <li><p>We now want to examine the offspring of the test mouse when mated with a brown “bb” mouse. Specifically, we are only interested in cases where all offspring were black. We will store the genetic kind of the parents of such offspring so that we can count them later.</p>
 <p>If our test mouse is “BB”, we already know that all their offspring will be black (“Bb”). Thus, store “BB” in the parent list.</p></li>
-<li><p>If our test mouse is “Bb”, we have a bit more work to do. Draw seven offspring from the middle row of Table tbl-mice-genetics. If all the offspring are black, store “Bb” in the parent list.</p></li>
+<li><p>If our test mouse is “Bb”, we have a bit more work to do. Draw seven offspring from the middle row of <a href="#tbl-mice-genetics" class="quarto-xref">Table&nbsp;<span>31.1</span></a>. If all the offspring are black, store “Bb” in the parent list.</p></li>
 <li><p>Repeat steps 1-3 perhaps 10000 times.</p></li>
 <li><p>Now, out of all parents count the numbers of “BB” vs “Bb”.</p></li>
 </ol>

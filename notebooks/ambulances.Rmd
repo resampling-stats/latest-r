@@ -24,7 +24,7 @@ Our next task is to use R to simulate a single day of ambulances. We
 will again represent each ambulance by a random number from 0 through 9.
 16 of these numbers represents a simulation of all 16 ambulances
 available to the contractor. We call a simulation of all ambulances for
-a specific day one *trial*.
+a specific day — one *trial*.
 
 Recall that we want 16 10-sided dice — one per ambulance. Our dice
 should be 10-sided, because each ambulance has a 1-in-10 chance of being
@@ -63,33 +63,21 @@ b <- sum(a == 9)
 b
 ```
 
-**Note: Counting sequence elements**
-
-We see that the code uses:
+You see that we have code like this:
 
 ```{r}
 sum(a == 9)
 ```
 
-What exactly happens here under the hood? First `a == 9` creates an
-sequence of values that only contains
-
-`TRUE` or `FALSE`
-
-values, depending on whether each element is equal to 9 or not.
-
-Then, we ask R to add up (`sum`). R counts `TRUE` as 1, and `FALSE` as
-0; thus we can use `sum` to count the number of `TRUE` values.
-
-This comes down to asking “how many elements in `a` are equal to 9”.
-
-Don’t worry, we will go over this again in the next chapter.
-
-**End of note**
+to count the number of values equal to 9 in the sequence `a`. For now
+just read sum(a == 9 as “count the number of 9s in `a`”. We will explain
+how this code works fairly soon
+(<a href="#sec-counting-results" class="quarto-xref"><span
+class="quarto-unresolved-ref">sec-counting-results</span></a>).
 
 The `sum` command is a *counting* operation. It asks the computer to
-*count* the number of `9`s among the twenty numbers that are in location
-`a` following the random draw carried out by the `sample` operation. The
+*count* the number of `9`s among the 16 numbers that are in location `a`
+following the random draw carried out by the `sample` operation. The
 result of the `sum` operation will be somewhere between 0 and 16, the
 number of simulated ambulances that were out-of-order on a given
 simulated day. The result is then placed in another location in the
@@ -108,10 +96,10 @@ number of times the count was three or more, and divide by 100, to get
 an estimate of the proportion of days with three or more out-of-order
 ambulances.
 
-One of the great things about the computer is that it is very good at
-repeating tasks many times, so we do not have to. Our next task is to
-ask the computer to repeat the single trial many times — say 1000 times
-— and count up the results for us.
+One of the most useful things about the computer is that it is very good
+at repeating tasks many times. Our next job is to ask the computer to
+repeat the single trial many times — say 1000 times — and count up the
+results for us.
 
 Of course R is very good at repeating things, but the instructions to
 tell R to repeat things will take a little while to get used to. Soon,
@@ -159,7 +147,7 @@ R.
 
 ### 2.3.2 The solution
 
-This is our big moment! Here we will combine the elements shown above to
+This is our big moment! We will combine the elements shown above to
 perform our ambulance simulation over, say, 1000 days. Just a quick
 reminder: we do not expect you to understand all the detail of the code
 below; we will cover that later. For now, see if you can follow along

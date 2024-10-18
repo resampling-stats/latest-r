@@ -449,8 +449,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The resampling approach produces the estimate as follows.</p>
 <section id="randomness-from-physical-methods" class="level3" data-number="2.1.1">
 <h3 data-number="2.1.1" class="anchored" data-anchor-id="randomness-from-physical-methods"><span class="header-section-number">2.1.1</span> Randomness from physical methods</h3>
-<p>We collect 10 coins, and mark one of them with a pen or pencil or tape as being the coin that represents “out-of-order;” the other nine coins stand for “in operation”. For any one ambulance, this set of 10 coins provides a “model” for the one-in-ten chance — a probability of .10 (10 percent) — of it being out of order on a given day. We put the coins into a little jar or bucket.</p>
-<p>For ambulance #1, we draw a single coin from the bucket. This coin represents whether that ambulance is going to be broken tomorrow. After replacing the coin and shaking the bucket, we repeat the same procedure for ambulance #2, ambulance #3 and so forth. Having repeated the procedure <em>16</em> times, we now have a representation of all ambulances for a single day.</p>
+<p>We collect 10 coins, and mark one of them with a pen or pencil as being the coin that represents “out-of-order;” the other nine coins stand for “in operation”. For any one ambulance, this set of 10 coins provides a “model” for the one-in-ten chance — a probability of .10 (10 percent) — of it being out of order on a given day. We put the coins into a little jar or bucket.</p>
+<p>For ambulance #1, we draw a single coin from the bucket. This coin represents whether that ambulance is going to be broken tomorrow. If we draw the marked coin, we label this ambulance as out-of-order, otherwise we label the ambulance as in-operation. After replacing the coin and shaking the bucket, we repeat the same procedure for ambulance #2, ambulance #3 and so forth. Having repeated the procedure <em>16</em> times, we now have a representation of all ambulances for a single day.</p>
 <p>We can now repeat this whole process as many times as we like: each time, we come up with a representation for a different day, telling us how many ambulances will be out-of-service on that day.</p>
 <p>After collecting evidence for, say, 50 experimental days we determine the proportion of the experimental days on which three or more ambulances are out of order. That proportion is an estimate of the probability that three or more ambulances will be out of order on a given day — the answer we seek. This procedure is an example of Monte Carlo simulation, which is the heart of the resampling method of statistical estimation.</p>
 <p>A more direct way to answer this question would be to examine the firm’s actual records for the past 100 days or, better, 500 days (if that’s available) to determine how many days had three or more ambulances out of order. But the resampling procedure described above gives us an estimate even if we do not have such long-term information. This is realistic; it is frequently the case in the real world that we must make estimates on the basis of insufficient history about an event.</p>
@@ -504,7 +504,7 @@ The Michael Larsen Incident
 https://web.archive.org/web/20170712041017/http://www.rotten.com/library/conspiracy/press-your-luck/
 -->
 <p>We can use random numbers from computers to simulate our problem. For example, we can ask the computer to choose a random number between 0 and 9 to represent one ambulance. Let’s say the number 9 represents “out-of-order” and 0 through 8 “in operation”, then any one random number gives us a trial observation for a single ambulance. To get an experimental trial for a single day we look at 16 numbers and count how many of them are 9. We then look at, say, one hundred sets of 16 numbers and count the proportion of sets whose 16 numbers show three or more ambulances being “out-of-order”. Once again, that proportion estimates the probability that three or more ambulances will be out-of-order on any given day.</p>
-<p>Soon we will do all these steps with some R code, but for now, consider Table <a href="#tbl-veh-numbers" class="quarto-xref">Table&nbsp;<span>2.1</span></a>. In each row, we placed 16 numbers, each one representing an ambulance. We added 25 such rows, each representing a simulation of one day.</p>
+<p>Soon we will do all these steps with some R code, but for now, consider <a href="#tbl-veh-numbers" class="quarto-xref">Table&nbsp;<span>2.1</span></a>. In each row, we placed 16 numbers, each one representing an ambulance. We added 25 such rows, each representing a simulation of one day.</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-veh-numbers" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -516,7 +516,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <table class="lightable-paper lightable-striped lightable-hover do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Day</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">A1</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">A2</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">A3</th>
@@ -537,7 +537,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Day 1</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">5</td>
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">4</td>
@@ -556,7 +556,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">6</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Day 2</td>
+<td style="text-align: right;">2</td>
 <td style="text-align: right;">6</td>
 <td style="text-align: right;">5</td>
 <td style="text-align: right;">0</td>
@@ -575,7 +575,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Day 3</td>
+<td style="text-align: right;">3</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">5</td>
 <td style="text-align: right;">4</td>
@@ -594,7 +594,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">3</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Day 4</td>
+<td style="text-align: right;">4</td>
 <td style="text-align: right;">8</td>
 <td style="text-align: right;">9</td>
 <td style="text-align: right;">2</td>
@@ -613,7 +613,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">6</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Day 5</td>
+<td style="text-align: right;">5</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">5</td>
@@ -632,7 +632,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">4</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Day 6</td>
+<td style="text-align: right;">6</td>
 <td style="text-align: right;">7</td>
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">8</td>
@@ -651,7 +651,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">5</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Day 7</td>
+<td style="text-align: right;">7</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">9</td>
 <td style="text-align: right;">8</td>
@@ -670,7 +670,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">7</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Day 8</td>
+<td style="text-align: right;">8</td>
 <td style="text-align: right;">7</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">0</td>
@@ -689,7 +689,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Day 9</td>
+<td style="text-align: right;">9</td>
 <td style="text-align: right;">8</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
@@ -708,7 +708,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">7</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Day 10</td>
+<td style="text-align: right;">10</td>
 <td style="text-align: right;">9</td>
 <td style="text-align: right;">7</td>
 <td style="text-align: right;">1</td>
@@ -727,7 +727,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Day 11</td>
+<td style="text-align: right;">11</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">9</td>
 <td style="text-align: right;">0</td>
@@ -746,7 +746,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">3</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Day 12</td>
+<td style="text-align: right;">12</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">7</td>
@@ -765,7 +765,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">9</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Day 13</td>
+<td style="text-align: right;">13</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">8</td>
@@ -784,7 +784,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Day 14</td>
+<td style="text-align: right;">14</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">5</td>
@@ -803,7 +803,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">4</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Day 15</td>
+<td style="text-align: right;">15</td>
 <td style="text-align: right;">6</td>
 <td style="text-align: right;">3</td>
 <td style="text-align: right;">9</td>
@@ -822,7 +822,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">3</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Day 16</td>
+<td style="text-align: right;">16</td>
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">6</td>
@@ -841,7 +841,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">8</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Day 17</td>
+<td style="text-align: right;">17</td>
 <td style="text-align: right;">3</td>
 <td style="text-align: right;">6</td>
 <td style="text-align: right;">3</td>
@@ -860,7 +860,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">4</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Day 18</td>
+<td style="text-align: right;">18</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">6</td>
 <td style="text-align: right;">1</td>
@@ -879,7 +879,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Day 19</td>
+<td style="text-align: right;">19</td>
 <td style="text-align: right;">3</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">2</td>
@@ -898,7 +898,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Day 20</td>
+<td style="text-align: right;">20</td>
 <td style="text-align: right;">6</td>
 <td style="text-align: right;">3</td>
 <td style="text-align: right;">3</td>
@@ -917,7 +917,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">6</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Day 21</td>
+<td style="text-align: right;">21</td>
 <td style="text-align: right;">8</td>
 <td style="text-align: right;">3</td>
 <td style="text-align: right;">0</td>
@@ -936,7 +936,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Day 22</td>
+<td style="text-align: right;">22</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">8</td>
 <td style="text-align: right;">7</td>
@@ -955,7 +955,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Day 23</td>
+<td style="text-align: right;">23</td>
 <td style="text-align: right;">9</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">8</td>
@@ -974,7 +974,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Day 24</td>
+<td style="text-align: right;">24</td>
 <td style="text-align: right;">6</td>
 <td style="text-align: right;">7</td>
 <td style="text-align: right;">4</td>
@@ -993,7 +993,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 <td style="text-align: right;">9</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Day 25</td>
+<td style="text-align: right;">25</td>
 <td style="text-align: right;">9</td>
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">3</td>
@@ -1020,7 +1020,7 @@ Table&nbsp;2.1: 25 simulations of 16 ambulances
 </figure>
 </div>
 </div>
-<p>To know how many ambulances were “out of order” on any given day, we count number of ones in that row. We place the counts in the final column called “#9” (for “number of nines”):</p>
+<p>To know how many ambulances were “out of order” on any given day, we count number of nines in that row. We place the counts in the final column called “#9” (for “number of nines”):</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-veh-numbers-counts" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -1032,7 +1032,7 @@ Table&nbsp;2.2: 25 simulations of 16 ambulances, with counts
 <table class="lightable-paper lightable-striped lightable-hover do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Day</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">A1</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">A2</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">A3</th>
@@ -1054,7 +1054,7 @@ Table&nbsp;2.2: 25 simulations of 16 ambulances, with counts
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Day 1</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">5</td>
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">4</td>
@@ -1074,7 +1074,7 @@ Table&nbsp;2.2: 25 simulations of 16 ambulances, with counts
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Day 2</td>
+<td style="text-align: right;">2</td>
 <td style="text-align: right;">6</td>
 <td style="text-align: right;">5</td>
 <td style="text-align: right;">0</td>
@@ -1094,7 +1094,7 @@ Table&nbsp;2.2: 25 simulations of 16 ambulances, with counts
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Day 3</td>
+<td style="text-align: right;">3</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">5</td>
 <td style="text-align: right;">4</td>
@@ -1114,7 +1114,7 @@ Table&nbsp;2.2: 25 simulations of 16 ambulances, with counts
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Day 4</td>
+<td style="text-align: right;">4</td>
 <td style="text-align: right;">8</td>
 <td style="text-align: right;">9</td>
 <td style="text-align: right;">2</td>
@@ -1134,7 +1134,7 @@ Table&nbsp;2.2: 25 simulations of 16 ambulances, with counts
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Day 5</td>
+<td style="text-align: right;">5</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">5</td>
@@ -1154,7 +1154,7 @@ Table&nbsp;2.2: 25 simulations of 16 ambulances, with counts
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Day 6</td>
+<td style="text-align: right;">6</td>
 <td style="text-align: right;">7</td>
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">8</td>
@@ -1174,7 +1174,7 @@ Table&nbsp;2.2: 25 simulations of 16 ambulances, with counts
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Day 7</td>
+<td style="text-align: right;">7</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">9</td>
 <td style="text-align: right;">8</td>
@@ -1194,7 +1194,7 @@ Table&nbsp;2.2: 25 simulations of 16 ambulances, with counts
 <td style="text-align: right;">4</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Day 8</td>
+<td style="text-align: right;">8</td>
 <td style="text-align: right;">7</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">0</td>
@@ -1214,147 +1214,147 @@ Table&nbsp;2.2: 25 simulations of 16 ambulances, with counts
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Day 9</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Day 10</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">1</td>
 <td style="text-align: right;">9</td>
 <td style="text-align: right;">8</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">7</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Day 11</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">6</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">3</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">8</td>
 <td style="text-align: right;">3</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Day 12</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
 <td style="text-align: right;">8</td>
 <td style="text-align: right;">6</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">3</td>
 <td style="text-align: right;">4</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Day 13</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">8</td>
 <td style="text-align: right;">6</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Day 14</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Day 15</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">7</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">4</td>
-<td style="text-align: right;">3</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">7</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Day 16</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16</td>
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">6</td>
@@ -1374,7 +1374,7 @@ Table&nbsp;2.2: 25 simulations of 16 ambulances, with counts
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Day 17</td>
+<td style="text-align: right;">17</td>
 <td style="text-align: right;">3</td>
 <td style="text-align: right;">6</td>
 <td style="text-align: right;">3</td>
@@ -1394,7 +1394,7 @@ Table&nbsp;2.2: 25 simulations of 16 ambulances, with counts
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Day 18</td>
+<td style="text-align: right;">18</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">6</td>
 <td style="text-align: right;">1</td>
@@ -1414,7 +1414,7 @@ Table&nbsp;2.2: 25 simulations of 16 ambulances, with counts
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Day 19</td>
+<td style="text-align: right;">19</td>
 <td style="text-align: right;">3</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">2</td>
@@ -1430,91 +1430,91 @@ Table&nbsp;2.2: 25 simulations of 16 ambulances, with counts
 <td style="text-align: right;">9</td>
 <td style="text-align: right;">9</td>
 <td style="text-align: right;">6</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Day 20</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Day 21</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Day 22</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Day 23</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">3</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">3</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Day 24</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">24</td>
 <td style="text-align: right;">6</td>
 <td style="text-align: right;">7</td>
 <td style="text-align: right;">4</td>
@@ -1534,7 +1534,7 @@ Table&nbsp;2.2: 25 simulations of 16 ambulances, with counts
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Day 25</td>
+<td style="text-align: right;">25</td>
 <td style="text-align: right;">9</td>
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">3</td>
@@ -1562,8 +1562,8 @@ Table&nbsp;2.2: 25 simulations of 16 ambulances, with counts
 </figure>
 </div>
 </div>
-<p>Each value in the last column of Table <a href="#tbl-veh-numbers-counts" class="quarto-xref">Table&nbsp;<span>2.2</span></a> is the count of 9s in that row and, therefore, the result from our simulation of one day.</p>
-<p>We can estimate how often three or more ambulances would break down by looking for values of three or greater in the last column. We find there are 3 rows with three or more in the last column. Finally we divide this number of rows by the number of trials (25) to get an estimate of the <em>proportion</em> of days with three or more breakdowns. The result is 0.12.</p>
+<p>Each value in the last column of <a href="#tbl-veh-numbers-counts" class="quarto-xref">Table&nbsp;<span>2.2</span></a> is the count of 9s in that row and, therefore, the result from our simulation of one day.</p>
+<p>We can estimate how often three or more ambulances would break down by looking for values of three or greater in the last column (labeled “#9”). We find there are 3 rows with three or more in the last column. Finally we divide this number of rows by the number of trials (25) to get an estimate of the <em>proportion</em> of days with three or more breakdowns. The result is 0.12.</p>
 </section>
 <section id="solving-the-problem-using" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="solving-the-problem-using"><span class="header-section-number">2.3</span> Solving the problem using R</h2>
@@ -1610,7 +1610,7 @@ Note&nbsp;2.1: Comments in code
 <p>Because R ignores lines beginning with <code>#</code>, the text after the <code>#</code> is just for us, the humans reading the code. The person writing the code will often use comments to explain what the code is doing.</p>
 </div>
 </div>
-<p>Our next task is to use R to simulate a single day of ambulances. We will again represent each ambulance by a random number from 0 through 9. 16 of these numbers represents a simulation of all 16 ambulances available to the contractor. We call a simulation of all ambulances for a specific day one <em>trial</em>.</p>
+<p>Our next task is to use R to simulate a single day of ambulances. We will again represent each ambulance by a random number from 0 through 9. 16 of these numbers represents a simulation of all 16 ambulances available to the contractor. We call a simulation of all ambulances for a specific day — one <em>trial</em>.</p>
 <p>Recall that we want 16 10-sided dice — one per ambulance. Our dice should be 10-sided, because each ambulance has a 1-in-10 chance of being out of order.</p>
 <p>The program to simulate one trial of the ambulances problem therefore begins with these commands:</p>
 <div class="cell" data-layout-align="center">
@@ -1643,37 +1643,20 @@ Note&nbsp;2.1: Comments in code
 <pre><code>[1] 0</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Counting sequence elements
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We see that the code uses:</p>
+<p>You see that we have code like this:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(a <span class="sc">==</span> <span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0</code></pre>
 </div>
 </div>
-<p>What exactly happens here under the hood? First <code>a == 9</code> creates an sequence of values that only contains</p>
-<p><code>TRUE</code> or <code>FALSE</code></p>
-<p>values, depending on whether each element is equal to 9 or not.</p>
-<p>Then, we ask R to add up (<code>sum</code>). R counts <code>TRUE</code> as 1, and <code>FALSE</code> as 0; thus we can use <code>sum</code> to count the number of <code>TRUE</code> values.</p>
-<p>This comes down to asking “how many elements in <code>a</code> are equal to 9”.</p>
-<p>Don’t worry, we will go over this again in the next chapter.</p>
-</div>
-</div>
-<p>The <code>sum</code> command is a <em>counting</em> operation. It asks the computer to <em>count</em> the number of <code>9</code>s among the twenty numbers that are in location <code>a</code> following the random draw carried out by the <span class="r"><code>sample</code></span> operation. The result of the <code>sum</code> operation will be somewhere between 0 and 16, the number of simulated ambulances that were out-of-order on a given simulated day. The result is then placed in another location in the computer’s memory that we label <code>b</code>.</p>
+<p>to count the number of values equal to 9 in the sequence <code>a</code>. For now just read <span class="r">sum(a == 9</span> as “count the number of 9s in <code>a</code>”. We will explain how this code works fairly soon (<a href="resampling_with_code.html#sec-counting-results" class="quarto-xref"><span>Section 5.12</span></a>).</p>
+<p>The <code>sum</code> command is a <em>counting</em> operation. It asks the computer to <em>count</em> the number of <code>9</code>s among the 16 numbers that are in location <code>a</code> following the random draw carried out by the <span class="r"><code>sample</code></span> operation. The result of the <code>sum</code> operation will be somewhere between 0 and 16, the number of simulated ambulances that were out-of-order on a given simulated day. The result is then placed in another location in the computer’s memory that we label <code>b</code>.</p>
 <p>Above you see that we have worked out how to tell the computer to do a single trial — one simulated day.</p>
 <section id="repeating-trials" class="level3" data-number="2.3.1">
 <h3 data-number="2.3.1" class="anchored" data-anchor-id="repeating-trials"><span class="header-section-number">2.3.1</span> Repeating trials</h3>
 <p>We could run the code above for one trial over and over, and write down the result on a piece of paper. If we did this 100 times we would have 100 counts of the number of simulated ambulances that had broken down for each simulated day. To answer our question, we will then count the number of times the count was three or more, and divide by 100, to get an estimate of the proportion of days with three or more out-of-order ambulances.</p>
-<p>One of the great things about the computer is that it is very good at repeating tasks many times, so we do not have to. Our next task is to ask the computer to repeat the single trial many times — say 1000 times — and count up the results for us.</p>
+<p>One of the most useful things about the computer is that it is very good at repeating tasks many times. Our next job is to ask the computer to repeat the single trial many times — say 1000 times — and count up the results for us.</p>
 <p>Of course R is very good at repeating things, but the instructions to tell R to repeat things will take a little while to get used to. Soon, we will spend some time going over it in more detail. For now though, we show you how what it looks like, and ask you to take our word for it.</p>
 <p>The standard way to repeat steps in R is a <code>for</code> loop. For example, let us say we wanted to display “Hello” five times. Here is how we would do that with a <code>for</code> loop:</p>
 <div class="cell" data-layout-align="center">
@@ -1706,7 +1689,7 @@ Hello</code></pre>
 </section>
 <section id="the-solution" class="level3" data-number="2.3.2">
 <h3 data-number="2.3.2" class="anchored" data-anchor-id="the-solution"><span class="header-section-number">2.3.2</span> The solution</h3>
-<p>This is our big moment! Here we will combine the elements shown above to perform our ambulance simulation over, say, 1000 days. Just a quick reminder: we do not expect you to understand all the detail of the code below; we will cover that later. For now, see if you can follow along with the gist of it.</p>
+<p>This is our big moment! We will combine the elements shown above to perform our ambulance simulation over, say, 1000 days. Just a quick reminder: we do not expect you to understand all the detail of the code below; we will cover that later. For now, see if you can follow along with the gist of it.</p>
 <p>To solve resampling problems, we typically proceed as we have done above. We figure out the structure of a single trial and then place that trial in a <code>for</code> loop that executes it multiple times (once for each day, in our case).</p>
 <p>Now, let us apply this procedure to our ambulance problem. We simulate 1000 days. You will see that we have just taken the parts above, and put them together. The only new part here, is the step at the end, where we store the result of the trial. Bear with us for that; we will come to it soon.</p>
 <div class="cell" data-layout-align="center">
@@ -1793,7 +1776,7 @@ Randomness in estimates
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This is an essential point — our code uses <em>random numbers</em> to get an <em>estimate</em> of the quantity we want — in this case, the probability of three or more ambulances being out of order. Every run of our code will use a different set of random numbers. Therefore, every run of our code will give us a very slightly different number. As you will soon see, we can make our estimate more and more accurate, and less and less different between each run, by doing many trials in each run. Here we did 1000 trials, but we will usually do 10000 trials, to give us a good estimate, that does not vary much from run to run.</p>
+<p>This is an essential point — our code uses <em>random numbers</em> to get an <em>estimate</em> of the quantity we want — in this case, the probability of three or more ambulances being out of order. Every run of our code block above will use a different set of random numbers. Therefore, every run of the code will give us a very slightly different number. As you will soon see, we can make our estimate more and more accurate, and less and less different between each run, by doing many trials in each run. Here we did 1000 trials, but we will usually do 10000 trials, to give us a good estimate, that does not vary much from run to run.</p>
 </div>
 </div>
 <p>Don’t worry about the detail of how each of these commands works — we will cover those details gradually, over the next few chapters. But, we hope that you can see, in principle, how each of the operations that the computer carries out are analogous to the operations that you yourself executed when you solved this problem using the equivalent of a ten-sided die. This is exactly the procedure that we will use to solve every problem in probability and statistics that we must deal with.</p>
@@ -1801,14 +1784,14 @@ Randomness in estimates
 </section>
 <section id="sec-resamp-differs" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="sec-resamp-differs"><span class="header-section-number">2.4</span> How resampling differs from the conventional approach</h2>
-<p>In the standard approach the student learns to choose and solve a formula. Doing the algebra and arithmetic is quick and easy. The difficulty is in choosing the correct formula. Unless you are a professional mathematician, it may take you quite a while to arrive at the correct formula — considerable hard thinking, and perhaps some digging in textbooks. More important than the labor, however, is that you may come up with the wrong formula, and hence obtain the wrong answer. And how would you know if you were wrong?</p>
+<p>In the standard approach the student learns to choose and solve a formula. Doing the algebra and arithmetic is quick and easy. The difficulty is in choosing the correct formula. Unless you are a professional statistician, it may take you quite a while to arrive at the correct formula — considerable hard thinking, and perhaps some digging in textbooks. More important than the labor, however, is that you may come up with the wrong formula, and hence obtain the wrong answer. And how would you know if you were wrong?</p>
 <p>Most students who have had a standard course in probability and statistics are quick to tell you that it is not easy to find the correct formula, even immediately after finishing a course (or several courses) on the subject. After leaving school or university, it is harder still to choose the right formula. Even many people who have taught statistics at the university level (including this writer) must look at a book to get the correct formula for a problem as simple as the ambulances, and then we are often still not sure we have the right answer. This is the grave disadvantage of the standard approach.</p>
 <p>In the past few decades, resampling and other Monte Carlo simulation methods have come to be used extensively in scientific research. But in contrast to the material in this book, simulation has mostly been used in situations so complex that mathematical methods have not yet been developed to handle them. Here are examples of such situations:</p>
 <!---
 Better examples.  These are out of date.
 -->
 <ol type="1">
-<li><p>For a flight to Mars, calculating the correct route involves a great many variables, too many to solve with formulas. Hence, the Monte Carlo simulation method is used.</p></li>
+<li><p>Imagine a large train station such as Grand Central Terminal in New York or King’s Cross in London. We are responsible for planning the new station layout so that passengers can move as quickly as possible to and from their trains in rush-hour. It will likely be far too complicated to make formulas to represent the passenger flows, but we could use the computer to simulate passengers, and their movements, and try different potential layouts within the simulation.</p></li>
 <li><p>The Navy might want to know how long the average ship will have to wait for dock facilities. The time of completion varies from ship to ship, and the number of ships waiting in line for dock work varies over time. This problem can be handled quite easily with the experimental simulation method, but formal mathematical analysis would be difficult or impossible.</p></li>
 <li><p>What are the best tactics in baseball? Should one bunt? Should one put the best hitter up first, or later? By trying out various tactics with dice or random numbers, Earnshaw Cook (in his book <em>Percentage Baseball</em>), found that it is best never to bunt, and the highest-average hitter should be put up first, in contrast to usual practice. Finding this answer would have been much more difficult with the analytic method.</p>
 <!---
