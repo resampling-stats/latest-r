@@ -1365,14 +1365,7 @@ Table&nbsp;11.2: Results of 25 hands using random numbers
 </div>
 <p>End of <code>three_of_a_kind</code> notebook</p>
 </div>
-<p>To estimate the probability of getting a two-pair hand, we revert to the original program (counting pairs), except that we examine all the results in the score-keeping vector <code>z</code> for hands in which we had <em>two</em> pairs, instead of <em>one</em> .</p>
-<div class="notebook" name="two_pairs" title="Two pairs">
-<p>Start of <code>two_pairs</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/two_pairs.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=two_pairs.ipynb">Interact</a>
-</div>
-
+<p>To estimate the probability of getting a two-pair hand, we revert to the original program (counting pairs), except that we examine all the results in the score-keeping vector <code>z</code> for hands in which we had <em>two</em> pairs, instead of <em>one</em>. ::: {.notebook name=“two_pairs” title=“Two pairs”}</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>deck <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">13</span>, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1407,8 +1400,7 @@ Table&nbsp;11.2: Results of 25 hands using random numbers
 <pre><code>[1] 0.0465</code></pre>
 </div>
 </div>
-<p>End of <code>two_pairs</code> notebook</p>
-</div>
+<p>:::</p>
 <p>For efficiency (though efficiency really is not important here because the computer performs its operations so cheaply) we could develop both estimates in a single program by simply generating 10000 hands, and count the number with three-of-a-kind and the number with two pairs.</p>
 <p>Before we leave the poker problems, we note a difficulty with Monte Carlo simulation. The probability of a royal flush is so low (about one in half a million) that it would take much computer time to compute. On the other hand, considerable inaccuracy is of little matter. Should one care whether the probability of a royal flush is 1/100,000 or 1/500,000?</p>
 </section>

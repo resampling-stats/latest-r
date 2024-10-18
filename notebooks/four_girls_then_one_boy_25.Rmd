@@ -5,10 +5,9 @@
 with two outcomes, several of each item.**
 
 What is the probability of getting an ordered series of *four girls and
-then one boy* , from a universe of 25 girls and 25 boys? This
-illustrates Case 3 above. Clearly we can use the same sampling mechanism
-as in the example
-<a href="#sec-four-girls-one-boy" class="quarto-xref"><span
+then one boy*, from a universe of 25 girls and 25 boys? This illustrates
+Case 3 above. Clearly we can use the same sampling mechanism as in the
+example <a href="#sec-four-girls-one-boy" class="quarto-xref"><span
 class="quarto-unresolved-ref">sec-four-girls-one-boy</span></a>, but now
 we record “yes” for a smaller number of composite events.
 

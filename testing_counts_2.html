@@ -463,7 +463,7 @@ div.csl-indent {
 
 
 <p>Here’s the bad-news-good-news message again: The bad news is that the subject of inferential statistics is extremely difficult — not because it is complex but rather because it is subtle. The cause of the difficulty is that the world around us is difficult to understand, and spoon-fed mathematical simplifications which you manipulate mechanically simply mislead you into thinking you understand that about which you have not got a clue.</p>
-<p>The good news is that you — and that means <em>you</em> , even if you say you are “no good at mathematics” — can understand these problems with a layperson’s hard thinking, even if you have no mathematical background beyond arithmetic and you think that you have no mathematical capability. That’s because the difficulty lies in such matters as pin-pointing the right question, and understanding how to interpret your results.</p>
+<p>The good news is that you — and that means <em>you</em>, even if you say you are “no good at mathematics” — can understand these problems with a layperson’s hard thinking, even if you have no mathematical background beyond arithmetic and you think that you have no mathematical capability. That’s because the difficulty lies in such matters as pin-pointing the right question, and understanding how to interpret your results.</p>
 <p>The problems in the previous chapter were tough enough. But this chapter considers problems with additional complications, such as when there are more than two groups, or paired comparisons for the same units of observation.</p>
 <p>But first, we need another addition to our R vocabulary.</p>
 <section id="sec-logical-operators" class="level2" data-number="23.1">
@@ -649,7 +649,7 @@ End of notebook.
 <p>We begin the trials with data as in <a href="#tbl-fruitfly-4-groups" class="quarto-xref">Table&nbsp;<span>23.1</span></a>. In two of the six simulation trials, one or more one samples (groups) shows 14 or more males. Without even concerning ourselves about whether we should be looking at males or females, or just males, or needing to do more trials, we can see that it would be <em>very common indeed</em> to have one of four treatments show fourteen or more of one sex just by chance. This discovery clearly indicates that a result that would be fairly unusual (five in 25) for a single sample alone is commonplace in one of four observed samples.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="tbl-fruitfly-4-groups" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;" data-quarto-postprocess="true">
+<div id="tbl-fruitfly-4-groups" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-fruitfly-4-groups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;23.1: Results from 6 random trials for Fruitfly 4-group problem
@@ -1129,7 +1129,7 @@ End of notebook
 <section id="sec-pig-pairs" class="level3" data-number="23.3.1">
 <h3 data-number="23.3.1" class="anchored" data-anchor-id="sec-pig-pairs"><span class="header-section-number">23.3.1</span> Example: the pig rations again, but comparing pairs of pigs</h3>
 <p>This is a <strong>Paired-Comparison Test</strong>.</p>
-<p>To illustrate how several different procedures can reasonably be used to deal with a given problem, here is another way to decide whether pig ration A is “really” better: We can assume that the order of the pig scores listed <em>within each ration group</em> is random — perhaps the order of the stalls the pigs were kept in, or their alphabetical-name order, or any other random order <em>not related to their weights</em> . Match the first pig eating ration A with the first pig eating ration B, and also match the second pigs, the third pigs, and so forth. Then count the number of matched pairs on which ration A does better. On nine of twelve pairings ration A does better, that is, 31.0 &gt; 26.0, 34.0 &gt; 24.0, and so forth.</p>
+<p>To illustrate how several different procedures can reasonably be used to deal with a given problem, here is another way to decide whether pig ration A is “really” better: We can assume that the order of the pig scores listed <em>within each ration group</em> is random — perhaps the order of the stalls the pigs were kept in, or their alphabetical-name order, or any other random order <em>not related to their weights</em>. Match the first pig eating ration A with the first pig eating ration B, and also match the second pigs, the third pigs, and so forth. Then count the number of matched pairs on which ration A does better. On nine of twelve pairings ration A does better, that is, 31.0 &gt; 26.0, 34.0 &gt; 24.0, and so forth.</p>
 <p>Now we can ask: <em>If</em> the two rations are equally good, how often will one ration exceed the other nine or more times out of twelve, just by chance? This is the same as asking how often either heads <em>or</em> tails will come up nine or more times in twelve tosses. (This is a “two-tailed” test because, as far as we know, either ration may be as good as or better than the other.) Once we have decided to treat the problem in this manner, it is quite similar to <a href="testing_counts_1.html#sec-fruitfly" class="quarto-xref"><span>Section 21.2.1</span></a> (the first fruitfly irradiation problem). We ask how likely it is that the outcome will be as far away as the observed outcome (9 “heads” of 12) from 6 of 12 (which is what we expect to get by chance in this case if the two rations are similar).</p>
 <p>So we conduct perhaps fifty trials as in <a href="#tbl-pigs-pair" class="quarto-xref">Table&nbsp;<span>23.3</span></a>, where an asterisk denotes nine or more heads or tails.</p>
 <ul>
@@ -1439,7 +1439,7 @@ Example 17-5
 <p>Here (<a href="#tbl-mergers-data" class="quarto-xref">Table&nbsp;<span>23.4</span></a>) are the data (provided by the authors):</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="tbl-mergers-data" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;" data-quarto-postprocess="true">
+<div id="tbl-mergers-data" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-mergers-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;23.4: Revenue Growth In Year 1 Following Merger
@@ -1666,7 +1666,7 @@ Table&nbsp;23.4: Revenue Growth In Year 1 Following Merger
 <p>Here are those average revenue growth rates for the three groups:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="tbl-merger-means" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;" data-quarto-postprocess="true">
+<div id="tbl-merger-means" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-merger-means-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;23.5: Year's revenue growth
@@ -1706,7 +1706,7 @@ Table&nbsp;23.5: Year's revenue growth
 <p>Here (<a href="#tbl-merger-ranks" class="quarto-xref">Table&nbsp;<span>23.6</span></a>) are those ranks, where 1 = worst, 3 = best:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="tbl-merger-ranks" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;" data-quarto-postprocess="true">
+<div id="tbl-merger-ranks" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-merger-ranks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;23.6: Revenue growth ranked within matched set (1=best)
@@ -1932,7 +1932,7 @@ Table&nbsp;23.6: Revenue growth ranked within matched set (1=best)
 <p>These (<a href="#tbl-merger-mean-ranks" class="quarto-xref">Table&nbsp;<span>23.7</span></a>) are the average ranks for the three groups (1 = worst, 3 = best):</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="tbl-merger-mean-ranks" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;" data-quarto-postprocess="true">
+<div id="tbl-merger-mean-ranks" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-merger-mean-ranks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;23.7: Mean rank of year revenue growth
@@ -2024,7 +2024,7 @@ End of notebook
 <p>Assume that we now switch scales from the merger data, so that #1 = best and #3 = worst, and that the outcomes on a series of tests were ranked from best (#1) to worst (#3) within each triplet. Assume that the combined drug-and-therapy regime has the best average rank. How sure can we be that the observed result would not occur by chance? Here are the data from the merger study, seen here as <a href="#tbl-therapy-ranks" class="quarto-xref">Table&nbsp;<span>23.8</span></a>:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="tbl-therapy-ranks" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;" data-quarto-postprocess="true">
+<div id="tbl-therapy-ranks" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-therapy-ranks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;23.8: Ranked therapies within matched-patient triplets (1=best)
@@ -2250,7 +2250,7 @@ Table&nbsp;23.8: Ranked therapies within matched-patient triplets (1=best)
 <p>These (<a href="#tbl-therapy-mean-ranks" class="quarto-xref">Table&nbsp;<span>23.9</span></a>) are the average ranks for the three groups (1 = best, 3 = worst):</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="tbl-therapy-mean-ranks" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;" data-quarto-postprocess="true">
+<div id="tbl-therapy-mean-ranks" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-therapy-mean-ranks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;23.9: Mean rank of therapy in matched triplets

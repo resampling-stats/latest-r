@@ -81,4 +81,4 @@ pigs to get further evidence. (Or you could proceed to employ another
 sort of test for a slightly more precise evaluation.) But if the goal is
 a decision on which type of ration to buy for a small farm and they are
 the same price, just go ahead and buy ration A because, even if it is no
-better than ration B, you have strong evidence that it is *no worse* .
+better than ration B, you have strong evidence that it is *no worse*.
