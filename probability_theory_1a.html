@@ -462,12 +462,12 @@ window.Quarto = {
   </ul></li>
   <li><a href="#the-concept-of-a-universe-or-population" id="toc-the-concept-of-a-universe-or-population" class="nav-link" data-scroll-target="#the-concept-of-a-universe-or-population"><span class="header-section-number">8.5</span> The concept of a universe or population</a></li>
   <li><a href="#the-conventions-of-probability" id="toc-the-conventions-of-probability" class="nav-link" data-scroll-target="#the-conventions-of-probability"><span class="header-section-number">8.6</span> The conventions of probability</a></li>
-  <li><a href="#mutually-exclusive-events-the-addition-rule" id="toc-mutually-exclusive-events-the-addition-rule" class="nav-link" data-scroll-target="#mutually-exclusive-events-the-addition-rule"><span class="header-section-number">8.7</span> Mutually exclusive events — the addition rule</a></li>
+  <li><a href="#sec-addition-rule" id="toc-sec-addition-rule" class="nav-link" data-scroll-target="#sec-addition-rule"><span class="header-section-number">8.7</span> Mutually exclusive events — the addition rule</a></li>
   <li><a href="#joint-probabilities" id="toc-joint-probabilities" class="nav-link" data-scroll-target="#joint-probabilities"><span class="header-section-number">8.8</span> Joint probabilities</a></li>
   <li><a href="#sec-what-is-resampling" id="toc-sec-what-is-resampling" class="nav-link" data-scroll-target="#sec-what-is-resampling"><span class="header-section-number">8.9</span> The Monte Carlo simulation method (resampling)</a></li>
   <li><a href="#sec-if-statements" id="toc-sec-if-statements" class="nav-link" data-scroll-target="#sec-if-statements"><span class="header-section-number">8.10</span> If statements in R</a></li>
   <li><a href="#the-deductive-formulaic-method" id="toc-the-deductive-formulaic-method" class="nav-link" data-scroll-target="#the-deductive-formulaic-method"><span class="header-section-number">8.11</span> The deductive formulaic method</a></li>
-  <li><a href="#multiplication-rule" id="toc-multiplication-rule" class="nav-link" data-scroll-target="#multiplication-rule"><span class="header-section-number">8.12</span> Multiplication rule</a></li>
+  <li><a href="#sec-multiplication-rule" id="toc-sec-multiplication-rule" class="nav-link" data-scroll-target="#sec-multiplication-rule"><span class="header-section-number">8.12</span> Multiplication rule</a></li>
   <li><a href="#sec-cond-uncond" id="toc-sec-cond-uncond" class="nav-link" data-scroll-target="#sec-cond-uncond"><span class="header-section-number">8.13</span> Conditional and unconditional probabilities</a></li>
   <li><a href="#sec-shuffling" id="toc-sec-shuffling" class="nav-link" data-scroll-target="#sec-shuffling"><span class="header-section-number">8.14</span> Shuffling with <span class="r"><code>sample</code></span></a></li>
   </ul>
@@ -603,8 +603,8 @@ R\)</span> the <em>complement</em> of <span class="math inline">\(R\)</span>.</p
 </div>
 </div>
 </section>
-<section id="mutually-exclusive-events-the-addition-rule" class="level2" data-number="8.7">
-<h2 data-number="8.7" class="anchored" data-anchor-id="mutually-exclusive-events-the-addition-rule"><span class="header-section-number">8.7</span> Mutually exclusive events — the addition rule</h2>
+<section id="sec-addition-rule" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="sec-addition-rule"><span class="header-section-number">8.7</span> Mutually exclusive events — the addition rule</h2>
 <p><strong>Definition:</strong> If there are just two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> and they are “mutually exclusive” or “disjoint,” each implies the absence of the other. Green and red coats are mutually exclusive for you if (but only if) you never wear more than one coat at a time.</p>
 <p>To state this idea formally, if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are mutually exclusive, then:</p>
 <p><span class="math display">\[
@@ -860,8 +860,8 @@ Figure&nbsp;8.1: Tree diagram
 <p>It also is possible to get an answer with formulaic methods to the question about a nice day and the Commanders winning. The following discussion of nice-day-Commanders-win handled by formula is a prototype of the formulaic deductive method for handling other problems.</p>
 <p>Return now to the tree diagram (<a href="#fig-commanders-tree" class="quarto-xref">Figure&nbsp;<span>8.1</span></a>) above. We can read from the tree diagram that 70 percent of the time it will be nice, and of that 70 percent of the time, 65 percent of the games will be wins. That is, <span class="math inline">\(0.65 * 0.7 = 0.455\)</span> = the probability of a nice day and a win. That is the answer we seek. The method seems easy, but it also is easy to get confused and obtain the wrong answer.</p>
 </section>
-<section id="multiplication-rule" class="level2" data-number="8.12">
-<h2 data-number="8.12" class="anchored" data-anchor-id="multiplication-rule"><span class="header-section-number">8.12</span> Multiplication rule</h2>
+<section id="sec-multiplication-rule" class="level2" data-number="8.12">
+<h2 data-number="8.12" class="anchored" data-anchor-id="sec-multiplication-rule"><span class="header-section-number">8.12</span> Multiplication rule</h2>
 <p>We can generalize what we have just done. The foregoing formula exemplifies what is known as the “multiplication rule”:</p>
 <p><span class="math display">\[
 P(\text{nice day and win}) = P(\text{nice day}) * P(\text{winning | nice day})
