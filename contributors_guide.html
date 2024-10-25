@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Appendix B — Technical Note to the Professional Reader – Resampling statistics</title>
+<title>Appendix E — Contributors guide – Resampling statistics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -50,8 +30,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./acknowlegements.html" rel="next">
-<link href="./exercise_solutions.html" rel="prev">
+<link href="./code_topics.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -108,7 +87,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercise_solutions.html">Appendices</a></li><li class="breadcrumb-item"><a href="./technical_note.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Technical Note to the Professional Reader</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercise_solutions.html">Appendices</a></li><li class="breadcrumb-item"><a href="./contributors_guide.html"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Contributors guide</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -360,7 +339,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./technical_note.html" class="sidebar-item-text sidebar-link active">
+  <a href="./technical_note.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Technical Note to the Professional Reader</span></span></a>
   </div>
 </li>
@@ -378,7 +357,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./contributors_guide.html" class="sidebar-item-text sidebar-link">
+  <a href="./contributors_guide.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Contributors guide</span></span></a>
   </div>
 </li>
@@ -389,15 +368,23 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-easiest-way-making-an-issue" id="toc-the-easiest-way-making-an-issue" class="nav-link active" data-scroll-target="#the-easiest-way-making-an-issue"><span class="header-section-number">E.1</span> The easiest way — making an <em>issue</em></a></li>
+  <li><a href="#sec-license-note" id="toc-sec-license-note" class="nav-link" data-scroll-target="#sec-license-note"><span class="header-section-number">E.2</span> Note on licensing</a></li>
+  <li><a href="#more-advanced-making-a-pull-request" id="toc-more-advanced-making-a-pull-request" class="nav-link" data-scroll-target="#more-advanced-making-a-pull-request"><span class="header-section-number">E.3</span> More advanced — making a <em>pull request</em></a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercise_solutions.html">Appendices</a></li><li class="breadcrumb-item"><a href="./technical_note.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Technical Note to the Professional Reader</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercise_solutions.html">Appendices</a></li><li class="breadcrumb-item"><a href="./contributors_guide.html"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Contributors guide</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Appendix B — Technical Note to the Professional Reader</h1>
+<h1 class="title"><span id="sec-contributors-guide" class="quarto-section-identifier">Appendix E — Contributors guide</span></h1>
 </div>
 
 
@@ -414,32 +401,28 @@ div.csl-indent {
 </header>
 
 
-<p>The material presented in this book fits together with the technical literature as follows: Though I (JLS) had proceeded from first principles rather than from the literature, I have from the start cited work by Chung and Fraser <span class="citation" data-cites="chung1958randomization">(<a href="references.html#ref-chung1958randomization" role="doc-biblioref">1958</a>)</span> and Meyer Dwass <span class="citation" data-cites="dwass1957modified">(<a href="references.html#ref-dwass1957modified" role="doc-biblioref">1957</a>)</span> They suggested taking samples of permutations in a two-sample test as a way of extending the applicability of Fisher’s randomization test <span class="citation" data-cites="fisher1935design fisher1960design">(<a href="references.html#ref-fisher1935design" role="doc-biblioref">1935</a>; <a href="references.html#ref-fisher1960design" role="doc-biblioref">1960, chap. III</a>, section 21)</span>. Resampling with replacement from a single sample to determine sample statistic variability was suggested by Simon <span class="citation" data-cites="simon1969basic">(<a href="references.html#ref-simon1969basic" role="doc-biblioref">1969</a>)</span>. Independent work by Efron <span class="citation" data-cites="efron1979bootstrap">(<a href="references.html#ref-efron1979bootstrap" role="doc-biblioref">1979</a>)</span> explored the properties of this technique (Efron termed it the “bootstrap”) and lent it theoretical support. The notion of using these techniques routinely and in preference to conventional techniques based on Gaussian assumptions was suggested by Simon <span class="citation" data-cites="simon1969basic">(<a href="references.html#ref-simon1969basic" role="doc-biblioref">1969</a>)</span> and by Simon, Atkinson, and Shevokas <span class="citation" data-cites="simon1976probability">(<a href="references.html#ref-simon1976probability" role="doc-biblioref">1976</a>)</span>.</p>
+<p>We are hoping that you have arrived at this chapter because you have found an error in the book, or you have thought of an improvement that you would like to share.</p>
+<p>There are two ways of letting us know about errors or fixes.</p>
+<section id="the-easiest-way-making-an-issue" class="level2" data-number="E.1">
+<h2 data-number="E.1" class="anchored" data-anchor-id="the-easiest-way-making-an-issue"><span class="header-section-number">E.1</span> The easiest way — making an <em>issue</em></h2>
+<p>The simplest method is to make a new “issue” using the Github website interface that we use to house the book. To do this, go to <a href="https://github.com/resampling-stats/resampling-with/issues" class="uri">https://github.com/resampling-stats/resampling-with/issues</a>, and click on the green “New Issue” button. Fill in as much information as you can think of about the error or fix or other improvement, and click “Submit new issue”. In particular, please make sure to tell us the chapter and page number (from the PDF), or the web address of the text with the error. We will try to respond quickly.</p>
+</section>
+<section id="sec-license-note" class="level2" data-number="E.2">
+<h2 data-number="E.2" class="anchored" data-anchor-id="sec-license-note"><span class="header-section-number">E.2</span> Note on licensing</h2>
+<p>Please bear in mind that we have — with permission — released the book under a <a href="https://github.com/resampling-stats/resampling-with/blob/main/LICENSE.md">Creative Commons attribution / non-commercial license</a>. In order to preserve our ability to keep using this license, we will assume that you will accept that license for any fixes or improvements that you send us. If that is not true, please let us know in your issue or pull-request (see below).</p>
+</section>
+<section id="more-advanced-making-a-pull-request" class="level2" data-number="E.3">
+<h2 data-number="E.3" class="anchored" data-anchor-id="more-advanced-making-a-pull-request"><span class="header-section-number">E.3</span> More advanced — making a <em>pull request</em></h2>
+<p>If you have some more time, and experience, you might consider sending us your suggested changes as a <em>pull-request</em>.</p>
+<p>As background, we have written this edition of the book in a set of simple computer text files. In these simple text file, we use conventions from a protocol called <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> to indicate things like <strong>bold</strong> and <em>italic</em> formatting, links (like the one above), and other things.</p>
+<p>We then use some software called <a href="https://quarto.org">Quarto</a> to take the collection of text files, and build them into the book — both in HTML (web page) format, and in PDF format.</p>
+<p>This is relevant, because we have stored all the text files and the instructions to build the book at the Github repository at <a href="https://github.com/resampling-stats/resampling-with" class="uri">https://github.com/resampling-stats/resampling-with</a>. If you have some experience of using such repositories, we would be very grateful if you would consider making a <em>fork</em> of the repository and making a <em>pull-request</em> from this fork. If you don’t know what these terms mean, don’t worry, and consider submitting an issue instead (see above).</p>
+<p>If you don’t know these terms, and you are interested to learn, we suggest you use your search engine to look for “Github fork pull-request” (without quotes) to start your research.</p>
+<p>Please have a look at the <a href="https://github.com/resampling-stats/resampling-with"><code>README.md</code></a> file in the repository for some instructions, and feel free to contact us to ask for help, either by an issue (above) or by email.</p>
+<p>If you do submit a pull-request, please note the comment above (<a href="#sec-license-note" class="quarto-xref"><span>Section E.2</span></a>) about the book license.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-chung1958randomization" class="csl-entry" role="listitem">
-Chung, James H, and Donald AS Fraser. 1958. <span>“Randomization Tests for a Multivariate Two-Sample Problem.”</span> <em>Journal of the American Statistical Association</em> 53 (283): 729–35. <a href="https://www.jstor.org/stable/pdf/2282050.pdf">https://www.jstor.org/stable/pdf/2282050.pdf</a>.
-</div>
-<div id="ref-dwass1957modified" class="csl-entry" role="listitem">
-Dwass, Meyer. 1957. <span>“Modified Randomization Tests for Nonparametric Hypotheses.”</span> <em>The Annals of Mathematical Statistics</em>, 181–87. <a href="https://www.jstor.org/stable/pdf/2237031.pdf">https://www.jstor.org/stable/pdf/2237031.pdf</a>.
-</div>
-<div id="ref-efron1979bootstrap" class="csl-entry" role="listitem">
-Efron, Bradley. 1979. <span>“Bootstrap Methods; Another Look at the Jackknife.”</span> <em>The Annals of Statistics</em> 7 (1): 1–26. <a href="http://www.econ.uiuc.edu/~econ508/Papers/efron79.pdf">http://www.econ.uiuc.edu/~econ508/Papers/efron79.pdf</a>.
-</div>
-<div id="ref-fisher1935design" class="csl-entry" role="listitem">
-Fisher, Ronald Aylmer. 1935. <em>The Design of Experiments</em>. 1st ed. Edinburgh: <span>Oliver and Boyd Ltd</span>. <a href="https://archive.org/details/in.ernet.dli.2015.502684">https://archive.org/details/in.ernet.dli.2015.502684</a>.
-</div>
-<div id="ref-fisher1960design" class="csl-entry" role="listitem">
-———. 1960. <em>The Design of Experiments</em>. 7th ed. Edinburgh: <span>Oliver and Boyd Ltd</span>. <a href="https://archive.org/details/designofexperime0000rona_q7u5">https://archive.org/details/designofexperime0000rona_q7u5</a>.
-</div>
-<div id="ref-simon1969basic" class="csl-entry" role="listitem">
-Simon, Julian Lincoln. 1969. <em>Basic Research Methods in Social Science</em>. 1st ed. New York: Random House.
-</div>
-<div id="ref-simon1976probability" class="csl-entry" role="listitem">
-Simon, Julian Lincoln, David T Atkinson, and Carolyn Shevokas. 1976. <span>“Probability and Statistics: Experimental Results of a Radically Different Teaching Method.”</span> <em>The American Mathematical Monthly</em> 83 (9): 733–39. <a href="https://www.jstor.org/stable/pdf/2318961.pdf">https://www.jstor.org/stable/pdf/2318961.pdf</a>.
-</div>
-</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -864,14 +847,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./exercise_solutions.html" class="pagination-link" aria-label="Exercise Solutions">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Exercise Solutions</span></span>
+      <a href="./code_topics.html" class="pagination-link" aria-label="Code topics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Code topics</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./acknowlegements.html" class="pagination-link" aria-label="Acknowledgements">
-        <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Acknowledgements</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
