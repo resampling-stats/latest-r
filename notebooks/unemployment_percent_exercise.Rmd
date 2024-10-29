@@ -224,8 +224,8 @@ render-id="quarto-int-sidebar:/acknowlegements.html&lt;span-class='chapter-numbe
 render-id="quarto-int-sidebar:/code_topics.html&lt;span-class='chapter-number'&gt;D&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Code-topics&lt;/span&gt;"><span class="chapter-number">D</span> 
 <span class="chapter-title">Code topics</span></span>
 <span class="hidden quarto-markdown-envelope-contents"
-render-id="quarto-int-sidebar:/contributors_guide.html&lt;span-class='chapter-number'&gt;E&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Contributors-guide&lt;/span&gt;"><span class="chapter-number">E</span> 
-<span class="chapter-title">Contributors guide</span></span>
+render-id="quarto-int-sidebar:/errors_suggestions.html&lt;span-class='chapter-number'&gt;E&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Errors-and-suggestions&lt;/span&gt;"><span class="chapter-number">E</span> 
+<span class="chapter-title">Errors and suggestions</span></span>
 <span class="hidden quarto-markdown-envelope-contents"
 render-id="quarto-breadcrumbs-&lt;span-class='chapter-number'&gt;27&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Confidence-Intervals,-Part-2:-The-Two-Approaches-to-Estimating-Confidence-Intervals&lt;/span&gt;"><span class="chapter-number">27</span> 
 <span class="chapter-title">Confidence Intervals, Part 2: The Two
