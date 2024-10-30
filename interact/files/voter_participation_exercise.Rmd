@@ -1,0 +1,12 @@
+# Voter participation in 1844 election
+
+
+Notebook for voter participation exercise.
+
+```{r}
+# Read data from web URL instead of local data directory
+# (so that notebook works in online version).
+voter_df <- read.csv('https://resampling-stats.github.io/latest-r/interact/files/data/election_1844.csv')
+participation <- voter_df$Participation
+spread <- voter_df$Spread
+```
