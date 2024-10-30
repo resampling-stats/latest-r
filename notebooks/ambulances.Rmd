@@ -50,7 +50,7 @@ a
 
 The commands above ask the computer to store the results of the random
 drawing in a location in the computer’s memory to which we give a name
-such as “a” or “ambulances” or “aardvark” — the name is up to us.
+such as `a` or `ambulances` or `aardvark` — the name is up to us.
 
 Next, we need to count the number of defective ambulances:
 
