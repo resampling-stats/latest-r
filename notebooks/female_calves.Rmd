@@ -1,6 +1,8 @@
 # Female calf numbers simulation
 
 
+Find this notebook on the web at Note .
+
 This notebook uses simulation to test the null hypothesis that the
 chances of any one calf being female is 100 / 206.
 

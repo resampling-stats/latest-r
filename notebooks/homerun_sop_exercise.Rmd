@@ -1,6 +1,8 @@
 # Homeruns and strikeout sum of products.
 
 
+Find this notebook on the web at Note .
+
 Exercise on relationship of home runs and strikeouts, using sum of
 products.
 

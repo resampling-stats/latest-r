@@ -1,6 +1,8 @@
 # An icebreaker for two universities
 
 
+Find this notebook on the web at Note .
+
 **First put two groups of 10 people into 10 pairs. Then re-randomize the
 pairings. What is the chance that four or more pairs are the same in the
 second random pairing? This is a problem in the probability of matching

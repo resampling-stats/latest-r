@@ -1,6 +1,8 @@
 # Public and private liquor prices
 
 
+Find this notebook on the web at Note .
+
 This notebook asks the question whether the difference in the means of
 private and government-specified prices of a particular whiskey could
 plausibly have come about as a result of random sampling.

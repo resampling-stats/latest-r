@@ -1,6 +1,8 @@
 # Unemployment percent solution
 
 
+Find this notebook on the web at Note .
+
 ```{r}
 n_trials <- 10000
 results <- numeric(n_trials)

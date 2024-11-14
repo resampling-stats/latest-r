@@ -1147,14 +1147,25 @@ Notebook with data file
 <p>As you saw in <a href="standard_scores.html#nte-download-links" class="quarto-xref">Note&nbsp;<span>16.1</span></a>, the following notebook reads a data file, so the download link points to a <code>.zip</code> file containing the notebook and the data file.</p>
 </div>
 </div>
-<div class="notebook" name="measured_rations" title="Pig rations via bootstrap">
-<p>Start of <code>measured_rations</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/measured_rations.zip">Download zip with notebook + data file</a>
-<a class="interact-button" href="./interact/lab/index.html?path=measured_rations.ipynb">Interact</a>
+<div id="nte-measured_rations" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;24.1: Notebook: Pig rations via bootstrap
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/measured_rations.zip">Download zip with notebook + data file</a> <a class="interact-button" href="./interact/lab/index.html?path=measured_rations.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="measured_rations" title="Pig rations via bootstrap">
 
-<p>First we need to get the measured data from the data file using <span class="r">R</span>:</p>
+</div>
+<p>First we need to get the measured data from the data file using R:</p>
 <p>We load the file containing the data:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the data file containing pig ration data.</span></span>
@@ -1267,7 +1278,21 @@ Notebook with data file
 <pre><code>Proportion of trials with either &gt;=38 or &lt;=-38: 0.012</code></pre>
 </div>
 </div>
-<p>End of <code>measured_rations</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Pig rations via bootstrap
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>measured_rations</code> starts at <a href="#nte-measured_rations" class="quarto-xref">Note&nbsp;<span>24.1</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook
@@ -1473,13 +1498,24 @@ Figure&nbsp;24.3: Whiskey prices by state category
 <p>On the “null hypothesis” that the two groups’ prices do <em>not</em> reflect different price-setting mechanisms, but rather differ only by chance, I then examined how often that simulated universe stochastically produces groups with results as different as observed in 1961. I repeatedly dealt groups of 16 and 26 cards, without replacing the cards, to simulate hypothetical monopoly-state and private-state samples, each time calculating the difference in mean prices.</p>
 <p>The probability that the benchmark null-hypothesis universe would produce a difference between groups as large or larger than observed in 1961 is estimated by how frequently the mean of the group of randomly-chosen sixteen prices from the simulated state-ownership universe is less than (or equal to) the mean of the actual sixteen state-ownership prices. If the simulated difference between the randomly-chosen groups was frequently equal to or greater than observed in 1961, one would not conclude that the observed difference was due to the type of retailing system because it could well have been due to chance variation.</p>
 <p>Here is that procedure as <span class="r">an R</span> notebook. Compare to the very similar bootstrap procedure in <a href="probability_theory_3.html#sec-public-liquor" class="quarto-xref"><span>Section 12.15</span></a>.</p>
-<div class="notebook" name="liquor_permutation" title="Permutation test of public and private liquor prices">
-<p>Start of <code>liquor_permutation</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/liquor_permutation.zip">Download zip with notebook + data file</a>
-<a class="interact-button" href="./interact/lab/index.html?path=liquor_permutation.ipynb">Interact</a>
+<div id="nte-liquor_permutation" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;24.2: Notebook: Permutation test of public and private liquor prices
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/liquor_permutation.zip">Download zip with notebook + data file</a> <a class="interact-button" href="./interact/lab/index.html?path=liquor_permutation.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="liquor_permutation" title="Permutation test of public and private liquor prices">
 
+</div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the data from a data file.</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>prices_df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'data/liquor_prices.csv'</span>)</span>
@@ -1594,7 +1630,21 @@ Figure&nbsp;24.3: Whiskey prices by state category
 </div>
 </div>
 </div>
-<p>End of <code>liquor_permutation</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Permutation test of public and private liquor prices
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>liquor_permutation</code> starts at <a href="#nte-liquor_permutation" class="quarto-xref">Note&nbsp;<span>24.2</span></a>.</p>
+</div>
 </div>
 <!---
 End of liquor_permutation notebook.
@@ -1800,13 +1850,24 @@ Table&nbsp;24.5: Mean birthweight per group
 <li>Repeatedly draw two samples of 15 birthweights each, and check how frequently the observed difference is as large as, or larger than, the actual difference of .82 pounds.</li>
 </ol>
 <p>This is the so-called bootstrap test of the null-hypothesis.</p>
-<div class="notebook" name="birthweight_bootstap" title="Bootstrap test of birthweight difference">
-<p>Start of <code>birthweight_bootstap</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/birthweight_bootstap.zip">Download zip with notebook + data file</a>
-<a class="interact-button" href="./interact/lab/index.html?path=birthweight_bootstap.ipynb">Interact</a>
+<div id="nte-birthweight_bootstap" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;24.3: Notebook: Bootstrap test of birthweight difference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/birthweight_bootstap.zip">Download zip with notebook + data file</a> <a class="interact-button" href="./interact/lab/index.html?path=birthweight_bootstap.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="birthweight_bootstap" title="Bootstrap test of birthweight difference">
 
+</div>
 <p>Proceed with the simulation:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get treatment and control values from data file.</span></span>
@@ -1874,7 +1935,21 @@ Table&nbsp;24.5: Mean birthweight per group
 </div>
 </div>
 </div>
-<p>End of <code>birthweight_bootstap</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Bootstrap test of birthweight difference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>birthweight_bootstap</code> starts at <a href="#nte-birthweight_bootstap" class="quarto-xref">Note&nbsp;<span>24.3</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook
@@ -1896,13 +1971,24 @@ End of notebook
 <li><strong>Step 4.</strong> Compute and record the difference between the means of the two samples. ** Step 5.** Repeat steps 2 and 3 perhaps 10000 times. ** Step 6.** Determine how often the resampled difference exceeds the observed difference of 30.63.</li>
 </ul>
 <p>The following notebook follows the above procedure:</p>
-<div class="notebook" name="mouse_bootstrap" title="A classic bootstrap example">
-<p>Start of <code>mouse_bootstrap</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/mouse_bootstrap.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=mouse_bootstrap.ipynb">Interact</a>
+<div id="nte-mouse_bootstrap" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;24.4: Notebook: A classic bootstrap example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/mouse_bootstrap.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=mouse_bootstrap.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="mouse_bootstrap" title="A classic bootstrap example">
 
+</div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Treatment group.</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>treat <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">94</span>, <span class="dv">38</span>, <span class="dv">23</span>, <span class="dv">197</span>, <span class="dv">99</span>, <span class="dv">16</span>, <span class="dv">141</span>)</span>
@@ -1957,7 +2043,21 @@ End of notebook
 </div>
 </div>
 </div>
-<p>End of <code>mouse_bootstrap</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: A classic bootstrap example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>mouse_bootstrap</code> starts at <a href="#nte-mouse_bootstrap" class="quarto-xref">Note&nbsp;<span>24.4</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook
@@ -1976,13 +2076,24 @@ End of notebook
 <li><strong>Step 6a.</strong> Determine how often the resampled difference exceeds the observed difference of 30.63.</li>
 </ul>
 <p>Here is the R notebook:</p>
-<div class="notebook" name="mouse_permutation" title="Permutation test for mouse survival data">
-<p>Start of <code>mouse_permutation</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/mouse_permutation.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=mouse_permutation.ipynb">Interact</a>
+<div id="nte-mouse_permutation" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;24.5: Notebook: Permutation test for mouse survival data
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/mouse_permutation.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=mouse_permutation.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="mouse_permutation" title="Permutation test for mouse survival data">
 
+</div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Treatment group.</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>treat <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">94</span>, <span class="dv">38</span>, <span class="dv">23</span>, <span class="dv">197</span>, <span class="dv">99</span>, <span class="dv">16</span>, <span class="dv">141</span>)</span>
@@ -2039,7 +2150,21 @@ End of notebook
 </div>
 </div>
 </div>
-<p>End of <code>mouse_permutation</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Permutation test for mouse survival data
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>mouse_permutation</code> starts at <a href="#nte-mouse_permutation" class="quarto-xref">Note&nbsp;<span>24.5</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook
@@ -2287,13 +2412,24 @@ Table&nbsp;24.7: Weight gain sum per group
 <p>Using R, we shuffle all the weight gains together, select four random groups, and determine whether the sum of squared differences in the resample equal or exceed 5299. If they do so with regularity, then we conclude that the observed differences could easily have occurred by chance.</p>
 <p>With the <span class="r"><code>c</code></span> func, we string the four vectors into a single vector called <code>all_weights</code>. After shuffling (using <span class="r"><code>sample</code></span> the 48-pig weight-gain vector <code>all_weights</code> into <code>shuffled</code>, we split <code>shuffled</code> into four randomized samples. And we compute the squared differences between the pairs of groups and <code>sum</code> the squared differences just as we did above for the observed groups.</p>
 <p>Last, we examine how often the simulated-trials data produce differences among the groups as large as (or larger than) the actually observed data — 5299.</p>
-<div class="notebook" name="squared_rations" title="Sum of squared differences for pig rations">
-<p>Start of <code>squared_rations</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/squared_rations.zip">Download zip with notebook + data file</a>
-<a class="interact-button" href="./interact/lab/index.html?path=squared_rations.ipynb">Interact</a>
+<div id="nte-squared_rations" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;24.6: Notebook: Sum of squared differences for pig rations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/squared_rations.zip">Download zip with notebook + data file</a> <a class="interact-button" href="./interact/lab/index.html?path=squared_rations.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="squared_rations" title="Sum of squared differences for pig rations">
 
+</div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data file.</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>rations_df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'data/pig_rations.csv'</span>)</span>
@@ -2393,7 +2529,21 @@ Table&nbsp;24.7: Weight gain sum per group
 </div>
 </div>
 </div>
-<p>End of <code>squared_rations</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Sum of squared differences for pig rations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>squared_rations</code> starts at <a href="#nte-squared_rations" class="quarto-xref">Note&nbsp;<span>24.6</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook
@@ -2479,13 +2629,24 @@ Table&nbsp;24.8: Hamilton Depression Scale Factor IV Values
 </div>
 <p>The task is to perform a test that will help decide whether there is a difference in the depression scores at the two visits (or the performances of the two mechanics). Perform both a bootstrap test and a permutation test, and give some reason for preferring one to the other in principle. How much do they differ in practice? (For this exercise, assume that we can treat the before and after scores as two different and independent samples and ignore the pairing between the before and after scores).</p>
 <p>Here’s a notebook to get you started:</p>
-<div class="notebook" name="paired_differences" title="Paired differences exercise">
-<p>Start of <code>paired_differences</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/paired_differences.zip">Download zip with notebook + data file</a>
-<a class="interact-button" href="./interact/lab/index.html?path=paired_differences.ipynb">Interact</a>
+<div id="nte-paired_differences" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;24.7: Notebook: Paired differences exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/paired_differences.zip">Download zip with notebook + data file</a> <a class="interact-button" href="./interact/lab/index.html?path=paired_differences.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="paired_differences" title="Paired differences exercise">
 
+</div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'data/hamilton.csv'</span>)</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>before <span class="ot">&lt;-</span> df<span class="sc">$</span>score_before</span>
@@ -2493,7 +2654,21 @@ Table&nbsp;24.8: Hamilton Depression Scale Factor IV Values
 <span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>End of <code>paired_differences</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Paired differences exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>paired_differences</code> starts at <a href="#nte-paired_differences" class="quarto-xref">Note&nbsp;<span>24.7</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook.

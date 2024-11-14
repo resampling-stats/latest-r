@@ -1,6 +1,8 @@
 # The Birthday Problem
 
 
+Find this notebook on the web at Note .
+
 Here we answer the question: “What is the probability that two or more
 people among a roomful of (say) twenty-five people will have the same
 birthday?”

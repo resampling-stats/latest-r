@@ -1,6 +1,8 @@
 # Bayesian analysis of Covid test result
 
 
+Find this notebook on the web at Note .
+
 You get a Covid test, and the test is negative. Now, you would like to
 know what the chance is of you having Covid.
 

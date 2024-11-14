@@ -1,6 +1,8 @@
 # Bayesian analysis of cars and mechanics
 
 
+Find this notebook on the web at Note .
+
 We wish to know the probability that if the mechanic *says* a car is
 “OK,” it *really* is faulty. Phrased differently, what is the
 probability of a car being faulty if the mechanic said it was OK?

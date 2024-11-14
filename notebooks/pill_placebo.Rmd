@@ -1,6 +1,8 @@
 # Cures for pill vs placebo
 
 
+Find this notebook on the web at Note .
+
 Now for a R solution. Again, the benchmark hypothesis is that pill P has
 no effect, and we ask how often, on this assumption, the results that
 were obtained from the actual test of the pill would occur by chance.

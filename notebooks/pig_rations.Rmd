@@ -1,6 +1,8 @@
 # Weight gain on pig rations
 
 
+Find this notebook on the web at Note .
+
 We do a simulation of weight gain ranks for two different pig rations.
 
 The `ranks <- 1:24` statement creates a vector of numbers 1 through 24,

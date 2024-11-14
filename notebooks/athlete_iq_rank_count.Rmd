@@ -1,6 +1,8 @@
 # Athletic ability and IQ using rank counts
 
 
+Find this notebook on the web at Note .
+
 Continuing with the question: **Is there correlation between two
 variables or are they independent?**
 

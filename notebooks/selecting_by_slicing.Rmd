@@ -1,11 +1,12 @@
 # Selecting elements by slicing
 
 
-As you saw in <a href="#sec-array-indexing" class="quarto-xref"><span
-class="quarto-unresolved-ref">sec-array-indexing</span></a>, we do
-*indexing* when we put square brackets following a value that is a
-container, such as a vector. Inside the square brackets we put another
-value to specify which elements we want to fetch from the container.
+Find this notebook on the web at Note .
+
+As you saw in Section , we do *indexing* when we put square brackets
+following a value that is a container, such as a vector. Inside the
+square brackets we put another value to specify which elements we want
+to fetch from the container.
 
 We will use the `some_numbers` vector as our container for indexing:
 
@@ -40,11 +41,9 @@ using the colon (`:`) operator.
 3:8
 ```
 
-See <a href="#nte-what-is-an-operator" class="quarto-xref">Note <span
-class="quarto-unresolved-ref">nte-what-is-an-operator</span></a> for
-more on operators. The colon operator (the `:`) serves as a signal to R
-to create a new value by *operating* on the values to the left and right
-of the colon.
+See Note  for more on operators. The colon operator (the `:`) serves as
+a signal to R to create a new value by *operating* on the values to the
+left and right of the colon.
 
 The integer to the left of the colon specifies the *start* position;
 this is the position of the first element we want. The integer to the

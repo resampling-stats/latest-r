@@ -1,6 +1,8 @@
 # Three or more basketball shots
 
 
+Find this notebook on the web at Note .
+
 We simulate the probability of scoring three or more baskets from five
 shots, if each shot has a 25% probability of success.
 

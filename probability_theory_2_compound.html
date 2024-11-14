@@ -1251,13 +1251,24 @@ Table&nbsp;11.2: Results of 25 hands using random numbers
 </ul>
 <p>With that we end a single trial, and go back to the beginning, until we have done this 10000 times.</p>
 <p>When those 10000 repetitions are over, the computer moves on to count (<code>sum</code>) the number of “1’s” in the score-keeping vector <code>z</code>, each “1” indicating a hand with exactly one pair. We store this count at location <code>k</code>. We divide <code>k</code> by 10000 to get the <em>proportion</em> of hands that had one pair, and we <span class="r"><code>message</code></span> the result of <code>k</code> to the screen.</p>
-<div class="notebook" name="one_pair" title="One pair">
-<p>Start of <code>one_pair</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/one_pair.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=one_pair.ipynb">Interact</a>
+<div id="nte-one_pair" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;11.1: Notebook: One pair
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/one_pair.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=one_pair.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="one_pair" title="One pair">
 
+</div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a bucket (vector) called a with four "1's," four "2's," four "3's,"</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="co"># etc., to represent a deck of cards</span></span>
@@ -1312,7 +1323,21 @@ Table&nbsp;11.2: Results of 25 hands using random numbers
 <pre><code>0.4285</code></pre>
 </div>
 </div>
-<p>End of <code>one_pair</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: One pair
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>one_pair</code> starts at <a href="#nte-one_pair" class="quarto-xref">Note&nbsp;<span>11.1</span></a>.</p>
+</div>
 </div>
 <p>In one run of the program, the result in <code>kk</code> was 0.428, so our estimate would be that the probability of a single pair is 0.428.</p>
 <p>How accurate are these resampling estimates? The accuracy depends on the <em>number of hands</em> we deal — the more hands, the greater the accuracy. If we were to examine millions of hands, 42 percent would contain a pair each; that is, the chance of getting a pair in the long run is 42 percent. It turns out the estimate of 44 percent based on 25 hands in <a href="#tbl-one-pair" class="quarto-xref">Table&nbsp;<span>11.1</span></a> is fairly close to the long-run estimate, though whether or not it is close <em>enough</em> depends on one’s needs of course. If you need great accuracy, deal many more hands.</p>
@@ -1328,13 +1353,24 @@ Table&nbsp;11.2: Results of 25 hands using random numbers
 <p>Again it is interesting to compare the odds with the formulaic mathematical computations, which are 1 in 21 (4.75 percent) for a hand containing two pairs and 1 in 47 (2.1 percent) for a hand containing three-of-a-kind — not too far from the estimates of .0375 and .02 derived from simulation.</p>
 <p>To handle the problem with the aid of the computer, we simply need to estimate the proportion of hands having triplicates and the proportion of hands with two pairs, and compare those estimates.</p>
 <p>To estimate the hands with three-of-a-kind, we can use a notebook just like “One Pair” earlier, except using <code>repeat_nos == 3</code> to search for triplicates instead of duplicates. The program, then, is:</p>
-<div class="notebook" name="three_of_a_kind" title="Three of a kind">
-<p>Start of <code>three_of_a_kind</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/three_of_a_kind.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=three_of_a_kind.ipynb">Interact</a>
+<div id="nte-three_of_a_kind" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;11.2: Notebook: Three of a kind
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/three_of_a_kind.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=three_of_a_kind.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="three_of_a_kind" title="Three of a kind">
 
+</div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>one_suit <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">13</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>deck <span class="ot">&lt;-</span> <span class="fu">rep</span>(one_suit, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1369,7 +1405,21 @@ Table&nbsp;11.2: Results of 25 hands using random numbers
 <pre><code>0.0251</code></pre>
 </div>
 </div>
-<p>End of <code>three_of_a_kind</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Three of a kind
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>three_of_a_kind</code> starts at <a href="#nte-three_of_a_kind" class="quarto-xref">Note&nbsp;<span>11.2</span></a>.</p>
+</div>
 </div>
 <p>To estimate the probability of getting a two-pair hand, we revert to the original program (counting pairs), except that we examine all the results in the score-keeping vector <code>z</code> for hands in which we had <em>two</em> pairs, instead of <em>one</em>. ::: {.notebook name=“two_pairs” title=“Two pairs”}</p>
 <div class="cell" data-layout-align="center">

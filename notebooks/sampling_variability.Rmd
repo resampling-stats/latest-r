@@ -1,6 +1,8 @@
 # Experiment in sampling variability
 
 
+Find this notebook on the web at Note .
+
 Try generating some rookie “seasons” yourself with the following
 commands, ranging the batter’s “true” performance by changing the value
 of `p_hit` (the probability of a hit).

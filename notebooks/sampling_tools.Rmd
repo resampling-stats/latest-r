@@ -1,12 +1,12 @@
 # Sampling tools
 
 
-## 7.2 Samples and labels and strings
+Find this notebook on the web at Note .
+
+## Samples and labels and strings
 
 Thus far we have used numbers such as 1 and 0 and 10 to represent the
-elements we are sampling from. For example, in
-<a href="#sec-resampling-two" class="quarto-xref"><span
-class="quarto-unresolved-ref">sec-resampling-two</span></a>, we were
+elements we are sampling from. For example, in Chapter , we were
 simulating the chance of a particular juror being black, given that 26%
 of the eligible jurors in the county were black. We used *integers* for
 that task, where we started with all the integers from 0 through 99, and
@@ -17,9 +17,7 @@ there is a 26% chance that any one integer will be in that range. If the
 integer was from 26 through 99, the simulated juror was white (there are
 74 integers in the range 26 through 99).
 
-Here is the process of simulating a single juror, adapted from
-<a href="#sec-random-zero-through-ninety-nine" class="quarto-xref"><span
-class="quarto-unresolved-ref">sec-random-zero-through-ninety-nine</span></a>:
+Here is the process of simulating a single juror, adapted from Section :
 
 ```{r}
 # Get 1 random number from 0 through 99
@@ -51,7 +49,7 @@ simulations.
 Before we get to strings, let us consider the type of the values we have
 seen so far.
 
-## 7.3 Types of values in R
+## Types of values in R
 
 
 
@@ -86,7 +84,7 @@ numeric.
 
 
 
-## 7.4 String values
+## String values
 
 So far, all the values you have seen in R vectors have been numbers. Now
 we get on to values that are bits of text. These are called *strings*.
@@ -132,7 +130,7 @@ second_char <- substring(s, 2, 2)
 second_char
 ```
 
-## 7.5 Strings in vectors
+## Strings in vectors
 
 As we can store numbers as elements in vectors, we can also store
 strings as vector elements.
@@ -159,7 +157,7 @@ operator, that asks whether the two strings are equal:
 middle_name == 'Lincoln'
 ```
 
-## 7.6 Repeating elements
+## Repeating elements
 
 Now let us go back to the problem of selecting black and white jurors.
 
@@ -214,13 +212,20 @@ one_jury <- sample(jury_pool, 12, replace=TRUE)
 one_jury
 ```
 
-**Note: Using the `size` argument to `sample`**
+<div __quarto_custom="true" __quarto_custom_type="Callout"
+__quarto_custom_context="Block" __quarto_custom_id="544">
+
+<div __quarto_custom_scaffold="true">
+
+Using the `size` argument to `sample`
+
+</div>
+
+<div __quarto_custom_scaffold="true">
 
 In the code above, we have specified the *size* of the sample we want
-(12) with the second argument to `sample`. As you saw in
-<a href="#sec-named-arguments" class="quarto-xref"><span
-class="quarto-unresolved-ref">sec-named-arguments</span></a>, we can
-also give names to the function arguments, in this case, to make it
+(12) with the second argument to `sample`. As you saw in Section , we
+can also give names to the function arguments, in this case, to make it
 clearer what we mean by “12” in the code above. In fact, from now on,
 that is what we will do; we will specify the *size* of our sample by
 using the *name* for the function argument to `sample` — `size` — like
@@ -233,7 +238,9 @@ one_jury <- sample(jury_pool, size=12, replace=TRUE)
 one_jury
 ```
 
-**End of note**
+</div>
+
+</div>
 
 We can use `==` on the vector to get `TRUE` values where the juror was
 “black” and `FALSE` values otherwise:
@@ -243,9 +250,7 @@ are_black <- one_jury == 'black'
 are_black
 ```
 
-Finally, we can `sum` to find the number of black jurors
-(<a href="#sec-count-with-sum" class="quarto-xref"><span
-class="quarto-unresolved-ref">sec-count-with-sum</span></a>):
+Finally, we can `sum` to find the number of black jurors (Section ):
 
 ```{r}
 # Number of black jurors in this simulated jury.
@@ -272,11 +277,10 @@ n_black = sum(sample(jury_pool, size=12, replace=TRUE) == 'black')
 n_black
 ```
 
-## 7.7 Resampling with and without replacement
+## Resampling with and without replacement
 
 Now let us return to the details of Robert Swain’s case, that you first
-saw in <a href="#sec-resampling-two" class="quarto-xref"><span
-class="quarto-unresolved-ref">sec-resampling-two</span></a>.
+saw in Chapter .
 
 We looked at the composition of Robert Swain’s 12-person jury — but in
 fact, by law, that does not have to be representative of the eligible
@@ -293,10 +297,8 @@ details.
 
 In fact, in Robert Swain’s trial, there were 8 black members in the
 100-person jury panel. We will leave it to you to adapt the simulation
-from <a href="#sec-resampling-two" class="quarto-xref"><span
-class="quarto-unresolved-ref">sec-resampling-two</span></a> to ask the
-question — is 8% surprising as a random sample from a population with
-26% black people?
+from Chapter  to ask the question — is 8% surprising as a random sample
+from a population with 26% black people?
 
 But we have a different question: given that 8 out of 100 of the jury
 panel were black, is it surprising that none of the 12-person jury were
@@ -389,7 +391,16 @@ ok_jury <- sample(jury_panel, size=12)
 ok_jury
 ```
 
-**Note: Note 7.1: Comments at the end of lines**
+<div __quarto_custom="true" __quarto_custom_type="Callout"
+__quarto_custom_context="Block" __quarto_custom_id="545">
+
+<div __quarto_custom_scaffold="true">
+
+Comments at the end of lines
+
+</div>
+
+<div __quarto_custom_scaffold="true">
 
 You have already seen comment lines. These are lines beginning with `#`,
 to signal to R that the rest of the line is text for humans to read, but
@@ -408,7 +419,9 @@ not for R.
 message('Hello')  # This is a comment at the end of the line.
 ```
 
-**End of note**
+</div>
+
+</div>
 
 To finish the procedure for simulating a single jury selection, we count
 the number of black jurors:

@@ -1,6 +1,8 @@
 # Fifteen points in a bridge hand
 
 
+Find this notebook on the web at Note .
+
 Let us assume that ace counts as 4, king = 3, queen = 2, and jack = 1.
 
 ```{r}

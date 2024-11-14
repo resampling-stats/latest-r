@@ -1,6 +1,8 @@
 # Santas' hats
 
 
+Find this notebook on the web at Note .
+
 **The welcome staff at a restaurant mix up the hats of a party of six
 Christmas Santas. What is the probability that at least one will get
 their own hat?**.

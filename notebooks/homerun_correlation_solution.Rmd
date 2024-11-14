@@ -1,6 +1,8 @@
 # Homeruns and strikeout correlation
 
 
+Find this notebook on the web at Note .
+
 Solution for exercise on relationship of home runs and strikeouts, using
 correlation coefficient.
 

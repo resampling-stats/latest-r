@@ -1,0 +1,12 @@
+# Exchange rates and money supply
+
+
+Find this notebook on the web at Note .
+
+Notebook for exercise on exchange rates and money supply.
+
+```{r}
+exchange_df <- read.csv('data/exchange_rates.csv')
+exchange_rates <- exchange_df$exchange_rate
+money_supply <- exchange_df$money_supply
+```

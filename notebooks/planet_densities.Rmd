@@ -1,6 +1,8 @@
 # Planet densities and distance
 
 
+Find this notebook on the web at Note .
+
 We apply the logic of resampling to the problem of close and distant
 planets and their densities.
 

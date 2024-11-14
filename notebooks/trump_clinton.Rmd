@@ -1,6 +1,8 @@
 # Trump/Clinton poll simulation
 
 
+Find this notebook on the web at Note .
+
 What is the probability that a sample outcome such as actually observed
 (840 Trump, 660 Clinton) would occur by chance if Clinton is “really”
 ahead — that is, if Clinton has 50 percent (or more) of the support? To
@@ -23,16 +25,23 @@ Here is a procedure that responds to that question:
     more in favor of Clinton.
 
 Before we come to the simulation, we need some new code to tune our
-histograms (see <a href="#sec-on-histograms" class="quarto-xref"><span
-class="quarto-unresolved-ref">sec-on-histograms</span></a>). We are
-going to set the bins for the histogram using advanced ranges.
+histograms (see Section ). We are going to set the bins for the
+histogram using advanced ranges.
 
-**Note: Note 21.1: Advanced ranges**
+<div __quarto_custom="true" __quarto_custom_type="Callout"
+__quarto_custom_context="Block" __quarto_custom_id="618">
 
-So far (<a href="#sec-ranges" class="quarto-xref"><span
-class="quarto-unresolved-ref">sec-ranges</span></a>) we have used the
-colon syntax to make regular sequences of integers. For example, to make
-a vector of the sequential integers from 3 through 12, we could use:
+<div __quarto_custom_scaffold="true">
+
+Advanced ranges
+
+</div>
+
+<div __quarto_custom_scaffold="true">
+
+So far (Section ) we have used the colon syntax to make regular
+sequences of integers. For example, to make a vector of the sequential
+integers from 3 through 12, we could use:
 
 ```{r}
 3:12
@@ -71,7 +80,9 @@ sequence of values starting at 0.1 up to and including 0.9, in steps of
 seq(0.1, 0.9, by=0.2)
 ```
 
-**End of note**
+</div>
+
+</div>
 
 
 

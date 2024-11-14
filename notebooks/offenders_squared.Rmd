@@ -1,6 +1,8 @@
 # Simulation of offender strategies using squared differences
 
 
+Find this notebook on the web at Note .
+
 This notebook uses squared differences in a simulation to test the null
 hypothesis that the four treatments in question were each equally
 effective.

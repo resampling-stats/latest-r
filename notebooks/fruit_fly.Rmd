@@ -1,6 +1,8 @@
 # Fruit fly simulation
 
 
+Find this notebook on the web at Note .
+
 This notebook uses simulation to test the null hypothesis that it is
 equally likely that new fruit files are male or female.
 

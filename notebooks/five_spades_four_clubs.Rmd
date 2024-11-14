@@ -1,14 +1,13 @@
 # Five spades and four clubs
 
 
+Find this notebook on the web at Note .
+
 **This is an example of multiple-outcome sampling without replacement,
 order does not matter**.
 
-The problem is similar to the example in
-<a href="#sec-four-girls-one-boy" class="quarto-xref"><span
-class="quarto-unresolved-ref">sec-four-girls-one-boy</span></a>, except
-that now there are four equally-likely outcomes instead of only two. An
-R solution is:
+The problem is similar to the example in Section , except that now there
+are four equally-likely outcomes instead of only two. An R solution is:
 
 ```{r}
 # Constitute the deck of 52 cards.

@@ -1,6 +1,8 @@
 # Sampling error for pig ration weight gain via bootstrap
 
 
+Find this notebook on the web at Note .
+
 Use the bootstrap (resampling with replacement) procedure to estimate
 how much error to expect when taking samples of different sizes.
 

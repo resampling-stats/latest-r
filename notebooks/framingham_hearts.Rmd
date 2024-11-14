@@ -1,6 +1,8 @@
 # Framingham heart data
 
 
+Find this notebook on the web at Note .
+
 We use simulation to investigate the relationship between serum
 cholesterol and heart attacks in the Framingham data.
 

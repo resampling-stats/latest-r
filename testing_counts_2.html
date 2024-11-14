@@ -474,13 +474,24 @@ div.csl-indent {
 <p>But first, we need another addition to our R vocabulary.</p>
 <section id="sec-logical-operators" class="level2" data-number="23.1">
 <h2 data-number="23.1" class="anchored" data-anchor-id="sec-logical-operators"><span class="header-section-number">23.1</span> Logical operators</h2>
-<div class="notebook" name="logical_operators" title="Logical operators">
-<p>Start of <code>logical_operators</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/logical_operators.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=logical_operators.ipynb">Interact</a>
+<div id="nte-logical_operators" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;23.1: Notebook: Logical operators
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/logical_operators.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=logical_operators.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="logical_operators" title="Logical operators">
 
+</div>
 <p>This section continues our programme of expanding the range of R features that you can use to clear code. As we introduce each feature, we will use them in the following examples.</p>
 <p>As motivation, we are about to do some simulations where we are interested in the number of some particular type of observations in each trial. For example, let’s do 10 coin tosses with <code>sample</code>:</p>
 <div class="cell" data-layout-align="center">
@@ -506,7 +517,7 @@ div.csl-indent {
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>It is a little repetitive to have to repeat the code identical code to print the same message for either of the two cases, and it would be even more repetitive if there were more lines of identical code to run for each of the two cases.</p>
-<p>R solves this problem with the <span class="r"><code>|</code> (<em>or</em>)</span> operator, like this:</p>
+<p>R solves this problem with the <code>|</code> (<em>or</em>) operator, like this:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">sum</span>(coins <span class="sc">==</span> <span class="st">'heads'</span>) <span class="sc">&lt;=</span> <span class="dv">2</span> <span class="sc">|</span> <span class="fu">sum</span>(coins <span class="sc">==</span> <span class="st">'tails'</span>) <span class="sc">&lt;=</span> <span class="dv">2</span>) {</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(<span class="st">'Trial is of interest'</span>)</span>
@@ -521,109 +532,99 @@ div.csl-indent {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note&nbsp;23.1: What is an operator?
+Note&nbsp;23.2: What is an operator?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Above, we called <span class="r"><code>|</code></span> an <em>operator</em>. An operator, for our purposes, is a special character that sits between two values, and that tells R how to combine these values.</p>
+<p>Above, we called <code>|</code> an <em>operator</em>. An operator, for our purposes, is a special character that sits between two values, and that tells R how to combine these values.</p>
 <p>For example <code>+</code> is an operator. When <code>+</code> sits between two numbers in code, R interprets this to mean “take the two numbers on either side, and make a new number that is the result of adding the two numbers”:</p>
-<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># + is an operator that, between two numbers, means "add the numbers".</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
-</div>
-</div>
 <p><code>+</code>, <code>-</code>, <code>/</code> and <code>*</code> are all examples of operators that do <em>arithmetic</em> on the numbers to either side — they are <em>arithmetic</em> operators.</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># * is an operator that, between two numbers, means "multiply the numbers".</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 8</code></pre>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># * is an operator that, between two numbers, means "multiply the numbers".</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <!---
 End of callout note.
 -->
-<p>We are about to use the operator <span class="r"><code>|</code> (<em>or</em>)</span>. <span class="r"><code>|</code></span> is a <em>logical</em> operator. It is a logical operator because it does not operate on <em>numbers</em> (as arithmetic operators do), but on <em>logical</em> (<em>Boolean</em>) values — values that can be either <code>TRUE</code> or <code>FALSE</code>.</p>
-<p>For example, here we use <span class="r"><code>|</code> (<em>or</em>)</span>. to combine a <code>TRUE</code> value (on the left) with a <code>FALSE</code> value (on the right). It gives a result — <code>TRUE</code>.</p>
+<p>We are about to use the operator <code>|</code> (<em>or</em>). <code>|</code> is a <em>logical</em> operator. It is a logical operator because it does not operate on <em>numbers</em> (as arithmetic operators do), but on <em>logical</em> (<em>Boolean</em>) values — values that can be either <code>TRUE</code> or <code>FALSE</code>.</p>
+<p>For example, here we use <code>|</code> (<em>or</em>). to combine a <code>TRUE</code> value (on the left) with a <code>FALSE</code> value (on the right). It gives a result — <code>TRUE</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read "|" here as "or".</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read "|" here as "or".</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
 </div>
-<p><span class="r"><code>|</code> (<em>or</em>)</span> applies a very simple rule: if <em>either</em> the left-hand (LH) <em>or</em> the right-hand (RH) values are <code>TRUE</code>, then <span class="r"><code>|</code> (<em>or</em>)</span> evaluates to <code>TRUE</code>. Only if <em>neither</em> of the LH and RH values are <code>TRUE</code>, does it return <code>FALSE</code>.</p>
+<p><code>|</code> (<em>or</em>) applies a very simple rule: if <em>either</em> the left-hand (LH) <em>or</em> the right-hand (RH) values are <code>TRUE</code>, then <code>|</code> (<em>or</em>) evaluates to <code>TRUE</code>. Only if <em>neither</em> of the LH and RH values are <code>TRUE</code>, does it return <code>FALSE</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Both LH and RH are TRUE, return TRUE.</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'TRUE | (or) TRUE result: '</span>, <span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Both LH and RH are TRUE, return TRUE.</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'TRUE | (or) TRUE result: '</span>, <span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>TRUE | (or) TRUE result: TRUE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Only LH is TRUE, return TRUE.</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'TRUE | (or) FALSE result: '</span>, <span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Only LH is TRUE, return TRUE.</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'TRUE | (or) FALSE result: '</span>, <span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>TRUE | (or) FALSE result: TRUE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Only RH is TRUE, return TRUE.</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'FALSE | (or) TRUE result: '</span>, <span class="cn">FALSE</span> <span class="sc">|</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Only RH is TRUE, return TRUE.</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'FALSE | (or) TRUE result: '</span>, <span class="cn">FALSE</span> <span class="sc">|</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>FALSE | (or) TRUE result: TRUE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Neither LH nor RH are TRUE, return FALSE.</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'FALSE | (or) FALSE result: '</span>, <span class="cn">FALSE</span> <span class="sc">|</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Neither LH nor RH are TRUE, return FALSE.</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'FALSE | (or) FALSE result: '</span>, <span class="cn">FALSE</span> <span class="sc">|</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>FALSE | (or) FALSE result: FALSE</code></pre>
 </div>
 </div>
 <p>Now let’s go back to the <code>if</code> statement above. The conditional part of the header line is:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(coins <span class="sc">==</span> <span class="st">'heads'</span>) <span class="sc">&lt;=</span><span class="dv">2</span> <span class="sc">|</span> <span class="fu">sum</span>(coins <span class="sc">==</span> <span class="st">'tails'</span>) <span class="sc">&lt;=</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(coins <span class="sc">==</span> <span class="st">'heads'</span>) <span class="sc">&lt;=</span><span class="dv">2</span> <span class="sc">|</span> <span class="fu">sum</span>(coins <span class="sc">==</span> <span class="st">'tails'</span>) <span class="sc">&lt;=</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
 </div>
 <p>This will be <code>TRUE</code> <em>either</em> when there there are two or fewer “heads”, <em>or</em> when there are two or fewer tails. Therefore, when we use this conditional in an <code>if</code> statement, we make the <em>body</em> of the <code>if</code> statement run only if either of the two conditions are <code>TRUE</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">sum</span>(coins <span class="sc">==</span> <span class="st">'heads'</span>) <span class="sc">&lt;=</span> <span class="dv">2</span> <span class="sc">|</span> <span class="fu">sum</span>(coins <span class="sc">==</span> <span class="st">'tails'</span>) <span class="sc">&lt;=</span> <span class="dv">2</span>) {</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(<span class="st">'Trial is of interest'</span>)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">sum</span>(coins <span class="sc">==</span> <span class="st">'heads'</span>) <span class="sc">&lt;=</span> <span class="dv">2</span> <span class="sc">|</span> <span class="fu">sum</span>(coins <span class="sc">==</span> <span class="st">'tails'</span>) <span class="sc">&lt;=</span> <span class="dv">2</span>) {</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(<span class="st">'Trial is of interest'</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Trial is of interest</code></pre>
 </div>
 </div>
-<p>While we are here, R has another very useful logical operator: <span class="r">‘&amp;’ (<em>and</em>)</span>.</p>
-<p><span class="r">‘&amp;’</span> takes the LH and RH values, and returns <code>TRUE</code> only if <em>both</em> values are <code>TRUE</code>.</p>
+<p>While we are here, R has another very useful logical operator: ‘&amp;’ (<em>and</em>).</p>
+<p>‘&amp;’ takes the LH and RH values, and returns <code>TRUE</code> only if <em>both</em> values are <code>TRUE</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Both LH and RH are TRUE, return TRUE.</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'TRUE &amp; (and) TRUE result: '</span>, <span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Both LH and RH are TRUE, return TRUE.</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'TRUE &amp; (and) TRUE result: '</span>, <span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>TRUE &amp; (and) TRUE result: TRUE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Only LH is TRUE, return FALSE.</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'TRUE &amp; (and) FALSE result: '</span>, <span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Only LH is TRUE, return FALSE.</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'TRUE &amp; (and) FALSE result: '</span>, <span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>TRUE &amp; (and) FALSE result: FALSE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Only RH is TRUE, return FALSE.</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'FALSE &amp; (and) TRUE result: '</span>, <span class="cn">FALSE</span> <span class="sc">&amp;</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Only RH is TRUE, return FALSE.</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'FALSE &amp; (and) TRUE result: '</span>, <span class="cn">FALSE</span> <span class="sc">&amp;</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>FALSE &amp; (and) TRUE result: FALSE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Neither LH nor RH are TRUE, return FALSE.</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'FALSE &amp; (and) FALSE result: '</span>, <span class="cn">FALSE</span> <span class="sc">&amp;</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Neither LH nor RH are TRUE, return FALSE.</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'FALSE &amp; (and) FALSE result: '</span>, <span class="cn">FALSE</span> <span class="sc">&amp;</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>FALSE &amp; (and) FALSE result: FALSE</code></pre>
 </div>
 </div>
 <p>We could, for example, ask whether the number of heads is &gt;=3 <em>and</em> &lt;=7 (is in the range 3 through 7).</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">sum</span>(coins <span class="sc">==</span> <span class="st">'heads'</span>) <span class="sc">&lt;=</span> <span class="dv">3</span> <span class="sc">|</span> <span class="fu">sum</span>(coins <span class="sc">==</span> <span class="st">'heads'</span>) <span class="sc">&lt;=</span> <span class="dv">7</span>) {</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(<span class="st">'Trial is of interest'</span>)</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">sum</span>(coins <span class="sc">==</span> <span class="st">'heads'</span>) <span class="sc">&lt;=</span> <span class="dv">3</span> <span class="sc">|</span> <span class="fu">sum</span>(coins <span class="sc">==</span> <span class="st">'heads'</span>) <span class="sc">&lt;=</span> <span class="dv">7</span>) {</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(<span class="st">'Trial is of interest'</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Trial is of interest</code></pre>
 </div>
@@ -631,7 +632,21 @@ End of callout note.
 <!---
 End of Python block.
 -->
-<p>End of <code>logical_operators</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Logical operators
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>logical_operators</code> starts at <a href="#nte-logical_operators" class="quarto-xref">Note&nbsp;<span>23.1</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook.
@@ -655,7 +670,7 @@ End of notebook.
 <p>We begin the trials with data as in <a href="#tbl-fruitfly-4-groups" class="quarto-xref">Table&nbsp;<span>23.1</span></a>. In two of the six simulation trials, one or more one samples (groups) shows 14 or more males. Without even concerning ourselves about whether we should be looking at males or females, or just males, or needing to do more trials, we can see that it would be <em>very common indeed</em> to have one of four treatments show fourteen or more of one sex just by chance. This discovery clearly indicates that a result that would be fairly unusual (five in 25) for a single sample alone is commonplace in one of four observed samples.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="tbl-fruitfly-4-groups" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;" data-quarto-postprocess="true">
+<div id="tbl-fruitfly-4-groups" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-fruitfly-4-groups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;23.1: Results from 6 random trials for Fruitfly 4-group problem
@@ -730,52 +745,77 @@ Table&nbsp;23.1: Results from 6 random trials for Fruitfly 4-group problem
 
 </div>
 </div>
-<div class="notebook" name="fruit_fly4" title="Fruit fly simulation of four groups">
-<p>Start of <code>fruit_fly4</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/fruit_fly4.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=fruit_fly4.ipynb">Interact</a>
+<div id="nte-fruit_fly4" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;23.3: Notebook: Fruit fly simulation of four groups
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/fruit_fly4.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=fruit_fly4.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="fruit_fly4" title="Fruit fly simulation of four groups">
 
+</div>
 <p>A key point of the notebook here is that each trial consists of <em>four groups</em> of 20 randomly generated hypothetical fruit flies. And if we consider 10,000 trials, we will be examining 40,000 sets of 20 fruit flies.</p>
 <p>In each trial we generate 4 random samples (groups) of 20 fruit flies, and for each, we count the number of males (“males”s) and then check whether that group has more than 13 of either sex (actually, more than 13 “males”s or less than 7 “males”). If it does, then we change a variable called <code>unusual</code> to 1, which informs us that for this sample, at least 1 group of 20 fruit flies had results as unusual as the results from the fruit flies exposed to the four treatments.</p>
 <p>After the 10,000 runs are made, we count the number of trials where one sample had a group of fruit flies with 14 or more of either sex, and show the results.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>n_iters <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Make vector to store results for each trial.</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_iters)</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_iters) {</span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># unusual indicates whether we have obtained any trial group with more</span></span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># than 13 of either sex. We start at 0 (= no).</span></span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>    unusual <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Repeat the following steps 4 times to constitute 4 trial groups</span></span>
-<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># (representing treatments A, B, C, and D) of 20 flies each.</span></span>
-<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) {</span>
-<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>        flies <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'male'</span>, <span class="st">'female'</span>), <span class="at">replace=</span><span class="cn">TRUE</span>, <span class="at">size=</span><span class="dv">20</span>)</span>
-<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>        n_males <span class="ot">&lt;-</span> <span class="fu">sum</span>(flies <span class="sc">==</span> <span class="st">'male'</span>)</span>
-<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (n_males <span class="sc">&gt;=</span> <span class="dv">13</span> <span class="sc">|</span> n_males <span class="sc">&lt;=</span> <span class="dv">6</span>) {</span>
-<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a>            unusual <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># unusual now tells us whether we got a result as extreme as that</span></span>
-<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># observed (unusual == 1 if we did, unusual == 0 if not). We must</span></span>
-<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># keep track of this result in the results variable, for each experiment.</span></span>
-<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a>    results[i] <span class="ot">&lt;-</span> unusual</span>
-<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-25"><a href="#cb36-25" aria-hidden="true" tabindex="-1"></a><span class="co"># The number of trials for which at least one of the four tests</span></span>
-<span id="cb36-26"><a href="#cb36-26" aria-hidden="true" tabindex="-1"></a><span class="co"># exceeded 13 males or 13 females.</span></span>
-<span id="cb36-27"><a href="#cb36-27" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">sum</span>(results)</span>
-<span id="cb36-28"><a href="#cb36-28" aria-hidden="true" tabindex="-1"></a>kk <span class="ot">&lt;-</span> k <span class="sc">/</span> n_iters</span>
-<span id="cb36-29"><a href="#cb36-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-30"><a href="#cb36-30" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'Proportion of trials with one or more group &gt;=14 or &lt;=6 :'</span>, kk)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>n_iters <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Make vector to store results for each trial.</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_iters)</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_iters) {</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># unusual indicates whether we have obtained any trial group with more</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># than 13 of either sex. We start at 0 (= no).</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>    unusual <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Repeat the following steps 4 times to constitute 4 trial groups</span></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># (representing treatments A, B, C, and D) of 20 flies each.</span></span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) {</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>        flies <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'male'</span>, <span class="st">'female'</span>), <span class="at">replace=</span><span class="cn">TRUE</span>, <span class="at">size=</span><span class="dv">20</span>)</span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>        n_males <span class="ot">&lt;-</span> <span class="fu">sum</span>(flies <span class="sc">==</span> <span class="st">'male'</span>)</span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (n_males <span class="sc">&gt;=</span> <span class="dv">13</span> <span class="sc">|</span> n_males <span class="sc">&lt;=</span> <span class="dv">6</span>) {</span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a>            unusual <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># unusual now tells us whether we got a result as extreme as that</span></span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># observed (unusual == 1 if we did, unusual == 0 if not). We must</span></span>
+<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># keep track of this result in the results variable, for each experiment.</span></span>
+<span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a>    results[i] <span class="ot">&lt;-</span> unusual</span>
+<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb34-24"><a href="#cb34-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-25"><a href="#cb34-25" aria-hidden="true" tabindex="-1"></a><span class="co"># The number of trials for which at least one of the four tests</span></span>
+<span id="cb34-26"><a href="#cb34-26" aria-hidden="true" tabindex="-1"></a><span class="co"># exceeded 13 males or 13 females.</span></span>
+<span id="cb34-27"><a href="#cb34-27" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">sum</span>(results)</span>
+<span id="cb34-28"><a href="#cb34-28" aria-hidden="true" tabindex="-1"></a>kk <span class="ot">&lt;-</span> k <span class="sc">/</span> n_iters</span>
+<span id="cb34-29"><a href="#cb34-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-30"><a href="#cb34-30" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'Proportion of trials with one or more group &gt;=14 or &lt;=6 :'</span>, kk)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Proportion of trials with one or more group &gt;=14 or &lt;=6 :0.569</code></pre>
 </div>
 </div>
-<p>End of <code>fruit_fly4</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Fruit fly simulation of four groups
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>fruit_fly4</code> starts at <a href="#nte-fruit_fly4" class="quarto-xref">Note&nbsp;<span>23.3</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook
@@ -862,161 +902,197 @@ Table&nbsp;23.2: Results of Six Random Trials for Problem “offenders”
 </div>
 <p>The strategy of the R solution to “offenders” is similar to the strategy for previous problems in this chapter. The benchmark (null) hypothesis is that the treatments do not differ in their effects observed, and we estimate the probability that the observed results would occur by chance using the benchmark universe. The only new twist is that we must instruct the computer to find the groups with the highest and the lowest numbers of success rates.</p>
 <p>Using R, we generate four “treatments,” each represented by 20 labels. We draw these 20 labels from the choices “success” or “failure”, with a 55% chance of getting “success” and a 45% chance of “failure”. Follow along in the program for the rest of the procedure:</p>
-<div class="notebook" name="offenders" title="Simulation of offender strategies">
-<p>Start of <code>offenders</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/offenders.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=offenders.ipynb">Interact</a>
+<div id="nte-offenders" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;23.4: Notebook: Simulation of offender strategies
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/offenders.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=offenders.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="offenders" title="Simulation of offender strategies">
 
+</div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the number of trials</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>n_trials <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the sample size for each trial</span></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>sample_size <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="co"># An empty array to store the trials</span></span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_trials)</span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Do 10000 trials</span></span>
-<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_trials) {</span>
-<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># The first treatment group</span></span>
-<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>    a <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'success'</span>, <span class="st">'failure'</span>),</span>
-<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>                <span class="at">size=</span>sample_size,</span>
-<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>                <span class="at">prob=</span><span class="fu">c</span>(<span class="fl">0.55</span>, <span class="fl">0.45</span>),</span>
-<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>                <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Count successes.</span></span>
-<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a>    a_count <span class="ot">&lt;-</span> <span class="fu">sum</span>(a <span class="sc">==</span> <span class="st">'success'</span>)</span>
-<span id="cb38-19"><a href="#cb38-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Second, third and fourth treatment groups, and successes.</span></span>
-<span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a>    b <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'success'</span>, <span class="st">'failure'</span>),</span>
-<span id="cb38-21"><a href="#cb38-21" aria-hidden="true" tabindex="-1"></a>                <span class="at">size=</span>sample_size,</span>
-<span id="cb38-22"><a href="#cb38-22" aria-hidden="true" tabindex="-1"></a>                <span class="at">prob=</span><span class="fu">c</span>(<span class="fl">0.55</span>, <span class="fl">0.45</span>),</span>
-<span id="cb38-23"><a href="#cb38-23" aria-hidden="true" tabindex="-1"></a>                <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb38-24"><a href="#cb38-24" aria-hidden="true" tabindex="-1"></a>    b_count <span class="ot">&lt;-</span> <span class="fu">sum</span>(b <span class="sc">==</span> <span class="st">'success'</span>)</span>
-<span id="cb38-25"><a href="#cb38-25" aria-hidden="true" tabindex="-1"></a>    c <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'success'</span>, <span class="st">'failure'</span>),</span>
-<span id="cb38-26"><a href="#cb38-26" aria-hidden="true" tabindex="-1"></a>                <span class="at">size=</span>sample_size,</span>
-<span id="cb38-27"><a href="#cb38-27" aria-hidden="true" tabindex="-1"></a>                <span class="at">prob=</span><span class="fu">c</span>(<span class="fl">0.55</span>, <span class="fl">0.45</span>),</span>
-<span id="cb38-28"><a href="#cb38-28" aria-hidden="true" tabindex="-1"></a>                <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb38-29"><a href="#cb38-29" aria-hidden="true" tabindex="-1"></a>    c_count <span class="ot">&lt;-</span> <span class="fu">sum</span>(c <span class="sc">==</span> <span class="st">'success'</span>)</span>
-<span id="cb38-30"><a href="#cb38-30" aria-hidden="true" tabindex="-1"></a>    d <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'success'</span>, <span class="st">'failure'</span>),</span>
-<span id="cb38-31"><a href="#cb38-31" aria-hidden="true" tabindex="-1"></a>                <span class="at">size=</span>sample_size,</span>
-<span id="cb38-32"><a href="#cb38-32" aria-hidden="true" tabindex="-1"></a>                <span class="at">prob=</span><span class="fu">c</span>(<span class="fl">0.55</span>, <span class="fl">0.45</span>),</span>
-<span id="cb38-33"><a href="#cb38-33" aria-hidden="true" tabindex="-1"></a>                <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb38-34"><a href="#cb38-34" aria-hidden="true" tabindex="-1"></a>    d_count <span class="ot">&lt;-</span> <span class="fu">sum</span>(d <span class="sc">==</span> <span class="st">'success'</span>)</span>
-<span id="cb38-35"><a href="#cb38-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-36"><a href="#cb38-36" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Now find all the pairwise differences in successes among the groups.</span></span>
-<span id="cb38-37"><a href="#cb38-37" aria-hidden="true" tabindex="-1"></a>    a_minus_b <span class="ot">&lt;-</span> a_count <span class="sc">-</span> b_count</span>
-<span id="cb38-38"><a href="#cb38-38" aria-hidden="true" tabindex="-1"></a>    a_minus_c <span class="ot">&lt;-</span> a_count <span class="sc">-</span> c_count</span>
-<span id="cb38-39"><a href="#cb38-39" aria-hidden="true" tabindex="-1"></a>    a_minus_d <span class="ot">&lt;-</span> a_count <span class="sc">-</span> d_count</span>
-<span id="cb38-40"><a href="#cb38-40" aria-hidden="true" tabindex="-1"></a>    b_minus_c <span class="ot">&lt;-</span> b_count <span class="sc">-</span> c_count</span>
-<span id="cb38-41"><a href="#cb38-41" aria-hidden="true" tabindex="-1"></a>    b_minus_d <span class="ot">&lt;-</span> b_count <span class="sc">-</span> d_count</span>
-<span id="cb38-42"><a href="#cb38-42" aria-hidden="true" tabindex="-1"></a>    c_minus_d <span class="ot">&lt;-</span> c_count <span class="sc">-</span> d_count</span>
-<span id="cb38-43"><a href="#cb38-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-44"><a href="#cb38-44" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Concatenate, or join, all the differences in a single array "diffs".</span></span>
-<span id="cb38-45"><a href="#cb38-45" aria-hidden="true" tabindex="-1"></a>    diffs <span class="ot">&lt;-</span> <span class="fu">c</span>(a_minus_b, a_minus_c, a_minus_d,</span>
-<span id="cb38-46"><a href="#cb38-46" aria-hidden="true" tabindex="-1"></a>               b_minus_c, b_minus_d, c_minus_d)</span>
-<span id="cb38-47"><a href="#cb38-47" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Since we are interested only in the magnitude of the difference, not its</span></span>
-<span id="cb38-48"><a href="#cb38-48" aria-hidden="true" tabindex="-1"></a>    <span class="co"># direction, we take the absolute value of all the differences (we remove</span></span>
-<span id="cb38-49"><a href="#cb38-49" aria-hidden="true" tabindex="-1"></a>    <span class="co"># any minus signs, making all values positive).</span></span>
-<span id="cb38-50"><a href="#cb38-50" aria-hidden="true" tabindex="-1"></a>    abs_diffs <span class="ot">&lt;-</span> <span class="fu">abs</span>(diffs)</span>
-<span id="cb38-51"><a href="#cb38-51" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Find the largest of all the differences</span></span>
-<span id="cb38-52"><a href="#cb38-52" aria-hidden="true" tabindex="-1"></a>    max_abs_diff <span class="ot">&lt;-</span> <span class="fu">max</span>(abs_diffs)</span>
-<span id="cb38-53"><a href="#cb38-53" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Keep score of the largest</span></span>
-<span id="cb38-54"><a href="#cb38-54" aria-hidden="true" tabindex="-1"></a>    scores[i] <span class="ot">&lt;-</span> max_abs_diff</span>
-<span id="cb38-55"><a href="#cb38-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-56"><a href="#cb38-56" aria-hidden="true" tabindex="-1"></a>    <span class="co"># End a trial, go back and repeat until all 10000 are complete.</span></span>
-<span id="cb38-57"><a href="#cb38-57" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb38-58"><a href="#cb38-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-59"><a href="#cb38-59" aria-hidden="true" tabindex="-1"></a><span class="co"># How many of the trials yielded a maximum difference greater than the</span></span>
-<span id="cb38-60"><a href="#cb38-60" aria-hidden="true" tabindex="-1"></a><span class="co"># observed maximum difference?</span></span>
-<span id="cb38-61"><a href="#cb38-61" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">sum</span>(scores <span class="sc">&gt;=</span> <span class="dv">10</span>)</span>
-<span id="cb38-62"><a href="#cb38-62" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to a proportion</span></span>
-<span id="cb38-63"><a href="#cb38-63" aria-hidden="true" tabindex="-1"></a>kk <span class="ot">&lt;-</span> k <span class="sc">/</span> n_trials</span>
-<span id="cb38-64"><a href="#cb38-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-65"><a href="#cb38-65" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'Proportion &gt;= 10 was: '</span>, kk)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the number of trials</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>n_trials <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the sample size for each trial</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>sample_size <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="co"># An empty array to store the trials</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_trials)</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Do 10000 trials</span></span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_trials) {</span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># The first treatment group</span></span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>    a <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'success'</span>, <span class="st">'failure'</span>),</span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>                <span class="at">size=</span>sample_size,</span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>                <span class="at">prob=</span><span class="fu">c</span>(<span class="fl">0.55</span>, <span class="fl">0.45</span>),</span>
+<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a>                <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Count successes.</span></span>
+<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a>    a_count <span class="ot">&lt;-</span> <span class="fu">sum</span>(a <span class="sc">==</span> <span class="st">'success'</span>)</span>
+<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Second, third and fourth treatment groups, and successes.</span></span>
+<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a>    b <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'success'</span>, <span class="st">'failure'</span>),</span>
+<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a>                <span class="at">size=</span>sample_size,</span>
+<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a>                <span class="at">prob=</span><span class="fu">c</span>(<span class="fl">0.55</span>, <span class="fl">0.45</span>),</span>
+<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a>                <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a>    b_count <span class="ot">&lt;-</span> <span class="fu">sum</span>(b <span class="sc">==</span> <span class="st">'success'</span>)</span>
+<span id="cb36-25"><a href="#cb36-25" aria-hidden="true" tabindex="-1"></a>    c <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'success'</span>, <span class="st">'failure'</span>),</span>
+<span id="cb36-26"><a href="#cb36-26" aria-hidden="true" tabindex="-1"></a>                <span class="at">size=</span>sample_size,</span>
+<span id="cb36-27"><a href="#cb36-27" aria-hidden="true" tabindex="-1"></a>                <span class="at">prob=</span><span class="fu">c</span>(<span class="fl">0.55</span>, <span class="fl">0.45</span>),</span>
+<span id="cb36-28"><a href="#cb36-28" aria-hidden="true" tabindex="-1"></a>                <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb36-29"><a href="#cb36-29" aria-hidden="true" tabindex="-1"></a>    c_count <span class="ot">&lt;-</span> <span class="fu">sum</span>(c <span class="sc">==</span> <span class="st">'success'</span>)</span>
+<span id="cb36-30"><a href="#cb36-30" aria-hidden="true" tabindex="-1"></a>    d <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'success'</span>, <span class="st">'failure'</span>),</span>
+<span id="cb36-31"><a href="#cb36-31" aria-hidden="true" tabindex="-1"></a>                <span class="at">size=</span>sample_size,</span>
+<span id="cb36-32"><a href="#cb36-32" aria-hidden="true" tabindex="-1"></a>                <span class="at">prob=</span><span class="fu">c</span>(<span class="fl">0.55</span>, <span class="fl">0.45</span>),</span>
+<span id="cb36-33"><a href="#cb36-33" aria-hidden="true" tabindex="-1"></a>                <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb36-34"><a href="#cb36-34" aria-hidden="true" tabindex="-1"></a>    d_count <span class="ot">&lt;-</span> <span class="fu">sum</span>(d <span class="sc">==</span> <span class="st">'success'</span>)</span>
+<span id="cb36-35"><a href="#cb36-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-36"><a href="#cb36-36" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Now find all the pairwise differences in successes among the groups.</span></span>
+<span id="cb36-37"><a href="#cb36-37" aria-hidden="true" tabindex="-1"></a>    a_minus_b <span class="ot">&lt;-</span> a_count <span class="sc">-</span> b_count</span>
+<span id="cb36-38"><a href="#cb36-38" aria-hidden="true" tabindex="-1"></a>    a_minus_c <span class="ot">&lt;-</span> a_count <span class="sc">-</span> c_count</span>
+<span id="cb36-39"><a href="#cb36-39" aria-hidden="true" tabindex="-1"></a>    a_minus_d <span class="ot">&lt;-</span> a_count <span class="sc">-</span> d_count</span>
+<span id="cb36-40"><a href="#cb36-40" aria-hidden="true" tabindex="-1"></a>    b_minus_c <span class="ot">&lt;-</span> b_count <span class="sc">-</span> c_count</span>
+<span id="cb36-41"><a href="#cb36-41" aria-hidden="true" tabindex="-1"></a>    b_minus_d <span class="ot">&lt;-</span> b_count <span class="sc">-</span> d_count</span>
+<span id="cb36-42"><a href="#cb36-42" aria-hidden="true" tabindex="-1"></a>    c_minus_d <span class="ot">&lt;-</span> c_count <span class="sc">-</span> d_count</span>
+<span id="cb36-43"><a href="#cb36-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-44"><a href="#cb36-44" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Concatenate, or join, all the differences in a single array "diffs".</span></span>
+<span id="cb36-45"><a href="#cb36-45" aria-hidden="true" tabindex="-1"></a>    diffs <span class="ot">&lt;-</span> <span class="fu">c</span>(a_minus_b, a_minus_c, a_minus_d,</span>
+<span id="cb36-46"><a href="#cb36-46" aria-hidden="true" tabindex="-1"></a>               b_minus_c, b_minus_d, c_minus_d)</span>
+<span id="cb36-47"><a href="#cb36-47" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Since we are interested only in the magnitude of the difference, not its</span></span>
+<span id="cb36-48"><a href="#cb36-48" aria-hidden="true" tabindex="-1"></a>    <span class="co"># direction, we take the absolute value of all the differences (we remove</span></span>
+<span id="cb36-49"><a href="#cb36-49" aria-hidden="true" tabindex="-1"></a>    <span class="co"># any minus signs, making all values positive).</span></span>
+<span id="cb36-50"><a href="#cb36-50" aria-hidden="true" tabindex="-1"></a>    abs_diffs <span class="ot">&lt;-</span> <span class="fu">abs</span>(diffs)</span>
+<span id="cb36-51"><a href="#cb36-51" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Find the largest of all the differences</span></span>
+<span id="cb36-52"><a href="#cb36-52" aria-hidden="true" tabindex="-1"></a>    max_abs_diff <span class="ot">&lt;-</span> <span class="fu">max</span>(abs_diffs)</span>
+<span id="cb36-53"><a href="#cb36-53" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Keep score of the largest</span></span>
+<span id="cb36-54"><a href="#cb36-54" aria-hidden="true" tabindex="-1"></a>    scores[i] <span class="ot">&lt;-</span> max_abs_diff</span>
+<span id="cb36-55"><a href="#cb36-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-56"><a href="#cb36-56" aria-hidden="true" tabindex="-1"></a>    <span class="co"># End a trial, go back and repeat until all 10000 are complete.</span></span>
+<span id="cb36-57"><a href="#cb36-57" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb36-58"><a href="#cb36-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-59"><a href="#cb36-59" aria-hidden="true" tabindex="-1"></a><span class="co"># How many of the trials yielded a maximum difference greater than the</span></span>
+<span id="cb36-60"><a href="#cb36-60" aria-hidden="true" tabindex="-1"></a><span class="co"># observed maximum difference?</span></span>
+<span id="cb36-61"><a href="#cb36-61" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">sum</span>(scores <span class="sc">&gt;=</span> <span class="dv">10</span>)</span>
+<span id="cb36-62"><a href="#cb36-62" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to a proportion</span></span>
+<span id="cb36-63"><a href="#cb36-63" aria-hidden="true" tabindex="-1"></a>kk <span class="ot">&lt;-</span> k <span class="sc">/</span> n_trials</span>
+<span id="cb36-64"><a href="#cb36-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-65"><a href="#cb36-65" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'Proportion &gt;= 10 was: '</span>, kk)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Proportion &gt;= 10 was: 0.0108</code></pre>
 </div>
 </div>
-<p>End of <code>offenders</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Simulation of offender strategies
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>offenders</code> starts at <a href="#nte-offenders" class="quarto-xref">Note&nbsp;<span>23.4</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook
 -->
 <p>Only one percent of the experiments with randomly generated treatments from a common success rate of .55 produced differences in excess of the observed maximum difference (10).</p>
 <p>An alternative approach to this problem would be to deal with <em>each</em> result’s departure from the mean, rather than the largest difference among the pairs. Once again, we want to deal with <em>absolute</em> departures, since we are interested only in magnitude of difference. We could take the absolute value of the differences, as above, but we will try something different here. <em>Squaring</em> the differences also renders them all positive: this is a common approach in statistics.</p>
-<div class="notebook" name="offenders_squared" title="Simulation of offender strategies using squared differences">
-<p>Start of <code>offenders_squared</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/offenders_squared.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=offenders_squared.ipynb">Interact</a>
+<div id="nte-offenders_squared" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;23.5: Notebook: Simulation of offender strategies using squared differences
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/offenders_squared.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=offenders_squared.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="offenders_squared" title="Simulation of offender strategies using squared differences">
 
+</div>
 <p>The first step is to examine our data and calculate this measure: The mean is 11, the differences (call <em>deviations from the mean</em>) are 6, 1, 1, and 4, the squared deviations are 36, 1, 1, and 16, and their sum is 54. In R:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The actual scores for each treatment.</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>treat_scores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">17</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">7</span>)</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="co"># The mean.</span></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">mean</span>(treat_scores)</span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co"># The four deviations from the mean</span></span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>deviations <span class="ot">&lt;-</span> treat_scores <span class="sc">-</span> m</span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Squared deviations.</span></span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>sq_deviations <span class="ot">&lt;-</span> deviations <span class="sc">**</span> <span class="dv">2</span></span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Sum of squared deviations.</span></span>
-<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>actual_sum_sq_deviations <span class="ot">&lt;-</span> <span class="fu">sum</span>(sq_deviations)</span>
-<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the result.</span></span>
-<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>actual_sum_sq_deviations</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The actual scores for each treatment.</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>treat_scores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">17</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">7</span>)</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co"># The mean.</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">mean</span>(treat_scores)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="co"># The four deviations from the mean</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>deviations <span class="ot">&lt;-</span> treat_scores <span class="sc">-</span> m</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Squared deviations.</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>sq_deviations <span class="ot">&lt;-</span> deviations <span class="sc">**</span> <span class="dv">2</span></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Sum of squared deviations.</span></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>actual_sum_sq_deviations <span class="ot">&lt;-</span> <span class="fu">sum</span>(sq_deviations)</span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the result.</span></span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>actual_sum_sq_deviations</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 54</code></pre>
 </div>
 </div>
 <p>Our experiment will be, as before, to constitute four groups of 20 at random from a universe with a 55 percent rehabilitation rate. We then calculate this same measure for the random groups. If it is frequently larger than 54, then we conclude that a uniform cure rate of 55 percent could easily have produced the observed results. The program that follows also generates the four treatments by using a <code>for</code> loop, rather than spelling out the <code>sample</code> command 4 times as above. In R:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the number of trials.</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>n_trials <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the sample size for each trial.</span></span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>sample_size <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="co"># An empty vector to store the trials.</span></span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_trials)</span>
-<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Do 10000 trials.</span></span>
-<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_trials) {</span>
-<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Repeat the following steps 4 times to constitute 4 groups of 20 and</span></span>
-<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># count their success rates.</span></span>
-<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>    group_scores <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">4</span>)</span>
-<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (group_no <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) {</span>
-<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># A treatment group</span></span>
-<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a>        group <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'success'</span>, <span class="st">'failure'</span>),</span>
-<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a>                        <span class="at">size=</span><span class="dv">20</span>,</span>
-<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a>                        <span class="at">prob=</span><span class="fu">c</span>(<span class="fl">0.55</span>, <span class="fl">0.45</span>),</span>
-<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a>                        <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Count successes.</span></span>
-<span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a>        group_count <span class="ot">&lt;-</span> <span class="fu">sum</span>(group <span class="sc">==</span> <span class="st">'success'</span>)</span>
-<span id="cb42-23"><a href="#cb42-23" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Store result.</span></span>
-<span id="cb42-24"><a href="#cb42-24" aria-hidden="true" tabindex="-1"></a>        group_scores[group_no] <span class="ot">&lt;-</span> group_count</span>
-<span id="cb42-25"><a href="#cb42-25" aria-hidden="true" tabindex="-1"></a>        <span class="co"># End the procedure for one group of 20, go back and repeat until all 4</span></span>
-<span id="cb42-26"><a href="#cb42-26" aria-hidden="true" tabindex="-1"></a>        <span class="co"># are done.</span></span>
-<span id="cb42-27"><a href="#cb42-27" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb42-28"><a href="#cb42-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate the mean</span></span>
-<span id="cb42-29"><a href="#cb42-29" aria-hidden="true" tabindex="-1"></a>    m <span class="ot">&lt;-</span> <span class="fu">mean</span>(group_scores)</span>
-<span id="cb42-30"><a href="#cb42-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate the deviations of the scores from the mean of the scores.</span></span>
-<span id="cb42-31"><a href="#cb42-31" aria-hidden="true" tabindex="-1"></a>    deviations <span class="ot">&lt;-</span> group_scores <span class="sc">-</span> m</span>
-<span id="cb42-32"><a href="#cb42-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Square them, making them them positive.</span></span>
-<span id="cb42-33"><a href="#cb42-33" aria-hidden="true" tabindex="-1"></a>    sq_deviations <span class="ot">&lt;-</span> deviations <span class="sc">**</span> <span class="dv">2</span></span>
-<span id="cb42-34"><a href="#cb42-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sum up the squared deviations.</span></span>
-<span id="cb42-35"><a href="#cb42-35" aria-hidden="true" tabindex="-1"></a>    sum_sq_deviations <span class="ot">&lt;-</span> <span class="fu">sum</span>(sq_deviations)</span>
-<span id="cb42-36"><a href="#cb42-36" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Keep track of the result for each trial.</span></span>
-<span id="cb42-37"><a href="#cb42-37" aria-hidden="true" tabindex="-1"></a>    scores[i] <span class="ot">&lt;-</span> sum_sq_deviations</span>
-<span id="cb42-38"><a href="#cb42-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-39"><a href="#cb42-39" aria-hidden="true" tabindex="-1"></a>    <span class="co"># End a trial, go back and repeat until all 10000 are complete.</span></span>
-<span id="cb42-40"><a href="#cb42-40" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb42-41"><a href="#cb42-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-42"><a href="#cb42-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Produce a histogram of the trial results.</span></span>
-<span id="cb42-43"><a href="#cb42-43" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(scores, <span class="at">breaks=</span><span class="dv">50</span>,</span>
-<span id="cb42-44"><a href="#cb42-44" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">'Distribution of sum of squared deviations, in null universe'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the number of trials.</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>n_trials <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the sample size for each trial.</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>sample_size <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="co"># An empty vector to store the trials.</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_trials)</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Do 10000 trials.</span></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_trials) {</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Repeat the following steps 4 times to constitute 4 groups of 20 and</span></span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># count their success rates.</span></span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>    group_scores <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">4</span>)</span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (group_no <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) {</span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># A treatment group</span></span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>        group <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'success'</span>, <span class="st">'failure'</span>),</span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>                        <span class="at">size=</span><span class="dv">20</span>,</span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>                        <span class="at">prob=</span><span class="fu">c</span>(<span class="fl">0.55</span>, <span class="fl">0.45</span>),</span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>                        <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Count successes.</span></span>
+<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>        group_count <span class="ot">&lt;-</span> <span class="fu">sum</span>(group <span class="sc">==</span> <span class="st">'success'</span>)</span>
+<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Store result.</span></span>
+<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a>        group_scores[group_no] <span class="ot">&lt;-</span> group_count</span>
+<span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a>        <span class="co"># End the procedure for one group of 20, go back and repeat until all 4</span></span>
+<span id="cb40-26"><a href="#cb40-26" aria-hidden="true" tabindex="-1"></a>        <span class="co"># are done.</span></span>
+<span id="cb40-27"><a href="#cb40-27" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb40-28"><a href="#cb40-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate the mean</span></span>
+<span id="cb40-29"><a href="#cb40-29" aria-hidden="true" tabindex="-1"></a>    m <span class="ot">&lt;-</span> <span class="fu">mean</span>(group_scores)</span>
+<span id="cb40-30"><a href="#cb40-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate the deviations of the scores from the mean of the scores.</span></span>
+<span id="cb40-31"><a href="#cb40-31" aria-hidden="true" tabindex="-1"></a>    deviations <span class="ot">&lt;-</span> group_scores <span class="sc">-</span> m</span>
+<span id="cb40-32"><a href="#cb40-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Square them, making them them positive.</span></span>
+<span id="cb40-33"><a href="#cb40-33" aria-hidden="true" tabindex="-1"></a>    sq_deviations <span class="ot">&lt;-</span> deviations <span class="sc">**</span> <span class="dv">2</span></span>
+<span id="cb40-34"><a href="#cb40-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sum up the squared deviations.</span></span>
+<span id="cb40-35"><a href="#cb40-35" aria-hidden="true" tabindex="-1"></a>    sum_sq_deviations <span class="ot">&lt;-</span> <span class="fu">sum</span>(sq_deviations)</span>
+<span id="cb40-36"><a href="#cb40-36" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Keep track of the result for each trial.</span></span>
+<span id="cb40-37"><a href="#cb40-37" aria-hidden="true" tabindex="-1"></a>    scores[i] <span class="ot">&lt;-</span> sum_sq_deviations</span>
+<span id="cb40-38"><a href="#cb40-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-39"><a href="#cb40-39" aria-hidden="true" tabindex="-1"></a>    <span class="co"># End a trial, go back and repeat until all 10000 are complete.</span></span>
+<span id="cb40-40"><a href="#cb40-40" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb40-41"><a href="#cb40-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-42"><a href="#cb40-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Produce a histogram of the trial results.</span></span>
+<span id="cb40-43"><a href="#cb40-43" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(scores, <span class="at">breaks=</span><span class="dv">50</span>,</span>
+<span id="cb40-44"><a href="#cb40-44" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">'Distribution of sum of squared deviations, in null universe'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1027,19 +1103,33 @@ End of notebook
 </div>
 <p>From this histogram, we see that in only about 1 percent of the cases did our trial sum of squared differences equal or exceed 54, confirming our conclusion that this is an unusual result. We can have R calculate this proportion:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># How many of the trials yielded a maximum difference greater than the</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co"># observed maximum difference?</span></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">sum</span>(scores <span class="sc">&gt;=</span> actual_sum_sq_deviations)</span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to a proportion</span></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>kk <span class="ot">&lt;-</span> k <span class="sc">/</span> n_trials</span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'Proportion &gt;= '</span>, actual_sum_sq_deviations, <span class="st">' was: '</span>, kk)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># How many of the trials yielded a maximum difference greater than the</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co"># observed maximum difference?</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">sum</span>(scores <span class="sc">&gt;=</span> actual_sum_sq_deviations)</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to a proportion</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>kk <span class="ot">&lt;-</span> k <span class="sc">/</span> n_trials</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'Proportion &gt;= '</span>, actual_sum_sq_deviations, <span class="st">' was: '</span>, kk)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Proportion &gt;= 54 was: 0.0122</code></pre>
 </div>
 </div>
 <p>The conventional way to approach this problem would be with what is known as a <a href="https://en.wikipedia.org/wiki/Chi-squared_test">chi-squared test</a>.</p>
-<p>End of <code>offenders_squared</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Simulation of offender strategies using squared differences
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>offenders_squared</code> starts at <a href="#nte-offenders_squared" class="quarto-xref">Note&nbsp;<span>23.5</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook
@@ -1058,58 +1148,69 @@ End of notebook
 <p>From here on, the procedure is straightforward: Determine how likely that universe is to produce a sample as far (or further) away in the direction of “our” candidate winning. (One could do something like this even if the candidate of interest were not now in the lead.)</p>
 <p>This problem teaches again that one must think explicitly about the choice of a benchmark hypothesis. The grounds for the choice of the benchmark hypothesis should precede the notebook, or should be included as an extended commentary within the notebook.</p>
 <p>This R code embodies the previous line of thought.</p>
-<div class="notebook" name="bush_clinton" title="Simulation of Bush / Clinton polling">
-<p>Start of <code>bush_clinton</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/bush_clinton.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=bush_clinton.ipynb">Interact</a>
+<div id="nte-bush_clinton" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;23.6: Notebook: Simulation of Bush / Clinton polling
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/bush_clinton.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=bush_clinton.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="bush_clinton" title="Simulation of Bush / Clinton polling">
 
+</div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of voters who expressed a preference.</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>n_voters <span class="ot">&lt;-</span> <span class="dv">705</span></span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Benchmark proportions.</span></span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>bench_ps <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.35</span>, <span class="fl">0.35</span>, <span class="fl">0.30</span>)</span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the number of trials.</span></span>
-<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>n_trials <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a><span class="co"># An empty array to store the trials.</span></span>
-<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_trials)</span>
-<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Do 10000 trials</span></span>
-<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_trials) {</span>
-<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Take a sample of 705 votes, with replacement.</span></span>
-<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>    samp <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'Bush'</span>, <span class="st">'Perot'</span>, <span class="st">'Clinton'</span>),</span>
-<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a>                   <span class="at">size=</span>n_voters,</span>
-<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a>                   <span class="at">prob=</span>bench_ps,</span>
-<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a>                   <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Count the Bush voters, etc.</span></span>
-<span id="cb45-21"><a href="#cb45-21" aria-hidden="true" tabindex="-1"></a>    n_bush <span class="ot">&lt;-</span> <span class="fu">sum</span>(samp <span class="sc">==</span> <span class="st">'Bush'</span>)</span>
-<span id="cb45-22"><a href="#cb45-22" aria-hidden="true" tabindex="-1"></a>    n_perot <span class="ot">&lt;-</span> <span class="fu">sum</span>(samp <span class="sc">==</span> <span class="st">'Perot'</span>)</span>
-<span id="cb45-23"><a href="#cb45-23" aria-hidden="true" tabindex="-1"></a>    n_clinton <span class="ot">&lt;-</span> <span class="fu">sum</span>(samp <span class="sc">==</span> <span class="st">'Clinton'</span>)</span>
-<span id="cb45-24"><a href="#cb45-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Join Perot &amp; Clinton votes into a vector.</span></span>
-<span id="cb45-25"><a href="#cb45-25" aria-hidden="true" tabindex="-1"></a>    others <span class="ot">&lt;-</span> <span class="fu">c</span>(n_perot, n_clinton)</span>
-<span id="cb45-26"><a href="#cb45-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Find the larger of the other two.</span></span>
-<span id="cb45-27"><a href="#cb45-27" aria-hidden="true" tabindex="-1"></a>    n_second <span class="ot">&lt;-</span> <span class="fu">max</span>(others)</span>
-<span id="cb45-28"><a href="#cb45-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Find Bush's margin over 2nd.</span></span>
-<span id="cb45-29"><a href="#cb45-29" aria-hidden="true" tabindex="-1"></a>    lead <span class="ot">&lt;-</span> n_bush <span class="sc">-</span> n_second</span>
-<span id="cb45-30"><a href="#cb45-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert vote difference to percent lead.</span></span>
-<span id="cb45-31"><a href="#cb45-31" aria-hidden="true" tabindex="-1"></a>    pct_lead <span class="ot">&lt;-</span> lead <span class="sc">/</span> n_voters <span class="sc">*</span> <span class="dv">100</span></span>
-<span id="cb45-32"><a href="#cb45-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Store the result.</span></span>
-<span id="cb45-33"><a href="#cb45-33" aria-hidden="true" tabindex="-1"></a>    scores[i] <span class="ot">&lt;-</span> pct_lead</span>
-<span id="cb45-34"><a href="#cb45-34" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb45-35"><a href="#cb45-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-36"><a href="#cb45-36" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(scores, <span class="at">breaks=</span><span class="dv">50</span>,</span>
-<span id="cb45-37"><a href="#cb45-37" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">'Distribution of Bush margin over second candidate'</span>)</span>
-<span id="cb45-38"><a href="#cb45-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-39"><a href="#cb45-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare to the observed margin in the sample of 705 corresponding to a 6.4</span></span>
-<span id="cb45-40"><a href="#cb45-40" aria-hidden="true" tabindex="-1"></a><span class="co"># percent margin by Bush over 2nd place finisher (rounded).</span></span>
-<span id="cb45-41"><a href="#cb45-41" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">sum</span>(scores <span class="sc">&gt;=</span> <span class="fl">6.4</span>)</span>
-<span id="cb45-42"><a href="#cb45-42" aria-hidden="true" tabindex="-1"></a>kk <span class="ot">&lt;-</span> k <span class="sc">/</span> n_trials</span>
-<span id="cb45-43"><a href="#cb45-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-44"><a href="#cb45-44" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'Proportion of trials where Bush margin &gt;= 6.4%: '</span>, kk)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of voters who expressed a preference.</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>n_voters <span class="ot">&lt;-</span> <span class="dv">705</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Benchmark proportions.</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>bench_ps <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.35</span>, <span class="fl">0.35</span>, <span class="fl">0.30</span>)</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the number of trials.</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>n_trials <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a><span class="co"># An empty array to store the trials.</span></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_trials)</span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Do 10000 trials</span></span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_trials) {</span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Take a sample of 705 votes, with replacement.</span></span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a>    samp <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'Bush'</span>, <span class="st">'Perot'</span>, <span class="st">'Clinton'</span>),</span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>                   <span class="at">size=</span>n_voters,</span>
+<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a>                   <span class="at">prob=</span>bench_ps,</span>
+<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a>                   <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Count the Bush voters, etc.</span></span>
+<span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a>    n_bush <span class="ot">&lt;-</span> <span class="fu">sum</span>(samp <span class="sc">==</span> <span class="st">'Bush'</span>)</span>
+<span id="cb43-22"><a href="#cb43-22" aria-hidden="true" tabindex="-1"></a>    n_perot <span class="ot">&lt;-</span> <span class="fu">sum</span>(samp <span class="sc">==</span> <span class="st">'Perot'</span>)</span>
+<span id="cb43-23"><a href="#cb43-23" aria-hidden="true" tabindex="-1"></a>    n_clinton <span class="ot">&lt;-</span> <span class="fu">sum</span>(samp <span class="sc">==</span> <span class="st">'Clinton'</span>)</span>
+<span id="cb43-24"><a href="#cb43-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Join Perot &amp; Clinton votes into a vector.</span></span>
+<span id="cb43-25"><a href="#cb43-25" aria-hidden="true" tabindex="-1"></a>    others <span class="ot">&lt;-</span> <span class="fu">c</span>(n_perot, n_clinton)</span>
+<span id="cb43-26"><a href="#cb43-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Find the larger of the other two.</span></span>
+<span id="cb43-27"><a href="#cb43-27" aria-hidden="true" tabindex="-1"></a>    n_second <span class="ot">&lt;-</span> <span class="fu">max</span>(others)</span>
+<span id="cb43-28"><a href="#cb43-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Find Bush's margin over 2nd.</span></span>
+<span id="cb43-29"><a href="#cb43-29" aria-hidden="true" tabindex="-1"></a>    lead <span class="ot">&lt;-</span> n_bush <span class="sc">-</span> n_second</span>
+<span id="cb43-30"><a href="#cb43-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert vote difference to percent lead.</span></span>
+<span id="cb43-31"><a href="#cb43-31" aria-hidden="true" tabindex="-1"></a>    pct_lead <span class="ot">&lt;-</span> lead <span class="sc">/</span> n_voters <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb43-32"><a href="#cb43-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Store the result.</span></span>
+<span id="cb43-33"><a href="#cb43-33" aria-hidden="true" tabindex="-1"></a>    scores[i] <span class="ot">&lt;-</span> pct_lead</span>
+<span id="cb43-34"><a href="#cb43-34" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb43-35"><a href="#cb43-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-36"><a href="#cb43-36" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(scores, <span class="at">breaks=</span><span class="dv">50</span>,</span>
+<span id="cb43-37"><a href="#cb43-37" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">'Distribution of Bush margin over second candidate'</span>)</span>
+<span id="cb43-38"><a href="#cb43-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-39"><a href="#cb43-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare to the observed margin in the sample of 705 corresponding to a 6.4</span></span>
+<span id="cb43-40"><a href="#cb43-40" aria-hidden="true" tabindex="-1"></a><span class="co"># percent margin by Bush over 2nd place finisher (rounded).</span></span>
+<span id="cb43-41"><a href="#cb43-41" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">sum</span>(scores <span class="sc">&gt;=</span> <span class="fl">6.4</span>)</span>
+<span id="cb43-42"><a href="#cb43-42" aria-hidden="true" tabindex="-1"></a>kk <span class="ot">&lt;-</span> k <span class="sc">/</span> n_trials</span>
+<span id="cb43-43"><a href="#cb43-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-44"><a href="#cb43-44" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'Proportion of trials where Bush margin &gt;= 6.4%: '</span>, kk)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Proportion of trials where Bush margin &gt;= 6.4%: 0.0178</code></pre>
 </div>
@@ -1121,7 +1222,21 @@ End of notebook
 </div>
 </div>
 </div>
-<p>End of <code>bush_clinton</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Simulation of Bush / Clinton polling
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>bush_clinton</code> starts at <a href="#nte-bush_clinton" class="quarto-xref">Note&nbsp;<span>23.6</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook
@@ -1385,46 +1500,71 @@ Table&nbsp;23.3: Results from fifty simulation trials of the paired pigs problem
 </div>
 <p>Now for a R program and results. This notebook is different from the example at <a href="testing_counts_1.html#sec-pig-rations" class="quarto-xref"><span>Section 21.2.8</span></a> in that it compares the weight-gain results of <em>pairs</em> of pigs, instead of simply looking at the <em>rankings</em> for weight gains.</p>
 <p>The key to the pigs pair notebook is the <code>sample</code> line. If we assume that ration A does not have an effect on weight gain (which is the “benchmark” or “null” hypothesis), then the results of the actual experiment would be no different than if we randomly <code>sample</code> “A” and “B” and treat an “A” as a larger weight gain for the ration A pig, and a “B” as a larger weight gain for the ration B pig. Both events have a .5 chance of occurring for each pair of pigs because if the rations had no effect on weight gain (the null hypothesis), ration A pigs would have larger weight gains about half of the time. The next step is to count (<code>sum</code>) the number of times that the weight gains of one group (call it the group fed with ration A) were larger than the weight gains of the other (call it the group fed with ration B). The complete program follows:</p>
-<div class="notebook" name="pig_pairs" title="Paired test for pig rations">
-<p>Start of <code>pig_pairs</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/pig_pairs.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=pig_pairs.ipynb">Interact</a>
+<div id="nte-pig_pairs" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;23.7: Notebook: Paired test for pig rations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/pig_pairs.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=pig_pairs.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="pig_pairs" title="Paired test for pig rations">
 
+</div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>n_iters <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Make array to store results for each trial.</span></span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_iters)</span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Do 10000 trials</span></span>
-<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_iters) {</span>
-<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Generate randomly 12 "A" or "B"s.  Each of the 12 values represents</span></span>
-<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># one "pairing" where "A" &lt;- ration A "wins," "B" &lt;- ration B "wins.".</span></span>
-<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>    wins <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'A'</span>, <span class="st">'B'</span>), <span class="at">replace=</span><span class="cn">TRUE</span>, <span class="at">size=</span><span class="dv">12</span>)</span>
-<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Count the number of "pairings" where ration A won, put the result in</span></span>
-<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># "n_a_wins".</span></span>
-<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>    n_a_wins <span class="ot">&lt;-</span> <span class="fu">sum</span>(wins <span class="sc">==</span> <span class="st">'A'</span>)</span>
-<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Keep track of the result in results.</span></span>
-<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a>    results[i] <span class="ot">&lt;-</span> n_a_wins</span>
-<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># End the trial, go back and repeat until all 10000 trials are complete.</span></span>
-<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine how often we got 9 or more "wins" for ration A.</span></span>
-<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a>high <span class="ot">&lt;-</span> <span class="fu">sum</span>(results <span class="sc">&gt;=</span> <span class="dv">9</span>)</span>
-<span id="cb47-20"><a href="#cb47-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine how often we got 3 or fewer "wins" for ration A.</span></span>
-<span id="cb47-21"><a href="#cb47-21" aria-hidden="true" tabindex="-1"></a>low <span class="ot">&lt;-</span> <span class="fu">sum</span>(results <span class="sc">&lt;=</span> <span class="dv">3</span>)</span>
-<span id="cb47-22"><a href="#cb47-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the two together</span></span>
-<span id="cb47-23"><a href="#cb47-23" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> high <span class="sc">+</span> low</span>
-<span id="cb47-24"><a href="#cb47-24" aria-hidden="true" tabindex="-1"></a><span class="co">#  Convert to a proportion</span></span>
-<span id="cb47-25"><a href="#cb47-25" aria-hidden="true" tabindex="-1"></a>kk <span class="ot">&lt;-</span> k <span class="sc">/</span> n_iters</span>
-<span id="cb47-26"><a href="#cb47-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the result.</span></span>
-<span id="cb47-27"><a href="#cb47-27" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'Proportion &gt;=9 or &lt;=3: '</span>, kk)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>n_iters <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Make array to store results for each trial.</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_iters)</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Do 10000 trials</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_iters) {</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Generate randomly 12 "A" or "B"s.  Each of the 12 values represents</span></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># one "pairing" where "A" &lt;- ration A "wins," "B" &lt;- ration B "wins.".</span></span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>    wins <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'A'</span>, <span class="st">'B'</span>), <span class="at">replace=</span><span class="cn">TRUE</span>, <span class="at">size=</span><span class="dv">12</span>)</span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Count the number of "pairings" where ration A won, put the result in</span></span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># "n_a_wins".</span></span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>    n_a_wins <span class="ot">&lt;-</span> <span class="fu">sum</span>(wins <span class="sc">==</span> <span class="st">'A'</span>)</span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Keep track of the result in results.</span></span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>    results[i] <span class="ot">&lt;-</span> n_a_wins</span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># End the trial, go back and repeat until all 10000 trials are complete.</span></span>
+<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine how often we got 9 or more "wins" for ration A.</span></span>
+<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a>high <span class="ot">&lt;-</span> <span class="fu">sum</span>(results <span class="sc">&gt;=</span> <span class="dv">9</span>)</span>
+<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine how often we got 3 or fewer "wins" for ration A.</span></span>
+<span id="cb45-21"><a href="#cb45-21" aria-hidden="true" tabindex="-1"></a>low <span class="ot">&lt;-</span> <span class="fu">sum</span>(results <span class="sc">&lt;=</span> <span class="dv">3</span>)</span>
+<span id="cb45-22"><a href="#cb45-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the two together</span></span>
+<span id="cb45-23"><a href="#cb45-23" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> high <span class="sc">+</span> low</span>
+<span id="cb45-24"><a href="#cb45-24" aria-hidden="true" tabindex="-1"></a><span class="co">#  Convert to a proportion</span></span>
+<span id="cb45-25"><a href="#cb45-25" aria-hidden="true" tabindex="-1"></a>kk <span class="ot">&lt;-</span> k <span class="sc">/</span> n_iters</span>
+<span id="cb45-26"><a href="#cb45-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the result.</span></span>
+<span id="cb45-27"><a href="#cb45-27" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'Proportion &gt;=9 or &lt;=3: '</span>, kk)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Proportion &gt;=9 or &lt;=3: 0.1464</code></pre>
 </div>
 </div>
-<p>End of <code>pig_pairs</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Paired test for pig rations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>pig_pairs</code> starts at <a href="#nte-pig_pairs" class="quarto-xref">Note&nbsp;<span>23.7</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook
@@ -1445,7 +1585,7 @@ Example 17-5
 <p>Here (<a href="#tbl-mergers-data" class="quarto-xref">Table&nbsp;<span>23.4</span></a>) are the data (provided by the authors):</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="tbl-mergers-data" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;" data-quarto-postprocess="true">
+<div id="tbl-mergers-data" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-mergers-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;23.4: Revenue Growth In Year 1 Following Merger
@@ -1672,7 +1812,7 @@ Table&nbsp;23.4: Revenue Growth In Year 1 Following Merger
 <p>Here are those average revenue growth rates for the three groups:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="tbl-merger-means" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;" data-quarto-postprocess="true">
+<div id="tbl-merger-means" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-merger-means-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;23.5: Year's revenue growth
@@ -1712,7 +1852,7 @@ Table&nbsp;23.5: Year's revenue growth
 <p>Here (<a href="#tbl-merger-ranks" class="quarto-xref">Table&nbsp;<span>23.6</span></a>) are those ranks, where 1 = worst, 3 = best:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="tbl-merger-ranks" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;" data-quarto-postprocess="true">
+<div id="tbl-merger-ranks" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-merger-ranks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;23.6: Revenue growth ranked within matched set (1=best)
@@ -1938,7 +2078,7 @@ Table&nbsp;23.6: Revenue growth ranked within matched set (1=best)
 <p>These (<a href="#tbl-merger-mean-ranks" class="quarto-xref">Table&nbsp;<span>23.7</span></a>) are the average ranks for the three groups (1 = worst, 3 = best):</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="tbl-merger-mean-ranks" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;" data-quarto-postprocess="true">
+<div id="tbl-merger-mean-ranks" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-merger-mean-ranks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;23.7: Mean rank of year revenue growth
@@ -1981,32 +2121,43 @@ Table&nbsp;23.7: Mean rank of year revenue growth
 <li>Find out how often the average rank is as low as 1.48.</li>
 </ol>
 <p>Here’s a R notebook to apply those steps:</p>
-<div class="notebook" name="merger_ranks" title="Merger rank test">
-<p>Start of <code>merger_ranks</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/merger_ranks.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=merger_ranks.ipynb">Interact</a>
+<div id="nte-merger_ranks" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;23.8: Notebook: Merger rank test
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/merger_ranks.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=merger_ranks.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="merger_ranks" title="Merger rank test">
 
+</div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>n_iters <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Make array to store results for each trial.</span></span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_iters)</span>
-<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_iters) {</span>
-<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>    ranks <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="at">size=</span><span class="dv">33</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>    mean_rank <span class="ot">&lt;-</span> <span class="fu">mean</span>(ranks)</span>
-<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>    results[i] <span class="ot">&lt;-</span> mean_rank</span>
-<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(results, <span class="at">breaks=</span><span class="dv">20</span>,</span>
-<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">'Mean ranks from random rank sampling'</span>)</span>
-<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">sum</span>(results <span class="sc">&lt;=</span> <span class="fl">1.48</span>)</span>
-<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a>kk <span class="ot">&lt;-</span> k <span class="sc">/</span> n_iters</span>
-<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'Proportion of mean ranks &lt;= 1.48: '</span>, kk)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>n_iters <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Make array to store results for each trial.</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_iters)</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_iters) {</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>    ranks <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="at">size=</span><span class="dv">33</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>    mean_rank <span class="ot">&lt;-</span> <span class="fu">mean</span>(ranks)</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>    results[i] <span class="ot">&lt;-</span> mean_rank</span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(results, <span class="at">breaks=</span><span class="dv">20</span>,</span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">'Mean ranks from random rank sampling'</span>)</span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">sum</span>(results <span class="sc">&lt;=</span> <span class="fl">1.48</span>)</span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a>kk <span class="ot">&lt;-</span> k <span class="sc">/</span> n_iters</span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'Proportion of mean ranks &lt;= 1.48: '</span>, kk)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Proportion of mean ranks &lt;= 1.48: 1e-04</code></pre>
 </div>
@@ -2018,7 +2169,21 @@ Table&nbsp;23.7: Mean rank of year revenue growth
 </div>
 </div>
 </div>
-<p>End of <code>merger_ranks</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Merger rank test
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>merger_ranks</code> starts at <a href="#nte-merger_ranks" class="quarto-xref">Note&nbsp;<span>23.8</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook
@@ -2030,7 +2195,7 @@ End of notebook
 <p>Assume that we now switch scales from the merger data, so that #1 = best and #3 = worst, and that the outcomes on a series of tests were ranked from best (#1) to worst (#3) within each triplet. Assume that the combined drug-and-therapy regime has the best average rank. How sure can we be that the observed result would not occur by chance? Here are the data from the merger study, seen here as <a href="#tbl-therapy-ranks" class="quarto-xref">Table&nbsp;<span>23.8</span></a>:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="tbl-therapy-ranks" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;" data-quarto-postprocess="true">
+<div id="tbl-therapy-ranks" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-therapy-ranks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;23.8: Ranked therapies within matched-patient triplets (1=best)
@@ -2256,7 +2421,7 @@ Table&nbsp;23.8: Ranked therapies within matched-patient triplets (1=best)
 <p>These (<a href="#tbl-therapy-mean-ranks" class="quarto-xref">Table&nbsp;<span>23.9</span></a>) are the average ranks for the three groups (1 = best, 3 = worst):</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="tbl-therapy-mean-ranks" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;" data-quarto-postprocess="true">
+<div id="tbl-therapy-mean-ranks" class="lightable-paper lightable-striped lightable-hover quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-therapy-mean-ranks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;23.9: Mean rank of therapy in matched triplets
@@ -2296,6 +2461,24 @@ Table&nbsp;23.9: Mean rank of therapy in matched triplets
 <p>In the above problems, we did not concern ourselves with chance outcomes for the other therapies (or the matched firms) because they were not our primary focus. If, in actual fact, one of them had done exceptionally well or poorly, we would have paid little notice because their performance was not the object of the study. We needed, therefore, only to guard against the possibility that chance good luck for <em>our therapy of interest</em> might have led us to a hasty conclusion.</p>
 <p>Suppose now that we are not interested primarily in the combined drug-therapy treatment, and that we have three treatments being tested, all on equal footing. It is no longer sufficient to ask the question “What is the probability that the combined therapy could come out this well just by chance?” We must now ask “What is the probability that <em>any</em> of the therapies could have come out this well by chance?” (Perhaps you can guess that this probability will be higher than the probability that our <em>chosen therapy</em> will do so well by chance.)</p>
 <p>Here is a resampling procedure that will answer this question:</p>
+<div id="nte-minimum_average_rank" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;23.9: Notebook: Minimum average rank
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/minimum_average_rank.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=minimum_average_rank.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="minimum_average_rank" title="Minimum average rank">
+
+</div>
 <ol type="1">
 <li>Put the numbers “1”, “2” and “3” (corresponding to ranks) in a bucket</li>
 <li>Shuffle the numbers and deal them out to three locations that correspond to treatments (call the locations “t1,” “t2,” and “t3”)</li>
@@ -2306,50 +2489,50 @@ Table&nbsp;23.9: Mean rank of therapy in matched triplets
 <li>Find out how often the minimum average rank for any treatment is as low as 1.48.</li>
 </ol>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the number of trials</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>n_iters <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co"># An empty array to store the trial results.</span></span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_iters)</span>
-<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1 above.</span></span>
-<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>bucket <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>n_rows <span class="ot">&lt;-</span> <span class="dv">33</span></span>
-<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Do 10000 trials.</span></span>
-<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_iters) {</span>
-<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Prepare vectors to store shuffled row results.</span></span>
-<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a>    t1 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_rows)</span>
-<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a>    t2 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_rows)</span>
-<span id="cb51-17"><a href="#cb51-17" aria-hidden="true" tabindex="-1"></a>    t3 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_rows)</span>
-<span id="cb51-18"><a href="#cb51-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Step 3 (for all 33 rows).</span></span>
-<span id="cb51-19"><a href="#cb51-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (row_no <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_rows) {</span>
-<span id="cb51-20"><a href="#cb51-20" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Step 2.</span></span>
-<span id="cb51-21"><a href="#cb51-21" aria-hidden="true" tabindex="-1"></a>        shuffled <span class="ot">&lt;-</span> <span class="fu">sample</span>(bucket)</span>
-<span id="cb51-22"><a href="#cb51-22" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Step 2 continued.</span></span>
-<span id="cb51-23"><a href="#cb51-23" aria-hidden="true" tabindex="-1"></a>        t1[row_no] <span class="ot">&lt;-</span> shuffled[<span class="dv">1</span>]</span>
-<span id="cb51-24"><a href="#cb51-24" aria-hidden="true" tabindex="-1"></a>        t2[row_no] <span class="ot">&lt;-</span> shuffled[<span class="dv">2</span>]</span>
-<span id="cb51-25"><a href="#cb51-25" aria-hidden="true" tabindex="-1"></a>        t3[row_no] <span class="ot">&lt;-</span> shuffled[<span class="dv">3</span>]</span>
-<span id="cb51-26"><a href="#cb51-26" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb51-27"><a href="#cb51-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Step 4.</span></span>
-<span id="cb51-28"><a href="#cb51-28" aria-hidden="true" tabindex="-1"></a>    m_t1 <span class="ot">&lt;-</span> <span class="fu">mean</span>(t1)</span>
-<span id="cb51-29"><a href="#cb51-29" aria-hidden="true" tabindex="-1"></a>    m_t2 <span class="ot">&lt;-</span> <span class="fu">mean</span>(t2)</span>
-<span id="cb51-30"><a href="#cb51-30" aria-hidden="true" tabindex="-1"></a>    m_t3 <span class="ot">&lt;-</span> <span class="fu">mean</span>(t3)</span>
-<span id="cb51-31"><a href="#cb51-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Step 5.</span></span>
-<span id="cb51-32"><a href="#cb51-32" aria-hidden="true" tabindex="-1"></a>    means <span class="ot">&lt;-</span> <span class="fu">c</span>(m_t1, m_t2, m_t3)</span>
-<span id="cb51-33"><a href="#cb51-33" aria-hidden="true" tabindex="-1"></a>    min_mean <span class="ot">&lt;-</span> <span class="fu">min</span>(means)</span>
-<span id="cb51-34"><a href="#cb51-34" aria-hidden="true" tabindex="-1"></a>    results[i] <span class="ot">&lt;-</span> min_mean</span>
-<span id="cb51-35"><a href="#cb51-35" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb51-36"><a href="#cb51-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-37"><a href="#cb51-37" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(results, <span class="at">breaks=</span><span class="dv">50</span>,</span>
-<span id="cb51-38"><a href="#cb51-38" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">'Distribution of minimum average rank'</span>)</span>
-<span id="cb51-39"><a href="#cb51-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-40"><a href="#cb51-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 7.</span></span>
-<span id="cb51-41"><a href="#cb51-41" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">sum</span>(results <span class="sc">&lt;=</span> <span class="fl">1.49</span>)</span>
-<span id="cb51-42"><a href="#cb51-42" aria-hidden="true" tabindex="-1"></a>kk <span class="ot">&lt;-</span> k <span class="sc">/</span> n_iters</span>
-<span id="cb51-43"><a href="#cb51-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-44"><a href="#cb51-44" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'Proportion minimum average rank &lt;= 1.48: '</span>, kk)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the number of trials</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>n_iters <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="co"># An empty array to store the trial results.</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_iters)</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1 above.</span></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>bucket <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>n_rows <span class="ot">&lt;-</span> <span class="dv">33</span></span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Do 10000 trials.</span></span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_iters) {</span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Prepare vectors to store shuffled row results.</span></span>
+<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>    t1 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_rows)</span>
+<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a>    t2 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_rows)</span>
+<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a>    t3 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_rows)</span>
+<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Step 3 (for all 33 rows).</span></span>
+<span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (row_no <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_rows) {</span>
+<span id="cb49-20"><a href="#cb49-20" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Step 2.</span></span>
+<span id="cb49-21"><a href="#cb49-21" aria-hidden="true" tabindex="-1"></a>        shuffled <span class="ot">&lt;-</span> <span class="fu">sample</span>(bucket)</span>
+<span id="cb49-22"><a href="#cb49-22" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Step 2 continued.</span></span>
+<span id="cb49-23"><a href="#cb49-23" aria-hidden="true" tabindex="-1"></a>        t1[row_no] <span class="ot">&lt;-</span> shuffled[<span class="dv">1</span>]</span>
+<span id="cb49-24"><a href="#cb49-24" aria-hidden="true" tabindex="-1"></a>        t2[row_no] <span class="ot">&lt;-</span> shuffled[<span class="dv">2</span>]</span>
+<span id="cb49-25"><a href="#cb49-25" aria-hidden="true" tabindex="-1"></a>        t3[row_no] <span class="ot">&lt;-</span> shuffled[<span class="dv">3</span>]</span>
+<span id="cb49-26"><a href="#cb49-26" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb49-27"><a href="#cb49-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Step 4.</span></span>
+<span id="cb49-28"><a href="#cb49-28" aria-hidden="true" tabindex="-1"></a>    m_t1 <span class="ot">&lt;-</span> <span class="fu">mean</span>(t1)</span>
+<span id="cb49-29"><a href="#cb49-29" aria-hidden="true" tabindex="-1"></a>    m_t2 <span class="ot">&lt;-</span> <span class="fu">mean</span>(t2)</span>
+<span id="cb49-30"><a href="#cb49-30" aria-hidden="true" tabindex="-1"></a>    m_t3 <span class="ot">&lt;-</span> <span class="fu">mean</span>(t3)</span>
+<span id="cb49-31"><a href="#cb49-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Step 5.</span></span>
+<span id="cb49-32"><a href="#cb49-32" aria-hidden="true" tabindex="-1"></a>    means <span class="ot">&lt;-</span> <span class="fu">c</span>(m_t1, m_t2, m_t3)</span>
+<span id="cb49-33"><a href="#cb49-33" aria-hidden="true" tabindex="-1"></a>    min_mean <span class="ot">&lt;-</span> <span class="fu">min</span>(means)</span>
+<span id="cb49-34"><a href="#cb49-34" aria-hidden="true" tabindex="-1"></a>    results[i] <span class="ot">&lt;-</span> min_mean</span>
+<span id="cb49-35"><a href="#cb49-35" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb49-36"><a href="#cb49-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-37"><a href="#cb49-37" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(results, <span class="at">breaks=</span><span class="dv">50</span>,</span>
+<span id="cb49-38"><a href="#cb49-38" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">'Distribution of minimum average rank'</span>)</span>
+<span id="cb49-39"><a href="#cb49-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-40"><a href="#cb49-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 7.</span></span>
+<span id="cb49-41"><a href="#cb49-41" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">sum</span>(results <span class="sc">&lt;=</span> <span class="fl">1.49</span>)</span>
+<span id="cb49-42"><a href="#cb49-42" aria-hidden="true" tabindex="-1"></a>kk <span class="ot">&lt;-</span> k <span class="sc">/</span> n_iters</span>
+<span id="cb49-43"><a href="#cb49-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-44"><a href="#cb49-44" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'Proportion minimum average rank &lt;= 1.48: '</span>, kk)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Proportion minimum average rank &lt;= 1.48: 2e-04</code></pre>
 </div>
@@ -2361,9 +2544,25 @@ Table&nbsp;23.9: Mean rank of therapy in matched triplets
 </div>
 </div>
 </div>
-<p>::: <!---
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Minimum average rank
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>minimum_average_rank</code> starts at <a href="#nte-minimum_average_rank" class="quarto-xref">Note&nbsp;<span>23.9</span></a>.</p>
+</div>
+</div>
+<!---
 End of notebook
---></p>
+-->
 <p>Interpretation: We did 10,000 random shufflings of 33 ranks, apportioned to three “treatments”. Of these, about 0 percent produced, for the best treatment in the three, an average as low as the observed average, therefore we rule out chance as an explanation for the success of the combined therapy.</p>
 <p>An interesting feature of the mergers (or depression treatment) problem is that it would be hard to find a conventional test that would handle this three-way comparison in an efficient manner. Certainly it would be impossible to find a test that does not require formulae and tables that only a talented professional statistician could manage satisfactorily, and even they are not likely to fully understand those formulaic procedures.</p>
 </section>

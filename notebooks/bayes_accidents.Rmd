@@ -1,6 +1,8 @@
 # Bayesian analysis for insurance premium
 
 
+Find this notebook on the web at Note .
+
 A mutual insurance company charges its members according to the risk of
 having an car accident. It is known that there are two classes of people
 — 80 percent of the population with good driving judgment and with a

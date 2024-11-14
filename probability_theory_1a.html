@@ -186,9 +186,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">
-      Resampling statistics
-      </a> 
+      <a href="./">Resampling statistics</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -476,6 +474,8 @@ window.Quarto = {
   <li><a href="#sec-multiplication-rule" id="toc-sec-multiplication-rule" class="nav-link" data-scroll-target="#sec-multiplication-rule"><span class="header-section-number">8.12</span> Multiplication rule</a></li>
   <li><a href="#sec-cond-uncond" id="toc-sec-cond-uncond" class="nav-link" data-scroll-target="#sec-cond-uncond"><span class="header-section-number">8.13</span> Conditional and unconditional probabilities</a></li>
   <li><a href="#sec-shuffling" id="toc-sec-shuffling" class="nav-link" data-scroll-target="#sec-shuffling"><span class="header-section-number">8.14</span> Shuffling with <span class="r"><code>sample</code></span></a></li>
+  <li><a href="#code-answers-to-the-cards-and-pennies-problem" id="toc-code-answers-to-the-cards-and-pennies-problem" class="nav-link" data-scroll-target="#code-answers-to-the-cards-and-pennies-problem"><span class="header-section-number">8.15</span> Code answers to the cards and pennies problem</a></li>
+  <li><a href="#the-commanders-again-plus-leaving-the-game-early" id="toc-the-commanders-again-plus-leaving-the-game-early" class="nav-link" data-scroll-target="#the-commanders-again-plus-leaving-the-game-early"><span class="header-section-number">8.16</span> The Commanders again, plus leaving the game early</a></li>
   </ul>
 </nav>
     </div>
@@ -608,6 +608,9 @@ R\)</span> the <em>complement</em> of <span class="math inline">\(R\)</span>.</p
 <p>For example, say we call the event “Commanders win the game” as <span class="math inline">\(W\)</span>. One example of a <em>compound event</em> (see above) would be the event <span class="math inline">\(W \text{and} R\)</span>, meaning, the event where the Commanders won the game <em>and</em> it rained.</p>
 </div>
 </div>
+<!---
+End of callout note.
+-->
 </section>
 <section id="sec-addition-rule" class="level2" data-number="8.7">
 <h2 data-number="8.7" class="anchored" data-anchor-id="sec-addition-rule"><span class="header-section-number">8.7</span> Mutually exclusive events — the addition rule</h2>
@@ -692,13 +695,24 @@ Figure&nbsp;8.1: Tree diagram
 <p>The indented stuff above is the <em>body</em> of the <code>if</code> statement. It is the stuff we do <code>if</code> the <em>conditional</em> at the top is True.</p>
 <p>Now let’s see how we would write that in R.</p>
 <p>Let’s make bucket A. Remember, this is the <em>weather</em> bucket. It has seven blue balls (for 70% fine days) and 3 yellow balls (for 30% rainy days). See <a href="sampling_tools.html#sec-repeating" class="quarto-xref"><span>Section 7.6</span></a> for the <span class="r"><code>rep</code></span> way of repeating elements multiple times.</p>
-<div class="notebook" name="fine_win" title="Fine day and win">
-<p>Start of <code>fine_win</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/fine_win.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=fine_win.ipynb">Interact</a>
+<div id="nte-fine_win" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;8.1: Notebook: Fine day and win
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/fine_win.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=fine_win.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="fine_win" title="Fine day and win">
 
+</div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># blue means "nice day", yellow means "not nice".</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>bucket_A <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">'blue'</span>, <span class="st">'yellow'</span>), <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">3</span>))</span>
@@ -717,6 +731,9 @@ Figure&nbsp;8.1: Tree diagram
 </div>
 </div>
 <p>How we run our first <code>if</code> statement. Running this code will display “The ball was blue” if the ball was blue, otherwise it will not display anything:</p>
+<!---
+End of Python block.
+-->
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (a_ball <span class="sc">==</span> <span class="st">'blue'</span>) {</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(<span class="st">'The ball was blue'</span>)</span>
@@ -728,6 +745,9 @@ Figure&nbsp;8.1: Tree diagram
 <div class="r">
 <p>Notice that the header line has <code>if</code>, followed by an open parenthesis <code>(</code> introducing the <em>conditional expression</em> <code>a_ball == 'blue'</code>. There follows close parenthesis <code>)</code> to finish the conditional expression. Next there is a open curly brace <code>{</code> to signal the start of the body of the <code>if</code> statement. The <em>body</em> of the <code>if</code> statement is one or more lines of code, followed by the close curly brace <code>}</code>. Here there is only one line: <code>message('The ball was blue')</code>. R only runs the body of the if statement if the <em>condition</em> is <code>TRUE</code>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 </div>
+<!---
+End of R block
+-->
 <p>To confirm we see “The ball was blue” if <code>a_ball</code> is <code>'blue'</code> and nothing otherwise, we can set <code>a_ball</code> and re-run the code:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set value of a_ball so we know what it is.</span></span>
@@ -856,8 +876,25 @@ Figure&nbsp;8.1: Tree diagram
 </div>
 </div>
 <p>The above procedure gives us the probability that it will be a nice day and the Commanders will win — about 46.1%.</p>
-<p>End of <code>fine_win</code> notebook</p>
+<div class="nb-end">
+
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Fine day and win
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>fine_win</code> starts at <a href="#nte-fine_win" class="quarto-xref">Note&nbsp;<span>8.1</span></a>.</p>
+</div>
+</div>
+<!---
+End of notebook.
+-->
 <p>Let’s say that we think that the Commanders have a 0.55 (55%) chance of winning on a not-nice day. With the aid of a bucket with a different composition — one made by substituting 55 green and 45 yellow balls in Step 4 — a similar procedure yields the chance that it will be a <em>nasty</em> day and the Commanders will win. With a similar substitution and procedure we could also estimate the probabilities that it will be a nasty day and the Commanders will lose, and a nice day and the Commanders will lose. The sum of these probabilities should come close to unity, because the sum includes all the possible outcomes. But it will not <em>exactly</em> equal unity because of what we call “sampling variation” or “sampling error.”</p>
 <p>Please notice that each trial of the procedure begins with the same numbers of balls in the buckets as the previous trial. That is, you must replace the balls you draw after each trial in order that the probabilities remain the same from trial to trial. Later we will discuss the general concept of replacement versus non-replacement more fully.</p>
 </section>
@@ -939,6 +976,135 @@ P(\text{nice day and win}) = P(\text{nice day}) * P(\text{winning | nice day})
 </div>
 </div>
 </div>
+<!---
+End of Python block.
+-->
+<p>See <a href="probability_theory_2_compound.html#sec-shuffling-deck" class="quarto-xref"><span>Section 11.4</span></a> for some more discussion of shuffling and sampling without replacement.</p>
+</section>
+<section id="code-answers-to-the-cards-and-pennies-problem" class="level2" data-number="8.15">
+<h2 data-number="8.15" class="anchored" data-anchor-id="code-answers-to-the-cards-and-pennies-problem"><span class="header-section-number">8.15</span> Code answers to the cards and pennies problem</h2>
+<div id="nte-cards_pennies" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;8.2: Notebook: Cards and pennies
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/cards_pennies.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=cards_pennies.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="cards_pennies" title="Cards and pennies">
+
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Numbers representing the slips in the hat.</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># An array in which we will store the result of each trial.</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="st">'No result yet'</span>, <span class="dv">10000</span>)</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>) {</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># sample, used in this way, has the effect of shuffling the vector</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># into a random order.  See the section linked above for an explanation.</span></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>    shuffled <span class="ot">&lt;-</span> <span class="fu">sample</span>(N)</span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>    A <span class="ot">&lt;-</span> shuffled[<span class="dv">1</span>]  <span class="co"># The first slip from the shuffled array.</span></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>    B <span class="ot">&lt;-</span> shuffled[<span class="dv">2</span>]  <span class="co"># The second slip from the shuffled array.</span></span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Set the result of this trial.</span></span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (A <span class="sc">==</span> B) {</span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>        z[i] <span class="ot">&lt;-</span> <span class="st">'Yes'</span></span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>        z[i] <span class="ot">&lt;-</span> <span class="st">'No'</span></span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>}  <span class="co"># End of the loop.</span></span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a><span class="co"># How many times did we see "Yes"?</span></span>
+<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">sum</span>(z <span class="sc">==</span> <span class="st">'Yes'</span>)</span>
+<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a><span class="co"># The proportion.</span></span>
+<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a>kk <span class="ot">&lt;-</span> k <span class="sc">/</span> <span class="dv">10000</span></span>
+<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(kk)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>0.3273</code></pre>
+</div>
+</div>
+<p>Now let’s play the game differently, first picking one card and <em>putting it back and shuffling</em> before picking a second card. What are the results now? You can try it with the cards, but here is another program, similar to the last, to run that variation.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># An array in which we will store the result of each trial.</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="st">'No result yet'</span>, <span class="dv">10000</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>) {</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Shuffle the numbers in N into a random order.</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    first_shuffle <span class="ot">&lt;-</span> <span class="fu">sample</span>(N)</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Draw a slip of paper.</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    A <span class="ot">&lt;-</span> first_shuffle[<span class="dv">1</span>]  <span class="co"># The first slip.</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Shuffle again (with all the slips).</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>    second_shuffle <span class="ot">&lt;-</span> <span class="fu">sample</span>(N)</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Draw a slip of paper.</span></span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>    B <span class="ot">&lt;-</span> second_shuffle[<span class="dv">1</span>]  <span class="co"># The second slip.</span></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Set the result of this trial.</span></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (A <span class="sc">==</span> B) {</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>        z[i] <span class="ot">&lt;-</span> <span class="st">'Yes'</span></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>        z[i] <span class="ot">&lt;-</span> <span class="st">'No'</span></span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>}  <span class="co"># End of the loop.</span></span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a><span class="co"># How many times did we see "Yes"?</span></span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">sum</span>(z <span class="sc">==</span> <span class="st">'Yes'</span>)</span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a><span class="co"># The proportion.</span></span>
+<span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a>kk <span class="ot">&lt;-</span> k <span class="sc">/</span> <span class="dv">10000</span></span>
+<span id="cb32-28"><a href="#cb32-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-29"><a href="#cb32-29" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(kk)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>0.5059</code></pre>
+</div>
+</div>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Cards and pennies
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>cards_pennies</code> starts at <a href="#nte-cards_pennies" class="quarto-xref">Note&nbsp;<span>8.2</span></a>.</p>
+</div>
+</div>
+<!---
+End of notebook.
+-->
+<p>Why do you get different results in the two cases? Let’s ask the question differently: What is the probability of first picking a black card? Clearly, it is 50-50, or 0.5. Now, if you first pick a black card, what is the probability in the first game above of getting a second black card? There are two red and one black cards left, so now p = 1/3.</p>
+<p>But in the second game, what is the probability of picking a second black card if the first one you pick is black? It is still 0.5 because we are <em>sampling with replacement.</em></p>
+<p>The probability of picking a second black card <em>conditional on picking a first black card</em> in the first game is 1/3, and it is different from the unconditional probability of picking a black card first. But in the second game the probability of the second black card conditional on first picking a black card is the same as the probability of the first black card.</p>
+<p>So the reason you lose money if you play the first game at even odds against a carnival game operator is because the conditional probability is different than the original probability.</p>
+<p>And an illustrative joke: The best way to avoid there being a live bomb aboard your plane flight is to take an inoperative bomb aboard with you; the probability of one bomb is very low, and by the multiplication rule, <em>the probability of two bombs is very very low</em>. Two hundred years ago the same joke was told about the midshipman who, during a battle, stuck his head through a hole in the ship’s side that had just been made by an enemy cannon ball because he had heard that the probability of two cannonballs striking in the same place was one in a million.</p>
+<p>What’s wrong with the logic in the joke? The probability of there being a bomb aboard already, <em>conditional on</em> your bringing a bomb aboard, is the same as the conditional probability if you do <em>not</em> bring a bomb aboard. Hence you change nothing by bringing a bomb aboard, and do not reduce the probability of an explosion.</p>
+</section>
+<section id="the-commanders-again-plus-leaving-the-game-early" class="level2" data-number="8.16">
+<h2 data-number="8.16" class="anchored" data-anchor-id="the-commanders-again-plus-leaving-the-game-early"><span class="header-section-number">8.16</span> The Commanders again, plus leaving the game early</h2>
+<p>Let’s carry exactly the same process one tiny step further. Assume that if the Commanders win, there is a 0.3 chance you will leave the game early. Now let us ask the probability of a nice day, the Commanders winning, and you leaving early. You should be able to see that this probability can be estimated with three buckets instead of two. Or it can be computed with the multiplication rule as 0.65 * 0.7 * 0.3 = 0.1365 (about 0.14) — the probability of a nice day and a win and you leave early.</p>
+<p>The book shows you the formal method — the multiplication rule, in this case — for several reasons: 1) Simulation is weak with very low probabilities, e.g.&nbsp;P(50 heads in 50 throws). But — a big but — <em>statistics</em> and probability is seldom concerned with very small probabilities. Even for games like poker, the orders of magnitude of 5 aces in a wild game with joker, or of a royal flush, matter little. 2) The multiplication rule is wonderfully handy and convenient for quick calculations in a variety of circumstances. A back-of-the-envelope calculation can be quicker than a simulation. And it can also be useful in situations where the probability you will calculate will be very small, in which case simulation can require considerable computer time to be accurate. (We will shortly see this point illustrated in the case of estimating the rate of transmission of AIDS by surgeons.) 3) It is useful to know the theory so that you are able to talk to others, or if you go on to other courses in the mathematics of probability and statistics.</p>
+<p>The multiplication rule also has the drawback of sometimes being confusing, however. If you are in the slightest doubt about whether the circumstances are correct for applying it, you will be safer to perform a simulation as we did earlier with the Commanders, though in practice you are likely to simulate with the aid of a computer program, as we shall see shortly. So use the multiplication rule only when there is no possibility of confusion. Usually that means using it only when the events under consideration are independent.</p>
+<p>Notice that the same multiplication rule gives us the probability of <em>any particular sequence</em> of hits and misses — say, a miss, then a hit, then a hit if the probability of a single miss is 2/3. Among the 2/3 of the trials with misses on the first shot, 1/3 will next have a hit, so 2/3 x 1/3 equals the probability of a miss then a hit. Of those 2/9 of the trials, 1/3 will then have a hit, or 2/3 x 1/3 x 1/3 = 2/27 equals the probability of the sequence miss-hit-hit.</p>
+<p>The multiplication rule is very useful in everyday life. It fits closely to a great many situations such as “What is the chance that it will rain (.3) and that (if it does rain) the plane will not fly (.8)?” Hence the probability of your not leaving the airport today is 0.3 x 0.8 = 0.24.</p>
+
+
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-gardner2001colossal" class="csl-entry" role="listitem">
 Gardner, Martin. 2001. <em>The Colossal Book of Mathematics</em>. W.W. Norton &amp; Company Inc., New York. <a href="https://archive.org/details/B-001-001-265">https://archive.org/details/B-001-001-265</a>.
@@ -949,7 +1115,7 @@ Gardner, Martin. 2001. <em>The Colossal Book of Mathematics</em>. W.W. Norton &a
 <hr>
 <ol>
 <li id="fn1"><p>“Universe” and “population” are perfect synonyms in scientific research. We choose to use “universe” because it seems to have fewer confusing associations.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>In this case, the result of the conditional expression is in fact either <code>TRUE</code> or <code>FALSE</code>. R is more liberal on what it allows in the conditional expression; it will take whatever the result is, and then force the result into either <code>TRUE</code> or <code>FALSE</code>, in fact, by wrapping the result with the <span class="r"><code>logical</code></span> function, that takes anything as input, and returns either <code>TRUE</code> or <code>FALSE</code>. Therefore, we could refer to the result of the conditional expression as something “truthy” — that is - something that comes back as <code>TRUE</code> or <code>FALSE</code> from the <span class="r"><code>logical</code></span> function. In the case here, that does not arise, because the result is in fact either exactly <code>TRUE</code> or exactly <code>FALSE</code>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>In this case, the result of the conditional expression is in fact either <code>TRUE</code> or <code>FALSE</code>. R is more liberal on what it allows in the conditional expression; it will take whatever the result is, and then force the result into either <code>TRUE</code> or <code>FALSE</code>, in fact, by wrapping the result with the <code>logical</code> function, that takes anything as input, and returns either <code>TRUE</code> or <code>FALSE</code>. Therefore, we could refer to the result of the conditional expression as something “truthy” — that is - something that comes back as <code>TRUE</code> or <code>FALSE</code> from the <code>logical</code> function. In the case here, that does not arise, because the result is in fact either exactly <code>TRUE</code> or exactly <code>FALSE</code>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

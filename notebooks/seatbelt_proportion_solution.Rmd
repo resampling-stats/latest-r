@@ -1,6 +1,8 @@
 # Seatbelt proportion solution
 
 
+Find this notebook on the web at Note .
+
 ```{r}
 pittsburgh <- rep(c('seatbelt', 'none'), c(36, 36))
 n_pitts <- length(pittsburgh)

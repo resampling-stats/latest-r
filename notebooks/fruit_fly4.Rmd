@@ -1,6 +1,8 @@
 # Fruit fly simulation of four groups
 
 
+Find this notebook on the web at Note .
+
 This notebook uses simulation to test whether a result of 14 or more
 males, or 14 or more females, can frequently arise by chance, if we look
 at four groups at a time, in one trial.

@@ -1,6 +1,8 @@
 # One pair
 
 
+Find this notebook on the web at Note .
+
 This is a simulation to find the probability of exactly one pair in a
 poker hand of five cards.
 

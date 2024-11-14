@@ -1,6 +1,8 @@
 # Association of athletic and IQ scores
 
 
+Find this notebook on the web at Note .
+
 We use random pairings of the athletic and IQ scores to find the
 null-world distribution of the sum of the products of these scores.
 

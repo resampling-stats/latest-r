@@ -1,6 +1,8 @@
 # A problem of black and brown mice
 
 
+Find this notebook on the web at Note .
+
 Solve the Box and Tao problem of parental probabilities for black and
 brown mice. See the text for full explanation.
 

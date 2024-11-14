@@ -1,6 +1,8 @@
 # Sample size for an internet contract poll
 
 
+Find this notebook on the web at Note .
+
 We want to know how many voters we should survey to be confident that
 the ratio that approve a proposal (to give an internet contract) has
 better than 50:50 approval. We are thinking of taking a sample size of

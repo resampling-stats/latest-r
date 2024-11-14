@@ -1,6 +1,8 @@
 # Four girls and one boy
 
 
+Find this notebook on the web at Note .
+
 What is the probability of selecting four girls and one boy when
 selecting five students from any group of twenty-five girls and
 twenty-five boys?

@@ -1,6 +1,8 @@
 # Sample size for detecting fruitfly sex difference
 
 
+Find this notebook on the web at Note .
+
 We are interested in a procedure to change the sex ratio of fruit flies
 to give more males. We are going to take samples of 80 flies. We know
 that, in order to detect a convincing difference from a 50:50 ratio, we

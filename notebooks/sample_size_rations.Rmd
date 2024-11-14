@@ -1,6 +1,8 @@
 # Sample size for pig rations with bootstrap
 
 
+Find this notebook on the web at Note .
+
 Use the bootstrap (resampling with replacement) procedure to find the
 plausible differences between two rations in the benchmark (combined)
 universe.

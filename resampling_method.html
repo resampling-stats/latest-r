@@ -415,7 +415,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#randomness-from-physical-methods" id="toc-randomness-from-physical-methods" class="nav-link" data-scroll-target="#randomness-from-physical-methods"><span class="header-section-number">2.1.1</span> Randomness from physical methods</a></li>
   </ul></li>
   <li><a href="#sec-randomness-computer" id="toc-sec-randomness-computer" class="nav-link" data-scroll-target="#sec-randomness-computer"><span class="header-section-number">2.2</span> Randomness from your computer</a></li>
-  <li><a href="#solving-the-problem-using" id="toc-solving-the-problem-using" class="nav-link" data-scroll-target="#solving-the-problem-using"><span class="header-section-number">2.3</span> Solving the problem using R</a></li>
+  <li><a href="#solving-the-problem-using" id="toc-solving-the-problem-using" class="nav-link" data-scroll-target="#solving-the-problem-using"><span class="header-section-number">2.3</span> Solving the problem using R</a>
+  <ul class="collapse">
+  <li><a href="#repeating-trials" id="toc-repeating-trials" class="nav-link" data-scroll-target="#repeating-trials">2.3.1 Repeating trials</a></li>
+  <li><a href="#the-solution" id="toc-the-solution" class="nav-link" data-scroll-target="#the-solution">2.3.2 The solution</a></li>
+  </ul></li>
   <li><a href="#sec-resamp-differs" id="toc-sec-resamp-differs" class="nav-link" data-scroll-target="#sec-resamp-differs"><span class="header-section-number">2.4</span> How resampling differs from the conventional approach</a></li>
   </ul>
 </nav>
@@ -1592,27 +1596,36 @@ Coming back to the example
 <!---
 End of callout note.
 -->
-<div class="notebook" name="ambulances" title="Ambulances">
-<p>Start of <code>ambulances</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/ambulances.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=ambulances.ipynb">Interact</a>
+<div id="nte-ambulances" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;2.1: Notebook: Ambulances
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/ambulances.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=ambulances.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="ambulances" title="Ambulances">
 
+</div>
 <div id="nte-comments" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note&nbsp;2.1: Comments in code
+Note&nbsp;2.2: Comments in code
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>The first thing to say about the code you will see below is there are some lines that do not do anything; these are the lines beginning with a <code>#</code> character (read <code>#</code> as “hash”). Lines beginning with <code>#</code> are called <em>comments</em>. When R sees a <code>#</code> at the start of a line, it ignores everything else on that line, and skips to the next. Here’s an example of a comment:</p>
-<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># R will completely ignore this text.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <p>Because R ignores lines beginning with <code>#</code>, the text after the <code>#</code> is just for us, the humans reading the code. The person writing the code will often use comments to explain what the code is doing.</p>
 </div>
 </div>
@@ -1656,11 +1669,11 @@ Note&nbsp;2.1: Comments in code
 <pre><code>[1] 0</code></pre>
 </div>
 </div>
-<p>to count the number of values equal to 9 in the sequence <code>a</code>. For now just read <span class="r">sum(a == 9</span> as “count the number of 9s in <code>a</code>”. We will explain how this code works fairly soon (<a href="resampling_with_code.html#sec-counting-results" class="quarto-xref"><span>Section 5.12</span></a>).</p>
-<p>The <code>sum</code> command is a <em>counting</em> operation. It asks the computer to <em>count</em> the number of <code>9</code>s among the 16 numbers that are in location <code>a</code> following the random draw carried out by the <span class="r"><code>sample</code></span> operation. The result of the <code>sum</code> operation will be somewhere between 0 and 16, the number of simulated ambulances that were out-of-order on a given simulated day. The result is then placed in another location in the computer’s memory that we label <code>b</code>.</p>
+<p>to count the number of values equal to 9 in the sequence <code>a</code>. For now just read sum(a == 9 as “count the number of 9s in <code>a</code>”. We will explain how this code works fairly soon (<a href="resampling_with_code.html#sec-counting-results" class="quarto-xref"><span>Section 5.12</span></a>).</p>
+<p>The <code>sum</code> command is a <em>counting</em> operation. It asks the computer to <em>count</em> the number of <code>9</code>s among the 16 numbers that are in location <code>a</code> following the random draw carried out by the <code>sample</code> operation. The result of the <code>sum</code> operation will be somewhere between 0 and 16, the number of simulated ambulances that were out-of-order on a given simulated day. The result is then placed in another location in the computer’s memory that we label <code>b</code>.</p>
 <p>Above you see that we have worked out how to tell the computer to do a single trial — one simulated day.</p>
 <section id="repeating-trials" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="repeating-trials"><span class="header-section-number">2.3.1</span> Repeating trials</h3>
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="repeating-trials">2.3.1 Repeating trials</h3>
 <p>We could run the code above for one trial over and over, and write down the result on a piece of paper. If we did this 100 times we would have 100 counts of the number of simulated ambulances that had broken down for each simulated day. To answer our question, we will then count the number of times the count was three or more, and divide by 100, to get an estimate of the proportion of days with three or more out-of-order ambulances.</p>
 <p>One of the most useful things about the computer is that it is very good at repeating tasks many times. Our next job is to ask the computer to repeat the single trial many times — say 1000 times — and count up the results for us.</p>
 <p>Of course R is very good at repeating things, but the instructions to tell R to repeat things will take a little while to get used to. Soon, we will spend some time going over it in more detail. For now though, we show you how what it looks like, and ask you to take our word for it.</p>
@@ -1694,7 +1707,7 @@ Hello</code></pre>
 <p>With these parts, we are now ready to solve the ambulance problem, using R.</p>
 </section>
 <section id="the-solution" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="the-solution"><span class="header-section-number">2.3.2</span> The solution</h3>
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="the-solution">2.3.2 The solution</h3>
 <p>This is our big moment! We will combine the elements shown above to perform our ambulance simulation over, say, 1000 days. Just a quick reminder: we do not expect you to understand all the detail of the code below; we will cover that later. For now, see if you can follow along with the gist of it.</p>
 <p>To solve resampling problems, we typically proceed as we have done above. We figure out the structure of a single trial and then place that trial in a <code>for</code> loop that executes it multiple times (once for each day, in our case).</p>
 <p>Now, let us apply this procedure to our ambulance problem. We simulate 1000 days. You will see that we have just taken the parts above, and put them together. The only new part here, is the step at the end, where we store the result of the trial. Bear with us for that; we will come to it soon.</p>
@@ -1727,7 +1740,7 @@ Hello</code></pre>
 <span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Now go back and repeat the trial, until done.</span></span>
 <span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The <span class="r"><code>z[i] &lt;- b</code></span> statement that follows the <code>sum</code> <em>counting</em> operation simply keeps track of the results of each trial, placing the number of defective ambulances for each trial inside the sequence called <code>z</code>. The sequence has 1000 positions: one for each trial.</p>
+<p>The <code>z[i] &lt;- b</code> statement that follows the <code>sum</code> <em>counting</em> operation simply keeps track of the results of each trial, placing the number of defective ambulances for each trial inside the sequence called <code>z</code>. The sequence has 1000 positions: one for each trial.</p>
 <p>When we have run the code above, we have stored 1000 trial results in the sequence <code>z</code>. These are 1000 counts of out-of-order ambulances, one for each of our simulated days. Our last task is to calculate the proportion of these days for which we had more than three broken-down ambulances.</p>
 <p>Since our aim is to count the number of days in which three or more defective ambulances occur, we use another <em>counting</em> <code>sum</code> command at the end of the 1000 trials. This command <em>counts</em> how many times three or more defects occurred in the 1000 days recorded in our <code>z</code> sequence, and we place the result in another location, <code>k</code>. The value of <code>k</code> gives us the total number of days where 3 or more defective ambulances are seen to occur. Then we divide the number in <code>k</code> by 1000, the number of trials. Thus we obtain an estimate of the chance, expressed as a probability between 0 and 1, that 3 or more ambulances will be defective on a given day. And we store that result in a location that we call <code>kk</code>, which R subsequently prints to the screen.</p>
 <div class="cell" data-layout-align="center">
@@ -1764,8 +1777,21 @@ Hello</code></pre>
 <pre><code>0.214</code></pre>
 </div>
 </div>
-<p>End of <code>ambulances</code> notebook</p>
-</section>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Ambulances
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>ambulances</code> starts at <a href="#nte-ambulances" class="quarto-xref">Note&nbsp;<span>2.1</span></a>.</p>
+</div>
 </div>
 <!---
 End of ambulances notebook.
@@ -1787,6 +1813,7 @@ Randomness in estimates
 </div>
 <p>Don’t worry about the detail of how each of these commands works — we will cover those details gradually, over the next few chapters. But, we hope that you can see, in principle, how each of the operations that the computer carries out are analogous to the operations that you yourself executed when you solved this problem using the ten-sided dice. This is exactly the procedure that we will use to solve every problem in probability and statistics that we must deal with.</p>
 <p>While writing programs like these take a bit of getting used to, it is vastly simpler than the older, more conventional approaches to such problems routinely taught to students.</p>
+</section>
 </section>
 <section id="sec-resamp-differs" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="sec-resamp-differs"><span class="header-section-number">2.4</span> How resampling differs from the conventional approach</h2>

@@ -1,6 +1,8 @@
 # Simulation of offender strategies
 
 
+Find this notebook on the web at Note .
+
 This notebook uses simulation to test the null hypothesis that the four
 treatments in question were each equally effective.
 

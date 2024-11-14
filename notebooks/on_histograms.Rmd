@@ -1,6 +1,8 @@
 # Plotting histograms
 
 
+Find this notebook on the web at Note .
+
 A histogram is a visual way to show the *distribution* of a sequence of
 values.
 

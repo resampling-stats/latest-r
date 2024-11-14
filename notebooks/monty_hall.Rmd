@@ -1,6 +1,8 @@
 # The Monty Hall problem
 
 
+Find this notebook on the web at Note .
+
 Here we do a R simulation of the Monty Hall problem.
 
 The Monty Hall problem has a slightly complicated structure, so we will
@@ -209,9 +211,7 @@ message('p for switch: ', p_for_switch)
 ```
 
 We can also follow the same strategy as we used for the second
-implementation of the two-ships problem
-(<a href="#sec-ships-booleans" class="quarto-xref"><span
-class="quarto-unresolved-ref">sec-ships-booleans</span></a>).
+implementation of the two-ships problem (Section ).
 
 Here, as in the second two-ships implementation, we do not calculate the
 trial results (`stay_wins`, `switch_wins`) in each trial. Instead, we
@@ -265,7 +265,7 @@ message('p for stay: ', p_for_stay)
 message('p for switch: ', p_for_switch)
 ```
 
-### 10.8.1 Insight from the Monty Hall simulation
+### Insight from the Monty Hall simulation
 
 The code simulation gives us an estimate of the right answer, but it
 also forces us to set out the exact mechanics of the problem. For
@@ -297,7 +297,7 @@ the probability that our *initial guess* is right, and that must be 1 in
 one other door to switch to, the probability of winning after switching
 must be 2 in 3 (0.666).
 
-### 10.8.2 Simulation and a variant of Monty Hall
+### Simulation and a variant of Monty Hall
 
 You have seen that you can avoid the silly mistakes that many of us make
 with probability — by asking the computer to tell you the result

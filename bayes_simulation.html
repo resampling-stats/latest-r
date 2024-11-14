@@ -522,13 +522,24 @@ window.Quarto = {
 <li>Out of all cars “approved”, count how many are “faulty”. The ratio between these numbers is our answer.</li>
 </ol>
 <p>Here is the whole simulation of the car / mechanic problem:</p>
-<div class="notebook" name="bayes_cars" title="Bayesian analysis of cars and mechanics">
-<p>Start of <code>bayes_cars</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/bayes_cars.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=bayes_cars.ipynb">Interact</a>
+<div id="nte-bayes_cars" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;31.1: Notebook: Bayesian analysis of cars and mechanics
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/bayes_cars.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=bayes_cars.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="bayes_cars" title="Bayesian analysis of cars and mechanics">
 
+</div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>n_trials <span class="ot">&lt;-</span> <span class="dv">10000</span>  <span class="co"># number of cars</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -634,7 +645,21 @@ window.Quarto = {
 </div>
 </div>
 <p>The code now runs much faster, and with a larger number of cars we see that the answer is closer to a 5% chance of a car being broken after it has been approved by a mechanic.</p>
-<p>End of <code>bayes_cars</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Bayesian analysis of cars and mechanics
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>bayes_cars</code> starts at <a href="#nte-bayes_cars" class="quarto-xref">Note&nbsp;<span>31.1</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook
@@ -747,13 +772,24 @@ P(B | A) = P(B \text{ and } A) / P(A)
 </ul>
 <p><img src="diagrams/covid-tree.png" class="img-fluid"></p>
 <p>Again, we start with our simulation.</p>
-<div class="notebook" name="bayes_covid" title="Bayesian analysis of Covid test result">
-<p>Start of <code>bayes_covid</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/bayes_covid.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=bayes_covid.ipynb">Interact</a>
+<div id="nte-bayes_covid" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;31.2: Notebook: Bayesian analysis of Covid test result
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/bayes_covid.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=bayes_covid.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="bayes_covid" title="Bayesian analysis of Covid test result">
 
+</div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The number of people.</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>n_trials <span class="ot">&lt;-</span> <span class="dv">1000000</span></span>
@@ -812,7 +848,21 @@ P(B | A) = P(B \text{ and } A) / P(A)
 </div>
 </div>
 <p>This gives around 0.006 or 0.6%.</p>
-<p>End of <code>bayes_covid</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Bayesian analysis of Covid test result
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>bayes_covid</code> starts at <a href="#nte-bayes_covid" class="quarto-xref">Note&nbsp;<span>31.2</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook.
@@ -852,13 +902,24 @@ P(T^-) = P(T^- | C^-) * P(C^-) + P(T^- | C^+) * P(C^+)
 <section id="estimating-driving-risk-for-insurance-purposes" class="level3" data-number="31.2.4">
 <h3 data-number="31.2.4" class="anchored" data-anchor-id="estimating-driving-risk-for-insurance-purposes"><span class="header-section-number">31.2.4</span> Estimating Driving Risk for Insurance Purposes</h3>
 <p>Another sort of introductory problem, following after <span class="citation" data-cites="feller1968introduction">(<a href="references.html#ref-feller1968introduction" role="doc-biblioref">Feller 1968</a>, p 122)</span>:</p>
-<div class="notebook" name="bayes_accidents" title="Bayesian analysis for insurance premium">
-<p>Start of <code>bayes_accidents</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/bayes_accidents.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=bayes_accidents.ipynb">Interact</a>
+<div id="nte-bayes_accidents" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;31.3: Notebook: Bayesian analysis for insurance premium
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/bayes_accidents.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=bayes_accidents.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="bayes_accidents" title="Bayesian analysis for insurance premium">
 
+</div>
 <p>A mutual insurance company charges its members according to the risk of having an car accident. It is known that there are two classes of people — 80 percent of the population with good driving judgment and with a probability of .06 of having an accident each year, and 20 percent with poor judgment and a probability of .6 of having an accident each year. The company’s policy is to charge $100 for each percent of risk, i. e., a driver with a probability of .6 should pay 60*$100 = $6000.</p>
 <p>If nothing is known of a driver except that they had an accident last year, what fee should they pay?</p>
 <p>Another way to phrase this question is: given that a driver had an accident last year, what is the probability of them having an accident overall?</p>
@@ -915,7 +976,21 @@ P(T^-) = P(T^- | C^-) * P(C^-) + P(T^- | C^+) * P(C^+)
 </div>
 </div>
 <p>The answer should be around 4450 USD.</p>
-<p>End of <code>bayes_accidents</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Bayesian analysis for insurance premium
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>bayes_accidents</code> starts at <a href="#nte-bayes_accidents" class="quarto-xref">Note&nbsp;<span>31.3</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook.
@@ -1008,13 +1083,24 @@ Table&nbsp;31.1: Probabilities for Genetic Character of Mice Offspring
 <!---
 TODO - explain continue in more detail?  Have we covered `np.all`?
 -->
-<div class="notebook" name="box_tao_mice" title="A problem of black and brown mice">
-<p>Start of <code>box_tao_mice</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/box_tao_mice.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=box_tao_mice.ipynb">Interact</a>
+<div id="nte-box_tao_mice" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;31.4: Notebook: A problem of black and brown mice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/box_tao_mice.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=box_tao_mice.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="box_tao_mice" title="A problem of black and brown mice">
 
+</div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>n_trials <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1081,120 +1167,104 @@ TODO - explain continue in more detail?  Have we covered `np.all`?
 </div>
 <p>We see that all the offspring being black considerably changes the situation! We started with the odds being 2:1 in favor of Bb vs BB. The “posterior” or “after the evidence” ratio is closer to 64:1 in favor of <em>BB</em>! (1973, pp. 12-14)</p>
 <p>Let’s tune the code a bit to run faster. Instead of doing the trials one mouse at a time, we will do the whole bunch together.</p>
-<p>To do this, we will use <span class="r">matrices</span>.</p>
+<p>To do this, we will use matrices.</p>
 <div class="r">
 <p>So far, we have used one-dimensional <em>vectors</em> in R. A vector is a sequence of values. Let us generate a vector with <code>sample</code>, as we have many times in this book, and in this chapter.</p>
-<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A vector with five elements.</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>a_vector <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">size=</span><span class="dv">5</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>a_vector</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2 2 1 2 1</code></pre>
-</div>
-</div>
 <p>However, we can also generate <em>matrices</em> in R. Matrices have two dimensions; it has rows and columns, much like a data frame. Here is a matrix we create with <code>sample</code>, by first making a vector, and then reshaping the vector into a matrix.</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A vector with 15 values.</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>another_vector <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">size=</span><span class="dv">15</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># A matrix with five rows and three columns.</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>a_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(another_vector, <span class="at">ncol=</span><span class="dv">3</span>)</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>a_matrix</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     [,1] [,2] [,3]
-[1,]    1    1    1
-[2,]    1    1    2
-[3,]    2    2    2
-[4,]    1    1    1
-[5,]    2    2    2</code></pre>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A vector with 15 values.</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>another_vector <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">size=</span><span class="dv">15</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># A matrix with five rows and three columns.</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>a_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(another_vector, <span class="at">ncol=</span><span class="dv">3</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>a_matrix</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>As usual, we can apply Boolean comparison operations to this matrix, to get a Boolean matrix:</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>is_2 <span class="ot">&lt;-</span> a_matrix <span class="sc">==</span> <span class="dv">2</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>is_2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>      [,1]  [,2]  [,3]
-[1,] FALSE FALSE FALSE
-[2,] FALSE FALSE  TRUE
-[3,]  TRUE  TRUE  TRUE
-[4,] FALSE FALSE FALSE
-[5,]  TRUE  TRUE  TRUE</code></pre>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>is_2 <span class="ot">&lt;-</span> a_matrix <span class="sc">==</span> <span class="dv">2</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>is_2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>R has functions to operate over rows and columns of a matrix. In particular, is has a function <code>rowSums</code> that gives the sum of values in the row (and therefore, the sum over the columns, for each row). For example, to see how many of the values in each row are equal to 2, we can do:</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>n_2s_in_rows <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(is_2)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>n_2s_in_rows</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0 1 3 0 3</code></pre>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>n_2s_in_rows <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(is_2)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>n_2s_in_rows</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Notice that we get one answer for each row, where the answer is the <code>sum</code> across the columns, for that row.</p>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>n_trials <span class="ot">&lt;-</span> <span class="dv">1000000</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># In n_trials trials, pair two Bb mice and generate a child.</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>test_mice <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'BB'</span>, <span class="st">'Bb'</span>, <span class="st">'bb'</span>),</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">size=</span>n_trials,</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">replace=</span><span class="cn">TRUE</span>,</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">prob=</span><span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.25</span>))</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="co"># The resulting test mouse is black, so filter out all brown ones.</span></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>test_mice <span class="ot">&lt;-</span> test_mice[test_mice <span class="sc">!=</span> <span class="st">'bb'</span>]</span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>n_test_mice <span class="ot">&lt;-</span> <span class="fu">length</span>(test_mice)</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Each test mouse will now be mated with a brown mouse, producing 7 offspring.</span></span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="co"># We then store whether all the offspring were black or not.</span></span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>all_offspring_black <span class="ot">&lt;-</span> <span class="fu">logical</span>(n_test_mice)</span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="co"># If a test mouse is 'BB', we are assured that all its offspring</span></span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="co"># will be black.</span></span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>all_offspring_black[test_mice <span class="sc">==</span> <span class="st">'BB'</span>] <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a><span class="co"># If a test mouse is 'Bb', we have to generate its offspring and</span></span>
-<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a><span class="co"># see whether they are all black or not</span></span>
-<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>test_mice_Bb <span class="ot">&lt;-</span> (test_mice <span class="sc">==</span> <span class="st">'Bb'</span>)</span>
-<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>n_test_mice_Bb <span class="ot">&lt;-</span> <span class="fu">sum</span>(test_mice_Bb)</span>
-<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate all offspring of all 'Bb' test mice</span></span>
-<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a><span class="co"># This gives 7 children for each Bb mouse.</span></span>
-<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a>offspring <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'Bb'</span>, <span class="st">'bb'</span>),</span>
-<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a>                    <span class="at">size=</span>n_test_mice_Bb <span class="sc">*</span> <span class="dv">7</span>,</span>
-<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a>                    <span class="at">replace=</span><span class="cn">TRUE</span>,</span>
-<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a>                    <span class="at">prob=</span><span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>))</span>
-<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a><span class="co"># This gives a 2-dimensional matrix, with one row per Bb mouse,</span></span>
-<span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a><span class="co"># and 7 columns, one for each child.</span></span>
-<span id="cb23-34"><a href="#cb23-34" aria-hidden="true" tabindex="-1"></a>offspring_mat <span class="ot">=</span> <span class="fu">matrix</span>(offspring, <span class="at">ncol=</span><span class="dv">7</span>)</span>
-<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Check whether all 7 children (columns) are Bb, for each row.</span></span>
-<span id="cb23-36"><a href="#cb23-36" aria-hidden="true" tabindex="-1"></a>all_offspring_black[test_mice_Bb] <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(offspring_mat <span class="sc">==</span> <span class="st">'Bb'</span>) <span class="sc">==</span> <span class="dv">7</span></span>
-<span id="cb23-37"><a href="#cb23-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-38"><a href="#cb23-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the genetic types of the parents of all-black offspring.</span></span>
-<span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a>parents <span class="ot">&lt;-</span> test_mice[all_offspring_black]</span>
-<span id="cb23-40"><a href="#cb23-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-41"><a href="#cb23-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate what fraction of parents were 'BB' vs 'Bb'.</span></span>
-<span id="cb23-42"><a href="#cb23-42" aria-hidden="true" tabindex="-1"></a>parents_BB <span class="ot">&lt;-</span> (parents <span class="sc">==</span> <span class="st">'BB'</span>)</span>
-<span id="cb23-43"><a href="#cb23-43" aria-hidden="true" tabindex="-1"></a>parents_Bb <span class="ot">&lt;-</span> (parents <span class="sc">==</span> <span class="st">'Bb'</span>)</span>
-<span id="cb23-44"><a href="#cb23-44" aria-hidden="true" tabindex="-1"></a>n_B <span class="ot">&lt;-</span> <span class="fu">sum</span>(all_offspring_black)</span>
-<span id="cb23-45"><a href="#cb23-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-46"><a href="#cb23-46" aria-hidden="true" tabindex="-1"></a>p_BB <span class="ot">&lt;-</span> <span class="fu">sum</span>(parents_BB) <span class="sc">/</span> n_B</span>
-<span id="cb23-47"><a href="#cb23-47" aria-hidden="true" tabindex="-1"></a>p_Bb <span class="ot">&lt;-</span> <span class="fu">sum</span>(parents_Bb) <span class="sc">/</span> n_B</span>
-<span id="cb23-48"><a href="#cb23-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-49"><a href="#cb23-49" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'p_BB = '</span>, <span class="fu">round</span>(p_BB, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>n_trials <span class="ot">&lt;-</span> <span class="dv">1000000</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># In n_trials trials, pair two Bb mice and generate a child.</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>test_mice <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'BB'</span>, <span class="st">'Bb'</span>, <span class="st">'bb'</span>),</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">size=</span>n_trials,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">replace=</span><span class="cn">TRUE</span>,</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">prob=</span><span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.25</span>))</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co"># The resulting test mouse is black, so filter out all brown ones.</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>test_mice <span class="ot">&lt;-</span> test_mice[test_mice <span class="sc">!=</span> <span class="st">'bb'</span>]</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>n_test_mice <span class="ot">&lt;-</span> <span class="fu">length</span>(test_mice)</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Each test mouse will now be mated with a brown mouse, producing 7 offspring.</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co"># We then store whether all the offspring were black or not.</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>all_offspring_black <span class="ot">&lt;-</span> <span class="fu">logical</span>(n_test_mice)</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="co"># If a test mouse is 'BB', we are assured that all its offspring</span></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="co"># will be black.</span></span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>all_offspring_black[test_mice <span class="sc">==</span> <span class="st">'BB'</span>] <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a><span class="co"># If a test mouse is 'Bb', we have to generate its offspring and</span></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a><span class="co"># see whether they are all black or not</span></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>test_mice_Bb <span class="ot">&lt;-</span> (test_mice <span class="sc">==</span> <span class="st">'Bb'</span>)</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>n_test_mice_Bb <span class="ot">&lt;-</span> <span class="fu">sum</span>(test_mice_Bb)</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate all offspring of all 'Bb' test mice</span></span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a><span class="co"># This gives 7 children for each Bb mouse.</span></span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>offspring <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'Bb'</span>, <span class="st">'bb'</span>),</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>                    <span class="at">size=</span>n_test_mice_Bb <span class="sc">*</span> <span class="dv">7</span>,</span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>                    <span class="at">replace=</span><span class="cn">TRUE</span>,</span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>                    <span class="at">prob=</span><span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>))</span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a><span class="co"># This gives a 2-dimensional matrix, with one row per Bb mouse,</span></span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a><span class="co"># and 7 columns, one for each child.</span></span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>offspring_mat <span class="ot">=</span> <span class="fu">matrix</span>(offspring, <span class="at">ncol=</span><span class="dv">7</span>)</span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Check whether all 7 children (columns) are Bb, for each row.</span></span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>all_offspring_black[test_mice_Bb] <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(offspring_mat <span class="sc">==</span> <span class="st">'Bb'</span>) <span class="sc">==</span> <span class="dv">7</span></span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the genetic types of the parents of all-black offspring.</span></span>
+<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a>parents <span class="ot">&lt;-</span> test_mice[all_offspring_black]</span>
+<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate what fraction of parents were 'BB' vs 'Bb'.</span></span>
+<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a>parents_BB <span class="ot">&lt;-</span> (parents <span class="sc">==</span> <span class="st">'BB'</span>)</span>
+<span id="cb19-43"><a href="#cb19-43" aria-hidden="true" tabindex="-1"></a>parents_Bb <span class="ot">&lt;-</span> (parents <span class="sc">==</span> <span class="st">'Bb'</span>)</span>
+<span id="cb19-44"><a href="#cb19-44" aria-hidden="true" tabindex="-1"></a>n_B <span class="ot">&lt;-</span> <span class="fu">sum</span>(all_offspring_black)</span>
+<span id="cb19-45"><a href="#cb19-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a>p_BB <span class="ot">&lt;-</span> <span class="fu">sum</span>(parents_BB) <span class="sc">/</span> n_B</span>
+<span id="cb19-47"><a href="#cb19-47" aria-hidden="true" tabindex="-1"></a>p_Bb <span class="ot">&lt;-</span> <span class="fu">sum</span>(parents_Bb) <span class="sc">/</span> n_B</span>
+<span id="cb19-48"><a href="#cb19-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-49"><a href="#cb19-49" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'p_BB = '</span>, <span class="fu">round</span>(p_BB, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>p_BB = 0.985</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'p_Bb = '</span>, <span class="fu">round</span>(p_Bb, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'p_Bb = '</span>, <span class="fu">round</span>(p_Bb, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>p_Bb = 0.015</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'Ratio = '</span>, <span class="fu">round</span>(p_BB <span class="sc">/</span> p_Bb, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'Ratio = '</span>, <span class="fu">round</span>(p_BB <span class="sc">/</span> p_Bb, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Ratio = 64.3</code></pre>
 </div>
 </div>
 <p>This yields a similar result, but in much shorter time — which means we can increase the number of trials and get a more accurate result.</p>
-<p>End of <code>box_tao_mice</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: A problem of black and brown mice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>box_tao_mice</code> starts at <a href="#nte-box_tao_mice" class="quarto-xref">Note&nbsp;<span>31.4</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook.

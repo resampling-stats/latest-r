@@ -1,0 +1,86 @@
+# Does opinion match behavior in a poll?
+
+
+Find this notebook on the web at Note .
+
+Our aim is to work out the number of matching `drink` and `sale` 1, 0
+scores in the null-world, where the association between the two is
+random.
+
+To accomplish this aim, we repeat the following procedure 10,000 times
+using a `for` loop. We shuffle `drink` to `random_drink` so that the
+responses are randomly ordered. Now when we subtract the corresponding
+elements of the two vectors, a 0 will appear in each element of the new
+vector `diffs` for which there was consistency in the response of the
+two questions. We therefore count (`sum`) the times that `diffs` equals
+0 and place this result in the vector `consistent` and the number of
+times `diffs` does not equal 0, and place this result in `inconsistent`.
+Find the difference (`consistent` minus `inconsistent`), and record the
+result in the `results` vector for each trial.
+
+`results` stores, for each trial, the number of consistent responses
+minus inconsistent responses. To determine whether the results of the
+actual sample indicate a relationship between the responses to the two
+questions, we check how often the random trials had a difference
+(between consistent and inconsistent responses) as great as 24, the
+value in the observed sample.
+
+```{r}
+# Constitute the set of 52 beer drinkers, and the set of 26 non-drinkers,
+# where 1 represents beer drinker, and 0 represents non-drinker.
+drink <- rep(c(1, 0), c(52, 26))
+# Show the result
+drink
+```
+
+```{r}
+# The same set of individuals classified by whether they favor or
+# don't favor the sale of beer, where 1 represents those who favor
+# local beer sale, and 0 represents those who do not.
+sale <- rep(c(1, 0), c(65, 13))
+# Show the result
+sale
+```
+
+```{r}
+# Number of repeats.
+n_trials <- 10000
+
+# Array to store the results of each trial.
+results <- numeric(n_trials)
+
+# Repeat the experiment 10,000 times.
+for (i in 1:n_trials) {
+    # Shuffle the drink labels..
+    random_drink <- sample(drink)
+    # Note — random_drink is now a vector like this:
+    # [1, 0, 1, 1, 1, 0, 0, 1 ...]
+
+    # Subtract the favor/don't favor set from the drink/don't drink set.
+    # Consistent responses are someone who drinks favoring the sale of beer (a
+    # 1 and a 1) or someone who doesn't drink opposing the sale of beer.
+    # When subtracted, consistent responses *(and only consistent responses)*
+    # produce a 0.
+    diffs <- random_drink - sale
+    # Count the number of consistent responses (those equal to 0).
+    consistent <- sum(diffs == 0)
+    # Count the "inconsistent" responses (those not equal to 0).
+    inconsistent <- sum(diffs != 0)
+    # Find the difference.
+    diff_diff <- consistent - inconsistent
+    # Keep track of the results of each trial.
+    results[i] <- diff_diff
+    # End one trial, go back and repeat until all 10,000 trials are complete.
+}
+# Produce a histogram of the trial result.
+hist(results, breaks=0:40,
+    main='Consistent-inconsistent responses in null world',
+    xlab='Consistent-inconsistent responses')
+
+# Count differences >= observed.
+k <- sum(results >= 24)
+# Proportion.
+kk <- k / n_trials
+# Print result.
+message('Proportion null-world differences >= observed: ', kk)
+```

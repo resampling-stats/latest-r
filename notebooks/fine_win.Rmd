@@ -1,6 +1,8 @@
 # Fine day and win
 
 
+Find this notebook on the web at Note .
+
 This notebook calculates the chances that the Commanders win on a fine
 day.
 
@@ -24,6 +26,8 @@ How we run our first `if` statement. Running this code will display “The
 ball was blue” if the ball was blue, otherwise it will not display
 anything:
 
+
+
 ```{r}
 if (a_ball == 'blue') {
     message('The ball was blue')
@@ -38,6 +42,8 @@ there is a open curly brace `{` to signal the start of the body of the
 code, followed by the close curly brace `}`. Here there is only one
 line: `message('The ball was blue')`. R only runs the body of the if
 statement if the *condition* is `TRUE`.[^1]
+
+
 
 To confirm we see “The ball was blue” if `a_ball` is `'blue'` and
 nothing otherwise, we can set `a_ball` and re-run the code:

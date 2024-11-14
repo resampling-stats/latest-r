@@ -1,6 +1,8 @@
 # Bullseye
 
 
+Find this notebook on the web at Note .
+
 This notebook solves the “bullseye” problem: assume from past experience
 that a given archer puts 10 percent of his shots in the black
 (“bullseye”) and 60 percent of his shots in the white ring around the

@@ -1,6 +1,8 @@
 # Three of a kind
 
 
+Find this notebook on the web at Note .
+
 We count the number of times we get three of a kind in a random hand of
 five cards.
 

@@ -1,6 +1,8 @@
 # A classic bootstrap example
 
 
+Find this notebook on the web at Note .
+
 Draw bootstrap samples from mouse survival data to compare actual mean
 difference to those observed in the null- (bootstrap) world.
 

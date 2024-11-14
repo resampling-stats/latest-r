@@ -1,6 +1,8 @@
 # Paired test for pig rations
 
 
+Find this notebook on the web at Note .
+
 Use simulation to test for a difference in pig rations, by pairing pigs
 and testing the probability of observed differences within the pairs.
 

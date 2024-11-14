@@ -1,6 +1,8 @@
 # Contract poll simulation
 
 
+Find this notebook on the web at Note .
+
 This R notebook generates samples of 50 simulated voters on the
 assumption that only 50 percent are in favor of the contract. Then it
 counts (`sum`s) the number of samples where over 29 (30 or more) of the

@@ -1,6 +1,8 @@
 # Logical operators
 
 
+Find this notebook on the web at Note .
+
 This section continues our programme of expanding the range of R
 features that you can use to clear code. As we introduce each feature,
 we will use them in the following examples.
@@ -45,7 +47,16 @@ if (sum(coins == 'heads') <= 2 | sum(coins == 'tails') <= 2) {
 }
 ```
 
-**Note: Note 23.1: What is an operator?**
+<div __quarto_custom="true" __quarto_custom_type="Callout"
+__quarto_custom_context="Block" __quarto_custom_id="629">
+
+<div __quarto_custom_scaffold="true">
+
+What is an operator?
+
+</div>
+
+<div __quarto_custom_scaffold="true">
 
 Above, we called `|` an *operator*. An operator, for our purposes, is a
 special character that sits between two values, and that tells R how to
@@ -68,7 +79,9 @@ on the numbers to either side — they are *arithmetic* operators.
 2 * 4
 ```
 
-**End of note**
+</div>
+
+</div>
 
 
 

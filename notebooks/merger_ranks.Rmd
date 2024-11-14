@@ -1,6 +1,8 @@
 # Merger rank test
 
 
+Find this notebook on the web at Note .
+
 Test whether observed mean rank is plausible in the null-world where
 ranks are randomly drawn from 1 through 3.
 

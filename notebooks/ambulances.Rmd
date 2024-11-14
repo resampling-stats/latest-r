@@ -1,7 +1,18 @@
 # Ambulances
 
 
-**Note: Note 2.1: Comments in code**
+Find this notebook on the web at Note .
+
+<div __quarto_custom="true" __quarto_custom_type="Callout"
+__quarto_custom_context="Block" __quarto_custom_id="525">
+
+<div __quarto_custom_scaffold="true">
+
+Comments in code
+
+</div>
+
+<div __quarto_custom_scaffold="true">
 
 The first thing to say about the code you will see below is there are
 some lines that do not do anything; these are the lines beginning with a
@@ -18,7 +29,9 @@ Because R ignores lines beginning with `#`, the text after the `#` is
 just for us, the humans reading the code. The person writing the code
 will often use comments to explain what the code is doing.
 
-**End of note**
+</div>
+
+</div>
 
 Our next task is to use R to simulate a single day of ambulances. We
 will again represent each ambulance by a random number from 0 through 9.
@@ -71,9 +84,7 @@ sum(a == 9)
 
 to count the number of values equal to 9 in the sequence `a`. For now
 just read sum(a == 9 as “count the number of 9s in `a`”. We will explain
-how this code works fairly soon
-(<a href="#sec-counting-results" class="quarto-xref"><span
-class="quarto-unresolved-ref">sec-counting-results</span></a>).
+how this code works fairly soon (Section ).
 
 The `sum` command is a *counting* operation. It asks the computer to
 *count* the number of `9`s among the 16 numbers that are in location `a`
@@ -86,7 +97,7 @@ computer’s memory that we label `b`.
 Above you see that we have worked out how to tell the computer to do a
 single trial — one simulated day.
 
-### 2.3.1 Repeating trials
+### Repeating trials
 
 We could run the code above for one trial over and over, and write down
 the result on a piece of paper. If we did this 100 times we would have
@@ -145,7 +156,7 @@ number of broken-down ambulances), and we will store the result in the
 With these parts, we are now ready to solve the ambulance problem, using
 R.
 
-### 2.3.2 The solution
+### The solution
 
 This is our big moment! We will combine the elements shown above to
 perform our ambulance simulation over, say, 1000 days. Just a quick

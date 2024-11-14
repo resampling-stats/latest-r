@@ -1,6 +1,8 @@
 # Twenty executives, two divisions
 
 
+Find this notebook on the web at Note .
+
 The top manager wants to spread the talent reasonably evenly, but she
 does not want to label particular executives with a quality rating and
 therefore considers distributing them with a random selection. She

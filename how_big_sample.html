@@ -718,13 +718,24 @@ Table&nbsp;30.3: Ten example trials from phone survey simulation
 <p>Accuracy is <em>slightly</em> greater in smaller universes but <em>only</em> slightly. For example, a sample of 400 would give <em>perfect</em> accuracy if Countryville had only 400 residents. And a sample of 400 will give <em>slightly</em> greater accuracy for a town of 800 residents than for a city of 80,000 residents. But, beyond the point at which the sample is a <em>large fraction</em> of the total universe, there is no difference in accuracy with increases in the size of universe. This point is very important. For any given level of accuracy, <em>identical</em> sample sizes give the same level of accuracy for Podunk (population 8,000) or New York City (population 8 million). The <em>ratio</em> of the sample size to the population of Podunk or New York City means nothing at all, even though it intuitively seems to be important.</p>
 <p>The size of the sample must depend upon which population or sub-populations you wish to describe. For example, Alfred Kinsey’s sample size for the classic “Sexual Behavior in the Human Male” <span class="citation" data-cites="kinsey1948sexual">(<a href="references.html#ref-kinsey1948sexual" role="doc-biblioref">1948</a>)</span> would have seemed large, by customary practice, for generalizations about the United States population as a whole. But, as Kinsey explains: “… the chief concern of the present study is an understanding of the sexual behavior of <em>each segment of the population</em>, and that it is only secondarily concerned with generalization for the population as a whole.” <span class="citation" data-cites="kinsey1948sexual">(<a href="references.html#ref-kinsey1948sexual" role="doc-biblioref">1948, 82</a>, italics added)</span>. Therefore Kinsey’s sample had to include sub-samples large enough to obtain the desired accuracy in <em>each</em> of these sub-universes. The U.S. Census offers a similar illustration. When the U.S. Bureau of the Census aims to estimate only a total or an average for the United States as a whole — as, for example, in the Current Population Survey estimate of unemployment — a sample of perhaps 50,000 is big enough. But the decennial census aims to make estimates for all the various communities in the country, estimates that require adequate sub-samples in each of these sub-universes; such is the justification for the decennial census’ sample size of so many millions. Television ratings illustrate both types of purpose. Nielsen ratings, for example, are sold primarily to national network advertisers. These advertisers on national television networks usually sell their goods all across the country and are therefore interested primarily in the total United States viewership for a program, rather than in the viewership in various demographic subgroups. The appropriate calculations for Nielsen sample size will therefore refer to the total United States sample. But other organizations sell rating services to <em>local</em> television and radio stations for use in soliciting advertising over the local stations rather than over the network as a whole. Each local sample must then be large enough to provide reasonable accuracy, and, considered as a whole, the samples for the local stations therefore add up to a much larger sample than the Nielsen and other nationwide samples.</p>
 <p>The problem may be handled with the following R program. This program represents viewers with the string <code>'viewers'</code> and non-viewers as <code>'not viewers'</code>. It then asks <span class="r"><code>sample</code></span> to choose randomly between <code>'viewer'</code> and <code>'not viewer'</code> with a 30% (p=0.3) chance of getting a <code>'viewer'</code> and a 70% chance of getting a <code>'not viewer'</code>. It gets a sample of 400 such numbers, counts (with <span class="r"><code>sum</code></span> the “viewers” then finds how much this sample diverges from the expected number of viewers (30% of 400 = 120). It repeats this procedure 10000 times, and then calculates the average divergence.</p>
-<div class="notebook" name="viewer_numbers" title="Number of viewers">
-<p>Start of <code>viewer_numbers</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/viewer_numbers.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=viewer_numbers.ipynb">Interact</a>
+<div id="nte-viewer_numbers" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;30.1: Notebook: Number of viewers
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/viewer_numbers.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=viewer_numbers.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="viewer_numbers" title="Number of viewers">
 
+</div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set the number of trials</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>n_trials <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
@@ -769,7 +780,21 @@ Table&nbsp;30.3: Ten example trials from phone survey simulation
 <!---
 End of notebook.
 -->
-<p>End of <code>viewer_numbers</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Number of viewers
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>viewer_numbers</code> starts at <a href="#nte-viewer_numbers" class="quarto-xref">Note&nbsp;<span>30.1</span></a>.</p>
+</div>
 </div>
 <p>It is a simple matter to go back and try a sample size of (say) 1600 rather than 400, and examine the effect on the mean difference.</p>
 </section>
@@ -1018,13 +1043,24 @@ Table&nbsp;30.5: Simulated average weight gain from 48 pigs
 <p>The guess should be based on something, however. One source for guessing is your general knowledge of the likely dispersion; for example, if you were estimating male heights in Rhode Island, you would be able to guess what proportion of observations would fall within 2 inches, 4 inches, 6 inches, and 8 inches, perhaps, of the real value. Or, much better yet, a very small pretest will yield quite satisfactory estimates of the dispersion.</p>
 <p>Here is a R program that will let you try different sample sizes, and then take bootstrap samples to determine the range of sampling error. You set the sample size by setting the <code>sampsize</code> variable. Above I noted that we could sample without replacement from a “deck” of thirty “31”’s, thirty “34”’s, etc, as a substitute for creating a universe of a million “31”’s, a million “34”’s, etc. We can achieve the same effect if we replace each card after we sample it; this is equivalent to creating a “deck” of an infinite number of “31”’s, “34”’s, etc. That is what the <code>sample</code> command does, below. Note that the sample size is determined by the value of the <code>sampsize</code> variable, which you set at the beginning. From here on the program takes the <code>mean</code> of each sample, keeps score of that result in the <code>results</code> vector and produces a histogram. The <code>quantile</code> function will also tell you what values enclose 90% of all sample results, excluding those below the 5th percentile and above the 95th percentile.</p>
 <p>Here is a notebook for a sample size of 12.</p>
-<div class="notebook" name="sampling_error_bootstrap" title="Sampling error for pig ration weight gain via bootstrap">
-<p>Start of <code>sampling_error_bootstrap</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/sampling_error_bootstrap.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=sampling_error_bootstrap.ipynb">Interact</a>
+<div id="nte-sampling_error_bootstrap" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;30.2: Notebook: Sampling error for pig ration weight gain via bootstrap
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/sampling_error_bootstrap.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=sampling_error_bootstrap.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="sampling_error_bootstrap" title="Sampling error for pig ration weight gain via bootstrap">
 
+</div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sampsize <span class="ot">&lt;-</span> <span class="dv">12</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1062,7 +1098,21 @@ Table&nbsp;30.5: Simulated average weight gain from 48 pigs
 </div>
 </div>
 </div>
-<p>End of <code>sampling_error_bootstrap</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Sampling error for pig ration weight gain via bootstrap
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>sampling_error_bootstrap</code> starts at <a href="#nte-sampling_error_bootstrap" class="quarto-xref">Note&nbsp;<span>30.2</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook.
@@ -1753,13 +1803,24 @@ Table&nbsp;30.8: Simulated males / females from 80 flies for 60/40% universe
 </div>
 <p>To review the main principles of this example: First, the closer together the two possible universes from which you think the sample might have come (50-50 and 60-40 are closer together than are 50-50 and 75-25), the larger the sample needed to distinguish between them. Second, the surer you want to be that you reach the right decision based upon the sample evidence, the larger the sample you need.</p>
 <p>The problem may be handled with the following R notebook. We construct a benchmark universe that is 60-40 male-female, and take samples of size 80, observing whether the numbers of males and females differs enough in these resamples to rule out a 50-50 universe. Recall that we need at least 48 of 80 males to say that the proportion of males is <em>not</em> 50%.</p>
-<div class="notebook" name="flies_sample_size" title="Sample size for detecting fruitfly sex difference">
-<p>Start of <code>flies_sample_size</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/flies_sample_size.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=flies_sample_size.ipynb">Interact</a>
+<div id="nte-flies_sample_size" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;30.3: Notebook: Sample size for detecting fruitfly sex difference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/flies_sample_size.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=flies_sample_size.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="flies_sample_size" title="Sample size for detecting fruitfly sex difference">
 
+</div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>n_trials <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1787,7 +1848,21 @@ Table&nbsp;30.8: Simulated males / females from 80 flies for 60/40% universe
 </div>
 </div>
 <p>If the result <code>kk</code> is close to 1, we then know that samples of size 80 will almost always produce samples with enough males to avoid misleading us into thinking that they could have come from a universe in which males and females are split 50-50.</p>
-<p>End of <code>flies_sample_size</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Sample size for detecting fruitfly sex difference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>flies_sample_size</code> starts at <a href="#nte-flies_sample_size" class="quarto-xref">Note&nbsp;<span>30.3</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook.
@@ -1797,13 +1872,24 @@ End of notebook.
 <p>Referring back to <a href="testing_counts_1.html#sec-contract-poll" class="quarto-xref"><span>Section 21.2.3</span></a>, on the internet provider poll, how large a sample <em>should</em> you have taken? Pretend that the data have not yet been collected. You need <em>some</em> estimate of how the results will turn out before you can select a sample size. But you have not the foggiest idea how the results will turn out. Therefore, go out and take a very small sample, maybe ten people, to give you some idea of whether people will split quite evenly or unevenly. Seven of your ten initial interviews say they are for the internet provider contract. How large a sample do you now need to provide an answer of which you can be fairly sure?</p>
 <p>Using the techniques of the previous chapter, we can estimate that from a sample of fifty people at least thirty-two would have to vote the same way for you to believe that the odds are at least 19 to 1 that the sample does not misrepresent the universe, that is, that the sample does not show a majority different from that of the whole universe if you polled everyone.</p>
 <p>We do this by repeating the experiment in <a href="testing_counts_1.html#sec-contract-poll" class="quarto-xref"><span>Section 21.2.3</span></a>. In that experiment, we were doing simulated trials in the 50:50 world, and looking at the proportion of simulated trials where the count of yes votes was &gt;= 30. We found the proportion of trials was about 10%. We are interested to know the count for which we get less than 5%. We can do this by checking the proportions for &gt;=31, &gt;= 32, and so on. It turns out that counts &gt;= 32 occur a bit less than 5% of the time in the 50:50 world.</p>
-<div class="notebook" name="contract_poll_32" title="Contract poll looking for >=32">
-<p>Start of <code>contract_poll_32</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/contract_poll_32.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=contract_poll_32.ipynb">Interact</a>
+<div id="nte-contract_poll_32" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;30.4: Notebook: Contract poll looking for &gt;=32
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/contract_poll_32.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=contract_poll_32.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="contract_poll_32" title="Contract poll looking for >=32">
 
+</div>
 <p>This R notebook generates samples of 50 simulated voters on the assumption that only 50 percent are in favor of the contract. Then it counts the number of generated samples where 32 or more of the 50 respondents said they were in favor of the contract.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>n_trials <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
@@ -1823,7 +1909,21 @@ End of notebook.
 <pre><code>Proportion &gt;= 32: 0.03</code></pre>
 </div>
 </div>
-<p>End of <code>contract_poll_32</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Contract poll looking for &gt;=32
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>contract_poll_32</code> starts at <a href="#nte-contract_poll_32" class="quarto-xref">Note&nbsp;<span>30.4</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook.
@@ -1910,13 +2010,24 @@ Table&nbsp;30.9: Number of “yes” votes out of 50 for 30% in favor universe
 </figure>
 </div>
 <p>The following R program takes samples of size 50 from a universe that is 70% “yes.” It then observes how often such samples produce more than 31 “yeses” — the number we must get if we are to be sure enough that the sample is not from a 50/50 universe.</p>
-<div class="notebook" name="poll_sample_size" title="Sample size for an internet contract poll">
-<p>Start of <code>poll_sample_size</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/poll_sample_size.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=poll_sample_size.ipynb">Interact</a>
+<div id="nte-poll_sample_size" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;30.5: Notebook: Sample size for an internet contract poll
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/poll_sample_size.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=poll_sample_size.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="poll_sample_size" title="Sample size for an internet contract poll">
 
+</div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of trials.</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>n_trials <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
@@ -1945,7 +2056,21 @@ Table&nbsp;30.9: Number of “yes” votes out of 50 for 30% in favor universe
 <pre><code>p of 50 voter samples in 70:30 universe &gt;= 32 "yes": 0.8551</code></pre>
 </div>
 </div>
-<p>End of <code>poll_sample_size</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Sample size for an internet contract poll
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>poll_sample_size</code> starts at <a href="#nte-poll_sample_size" class="quarto-xref">Note&nbsp;<span>30.5</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook.
@@ -1957,14 +2082,25 @@ End of notebook.
 <p>How large a sample is needed to determine whether there is any difference between the two pig rations in <a href="testing_measured.html#sec-pig-rations-measured" class="quarto-xref"><span>Section 24.0.1</span></a>? The first step is to guess the results of the tests. You estimate that the average for ration A will be a weight gain of 32 pounds. You further guess that twelve pigs on ration A might gain 36, 35, 34, 33, 33, 32, 32, 31, 31, 30, 29 and 28 pounds. This set of guesses has an equal number of pigs above and below the average and more pigs close to the average than farther away. That is, there are more pigs at 33 and 31 pounds than at 36 and 28 pounds. This would seem to be a reasonable distribution of pigs around an average of 32 pounds. In similar fashion, you guess an average weight gain of 28 pounds for ration B and a distribution of 32, 31, 30, 29, 29, 28, 28, 27, 27, 26, 25, and 24 pounds.</p>
 <p>Let us review the basic strategy. We want to find a sample size large enough so that a large proportion of the time it will reveal a difference between groups big enough to be accepted as not attributable to chance. First, then, we need to find out how big the difference must be to be accepted as evidence that the difference is not attributable to chance. We do so from trials with samples of the given size from the benchmark universe. We state that a difference larger than the benchmark universe will usually produce is not attributable to chance.</p>
 <p>In this case, let us try samples of 12 pigs on each ration. First we draw two samples from a <em>combined</em> benchmark universe made up of the results that we have guessed will come from ration A and ration B. (The procedure is the same as was followed in <a href="testing_measured.html#sec-pig-rations-measured" class="quarto-xref"><span>Section 24.0.1</span></a>).</p>
-<div class="notebook" name="sample_size_rations" title="Sample size for pig rations with bootstrap">
-<p>Start of <code>sample_size_rations</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/sample_size_rations.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=sample_size_rations.ipynb">Interact</a>
+<div id="nte-sample_size_rations" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;30.6: Notebook: Sample size for pig rations with bootstrap
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/sample_size_rations.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=sample_size_rations.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="sample_size_rations" title="Sample size for pig rations with bootstrap">
 
-<p>First we need to get the measured data from the data file using <span class="r">R</span>:</p>
+</div>
+<p>First we need to get the measured data from the data file using R:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimated weights for ration A.</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>a_weights <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">36</span>, <span class="dv">35</span>, <span class="dv">34</span>, <span class="dv">33</span>, <span class="dv">33</span>, <span class="dv">32</span>, <span class="dv">32</span>, <span class="dv">31</span>, <span class="dv">31</span>, <span class="dv">30</span>, <span class="dv">29</span>, <span class="dv">28</span>)</span>
@@ -2074,7 +2210,21 @@ End of notebook.
 <p>If <code>kk</code> is close to one, we know that the sample size is large enough that samples drawn from the universes we have hypothesized will not mislead us into thinking that they could come from the same universe.</p>
 <p>Therefore, two samples of twelve pigs each are clearly large enough, and, in fact, even smaller samples might be sufficient if the universes are really like those we guessed at. If, on the other hand, the differences in the guessed universes had been smaller, then twelve-pig groups would have seemed too small and we would then have had to try out larger sample sizes, say forty-eight pigs in each group and perhaps 200 pigs in each group if forty-eight were not enough. And so on until the sample size is large enough to promise the accuracy we want. (In that case, the decks would also have to be much larger, of course.)</p>
 <p>If we had guessed different universes for the two rations, then the sample sizes required would have been larger or smaller. If we had guessed the averages for the two samples to be closer together, then we would have needed larger samples. Also, if we had guessed the weight gains <em>within</em> each universe to be less spread out, the samples could have been smaller and vice versa.</p>
-<p>End of <code>sample_size_rations</code> notebook</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Sample size for pig rations with bootstrap
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>sample_size_rations</code> starts at <a href="#nte-sample_size_rations" class="quarto-xref">Note&nbsp;<span>30.6</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook

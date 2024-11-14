@@ -1,6 +1,8 @@
 # Optical density exercise
 
 
+Find this notebook on the web at Note .
+
 Suppose we have 10 measurements of Optical Density on a batch of HIV
 negative control samples:
 

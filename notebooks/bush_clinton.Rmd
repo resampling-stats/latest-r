@@ -1,6 +1,8 @@
 # Simulation of Bush / Clinton polling
 
 
+Find this notebook on the web at Note .
+
 The notebook estimates the chances that Bush is in fact equal or behind
 in the population of eventual voters, despite the poll giving him a
 narrow lead.

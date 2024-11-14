@@ -1,6 +1,8 @@
 # Building strings for labels
 
 
+Find this notebook on the web at Note .
+
 As the examples in this book proceed, we will use more code techniques
 to write the examples in a more concise and efficient way.
 

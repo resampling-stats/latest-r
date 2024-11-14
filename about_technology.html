@@ -410,6 +410,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#the-environment" id="toc-the-environment" class="nav-link active" data-scroll-target="#the-environment"><span class="header-section-number">4.1</span> The environment</a></li>
   <li><a href="#getting-started-with-the-notebook" id="toc-getting-started-with-the-notebook" class="nav-link" data-scroll-target="#getting-started-with-the-notebook"><span class="header-section-number">4.2</span> Getting started with the notebook</a></li>
+  <li><a href="#the-meal-in-question" id="toc-the-meal-in-question" class="nav-link" data-scroll-target="#the-meal-in-question">4.3 The meal in question</a></li>
+  <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments">4.4 Comments</a></li>
+  <li><a href="#more-calculations" id="toc-more-calculations" class="nav-link" data-scroll-target="#more-calculations">4.5 More calculations</a></li>
+  <li><a href="#sec-variables" id="toc-sec-variables" class="nav-link" data-scroll-target="#sec-variables">4.6 Variables</a></li>
+  <li><a href="#and-so-on" id="toc-and-so-on" class="nav-link" data-scroll-target="#and-so-on">4.7 And so, on</a></li>
+  <li><a href="#saving-your-work" id="toc-saving-your-work" class="nav-link" data-scroll-target="#saving-your-work">4.8 Saving your work</a></li>
   <li><a href="#sec-running-own-computer" id="toc-sec-running-own-computer" class="nav-link" data-scroll-target="#sec-running-own-computer"><span class="header-section-number">4.9</span> Running the code on your own computer</a>
   <ul class="collapse">
   <li><a href="#sec-running-rstudio" id="toc-sec-running-rstudio" class="nav-link" data-scroll-target="#sec-running-rstudio"><span class="header-section-number">4.9.1</span> Running notebooks in RStudio</a></li>
@@ -488,13 +494,24 @@ About JupyterLite
 <section id="getting-started-with-the-notebook" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="getting-started-with-the-notebook"><span class="header-section-number">4.2</span> Getting started with the notebook</h2>
 <p>The next section contains a notebook called “Billie’s Bill”. If you are looking at the web edition, you will see links to interact with this notebook in your browser, or download it to your computer.</p>
-<div class="notebook" name="billies_bill" title="Billie's Bill">
-<p>Start of <code>billies_bill</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/billies_bill.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=billies_bill.ipynb">Interact</a>
+<div id="nte-billies_bill" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;4.1: Notebook: Billie’s Bill
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/billies_bill.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=billies_bill.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="billies_bill" title="Billie's Bill">
 
+</div>
 <div class="r">
 <p>The text in this notebook section assumes you have opened the page as an interactive notebook on the web. In that case, you are running the notebook in a version of Jupyter. We will assume you are using Jupyter in the description that follows. You can also run R in Jupyter on your own computer, although we recommend that you use RStudio to work with R notebook files (see <a href="#sec-running-own-computer" class="quarto-xref"><span>Section 4.9</span></a>). The procedure for working with notebooks in RStudio is not the same as that for Jupyter. We will cover RStudio, briefly, in another notebook tutorial after this one.</p>
 </div>
@@ -512,11 +529,12 @@ About JupyterLite
 <p>In the Jupyter toolbar, you may see icons to run the current cell, among others.</p>
 <p>To move from one cell to the next, you can click the run icon in the toolbar, but it is more efficient to press the Shift key, and press Enter (with Shift still held down). We will write this as Ctl/Cmd-Shift-Enter.</p>
 <p>In this, our first notebook, we will be using R to solve one of those difficult and troubling problems in life — working out the bill in a restaurant.</p>
+</section>
 <section id="the-meal-in-question" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="the-meal-in-question"><span class="header-section-number">4.3</span> The meal in question</h2>
+<h2 data-number="4.3" class="anchored" data-anchor-id="the-meal-in-question">4.3 The meal in question</h2>
 <p>Alex and Billie are at a restaurant, getting ready to order. They do not have much money, so they are calculating the expected bill before they order.</p>
 <p>Alex is thinking of having the fish for £10.50, and Billie is leaning towards the chicken, at £9.25. First they calculate their combined bill.</p>
-<p>Below this text you see a <em>code</em> chunk. It contains the R code to calculate the total bill. Press <span class="r">Control-Shift-Enter or Cmd-Shift-Enter (on Mac)</span> in the chunk below, to see the total.<span class="r">(Remember, this is what you should do when running the code in Jupyter, via the interactive web pages. If you are using RStudio on your own computer, you should use different commands — see <a href="#sec-running-rstudio" class="quarto-xref"><span>Section 4.9.1</span></a>.)</span>.</p>
+<p>Below this text you see a <em>code</em> chunk. It contains the R code to calculate the total bill. Press Control-Shift-Enter or Cmd-Shift-Enter (on Mac) in the chunk below, to see the total.(Remember, this is what you should do when running the code in Jupyter, via the interactive web pages. If you are using RStudio on your own computer, you should use different commands — see <a href="#sec-running-rstudio" class="quarto-xref"><span>Section 4.9.1</span></a>.).</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fl">10.50</span> <span class="sc">+</span> <span class="fl">9.25</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -529,7 +547,7 @@ About JupyterLite
 <p>This is exactly what a calculator would do.</p>
 </section>
 <section id="comments" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="comments"><span class="header-section-number">4.4</span> Comments</h2>
+<h2 data-number="4.4" class="anchored" data-anchor-id="comments">4.4 Comments</h2>
 <p>Unlike a calculator, we can also put notes next to our calculations, to remind us what they are for. One way of doing this is to use a “comment”. You have already seen comments in the previous chapter.</p>
 <p>A comment is some text that the computer will ignore. In R, you can make a comment by starting a line with the <code>#</code> (hash) character. For example, the next cell is a code cell, but when you run it, it does not show any result. In this case, that is because the computer sees the <code>#</code> at the beginning of the line, and then ignores the rest.</p>
 <div class="cell" data-layout-align="center">
@@ -539,7 +557,7 @@ About JupyterLite
 <p>Practice writing comments for your own code. It is a very good habit to get into. You will find that experienced programmers write many comments on their code. They do not do this to show off, but because they have a lot of experience in reading code, and they know that comments make it much easier to read and understand code.</p>
 </section>
 <section id="more-calculations" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="more-calculations"><span class="header-section-number">4.5</span> More calculations</h2>
+<h2 data-number="4.5" class="anchored" data-anchor-id="more-calculations">4.5 More calculations</h2>
 <p>Let us continue with the struggle that Alex and Billie are having with their bill.</p>
 <p>They realize that they will also need to pay a tip.</p>
 <p>They think it would be reasonable to leave a 15% tip. Now they need to multiply their total bill by 0.15, to get the tip. The bill is about £20, so they know that the tip will be about £3.</p>
@@ -563,7 +581,7 @@ About JupyterLite
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note&nbsp;4.1: Three types of brackets in R
+Note&nbsp;4.2: Three types of brackets in R
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -595,7 +613,7 @@ Note&nbsp;4.1: Three types of brackets in R
 <p>At this stage we start to feel that we are doing too much typing. Notice that we had to type out <code>10.50 + 9.25</code> twice there. That is a little boring, but it also makes it easier to make mistakes. The more we have to type, the greater the chance we have to make a mistake.</p>
 </section>
 <section id="sec-variables" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="sec-variables"><span class="header-section-number">4.6</span> Variables</h2>
+<h2 data-number="4.6" class="anchored" data-anchor-id="sec-variables">4.6 Variables</h2>
 <p>To make things simpler, we would like to be able to <em>store</em> the result of the calculation <code>10.50 + 9.25</code>, and then re-use this value, to calculate the tip.</p>
 <p>This is the role of <em>variables</em>. A <em>variable</em> is a value with a name.</p>
 <p>Here is a variable:</p>
@@ -684,14 +702,27 @@ Note&nbsp;4.1: Three types of brackets in R
 <p>Now we are using variables with relevant names, the calculation looks right to our eye. The code expresses the calculation as we mean it: the bill after tip is equal to the bill before the tip, plus the bill before the tip times 0.15.</p>
 </section>
 <section id="and-so-on" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="and-so-on"><span class="header-section-number">4.7</span> And so, on</h2>
+<h2 data-number="4.7" class="anchored" data-anchor-id="and-so-on">4.7 And so, on</h2>
 <p>Now you have done some practice with the notebook, and with variables, you are ready for a new problem in probability and statistics, in the next chapter.</p>
 </section>
 <section id="saving-your-work" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="saving-your-work"><span class="header-section-number">4.8</span> Saving your work</h2>
+<h2 data-number="4.8" class="anchored" data-anchor-id="saving-your-work">4.8 Saving your work</h2>
 <p>If you are running this notebook via the “Interact” button, you are running it using the JupyterLite system. Please bear in mind that your browser keeps all the notebooks you run in JupyterLite, in its browser <em>cache</em> — a private and temporary store that the browser maintains somewhere on your system. If you want to keep any changes you make to notebooks you have run with the “Interact” JupyterLite system, you might want to save a copy of the notebook outside the browser cache. To do this, look the pane to the left of the notebook for the name of the notebook. This name of this particular notebook is “billies_bill”, and you will see the notebook file in the left pane listed as <code>billies_bill.ipynb</code>. If you want to save a copy to your computer, first use the “File” menu, and the “Save” option, to save your notebook. This saves the notebook to your browser’s private store (the <em>cache</em>). Next <em>right-click</em> on <code>billies_bill.ipynb</code> in the left pane (see <a href="#fig-jupyterlite-download" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>), and choose “Download”. Save the file somewhere memorable on your computer. You can go back to the notebook by following the instructions at <a href="#sec-running-own-computer" class="quarto-xref"><span>Section 4.9</span></a>.</p>
-<p>End of <code>billies_bill</code> notebook</p>
-</section>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Billie’s Bill
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>billies_bill</code> starts at <a href="#nte-billies_bill" class="quarto-xref">Note&nbsp;<span>4.1</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook.
@@ -717,7 +748,7 @@ Figure&nbsp;4.1: Downloading files in JupyterLite
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note&nbsp;4.2: Download links and data files
+Note&nbsp;4.3: Download links and data files
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -739,13 +770,24 @@ Note&nbsp;4.2: Download links and data files
 <p>Then install the RStudio interface by going to the RStudio download page at <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a>, and navigating to the link to download RStudio Desktop. RStudio is an Integrated Development Environment for R. The RStudio IDE makes it easier to interact with, and develop, R code. You only need the free (default) version; it has all the features you will need. The free version is the only version that we, your humble authors, have used for this book, and for all our own work and teaching.</p>
 <p>See <a href="#sec-running-rstudio" class="quarto-xref"><span>Section 4.9.1</span></a> for a starter tutorial on running notebooks in RStudio.</p>
 <p>Click the Download link below to download this notebook to your computer.</p>
-<div class="notebook" name="bill_in_rstudio" title="The Bill but in RStudio">
-<p>Start of <code>bill_in_rstudio</code> notebook</p>
-<div class="nb-links">
-<a class="notebook-link" href="notebooks/bill_in_rstudio.Rmd">Download notebook</a>
-<a class="interact-button" href="./interact/lab/index.html?path=bill_in_rstudio.ipynb">Interact</a>
+<div id="nte-bill_in_rstudio" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;4.4: Notebook: The Bill but in RStudio
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="nb-links">
+<p><a class="notebook-link" href="notebooks/bill_in_rstudio.Rmd">Download notebook</a> <a class="interact-button" href="./interact/lab/index.html?path=bill_in_rstudio.ipynb">Interact</a></p>
+</div>
+</div>
+</div>
+<div class="nb-start" name="bill_in_rstudio" title="The Bill but in RStudio">
 
+</div>
 <p>Notice that the Download link gave you a file ending in <code>.Rmd</code>, where “Rmd” is short for <em>RMarkdown</em>. <em>RMarkdown</em> is the name of the notebook format — and it is the native notebook format for RStudio. The <code>.Rmd</code> file is an RMarkdown version of the notebook.</p>
 <p>Open the <code>bill_in_rstudio.Rmd</code> file in RStudio.</p>
 <p>RStudio’s idea of a notebook is very similar to Jupyter’s — and this is not a coincidence, the Jupyter notebook was already popular when RStudio came up with its own take on this idea.</p>
@@ -768,8 +810,22 @@ Note&nbsp;4.2: Download links and data files
 </div>
 <p>Now we return to the interface. Click inside the code chunk above. Notice that the code chunk is grey, compared to the usual default white for the rest of the notebook. At the top left of the code chunk, you will see a <em>play</em> icon. Click this to run the code and see the results.</p>
 <p>There are various other ways of running code chunks. For example, the <em>notebook toolbar</em> that you identified about has icons that allow you run the code. In particular, there is a “Run” icon that triggers a drop-down menu, with options for running this and other code chunks. You will soon find yourself wanting the keyboard shortcuts to run code-chunks — please do start using these as early as you can — you will find they make you much more efficient and fluent in using notebooks in RStudio. To see the shortcuts, find the main RStudio menu, and select “Keyboard Shortcuts Help” for more information.</p>
-<p>We will leave you with this brief introduction, and point you out into the interwebs to search for good tutorials on using RStudio. Books always get out of date quickly, so we won’t risk instant obsolescence by recommending particular pages or videos here.</p>
-<p>End of <code>bill_in_rstudio</code> notebook</p>
+<p>We will leave you with this brief introduction, and point you out to the interwebs to search for good tutorials on using RStudio. Books go out of date quickly, so we won’t risk instant obsolescence by recommending particular pages or videos here.</p>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: The Bill but in RStudio
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>bill_in_rstudio</code> starts at <a href="#nte-bill_in_rstudio" class="quarto-xref">Note&nbsp;<span>4.4</span></a>.</p>
+</div>
 </div>
 <!---
 End of notebook.

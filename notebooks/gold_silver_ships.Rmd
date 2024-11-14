@@ -1,6 +1,8 @@
 # Ships with gold and silver
 
 
+Find this notebook on the web at Note .
+
 In which we solve the problem of gold and silver chests in a discovered
 ship.
 
