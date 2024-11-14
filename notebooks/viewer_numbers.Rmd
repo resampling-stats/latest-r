@@ -1,7 +1,8 @@
 # Number of viewers
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/how_big_sample.html#nte-viewer_numbers">Note <span>30.1</span></a>.
 
 The notebook calculates the expected number of viewers in a sample of
 400, given that there is a 30% chance of any one person being a viewer,

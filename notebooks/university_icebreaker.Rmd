@@ -1,7 +1,8 @@
 # An icebreaker for two universities
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_4_finite.html#nte-university_icebreaker">Note <span>13.6</span></a>.
 
 **First put two groups of 10 people into 10 pairs. Then re-randomize the
 pairings. What is the chance that four or more pairs are the same in the

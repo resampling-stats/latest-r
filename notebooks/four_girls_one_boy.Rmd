@@ -1,7 +1,8 @@
 # Four girls and one boy
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_4_finite.html#nte-four_girls_one_boy">Note <span>13.1</span></a>.
 
 What is the probability of selecting four girls and one boy when
 selecting five students from any group of twenty-five girls and

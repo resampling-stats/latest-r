@@ -1,7 +1,8 @@
 # Homeruns and strikeout correlation
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/exercise_solutions.html#nte-homerun_correlation_solution">Note <span>A.8</span></a>.
 
 Solution for exercise on relationship of home runs and strikeouts, using
 correlation coefficient.

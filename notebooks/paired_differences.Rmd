@@ -1,7 +1,8 @@
 # Paired differences exercise
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/testing_measured.html#nte-paired_differences">Note <span>24.7</span></a>.
 
 ```{r}
 df <- read.csv('data/hamilton.csv')

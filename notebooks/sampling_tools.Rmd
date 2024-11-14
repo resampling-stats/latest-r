@@ -1,12 +1,14 @@
 # Sampling tools
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/sampling_tools.html#nte-sampling_tools">Note <span>7.1</span></a>.
 
-## Samples and labels and strings
+## 7.2 Samples and labels and strings
 
 Thus far we have used numbers such as 1 and 0 and 10 to represent the
-elements we are sampling from. For example, in Chapter , we were
+elements we are sampling from. For example, in
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/#sec-resampling-two"><span class="quarto-unresolved-ref">sec-resampling-two</span></a>, we were
 simulating the chance of a particular juror being black, given that 26%
 of the eligible jurors in the county were black. We used *integers* for
 that task, where we started with all the integers from 0 through 99, and
@@ -17,7 +19,8 @@ there is a 26% chance that any one integer will be in that range. If the
 integer was from 26 through 99, the simulated juror was white (there are
 74 integers in the range 26 through 99).
 
-Here is the process of simulating a single juror, adapted from Section :
+Here is the process of simulating a single juror, adapted from
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code2.html#sec-random-zero-through-ninety-nine"><span>Section 6.3.3</span></a>:
 
 ```{r}
 # Get 1 random number from 0 through 99
@@ -49,7 +52,7 @@ simulations.
 Before we get to strings, let us consider the type of the values we have
 seen so far.
 
-## Types of values in R
+## 7.3 Types of values in R
 
 
 
@@ -84,7 +87,7 @@ numeric.
 
 
 
-## String values
+## 7.4 String values
 
 So far, all the values you have seen in R vectors have been numbers. Now
 we get on to values that are bits of text. These are called *strings*.
@@ -130,7 +133,7 @@ second_char <- substring(s, 2, 2)
 second_char
 ```
 
-## Strings in vectors
+## 7.5 Strings in vectors
 
 As we can store numbers as elements in vectors, we can also store
 strings as vector elements.
@@ -157,7 +160,7 @@ operator, that asks whether the two strings are equal:
 middle_name == 'Lincoln'
 ```
 
-## Repeating elements
+## 7.6 Repeating elements
 
 Now let us go back to the problem of selecting black and white jurors.
 
@@ -212,24 +215,22 @@ one_jury <- sample(jury_pool, 12, replace=TRUE)
 one_jury
 ```
 
-<div __quarto_custom="true" __quarto_custom_type="Callout"
-__quarto_custom_context="Block" __quarto_custom_id="544">
-
+<div __quarto_custom="true" __quarto_custom_context="Block" __quarto_custom_id="34" __quarto_custom_type="Callout">
 <div __quarto_custom_scaffold="true">
 
 Using the `size` argument to `sample`
 
 </div>
-
 <div __quarto_custom_scaffold="true">
 
 In the code above, we have specified the *size* of the sample we want
-(12) with the second argument to `sample`. As you saw in Section , we
-can also give names to the function arguments, in this case, to make it
+(12) with the second argument to `sample`. As you saw in
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code.html#sec-named-arguments"><span>Section 5.8</span></a>, we can
+also give names to the function arguments, in this case, to make it
 clearer what we mean by “12” in the code above. In fact, from now on,
 that is what we will do; we will specify the *size* of our sample by
 using the *name* for the function argument to `sample` — `size` — like
-this:
+this:</div></div>
 
 ```{r}
 # Select one juror at random from the black / white pool.
@@ -238,19 +239,21 @@ one_jury <- sample(jury_pool, size=12, replace=TRUE)
 one_jury
 ```
 
-</div>
+<!-- #region -->
 
-</div>
+
 
 We can use `==` on the vector to get `TRUE` values where the juror was
 “black” and `FALSE` values otherwise:
+<!-- #endregion -->
 
 ```{r}
 are_black <- one_jury == 'black'
 are_black
 ```
 
-Finally, we can `sum` to find the number of black jurors (Section ):
+Finally, we can `sum` to find the number of black jurors
+(<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code.html#sec-count-with-sum"><span>Section 5.13</span></a>):
 
 ```{r}
 # Number of black jurors in this simulated jury.
@@ -277,10 +280,10 @@ n_black = sum(sample(jury_pool, size=12, replace=TRUE) == 'black')
 n_black
 ```
 
-## Resampling with and without replacement
+## 7.7 Resampling with and without replacement
 
 Now let us return to the details of Robert Swain’s case, that you first
-saw in Chapter .
+saw in <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/#sec-resampling-two"><span class="quarto-unresolved-ref">sec-resampling-two</span></a>.
 
 We looked at the composition of Robert Swain’s 12-person jury — but in
 fact, by law, that does not have to be representative of the eligible
@@ -297,8 +300,9 @@ details.
 
 In fact, in Robert Swain’s trial, there were 8 black members in the
 100-person jury panel. We will leave it to you to adapt the simulation
-from Chapter  to ask the question — is 8% surprising as a random sample
-from a population with 26% black people?
+from <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/#sec-resampling-two"><span class="quarto-unresolved-ref">sec-resampling-two</span></a> to ask the
+question — is 8% surprising as a random sample from a population with
+26% black people?
 
 But we have a different question: given that 8 out of 100 of the jury
 panel were black, is it surprising that none of the 12-person jury were
@@ -391,20 +395,17 @@ ok_jury <- sample(jury_panel, size=12)
 ok_jury
 ```
 
-<div __quarto_custom="true" __quarto_custom_type="Callout"
-__quarto_custom_context="Block" __quarto_custom_id="545">
-
+<div __quarto_custom="true" __quarto_custom_context="Block" __quarto_custom_id="35" __quarto_custom_type="Callout">
 <div __quarto_custom_scaffold="true">
 
 Comments at the end of lines
 
 </div>
-
 <div __quarto_custom_scaffold="true">
 
 You have already seen comment lines. These are lines beginning with `#`,
 to signal to R that the rest of the line is text for humans to read, but
-R to ignore.
+R to ignore.</div></div>
 
 ```{r}
 # This is a comment.  R ignores this line.
@@ -419,12 +420,13 @@ not for R.
 message('Hello')  # This is a comment at the end of the line.
 ```
 
-</div>
+<!-- #region -->
 
-</div>
+
 
 To finish the procedure for simulating a single jury selection, we count
 the number of black jurors:
+<!-- #endregion -->
 
 ```{r}
 n_black <- sum(ok_jury == 'black')  # How many black jurors?

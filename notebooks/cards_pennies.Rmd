@@ -1,7 +1,8 @@
 # Cards and pennies
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_1a.html#nte-cards_pennies">Note <span>8.2</span></a>.
 
 An answer for the following puzzle: “… shuffle a packet of four cards —
 two red, two black — and deal them face down in a row. Two cards are

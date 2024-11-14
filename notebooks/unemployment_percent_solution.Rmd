@@ -1,7 +1,8 @@
 # Unemployment percent solution
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/exercise_solutions.html#nte-unemployment_percent_solution">Note <span>A.3</span></a>.
 
 ```{r}
 n_trials <- 10000

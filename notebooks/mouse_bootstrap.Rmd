@@ -1,7 +1,8 @@
 # A classic bootstrap example
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/testing_measured.html#nte-mouse_bootstrap">Note <span>24.4</span></a>.
 
 Draw bootstrap samples from mouse survival data to compare actual mean
 difference to those observed in the null- (bootstrap) world.

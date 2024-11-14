@@ -1,7 +1,8 @@
 # Battery lifetime exercise
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/confidence_2.html#nte-battery_lifetime_exercise">Note <span>27.2</span></a>.
 
 A sample of 20 batteries is tested, and the average lifetime is 28.85
 months. Establish a 95 percent confidence interval for the true average

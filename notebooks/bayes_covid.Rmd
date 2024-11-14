@@ -1,7 +1,8 @@
 # Bayesian analysis of Covid test result
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/bayes_simulation.html#nte-bayes_covid">Note <span>31.2</span></a>.
 
 You get a Covid test, and the test is negative. Now, you would like to
 know what the chance is of you having Covid.

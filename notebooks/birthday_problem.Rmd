@@ -1,7 +1,8 @@
 # The Birthday Problem
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_3.html#nte-birthday_problem">Note <span>12.1</span></a>.
 
 Here we answer the question: “What is the probability that two or more
 people among a roomful of (say) twenty-five people will have the same

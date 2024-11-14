@@ -1,7 +1,8 @@
 # Permutation test for mouse survival data
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/testing_measured.html#nte-mouse_permutation">Note <span>24.5</span></a>.
 
 Use permutation (shuffle-and-split) samples from mouse survival data to
 compare actual mean difference to those observed in the null-

@@ -1,7 +1,8 @@
 # Paired test for pig rations
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/testing_counts_2.html#nte-pig_pairs">Note <span>23.7</span></a>.
 
 Use simulation to test for a difference in pig rations, by pairing pigs
 and testing the probability of observed differences within the pairs.

@@ -1,7 +1,8 @@
 # Battery lifetime solution
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/exercise_solutions.html#nte-battery_lifetime_solution">Note <span>A.4</span></a>.
 
 ```{r}
 lifetimes <- c(30, 32, 31, 28, 31, 29, 29, 24, 30, 31,

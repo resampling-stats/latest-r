@@ -1,7 +1,8 @@
 # Optical density solution
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/exercise_solutions.html#nte-optical_density_solution">Note <span>A.5</span></a>.
 
 Suppose we have 10 measurements of Optical Density on a batch of HIV
 negative control samples:

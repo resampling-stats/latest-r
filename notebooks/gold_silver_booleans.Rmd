@@ -1,7 +1,8 @@
 # Another approach to ships with gold and silver
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/more_sampling_tools.html#nte-gold_silver_booleans">Note <span>10.3</span></a>.
 
 This notebook is a variation on the problem with gold and silver chests
 in ships. It shows how we can count and tally the results at the end,
@@ -81,15 +82,15 @@ In this variant, we recorded the type of first chest for each trial
 **We would like to count the number of times there was “Gold” in the
 first chest *and* “Gold” in the second.**
 
-## Combining Boolean arrays
+## 10.6 Combining Boolean arrays
 
 We can do the count we need by *combining* the Boolean vectors with the
-`&` operator. `&` combines Boolean vectors with a *logical and*.
+`&amp;` operator. `&amp;` combines Boolean vectors with a *logical and*.
 *Logical and* is a rule for combining two Boolean values, where the rule
 is: the result is `TRUE` if the first value is `TRUE` *and* the second
 value if `TRUE`.
 
-Here we use the `&` *operator* to combine some Boolean values on the
+Here we use the `&amp;` *operator* to combine some Boolean values on the
 left and right of the operator:
 
 Above you saw that the `==` operator (as in `== 'Gold'`), when applied
@@ -115,7 +116,7 @@ message("Ten second == 'Gold'")
 print(ten_second_gold)
 ```
 
-Now let us use `&` to combine Boolean vectors:
+Now let us use `&amp;` to combine Boolean vectors:
 
 ```{r}
 ten_both <- (ten_first_gold & ten_second_gold)
@@ -130,9 +131,9 @@ one answer per element in `second_chests`. In that case there was a
 vector to the *left* of `==` and a single value to the *right*. We were
 comparing a vector to a value.
 
-Here we are asking the `&` question of `ten_first_gold` and
+Here we are asking the `&amp;` question of `ten_first_gold` and
 `ten_second_gold`. Here there is a vector to the *left* and a vector to
-the *right*. We are asking the `&` question 10 times, but the first
+the *right*. We are asking the `&amp;` question 10 times, but the first
 question we are asking is:
 
 ```{r}
@@ -149,10 +150,10 @@ The second question is:
 
 and so on. We have ten elements on *each side*, and 10 answers, giving a
 vector (`ten_both`) of 10 elements. Each element in `ten_both` is the
-answer to the `&` question for the elements at the corresponding
+answer to the `&amp;` question for the elements at the corresponding
 positions in `ten_first_gold` and `ten_second_gold`.
 
-We could also create the Boolean vectors and do the `&` operation all in
+We could also create the Boolean vectors and do the `&amp;` operation all in
 one step, like this:
 
 

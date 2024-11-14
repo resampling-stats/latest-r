@@ -1,7 +1,8 @@
 # Permutation test of public and private liquor prices
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/testing_measured.html#nte-liquor_permutation">Note <span>24.2</span></a>.
 
 This notebook asks the question whether the difference in the means of
 private and government-specified prices of a particular whiskey could

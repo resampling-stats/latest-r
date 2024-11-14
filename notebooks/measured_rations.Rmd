@@ -1,7 +1,8 @@
 # Pig rations via bootstrap
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/testing_measured.html#nte-measured_rations">Note <span>24.1</span></a>.
 
 Use the bootstrap (resampling with replacement) procedure to test
 whether the observed differences are surprising in the distribution of
@@ -48,7 +49,8 @@ a_weights
 
 We will use the `a_weights` and `b_weights` vectors for our simulation.
 We are going to shuffle these weights, so we first *concatenate* the two
-vectors (see Section ) so we can shuffle them:
+vectors (see <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_3.html#sec-concatenate"><span>Section 12.15.1</span></a>) so we can
+shuffle them:
 
 ```{r}
 both <- c(a_weights, b_weights)

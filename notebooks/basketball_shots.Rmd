@@ -1,7 +1,8 @@
 # Three or more basketball shots
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_3.html#nte-basketball_shots">Note <span>12.3</span></a>.
 
 We simulate the probability of scoring three or more baskets from five
 shots, if each shot has a 25% probability of success.

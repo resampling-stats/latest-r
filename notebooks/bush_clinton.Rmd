@@ -1,7 +1,8 @@
 # Simulation of Bush / Clinton polling
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/testing_counts_2.html#nte-bush_clinton">Note <span>23.6</span></a>.
 
 The notebook estimates the chances that Bush is in fact equal or behind
 in the population of eventual voters, despite the poll giving him a

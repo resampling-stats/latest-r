@@ -1,7 +1,8 @@
 # Introducing data frames
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/standard_scores.html#nte-intro_data_frames">Note <span>16.2</span></a>.
 
 R is a data analysis language, so, as you would expect, it is
 particularly good at loading data files, and presenting them to us as a

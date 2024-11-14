@@ -1,7 +1,8 @@
 # Association of athletic and IQ scores with $r$
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/correlation_causation.html#nte-athlete_iq_cc">Note <span>29.6</span></a>.
 
 We use random pairings of the athletic and IQ scores to find the
 null-world distribution of the correlation coefficients of these scores.

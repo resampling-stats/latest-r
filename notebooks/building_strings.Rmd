@@ -1,7 +1,8 @@
 # Building strings for labels
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/testing_counts_1.html#nte-building_strings">Note <span>21.1</span></a>.
 
 As the examples in this book proceed, we will use more code techniques
 to write the examples in a more concise and efficient way.

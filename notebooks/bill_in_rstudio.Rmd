@@ -1,7 +1,8 @@
 # The Bill but in RStudio
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/about_technology.html#nte-bill_in_rstudio">Note <span>4.4</span></a>.
 
 Notice that the Download link gave you a file ending in `.Rmd`, where
 “Rmd” is short for *RMarkdown*. *RMarkdown* is the name of the notebook

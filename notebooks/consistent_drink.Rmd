@@ -1,7 +1,8 @@
 # Does opinion match behavior in a poll?
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/correlation_causation.html#nte-consistent_drink">Note <span>29.7</span></a>.
 
 Our aim is to work out the number of matching `drink` and `sale` 1, 0
 scores in the null-world, where the association between the two is

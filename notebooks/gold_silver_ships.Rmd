@@ -1,7 +1,8 @@
 # Ships with gold and silver
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/more_sampling_tools.html#nte-gold_silver_ships">Note <span>10.2</span></a>.
 
 In which we solve the problem of gold and silver chests in a discovered
 ship.

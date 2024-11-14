@@ -1,7 +1,8 @@
 # Sum of squared differences for pig rations
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/testing_measured.html#nte-squared_rations">Note <span>24.6</span></a>.
 
 Here we are working on the question — are the observed differences
 between pig ration measured weight gains for different rations greater

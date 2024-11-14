@@ -1,7 +1,8 @@
 # One pair
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_2_compound.html#nte-one_pair">Note <span>11.1</span></a>.
 
 This is a simulation to find the probability of exactly one pair in a
 poker hand of five cards.

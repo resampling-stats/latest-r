@@ -1,13 +1,16 @@
 # Five spades and four clubs
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_4_finite.html#nte-five_spades_four_clubs">Note <span>13.2</span></a>.
 
 **This is an example of multiple-outcome sampling without replacement,
 order does not matter**.
 
-The problem is similar to the example in Section , except that now there
-are four equally-likely outcomes instead of only two. An R solution is:
+The problem is similar to the example in
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_4_finite.html#sec-four-girls-one-boy"><span>Section 13.3.1</span></a>, except
+that now there are four equally-likely outcomes instead of only two. An
+R solution is:
 
 ```{r}
 # Constitute the deck of 52 cards.

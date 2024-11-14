@@ -1,7 +1,8 @@
 # Voter participation in 1844 election
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/correlation_causation.html#nte-voter_participation_exercise">Note <span>29.9</span></a>.
 
 Notebook for voter participation exercise.
 

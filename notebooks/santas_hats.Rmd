@@ -1,7 +1,8 @@
 # Santas' hats
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_4_finite.html#nte-santas_hats">Note <span>13.7</span></a>.
 
 **The welcome staff at a restaurant mix up the hats of a party of six
 Christmas Santas. What is the probability that at least one will get

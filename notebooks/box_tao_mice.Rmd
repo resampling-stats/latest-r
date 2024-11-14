@@ -1,7 +1,8 @@
 # A problem of black and brown mice
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/bayes_simulation.html#nte-box_tao_mice">Note <span>31.4</span></a>.
 
 Solve the Box and Tao problem of parental probabilities for black and
 brown mice. See the text for full explanation.

@@ -1,7 +1,8 @@
 # Testing association of compliance and cholesterol values
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/correlation_causation.html#nte-compliance_cholesterol">Note <span>29.4</span></a>.
 
 We have 164 rows, each representing a person taking a medication. For
 each row (each person) we have a pair of measurements. The first is

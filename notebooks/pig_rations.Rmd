@@ -1,11 +1,12 @@
 # Weight gain on pig rations
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/testing_counts_1.html#nte-pig_rations">Note <span>21.9</span></a>.
 
 We do a simulation of weight gain ranks for two different pig rations.
 
-The `ranks <- 1:24` statement creates a vector of numbers 1 through 24,
+The `ranks &lt;- 1:24` statement creates a vector of numbers 1 through 24,
 which will represent the rankings of weight gains for each of the 24
 pigs. We repeat the following procedure for 10000 trials. First we
 shuffle the elements of vector `ranks` so that the rank numbers for

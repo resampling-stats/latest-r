@@ -1,7 +1,8 @@
 # Sample size for pig rations with bootstrap
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/how_big_sample.html#nte-sample_size_rations">Note <span>30.6</span></a>.
 
 Use the bootstrap (resampling with replacement) procedure to find the
 plausible differences between two rations in the benchmark (combined)

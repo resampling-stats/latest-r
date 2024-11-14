@@ -1,12 +1,13 @@
 # Selecting elements by slicing
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/more_sampling_tools.html#nte-selecting_by_slicing">Note <span>10.1</span></a>.
 
-As you saw in Section , we do *indexing* when we put square brackets
-following a value that is a container, such as a vector. Inside the
-square brackets we put another value to specify which elements we want
-to fetch from the container.
+As you saw in <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code2.html#sec-array-indexing"><span>Section 6.6</span></a>, we do
+*indexing* when we put square brackets following a value that is a
+container, such as a vector. Inside the square brackets we put another
+value to specify which elements we want to fetch from the container.
 
 We will use the `some_numbers` vector as our container for indexing:
 
@@ -41,9 +42,10 @@ using the colon (`:`) operator.
 3:8
 ```
 
-See Note  for more on operators. The colon operator (the `:`) serves as
-a signal to R to create a new value by *operating* on the values to the
-left and right of the colon.
+See <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/testing_counts_2.html#nte-what-is-an-operator">Note <span>23.2</span></a> for
+more on operators. The colon operator (the `:`) serves as a signal to R
+to create a new value by *operating* on the values to the left and right
+of the colon.
 
 The integer to the left of the colon specifies the *start* position;
 this is the position of the first element we want. The integer to the

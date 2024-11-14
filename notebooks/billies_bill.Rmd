@@ -1,16 +1,19 @@
 # Billie's Bill
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/about_technology.html#nte-billies_bill">Note <span>4.1</span></a>.
 
 The text in this notebook section assumes you have opened the page as an
 interactive notebook on the web. In that case, you are running the
 notebook in a version of Jupyter. We will assume you are using Jupyter
 in the description that follows. You can also run R in Jupyter on your
 own computer, although we recommend that you use RStudio to work with R
-notebook files (see Section ). The procedure for working with notebooks
-in RStudio is not the same as that for Jupyter. We will cover RStudio,
-briefly, in another notebook tutorial after this one.
+notebook files (see
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/about_technology.html#sec-running-own-computer"><span>Section 4.9</span></a>). The
+procedure for working with notebooks in RStudio is not the same as that
+for Jupyter. We will cover RStudio, briefly, in another notebook
+tutorial after this one.
 
 A notebook can contain blocks of text — like this one — as well as code,
 and the results from running the code.
@@ -26,7 +29,7 @@ of a text “cell” — instead it distinguishes between the main body of the
 notebook, made up of text, and *code chunks* — delimited sections in the
 notebook that contain code, instead of text. Jupyter would refer to
 these code chunks as *code cells*. We will go into more detail in
-Section .
+.
 
 Jupyter cells can contain text or code.
 
@@ -57,7 +60,7 @@ In this, our first notebook, we will be using R to solve one of those
 difficult and troubling problems in life — working out the bill in a
 restaurant.
 
-## The meal in question
+## 4.3 The meal in question
 
 Alex and Billie are at a restaurant, getting ready to order. They do not
 have much money, so they are calculating the expected bill before they
@@ -71,7 +74,8 @@ calculate the total bill. Press Control-Shift-Enter or Cmd-Shift-Enter
 (on Mac) in the chunk below, to see the total.(Remember, this is what
 you should do when running the code in Jupyter, via the interactive web
 pages. If you are using RStudio on your own computer, you should use
-different commands — see Section .).
+different commands — see
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/about_technology.html#sec-running-rstudio"><span>Section 4.9.1</span></a>.).
 
 ```{r}
 10.50 + 9.25
@@ -92,7 +96,7 @@ us.
 
 This is exactly what a calculator would do.
 
-## Comments
+## 4.4 Comments
 
 Unlike a calculator, we can also put notes next to our calculations, to
 remind us what they are for. One way of doing this is to use a
@@ -117,7 +121,7 @@ on their code. They do not do this to show off, but because they have a
 lot of experience in reading code, and they know that comments make it
 much easier to read and understand code.
 
-## More calculations
+## 4.5 More calculations
 
 Let us continue with the struggle that Alex and Billie are having with
 their bill.
@@ -143,7 +147,7 @@ Oh dear, no, that isn’t doing the right calculation.
 R follows the normal rules of *precedence* with calculations. These
 rules tell us to do multiplication before addition.
 
-See <https://en.wikipedia.org/wiki/Order_of_operations> for more detail
+See <https: en.wikipedia.org="" order_of_operations="" wiki=""> for more detail
 on the standard rules.
 
 In the case above the rules tell R to first calculate `9.25 * 0.15` (to
@@ -152,15 +156,12 @@ get `1.3875`) and then to add the result to `10.50`, giving `11.8875`.
 We need to tell R we want it to do the *addition* and *then* the
 multiplication. We do this with round brackets (parentheses):
 
-<div __quarto_custom="true" __quarto_custom_type="Callout"
-__quarto_custom_context="Block" __quarto_custom_id="532">
-
+<div __quarto_custom="true" __quarto_custom_context="Block" __quarto_custom_id="55" __quarto_custom_type="Callout">
 <div __quarto_custom_scaffold="true">
 
 Three types of brackets in R
 
 </div>
-
 <div __quarto_custom_scaffold="true">
 
 There are three types of brackets in R.
@@ -175,8 +176,7 @@ Each type of bracket has a different meaning in R. In the examples, play
 close to attention to the type of brackets we are using.
 
 </div>
-
-</div>
+</div></https:>
 
 ```{r}
 # The bill plus tip - mistake fixed.
@@ -195,7 +195,7 @@ that we had to type out `10.50 + 9.25` twice there. That is a little
 boring, but it also makes it easier to make mistakes. The more we have
 to type, the greater the chance we have to make a mistake.
 
-## Variables
+## 4.6 Variables
 
 To make things simpler, we would like to be able to *store* the result
 of the calculation `10.50 + 9.25`, and then re-use this value, to
@@ -314,13 +314,13 @@ right to our eye. The code expresses the calculation as we mean it: the
 bill after tip is equal to the bill before the tip, plus the bill before
 the tip times 0.15.
 
-## And so, on
+## 4.7 And so, on
 
 Now you have done some practice with the notebook, and with variables,
 you are ready for a new problem in probability and statistics, in the
 next chapter.
 
-## Saving your work
+## 4.8 Saving your work
 
 If you are running this notebook via the “Interact” button, you are
 running it using the JupyterLite system. Please bear in mind that your
@@ -335,7 +335,8 @@ you will see the notebook file in the left pane listed as
 `billies_bill.ipynb`. If you want to save a copy to your computer, first
 use the “File” menu, and the “Save” option, to save your notebook. This
 saves the notebook to your browser’s private store (the *cache*). Next
-*right-click* on `billies_bill.ipynb` in the left pane (see Figure ),
-and choose “Download”. Save the file somewhere memorable on your
-computer. You can go back to the notebook by following the instructions
-at Section .
+*right-click* on `billies_bill.ipynb` in the left pane (see
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/about_technology.html#fig-jupyterlite-download">Figure <span>4.1</span></a>), and
+choose “Download”. Save the file somewhere memorable on your computer.
+You can go back to the notebook by following the instructions at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/about_technology.html#sec-running-own-computer"><span>Section 4.9</span></a>.

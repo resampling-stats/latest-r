@@ -1,7 +1,8 @@
 # Unemployment percent exercise
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/confidence_2.html#nte-unemployment_percent_exercise">Note <span>27.1</span></a>.
 
 In a sample of 200 people, 7 percent are found to be unemployed.
 Determine a 95 percent confidence interval for the true population

@@ -1,7 +1,8 @@
 # Twenty executives, two divisions
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_4_finite.html#nte-twenty_executives">Note <span>13.8</span></a>.
 
 The top manager wants to spread the talent reasonably evenly, but she
 does not want to label particular executives with a quality rating and

@@ -1,7 +1,8 @@
 # Trump/Clinton poll simulation
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/testing_counts_1.html#nte-trump_clinton">Note <span>21.5</span></a>.
 
 What is the probability that a sample outcome such as actually observed
 (840 Trump, 660 Clinton) would occur by chance if Clinton is “really”
@@ -25,23 +26,20 @@ Here is a procedure that responds to that question:
     more in favor of Clinton.
 
 Before we come to the simulation, we need some new code to tune our
-histograms (see Section ). We are going to set the bins for the
-histogram using advanced ranges.
+histograms (see <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_3.html#sec-on-histograms"><span>Section 12.15.2</span></a>). We are
+going to set the bins for the histogram using advanced ranges.
 
-<div __quarto_custom="true" __quarto_custom_type="Callout"
-__quarto_custom_context="Block" __quarto_custom_id="618">
-
+<div __quarto_custom="true" __quarto_custom_context="Block" __quarto_custom_id="26" __quarto_custom_type="Callout">
 <div __quarto_custom_scaffold="true">
 
 Advanced ranges
 
 </div>
-
 <div __quarto_custom_scaffold="true">
 
-So far (Section ) we have used the colon syntax to make regular
-sequences of integers. For example, to make a vector of the sequential
-integers from 3 through 12, we could use:
+So far (<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code.html#sec-ranges"><span>Section 5.9</span></a>) we have used the
+colon syntax to make regular sequences of integers. For example, to make
+a vector of the sequential integers from 3 through 12, we could use:</div></div>
 
 ```{r}
 3:12
@@ -80,9 +78,7 @@ sequence of values starting at 0.1 up to and including 0.9, in steps of
 seq(0.1, 0.9, by=0.2)
 ```
 
-</div>
 
-</div>
 
 
 
@@ -115,5 +111,5 @@ message('Proportion voting for Trump: ', kk)
 
 The value for `kk` is our estimate of the probability that Trump’s
 “victory” in the sample would occur by chance if he really were behind.
-In this case, our probability estimate is less than 1 in 10,000 (\<
+In this case, our probability estimate is less than 1 in 10,000 (\&lt;
 0.0001).

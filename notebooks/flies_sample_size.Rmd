@@ -1,14 +1,15 @@
 # Sample size for detecting fruitfly sex difference
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/how_big_sample.html#nte-flies_sample_size">Note <span>30.3</span></a>.
 
 We are interested in a procedure to change the sex ratio of fruit flies
 to give more males. We are going to take samples of 80 flies. We know
 that, in order to detect a convincing difference from a 50:50 ratio, we
 need 48 of 80, or more, to be male. We suspect that the treatment gives
 a 60:40 ratio. Drawing random samples in this 60:40 universe, how often
-do we get the convincing \>=48 male count? In other words, for how many
+do we get the convincing \&gt;=48 male count? In other words, for how many
 trials in this situation, will we see a convincing answer?
 
 ```{r}

@@ -1,7 +1,8 @@
 # Logical operators
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/testing_counts_2.html#nte-logical_operators">Note <span>23.1</span></a>.
 
 This section continues our programme of expanding the range of R
 features that you can use to clear code. As we introduce each feature,
@@ -47,15 +48,12 @@ if (sum(coins == 'heads') <= 2 | sum(coins == 'tails') <= 2) {
 }
 ```
 
-<div __quarto_custom="true" __quarto_custom_type="Callout"
-__quarto_custom_context="Block" __quarto_custom_id="629">
-
+<div __quarto_custom="true" __quarto_custom_context="Block" __quarto_custom_id="35" __quarto_custom_type="Callout">
 <div __quarto_custom_scaffold="true">
 
 What is an operator?
 
 </div>
-
 <div __quarto_custom_scaffold="true">
 
 Above, we called `|` an *operator*. An operator, for our purposes, is a
@@ -64,7 +62,7 @@ combine these values.
 
 For example `+` is an operator. When `+` sits between two numbers in
 code, R interprets this to mean “take the two numbers on either side,
-and make a new number that is the result of adding the two numbers”:
+and make a new number that is the result of adding the two numbers”:</div></div>
 
 ```{r}
 # + is an operator that, between two numbers, means "add the numbers".
@@ -79,9 +77,7 @@ on the numbers to either side — they are *arithmetic* operators.
 2 * 4
 ```
 
-</div>
 
-</div>
 
 
 
@@ -141,10 +137,10 @@ if (sum(coins == 'heads') <= 2 | sum(coins == 'tails') <= 2) {
 }
 ```
 
-While we are here, R has another very useful logical operator: ‘&’
+While we are here, R has another very useful logical operator: ‘&amp;’
 (*and*).
 
-‘&’ takes the LH and RH values, and returns `TRUE` only if *both* values
+‘&amp;’ takes the LH and RH values, and returns `TRUE` only if *both* values
 are `TRUE`.
 
 ```{r}
@@ -167,8 +163,8 @@ message('FALSE & (and) TRUE result: ', FALSE & TRUE)
 message('FALSE & (and) FALSE result: ', FALSE & FALSE)
 ```
 
-We could, for example, ask whether the number of heads is \>=3 *and*
-\<=7 (is in the range 3 through 7).
+We could, for example, ask whether the number of heads is \&gt;=3 *and*
+\&lt;=7 (is in the range 3 through 7).
 
 ```{r}
 if (sum(coins == 'heads') <= 3 | sum(coins == 'heads') <= 7) {

@@ -1,7 +1,8 @@
 # Fine day and win
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_1a.html#nte-fine_win">Note <span>8.1</span></a>.
 
 This notebook calculates the chances that the Commanders win on a fine
 day.

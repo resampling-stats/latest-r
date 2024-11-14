@@ -1,7 +1,8 @@
 # Three Girls
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_3.html#nte-three_girls">Note <span>12.2</span></a>.
 
 This notebook estimates the probability that a family of four children
 will have exactly three girls.

@@ -1,7 +1,8 @@
 # Five spades, four girls
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_4_finite.html#nte-five_spades_four_girls">Note <span>13.9</span></a>.
 
 This is a compound problem: what are the chances of *both* five or more
 spades in one bridge hand, and four girls and a boy in a five-child
@@ -11,9 +12,10 @@ family?
 problem is a compound of two or more simpler problems.
 
 A natural way to handle such a compound problem is in stages, as we saw
-in the archery problem of Section . If a “success” is achieved in the
-first stage, go on to the second stage; if not, don’t go on. More
-specifically in this example:
+in the archery problem of
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_3.html#sec-one-black-archery"><span>Section 12.9</span></a>. If a
+“success” is achieved in the first stage, go on to the second stage; if
+not, don’t go on. More specifically in this example:
 
 - **Step 1.** Use a bridge card deck, and five coins with heads =
   “girl”.
@@ -29,17 +31,18 @@ specifically in this example:
 The R solution to this compound problem is neither long nor difficult.
 We tackle it almost as if the two parts of the problem were to be dealt
 with separately. We first determine, in a random bridge hand, whether 5
-spades or more are dealt, as was done in the problem Section . Then,
-`if` 5 or more spades are found, we use `sample` to generate a random
-family of 5 children. This means that we need not generate families if 5
-or more spades were not dealt to the bridge hand, because a “success” is
-only recorded if both conditions are met. After we record the number of
-girls in each sample of 5 children, we need only finish the loop (by
-`}`) and then use `sum` to count the number of samples that had 4 girls,
-storing the result in `k`. Since we only drew samples of children for
-those trials in which a bridge hand of 5 spades had already been dealt,
-`k` will have the number of trials out of 10000 in which both conditions
-were met.
+spades or more are dealt, as was done in the problem
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_4_finite.html#sec-five-spades-four-clubs"><span>Section 13.3.2</span></a>.
+Then, `if` 5 or more spades are found, we use `sample` to generate a
+random family of 5 children. This means that we need not generate
+families if 5 or more spades were not dealt to the bridge hand, because
+a “success” is only recorded if both conditions are met. After we record
+the number of girls in each sample of 5 children, we need only finish
+the loop (by `}`) and then use `sum` to count the number of samples that
+had 4 girls, storing the result in `k`. Since we only drew samples of
+children for those trials in which a bridge hand of 5 spades had already
+been dealt, `k` will have the number of trials out of 10000 in which
+both conditions were met.
 
 ```{r}
 N <- 10000
@@ -71,7 +74,7 @@ print(kk)
 
 Here is an alternative approach to the same problem, but getting the
 result at the end of the loop, by combining Boolean vectors (see
-Section ).
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/more_sampling_tools.html#sec-combine-booleans"><span>Section 10.6</span></a>).
 
 ```{r}
 N <- 10000

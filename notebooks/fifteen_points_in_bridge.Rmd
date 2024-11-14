@@ -1,7 +1,8 @@
 # Fifteen points in a bridge hand
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_4_finite.html#nte-fifteen_points_in_bridge">Note <span>13.3</span></a>.
 
 Let us assume that ace counts as 4, king = 3, queen = 2, and jack = 1.
 

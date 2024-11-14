@@ -1,7 +1,8 @@
 # Merger rank test
 
 
-Find this notebook on the web at Note .
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/testing_counts_2.html#nte-merger_ranks">Note <span>23.8</span></a>.
 
 Test whether observed mean rank is plausible in the null-world where
 ranks are randomly drawn from 1 through 3.
