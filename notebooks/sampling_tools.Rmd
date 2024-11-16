@@ -8,7 +8,7 @@ Find this notebook on the web at
 
 Thus far we have used numbers such as 1 and 0 and 10 to represent the
 elements we are sampling from. For example, in
-<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/#sec-resampling-two"><span class="quarto-unresolved-ref">sec-resampling-two</span></a>, we were
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code2.html"><span>Chapter 6</span></a>, we were
 simulating the chance of a particular juror being black, given that 26%
 of the eligible jurors in the county were black. We used *integers* for
 that task, where we started with all the integers from 0 through 99, and
@@ -283,7 +283,7 @@ n_black
 ## 7.7 Resampling with and without replacement
 
 Now let us return to the details of Robert Swain’s case, that you first
-saw in <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/#sec-resampling-two"><span class="quarto-unresolved-ref">sec-resampling-two</span></a>.
+saw in .
 
 We looked at the composition of Robert Swain’s 12-person jury — but in
 fact, by law, that does not have to be representative of the eligible
@@ -300,7 +300,7 @@ details.
 
 In fact, in Robert Swain’s trial, there were 8 black members in the
 100-person jury panel. We will leave it to you to adapt the simulation
-from <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/#sec-resampling-two"><span class="quarto-unresolved-ref">sec-resampling-two</span></a> to ask the
+from <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code2.html"><span>Chapter 6</span></a> to ask the
 question — is 8% surprising as a random sample from a population with
 26% black people?
 
