@@ -4,32 +4,24 @@
 Find this notebook on the web at
 <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_method.html#nte-ambulances">Note <span>2.1</span></a>.
 
-<div __quarto_custom="true" __quarto_custom_context="Block" __quarto_custom_id="20" __quarto_custom_type="Callout">
-<div __quarto_custom_scaffold="true">
-
-Comments in code
-
-</div>
-<div __quarto_custom_scaffold="true">
+**Note: Comments in code**
 
 The first thing to say about the code you will see below is there are
 some lines that do not do anything; these are the lines beginning with a
 `#` character (read `#` as “hash”). Lines beginning with `#` are called
 *comments*. When R sees a `#` at the start of a line, it ignores
 everything else on that line, and skips to the next. Here’s an example
-of a comment:</div></div>
+of a comment:
 
 ```{r}
 # R will completely ignore this text.
 ```
 
-<!-- #region -->
 Because R ignores lines beginning with `#`, the text after the `#` is
 just for us, the humans reading the code. The person writing the code
 will often use comments to explain what the code is doing.
 
-
-
+**End of Note: Comments in code**
 
 Our next task is to use R to simulate a single day of ambulances. We
 will again represent each ambulance by a random number from 0 through 9.
@@ -43,7 +35,6 @@ out of order.
 
 The program to simulate one trial of the ambulances problem therefore
 begins with these commands:
-<!-- #endregion -->
 
 ```{r}
 # Ask R to generate 16 numbers from 0 through 9.

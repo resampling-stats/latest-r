@@ -156,13 +156,7 @@ get `1.3875`) and then to add the result to `10.50`, giving `11.8875`.
 We need to tell R we want it to do the *addition* and *then* the
 multiplication. We do this with round brackets (parentheses):
 
-<div __quarto_custom="true" __quarto_custom_context="Block" __quarto_custom_id="55" __quarto_custom_type="Callout">
-<div __quarto_custom_scaffold="true">
-
-Three types of brackets in R
-
-</div>
-<div __quarto_custom_scaffold="true">
+**Note: Three types of brackets in R**
 
 There are three types of brackets in R.
 
@@ -175,8 +169,7 @@ These are:
 Each type of bracket has a different meaning in R. In the examples, play
 close to attention to the type of brackets we are using.
 
-</div>
-</div></https:>
+**End of Note: Three types of brackets in R**</https:>
 
 ```{r}
 # The bill plus tip - mistake fixed.

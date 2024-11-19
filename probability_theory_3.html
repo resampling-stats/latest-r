@@ -1677,34 +1677,111 @@ End Python section.
 -->
 <div class="r">
 <p>In fact, <code>hist</code> sent back the edges (or <em>breaks</em>) of these bins as part of the <code>hist_res</code> results. <code>hist_res</code> is a special R value to contain the results of the histogram. It contains various relevant values.</p>
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>hist_res</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$breaks
+[1] 3.8 4.0 4.2 4.4 4.6 4.8 5.0 5.2 5.4
+
+$counts
+[1]  3  6  2  6  9 10  3  3
+
+$density
+[1] 0.357 0.714 0.238 0.714 1.071 1.190 0.357 0.357
+
+$mids
+[1] 3.9 4.1 4.3 4.5 4.7 4.9 5.1 5.3
+
+$xname
+[1] "prices"
+
+$equidist
+[1] TRUE
+
+attr(,"class")
+[1] "histogram"</code></pre>
+</div>
+</div>
 <p>Notice that the values attached to the <code>hist_res</code> result have <em>names</em>, such as <code>breaks</code>, <code>counts</code> and so on. To get the attached values from the <code>hist_res</code> results, we use the <code>$</code> character to mean <em>attached to</em>. So read:</p>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>hist_res<span class="sc">$</span>counts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>hist_res<span class="sc">$</span>counts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  3  6  2  6  9 10  3  3</code></pre>
+</div>
+</div>
 <p>as “get the value called <code>counts</code> that is attached to the <code>hist_res</code> value.”</p>
 <p>When we called <code>hist(prices)</code>, the <code>hist</code> function had to decide how many bins to use, and the edges of the bins. By default, it does this with an algorithm called <a href="https://en.wikipedia.org/wiki/Sturges%27s_rule">Sturge’s rule</a>. The details of the algorithm are not important to us, but the result is that <code>hist</code> decided to make 9 bins, with the edges you see in the <code>breaks</code> value of <code>hist_res</code>.</p>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bin edges</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>hist_res<span class="sc">$</span>breaks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bin edges</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>hist_res<span class="sc">$</span>breaks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.8 4.0 4.2 4.4 4.6 4.8 5.0 5.2 5.4</code></pre>
+</div>
+</div>
 <p>Think of the <code>breaks</code> values as: the value that starts the first bin, followed by the 9 values that end each of the 9 bins.</p>
 <p>The <code>breaks</code> vector shows that the first bin was from (including) 3.8 up to, <em>and including</em> 4.0, the second bin was from (not including) 4.0 up to, and including 4.2 and so on. The last bin is from (not including) 5.2 through (including) 5.4. There are 10 edges (breaks), forming 9 bins.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
 <p>Put another way, the edges (boundaries) that <code>hist</code> sent back start with the left-hand (inclusive) edge of the first bin, followed by the 9 right-hand (inclusive) edges of the 9 bins.</p>
 <p>The list of results in <code>hist_res</code> includes the vector of <em>counts</em> of values in <code>prices</code> that fall within each bin.</p>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Counts of values falling into each bin.</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>hist_res<span class="sc">$</span>counts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Counts of values falling into each bin.</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>hist_res<span class="sc">$</span>counts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  3  6  2  6  9 10  3  3</code></pre>
+</div>
+</div>
 <p>The <code>counts</code> vector shows that 3 values from <code>prices</code> fell in the range 3.8 through 4.0, 6 values fell in the range from (not including) 4.0 through 4.2, and so on.</p>
 <p>The counts correspond to the heights of the bars on the histogram, so the first bar has height 3, the second bar has height 6, and so on.</p>
 <p>By default, <code>hist</code> uses Sturge’s rule to decide on the number of bins. You can also <em>suggest</em> to R that it uses another number of bins, by sending a number for the <code>breaks</code> argument to <code>hist</code>. For example, you might want to suggest 20 bins:</p>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>results_20 <span class="ot">&lt;-</span> <span class="fu">hist</span>(prices, <span class="at">breaks=</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>results_20 <span class="ot">&lt;-</span> <span class="fu">hist</span>(prices, <span class="at">breaks=</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="probability_theory_3_files/figure-html/unnamed-chunk-69-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
 <p>Notice that R treats this number as a suggestion, and will adjust the actual number of bins to something close to the suggestion and that result in suitably rounded bin edges. In fact, R responded to the suggestion of 20 by giving 15 bins:</p>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(results_20<span class="sc">$</span>counts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(results_20<span class="sc">$</span>counts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 15</code></pre>
+</div>
+</div>
 <p>We now have 16 new edges (boundaries), the first value giving the (inclusive) left-hand edge of the first bin, and the subsequent 15 values giving the (inclusive) right-hand edges.</p>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>results_20<span class="sc">$</span>breaks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>results_20<span class="sc">$</span>breaks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 3.8 3.9 4.0 4.1 4.2 4.3 4.4 4.5 4.6 4.7 4.8 4.9 5.0 5.1 5.2 5.3</code></pre>
+</div>
+</div>
 <p>We can also specify our own <code>breaks</code>, in order to bypass <code>hist</code>s default algorithm. For example, we might prefer exactly 16 bins of size 0.1, with edges starting at 3.8:</p>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>our_edges <span class="ot">&lt;-</span> <span class="fl">3.8</span> <span class="sc">+</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">15</span> <span class="sc">*</span> <span class="fl">0.1</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>our_edges</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>our_edges <span class="ot">&lt;-</span> <span class="fl">3.8</span> <span class="sc">+</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">15</span> <span class="sc">*</span> <span class="fl">0.1</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>our_edges</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 3.8 3.9 4.0 4.1 4.2 4.3 4.4 4.5 4.6 4.7 4.8 4.9 5.0 5.1 5.2 5.3</code></pre>
+</div>
+</div>
 <p>We can send these directly to <code>hist</code> to specify the edges (and the number of bins):</p>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>results_16 <span class="ot">=</span> <span class="fu">hist</span>(prices, <span class="at">breaks=</span>our_edges)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the edges that come back (these are the edges we sent).</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>results_16<span class="sc">$</span>breaks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>results_16 <span class="ot">=</span> <span class="fu">hist</span>(prices, <span class="at">breaks=</span>our_edges)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="probability_theory_3_files/figure-html/unnamed-chunk-73-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the edges that come back (these are the edges we sent).</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>results_16<span class="sc">$</span>breaks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 3.8 3.9 4.0 4.1 4.2 4.3 4.4 4.5 4.6 4.7 4.8 4.9 5.0 5.1 5.2 5.3</code></pre>
+</div>
+</div>
 </div>
 <!---
 End R section
@@ -1751,48 +1828,48 @@ Note&nbsp;12.7: Notebook: Public and private liquor prices
 
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>fake_diffs <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10000</span>)</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>priv <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">4.82</span>, <span class="fl">5.29</span>, <span class="fl">4.89</span>, <span class="fl">4.95</span>, <span class="fl">4.55</span>, <span class="fl">4.90</span>, <span class="fl">5.25</span>, <span class="fl">5.30</span>, <span class="fl">4.29</span>, <span class="fl">4.85</span>, <span class="fl">4.54</span>,</span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>          <span class="fl">4.75</span>, <span class="fl">4.85</span>, <span class="fl">4.85</span>, <span class="fl">4.50</span>, <span class="fl">4.75</span>, <span class="fl">4.79</span>, <span class="fl">4.85</span>, <span class="fl">4.79</span>, <span class="fl">4.95</span>, <span class="fl">4.95</span>, <span class="fl">4.75</span>,</span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>          <span class="fl">5.20</span>, <span class="fl">5.10</span>, <span class="fl">4.80</span>, <span class="fl">4.29</span>)</span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>govt <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">4.65</span>, <span class="fl">4.55</span>, <span class="fl">4.11</span>, <span class="fl">4.15</span>, <span class="fl">4.20</span>, <span class="fl">4.55</span>, <span class="fl">3.80</span>, <span class="fl">4.00</span>, <span class="fl">4.19</span>, <span class="fl">4.75</span>, <span class="fl">4.74</span>,</span>
-<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>          <span class="fl">4.50</span>, <span class="fl">4.10</span>, <span class="fl">4.00</span>, <span class="fl">5.05</span>, <span class="fl">4.20</span>)</span>
-<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>actual_diff <span class="ot">&lt;-</span> <span class="fu">mean</span>(priv) <span class="sc">-</span> <span class="fu">mean</span>(govt)</span>
-<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the two vectors of data into one vector.</span></span>
-<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>both <span class="ot">&lt;-</span> <span class="fu">c</span>(priv, govt)</span>
-<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Repeat 10000 simulation trials.</span></span>
-<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>) {</span>
-<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sample 26 with replacement for private group</span></span>
-<span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a>    fake_priv <span class="ot">&lt;-</span> <span class="fu">sample</span>(both, <span class="at">size=</span><span class="dv">26</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb46-20"><a href="#cb46-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-21"><a href="#cb46-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sample 16 with replacement for govt. group</span></span>
-<span id="cb46-22"><a href="#cb46-22" aria-hidden="true" tabindex="-1"></a>    fake_govt <span class="ot">&lt;-</span> <span class="fu">sample</span>(both, <span class="at">size=</span><span class="dv">16</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb46-23"><a href="#cb46-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-24"><a href="#cb46-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Find the mean of the "private" group.</span></span>
-<span id="cb46-25"><a href="#cb46-25" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">mean</span>(fake_priv)</span>
-<span id="cb46-26"><a href="#cb46-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-27"><a href="#cb46-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Mean of the "govt." group</span></span>
-<span id="cb46-28"><a href="#cb46-28" aria-hidden="true" tabindex="-1"></a>    g <span class="ot">&lt;-</span> <span class="fu">mean</span>(fake_govt)</span>
-<span id="cb46-29"><a href="#cb46-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-30"><a href="#cb46-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Difference in the means</span></span>
-<span id="cb46-31"><a href="#cb46-31" aria-hidden="true" tabindex="-1"></a>    diff <span class="ot">&lt;-</span> p <span class="sc">-</span> g</span>
-<span id="cb46-32"><a href="#cb46-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-33"><a href="#cb46-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Keep score of the trials</span></span>
-<span id="cb46-34"><a href="#cb46-34" aria-hidden="true" tabindex="-1"></a>    fake_diffs[i] <span class="ot">&lt;-</span> diff</span>
-<span id="cb46-35"><a href="#cb46-35" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb46-36"><a href="#cb46-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-37"><a href="#cb46-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Graph of simulation results to compare with the observed result.</span></span>
-<span id="cb46-38"><a href="#cb46-38" aria-hidden="true" tabindex="-1"></a><span class="co"># The paste function sticks the strings together into a single string.</span></span>
-<span id="cb46-39"><a href="#cb46-39" aria-hidden="true" tabindex="-1"></a>fig_title <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">'Average price difference (Actual difference = '</span>,</span>
-<span id="cb46-40"><a href="#cb46-40" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">round</span>(actual_diff <span class="sc">*</span> <span class="dv">100</span>),</span>
-<span id="cb46-41"><a href="#cb46-41" aria-hidden="true" tabindex="-1"></a>                   <span class="st">'cents)'</span>)</span>
-<span id="cb46-42"><a href="#cb46-42" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(fake_diffs, <span class="at">main=</span>fig_title, <span class="at">xlab=</span><span class="st">'Difference in average prices (cents)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>fake_diffs <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10000</span>)</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>priv <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">4.82</span>, <span class="fl">5.29</span>, <span class="fl">4.89</span>, <span class="fl">4.95</span>, <span class="fl">4.55</span>, <span class="fl">4.90</span>, <span class="fl">5.25</span>, <span class="fl">5.30</span>, <span class="fl">4.29</span>, <span class="fl">4.85</span>, <span class="fl">4.54</span>,</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>          <span class="fl">4.75</span>, <span class="fl">4.85</span>, <span class="fl">4.85</span>, <span class="fl">4.50</span>, <span class="fl">4.75</span>, <span class="fl">4.79</span>, <span class="fl">4.85</span>, <span class="fl">4.79</span>, <span class="fl">4.95</span>, <span class="fl">4.95</span>, <span class="fl">4.75</span>,</span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>          <span class="fl">5.20</span>, <span class="fl">5.10</span>, <span class="fl">4.80</span>, <span class="fl">4.29</span>)</span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>govt <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">4.65</span>, <span class="fl">4.55</span>, <span class="fl">4.11</span>, <span class="fl">4.15</span>, <span class="fl">4.20</span>, <span class="fl">4.55</span>, <span class="fl">3.80</span>, <span class="fl">4.00</span>, <span class="fl">4.19</span>, <span class="fl">4.75</span>, <span class="fl">4.74</span>,</span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>          <span class="fl">4.50</span>, <span class="fl">4.10</span>, <span class="fl">4.00</span>, <span class="fl">5.05</span>, <span class="fl">4.20</span>)</span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>actual_diff <span class="ot">&lt;-</span> <span class="fu">mean</span>(priv) <span class="sc">-</span> <span class="fu">mean</span>(govt)</span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the two vectors of data into one vector.</span></span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>both <span class="ot">&lt;-</span> <span class="fu">c</span>(priv, govt)</span>
+<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Repeat 10000 simulation trials.</span></span>
+<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>) {</span>
+<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sample 26 with replacement for private group</span></span>
+<span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a>    fake_priv <span class="ot">&lt;-</span> <span class="fu">sample</span>(both, <span class="at">size=</span><span class="dv">26</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-21"><a href="#cb54-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sample 16 with replacement for govt. group</span></span>
+<span id="cb54-22"><a href="#cb54-22" aria-hidden="true" tabindex="-1"></a>    fake_govt <span class="ot">&lt;-</span> <span class="fu">sample</span>(both, <span class="at">size=</span><span class="dv">16</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb54-23"><a href="#cb54-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-24"><a href="#cb54-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Find the mean of the "private" group.</span></span>
+<span id="cb54-25"><a href="#cb54-25" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">mean</span>(fake_priv)</span>
+<span id="cb54-26"><a href="#cb54-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-27"><a href="#cb54-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Mean of the "govt." group</span></span>
+<span id="cb54-28"><a href="#cb54-28" aria-hidden="true" tabindex="-1"></a>    g <span class="ot">&lt;-</span> <span class="fu">mean</span>(fake_govt)</span>
+<span id="cb54-29"><a href="#cb54-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-30"><a href="#cb54-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Difference in the means</span></span>
+<span id="cb54-31"><a href="#cb54-31" aria-hidden="true" tabindex="-1"></a>    diff <span class="ot">&lt;-</span> p <span class="sc">-</span> g</span>
+<span id="cb54-32"><a href="#cb54-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-33"><a href="#cb54-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Keep score of the trials</span></span>
+<span id="cb54-34"><a href="#cb54-34" aria-hidden="true" tabindex="-1"></a>    fake_diffs[i] <span class="ot">&lt;-</span> diff</span>
+<span id="cb54-35"><a href="#cb54-35" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb54-36"><a href="#cb54-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-37"><a href="#cb54-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Graph of simulation results to compare with the observed result.</span></span>
+<span id="cb54-38"><a href="#cb54-38" aria-hidden="true" tabindex="-1"></a><span class="co"># The paste function sticks the strings together into a single string.</span></span>
+<span id="cb54-39"><a href="#cb54-39" aria-hidden="true" tabindex="-1"></a>fig_title <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">'Average price difference (Actual difference = '</span>,</span>
+<span id="cb54-40"><a href="#cb54-40" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">round</span>(actual_diff <span class="sc">*</span> <span class="dv">100</span>),</span>
+<span id="cb54-41"><a href="#cb54-41" aria-hidden="true" tabindex="-1"></a>                   <span class="st">'cents)'</span>)</span>
+<span id="cb54-42"><a href="#cb54-42" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(fake_diffs, <span class="at">main=</span>fig_title, <span class="at">xlab=</span><span class="st">'Difference in average prices (cents)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">

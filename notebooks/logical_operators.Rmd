@@ -48,13 +48,7 @@ if (sum(coins == 'heads') <= 2 | sum(coins == 'tails') <= 2) {
 }
 ```
 
-<div __quarto_custom="true" __quarto_custom_context="Block" __quarto_custom_id="35" __quarto_custom_type="Callout">
-<div __quarto_custom_scaffold="true">
-
-What is an operator?
-
-</div>
-<div __quarto_custom_scaffold="true">
+**Note: What is an operator?**
 
 Above, we called `|` an *operator*. An operator, for our purposes, is a
 special character that sits between two values, and that tells R how to
@@ -62,7 +56,7 @@ combine these values.
 
 For example `+` is an operator. When `+` sits between two numbers in
 code, R interprets this to mean “take the two numbers on either side,
-and make a new number that is the result of adding the two numbers”:</div></div>
+and make a new number that is the result of adding the two numbers”:
 
 ```{r}
 # + is an operator that, between two numbers, means "add the numbers".
@@ -77,7 +71,7 @@ on the numbers to either side — they are *arithmetic* operators.
 2 * 4
 ```
 
-
+**End of Note: What is an operator?**
 
 
 

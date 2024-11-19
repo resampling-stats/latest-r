@@ -78,19 +78,13 @@ Another way to ask the same question is by using the `all` function on
 `are_equal`. This returns `TRUE` if *all* the elements in `are_equal`
 are `TRUE`, and `FALSE` otherwise.
 
-<div __quarto_custom="true" __quarto_custom_context="Block" __quarto_custom_id="31" __quarto_custom_type="Callout">
-<div __quarto_custom_scaffold="true">
-
-Testing whether all elements of a vector are the same
-
-</div>
-<div __quarto_custom_scaffold="true">
+**Note: Testing whether all elements of a vector are the same**
 
 The `all`, applied to a Boolean vector (as here), checks whether *all*
 of the elements in the Boolean vector are `TRUE`. If so, it returns
 `TRUE`, otherwise, it returns `FALSE`.
 
-For example:</div></div>
+For example:
 
 ```{r}
 # All elements are TRUE, `all` returns TRUE
@@ -102,12 +96,9 @@ all(c(TRUE, TRUE, TRUE, TRUE))
 all(c(TRUE, TRUE, FALSE, TRUE))
 ```
 
-<!-- #region -->
-
-
+**End of Note: Testing whether all elements of a vector are the same**
 
 Here is the full procedure for steps 2 and 3 (a single trial):
-<!-- #endregion -->
 
 ```{r}
 # Shuffle the class into a random order.
