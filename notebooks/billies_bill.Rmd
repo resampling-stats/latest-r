@@ -6,23 +6,24 @@ Find this notebook on the web at
 
 The text in this notebook section assumes you have opened the page as an
 interactive notebook on the web. In that case, you are running the
-notebook in a version of Jupyter. We will assume you are using Jupyter
-in the description that follows. You can also run R in Jupyter on your
-own computer, although we recommend that you use RStudio to work with R
-notebook files (see
+notebook in a version of Jupyter. We assume you are using Jupyter in the
+description that follows. You can also run R in Jupyter on your own
+computer, but we suggest that you do not do that. Instead, we recommend
+you use RStudio to work with R notebook files on your computer (see
 <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/about_technology.html#sec-running-own-computer"><span>Section 4.9</span></a>). The
 procedure for working with notebooks in RStudio is not the same as that
-for Jupyter. We will cover RStudio, briefly, in another notebook
-tutorial after this one.
+for Jupyter. We give a short tutorial on using RStudio in another
+notebook after this one (see
+).
 
 A notebook can contain blocks of text — like this one — as well as code,
 and the results from running the code.
 
 Jupyter Notebooks are made up of *cells*.
 
-We assume you are running this notebook via the interactive web pages,
-and therefore, that you are running the notebook with Jupyter, not
-RStudio.
+As we said above, we assume you are running this notebook via the
+interactive web pages, and therefore, that you are running the notebook
+with Jupyter, not RStudio.
 
 RStudio differs a little from Jupyter, because it does not have the idea
 of a text “cell” — instead it distinguishes between the main body of the
@@ -75,7 +76,7 @@ calculate the total bill. Press Control-Shift-Enter or Cmd-Shift-Enter
 you should do when running the code in Jupyter, via the interactive web
 pages. If you are using RStudio on your own computer, you should use
 different commands — see
-<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/about_technology.html#sec-running-rstudio"><span>Section 4.9.1</span></a>.).
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/about_technology.html#sec-running-rstudio"><span>Section 4.9.2</span></a>.).
 
 ```{r}
 10.50 + 9.25
@@ -316,20 +317,30 @@ next chapter.
 ## 4.8 Saving your work
 
 If you are running this notebook via the “Interact” button, you are
-running it using the JupyterLite system. Please bear in mind that your
-browser keeps all the notebooks you run in JupyterLite, in its browser
-*cache* — a private and temporary store that the browser maintains
-somewhere on your system. If you want to keep any changes you make to
-notebooks you have run with the “Interact” JupyterLite system, you might
-want to save a copy of the notebook outside the browser cache. To do
-this, look the pane to the left of the notebook for the name of the
-notebook. This name of this particular notebook is “billies_bill”, and
-you will see the notebook file in the left pane listed as
-`billies_bill.ipynb`. If you want to save a copy to your computer, first
-use the “File” menu, and the “Save” option, to save your notebook. This
-saves the notebook to your browser’s private store (the *cache*). Next
-*right-click* on `billies_bill.ipynb` in the left pane (see
+running it using the JupyterLite system. JupyterLite keeps all its
+notebooks in your browser *cache*. This is a private and temporary store
+that the browser keeps somewhere on your system. This can be a problem
+if you find yourself clearing your browser cache for some reason, or if
+you start using another browser, that has a different cache. If you want
+make sure you have a copy of any changes you make to notebooks you ran
+with the “Interact” JupyterLite system, you might want to save a copy of
+the notebook outside the browser cache. To do this, look the pane to the
+left of the notebook for the name of the notebook. This name of this
+particular notebook is “billies_bill”, and you will see the notebook
+file in the left pane listed as `billies_bill.ipynb`. If you want to
+save a copy to your computer, first use the “File” menu, and the “Save”
+option, to save your notebook. This saves the notebook to your browser’s
+private store (the *cache*). Next *right-click* on `billies_bill.ipynb`
+in the left pane (see
 <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/about_technology.html#fig-jupyterlite-download">Figure <span>4.1</span></a>), and
 choose “Download”. Save the file somewhere memorable on your computer.
 You can go back to the notebook by following the instructions at
 <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/about_technology.html#sec-running-own-computer"><span>Section 4.9</span></a>.
+
+You can use this copy by re-uploading it to the “Interact” JupyterLite
+system. Go to the upload button near the top-left of the JupyterLite
+interface (see
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/about_technology.html#fig-jupyterlite-upload">Figure <span>4.2</span></a>). Select
+the `.ipynb` (Jupyter notebook) file you want to upload; once done, you
+can open the notebook using the file listing panel to the left of the
+interface.

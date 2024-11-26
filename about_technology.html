@@ -415,11 +415,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#more-calculations" id="toc-more-calculations" class="nav-link" data-scroll-target="#more-calculations">4.5 More calculations</a></li>
   <li><a href="#sec-variables" id="toc-sec-variables" class="nav-link" data-scroll-target="#sec-variables">4.6 Variables</a></li>
   <li><a href="#and-so-on" id="toc-and-so-on" class="nav-link" data-scroll-target="#and-so-on">4.7 And so, on</a></li>
-  <li><a href="#saving-your-work" id="toc-saving-your-work" class="nav-link" data-scroll-target="#saving-your-work">4.8 Saving your work</a></li>
-  <li><a href="#sec-running-own-computer" id="toc-sec-running-own-computer" class="nav-link" data-scroll-target="#sec-running-own-computer"><span class="header-section-number">4.9</span> Running the code on your own computer</a>
-  <ul class="collapse">
-  <li><a href="#sec-running-rstudio" id="toc-sec-running-rstudio" class="nav-link" data-scroll-target="#sec-running-rstudio"><span class="header-section-number">4.9.1</span> Running notebooks in RStudio</a></li>
-  </ul></li>
+  <li><a href="#sec-saving-ipynb" id="toc-sec-saving-ipynb" class="nav-link" data-scroll-target="#sec-saving-ipynb">4.8 Saving your work</a></li>
+  <li><a href="#sec-running-own-computer" id="toc-sec-running-own-computer" class="nav-link" data-scroll-target="#sec-running-own-computer"><span class="header-section-number">4.9</span> Running the code on your own computer</a></li>
   </ul>
 </nav>
     </div>
@@ -470,10 +467,10 @@ Using R on the web and on your computer
 <p>The current title of the main website for R<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> is “The R Project for Statistical Computing”, and this is a good summary of how R started, and what R is particularly good at. The people who designed R designed it for themselves, and you and I — those of us who are working to find and understand the patterns in data. Over the last 20 years, it has gained wide use for data analysis across many fields, especially in life sciences, data science and statistics.</p>
 <p>Although many people use R as a simple way of exploring data and doing standard statistical tests, it is a full-fledged programming language.</p>
 </div>
-<p>It is very important that R is a <em>programming language</em> and not a set of canned routines for “doing statistics”. It means that we can explore the <em>ideas</em> of probability and statistics using the <em>language</em> of R to express those ideas. It also means that you, and we, and anyone else in the world, can write new code to share with others, so they can benefit from our work, understand it, and improve it. This book is one example; we have written the R code in this book as clearly as we can to make it easy to follow, and to explain the underlying ideas. We hope you will help us by testing what we have done and sending us suggestions for ways we could improve. Please see <a href="preface_third.html#sec-book-as-public" class="quarto-xref"><span>Section 6</span></a> for more information about how to do that.</p>
+<p>It is crucial to our purpose that R is a <em>programming language</em> and not a set of canned routines for “doing statistics”. It means that we can explore the <em>ideas</em> of probability and statistics using the <em>language</em> of R to express those ideas. It also means that you, and we, and anyone else in the world, can write new code to share with others, so they can use our work, understand it, and improve it. This book is one example; we have written the R code in this book as clearly as we can to make it easy to follow, and to explain the underlying ideas. We hope you will help us by testing what we have done and sending us suggestions for ways we could improve. Please see <a href="preface_third.html#sec-book-as-public" class="quarto-xref"><span>Section 6</span></a> for more information about how to do that.</p>
 <section id="the-environment" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="the-environment"><span class="header-section-number">4.1</span> The environment</h2>
-<p>Many of the chapters have sections with code for you to run, and experiment with. These sections contain <em>Jupyter notebooks</em>[^jupyter-nb]. Jupyter notebooks are interactive web pages that allow you to read, write and run R code. We mark the start of each notebook in the text with a note and link heading like the one you see below. In the web edition of this book, you can click on the <em>Download</em> link in this header to download the section as a notebook. You can also click on the <em>Interact</em> link in this header to open the notebook in your web browser, using a system called JupyterLite. You can run the code, and experiment by making changes.</p>
+<p>Many of the chapters have sections with code for you to run, and experiment with. These sections contain <em>Jupyter notebooks</em>[^jupyter-nb]. Jupyter notebooks are interactive web pages that allow you to read, write and run R code. We mark the start of each notebook in the text with a note-and-link heading like the one you see below. In the web edition of this book, you can click on the <em>Download</em> link in this heading to download the section as a notebook. You can also click on the <em>Interact</em> link to open the notebook in your web browser, using a system called JupyterLite. JupyterLite allows you to run the code in your browser, and experiment by making changes.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -488,7 +485,7 @@ About JupyterLite
 <p>When you click on the “Interact” link, it will take you to a web address that has the effect of making your browser download the JupyterLite system, along with <span class="r">a compatible version of the R language</span>. The web page that opens allows you run to the R code in the notebook inside your browser.</p>
 </div>
 </div>
-<p>In the print version of the book, we point you to the web version, to get the links.</p>
+<p>In the print version of the book, we point you to the web version to get the “Download” and “Interact” links.</p>
 <p>At the end of this chapter, we explain how to run these notebooks on your own computer. In the next section you will see an example notebook; to start with, you might want to run this in your browser using the “Interact” link.</p>
 </section>
 <section id="getting-started-with-the-notebook" class="level2" data-number="4.2">
@@ -513,13 +510,13 @@ Note&nbsp;4.1: Notebook: Billie’s Bill
 
 </div>
 <div class="r">
-<p>The text in this notebook section assumes you have opened the page as an interactive notebook on the web. In that case, you are running the notebook in a version of Jupyter. We will assume you are using Jupyter in the description that follows. You can also run R in Jupyter on your own computer, although we recommend that you use RStudio to work with R notebook files (see <a href="#sec-running-own-computer" class="quarto-xref"><span>Section 4.9</span></a>). The procedure for working with notebooks in RStudio is not the same as that for Jupyter. We will cover RStudio, briefly, in another notebook tutorial after this one.</p>
+<p>The text in this notebook section assumes you have opened the page as an interactive notebook on the web. In that case, you are running the notebook in a version of Jupyter. We assume you are using Jupyter in the description that follows. You can also run R in Jupyter on your own computer, but we suggest that you do not do that. Instead, we recommend you use RStudio to work with R notebook files on your computer (see <a href="#sec-running-own-computer" class="quarto-xref"><span>Section 4.9</span></a>). The procedure for working with notebooks in RStudio is not the same as that for Jupyter. We give a short tutorial on using RStudio in another notebook after this one (see <a href="#sec-running-rstudio" class="quarto-xref"><span>Section 4.9.2</span></a>).</p>
 </div>
 <p>A notebook can contain blocks of text — like this one — as well as code, and the results from running the code.</p>
 <p>Jupyter Notebooks are made up of <em>cells</em>.</p>
 <div class="r">
-<p>We assume you are running this notebook via the interactive web pages, and therefore, that you are running the notebook with Jupyter, not RStudio.</p>
-<p>RStudio differs a little from Jupyter, because it does not have the idea of a text “cell” — instead it distinguishes between the main body of the notebook, made up of text, and <em>code chunks</em> — delimited sections in the notebook that contain code, instead of text. Jupyter would refer to these code chunks as <em>code cells</em>. We will go into more detail in <a href="#sec-running-rstudio" class="quarto-xref"><span>Section 4.9.1</span></a>.</p>
+<p>As we said above, we assume you are running this notebook via the interactive web pages, and therefore, that you are running the notebook with Jupyter, not RStudio.</p>
+<p>RStudio differs a little from Jupyter, because it does not have the idea of a text “cell” — instead it distinguishes between the main body of the notebook, made up of text, and <em>code chunks</em> — delimited sections in the notebook that contain code, instead of text. Jupyter would refer to these code chunks as <em>code cells</em>. We will go into more detail in <a href="#sec-running-rstudio" class="quarto-xref"><span>Section 4.9.2</span></a>.</p>
 </div>
 <p>Jupyter cells can contain text or code.</p>
 <p>Notebook text can have formatting, such as links.</p>
@@ -534,7 +531,7 @@ Note&nbsp;4.1: Notebook: Billie’s Bill
 <h2 data-number="4.3" class="anchored" data-anchor-id="the-meal-in-question">4.3 The meal in question</h2>
 <p>Alex and Billie are at a restaurant, getting ready to order. They do not have much money, so they are calculating the expected bill before they order.</p>
 <p>Alex is thinking of having the fish for £10.50, and Billie is leaning towards the chicken, at £9.25. First they calculate their combined bill.</p>
-<p>Below this text you see a <em>code</em> chunk. It contains the R code to calculate the total bill. Press Control-Shift-Enter or Cmd-Shift-Enter (on Mac) in the chunk below, to see the total.(Remember, this is what you should do when running the code in Jupyter, via the interactive web pages. If you are using RStudio on your own computer, you should use different commands — see <a href="#sec-running-rstudio" class="quarto-xref"><span>Section 4.9.1</span></a>.).</p>
+<p>Below this text you see a <em>code</em> chunk. It contains the R code to calculate the total bill. Press Control-Shift-Enter or Cmd-Shift-Enter (on Mac) in the chunk below, to see the total.(Remember, this is what you should do when running the code in Jupyter, via the interactive web pages. If you are using RStudio on your own computer, you should use different commands — see <a href="#sec-running-rstudio" class="quarto-xref"><span>Section 4.9.2</span></a>.).</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fl">10.50</span> <span class="sc">+</span> <span class="fl">9.25</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -705,9 +702,10 @@ Note&nbsp;4.2: Three types of brackets in R
 <h2 data-number="4.7" class="anchored" data-anchor-id="and-so-on">4.7 And so, on</h2>
 <p>Now you have done some practice with the notebook, and with variables, you are ready for a new problem in probability and statistics, in the next chapter.</p>
 </section>
-<section id="saving-your-work" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="saving-your-work">4.8 Saving your work</h2>
-<p>If you are running this notebook via the “Interact” button, you are running it using the JupyterLite system. Please bear in mind that your browser keeps all the notebooks you run in JupyterLite, in its browser <em>cache</em> — a private and temporary store that the browser maintains somewhere on your system. If you want to keep any changes you make to notebooks you have run with the “Interact” JupyterLite system, you might want to save a copy of the notebook outside the browser cache. To do this, look the pane to the left of the notebook for the name of the notebook. This name of this particular notebook is “billies_bill”, and you will see the notebook file in the left pane listed as <code>billies_bill.ipynb</code>. If you want to save a copy to your computer, first use the “File” menu, and the “Save” option, to save your notebook. This saves the notebook to your browser’s private store (the <em>cache</em>). Next <em>right-click</em> on <code>billies_bill.ipynb</code> in the left pane (see <a href="#fig-jupyterlite-download" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>), and choose “Download”. Save the file somewhere memorable on your computer. You can go back to the notebook by following the instructions at <a href="#sec-running-own-computer" class="quarto-xref"><span>Section 4.9</span></a>.</p>
+<section id="sec-saving-ipynb" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="sec-saving-ipynb">4.8 Saving your work</h2>
+<p>If you are running this notebook via the “Interact” button, you are running it using the JupyterLite system. JupyterLite keeps all its notebooks in your browser <em>cache</em>. This is a private and temporary store that the browser keeps somewhere on your system. This can be a problem if you find yourself clearing your browser cache for some reason, or if you start using another browser, that has a different cache. If you want make sure you have a copy of any changes you make to notebooks you ran with the “Interact” JupyterLite system, you might want to save a copy of the notebook outside the browser cache. To do this, look the pane to the left of the notebook for the name of the notebook. This name of this particular notebook is “billies_bill”, and you will see the notebook file in the left pane listed as <code>billies_bill.ipynb</code>. If you want to save a copy to your computer, first use the “File” menu, and the “Save” option, to save your notebook. This saves the notebook to your browser’s private store (the <em>cache</em>). Next <em>right-click</em> on <code>billies_bill.ipynb</code> in the left pane (see <a href="#fig-jupyterlite-download" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>), and choose “Download”. Save the file somewhere memorable on your computer. You can go back to the notebook by following the instructions at <a href="#sec-running-own-computer" class="quarto-xref"><span>Section 4.9</span></a>.</p>
+<p>You can use this copy by re-uploading it to the “Interact” JupyterLite system. Go to the upload button near the top-left of the JupyterLite interface (see <a href="#fig-jupyterlite-upload" class="quarto-xref">Figure&nbsp;<span>4.2</span></a>). Select the <code>.ipynb</code> (Jupyter notebook) file you want to upload; once done, you can open the notebook using the file listing panel to the left of the interface.</p>
 <div class="nb-end">
 
 </div>
@@ -737,6 +735,16 @@ Figure&nbsp;4.1: Downloading files in JupyterLite
 </figcaption>
 </figure>
 </div>
+<div id="fig-jupyterlite-upload" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-jupyterlite-upload-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/jupyterlite_upload.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-jupyterlite-upload-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.2: Uploading files in JupyterLite
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="sec-running-own-computer" class="level2" data-number="4.9">
 <h2 data-number="4.9" class="anchored" data-anchor-id="sec-running-own-computer"><span class="header-section-number">4.9</span> Running the code on your own computer</h2>
@@ -757,8 +765,16 @@ Note&nbsp;4.3: Download links and data files
 </div>
 </div>
 <p>You can run any of the code notebooks in this textbook on your own machine by downloading the notebook, via the download link at the top of each notebook section, and then opening the resulting notebook in RStudio.</p>
-<section id="sec-running-rstudio" class="level3 r" data-number="4.9.1">
-<h3 data-number="4.9.1" class="anchored" data-anchor-id="sec-running-rstudio"><span class="header-section-number">4.9.1</span> Running notebooks in RStudio</h3>
+<p>Notice that the notebooks for download are in the same <code>.ipynb</code> (Jupyter) format as the notebooks in the “Interact” system (see <a href="#sec-saving-ipynb" class="quarto-xref"><span>Section 4.8</span></a>). That means you can upload the <code>.ipynb</code> files from the download links into the Interact system and work with them there, and conversely, you can download the <code>.ipynb</code> files from the Interact system and work with them in Jupyter.</p>
+<div class="r">
+<section id="notebooks-for-download-are-in-rstudio-.rmd-format" class="level3" data-number="4.9.1">
+<h3 data-number="4.9.1" class="anchored" data-anchor-id="notebooks-for-download-are-in-rstudio-.rmd-format"><span class="header-section-number">4.9.1</span> Notebooks for download are in RStudio (<code>.Rmd</code>) format</h3>
+<p>You will notice that the notebooks for download are in the <code>.Rmd</code> (RMarkdown) format, rather than the <code>.ipynb</code> (Jupyter) format. RMarkdown is the standard format for notebooks in RStudio. The <code>.ipynb</code> format is the standard format for Jupyter. As you remember, the “Interact” system uses Jupyter, and you may have noticed that the notebooks there are in <code>.ipynb</code>. However, we designed the notebooks for download to work easily with RStudio — the system we recommend for running on your own computer, outside the browser.</p>
+<p>At the moment, by default, RStudio will not open Jupyter <code>.ipynb</code> files as notebooks, and the “Interact” system will not open RMarkdown <code>.Rmd</code> files as notebooks, so treat these two systems as separate. If you download an <code>.Rmd</code>, do not upload it to the “Interact” system. If you download an <code>.ipynb</code> file, do not try and open it in RStudio.</p>
+<p>In fact, it is relatively easy to convert between these two common notebook formats, with various methods, but we will leave you to explore that task if you are interested.</p>
+</section>
+<section id="sec-running-rstudio" class="level3" data-number="4.9.2">
+<h3 data-number="4.9.2" class="anchored" data-anchor-id="sec-running-rstudio"><span class="header-section-number">4.9.2</span> Running notebooks in RStudio</h3>
 <p>We are use a version of the Jupyter notebook for our interactive (web) examples. Although you can use the Jupyter notebook on your own computer, we recommend you use the RStudio desktop application.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> It works in similar way to Jupyter, but with some variation. You will find many good tutorials for RStudio online; at time of writing <a href="https://www.datacamp.com/tutorial/r-studio-tutorial">this DataCamp tutorial</a> was a good place to start.</p>
 <p>As you will read on the RStudio download page, linked above, you will need two software packages on your computer to run RStudio. These are:</p>
 <ul>
@@ -768,7 +784,7 @@ Note&nbsp;4.3: Download links and data files
 <p>The base R language gives you the software to run R code and show results. You can use the base R language on its own, but RStudio gives you a richer interface to interact with the R language, including the ability to open, edit and run R notebooks, like the notebook in this chapter. RStudio uses the base R language to run R code from the notebook, and show the results.</p>
 <p>Install the base R language by going to the main R website at <a href="https://www.r-project.org" class="uri">https://www.r-project.org</a>, following the links to the package for your system (Windows, Mac, or Linux), and install according to the instructions on the website.</p>
 <p>Then install the RStudio interface by going to the RStudio download page at <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a>, and navigating to the link to download RStudio Desktop. RStudio is an Integrated Development Environment for R. The RStudio IDE makes it easier to interact with, and develop, R code. You only need the free (default) version; it has all the features you will need. The free version is the only version that we, your humble authors, have used for this book, and for all our own work and teaching.</p>
-<p>See <a href="#sec-running-rstudio" class="quarto-xref"><span>Section 4.9.1</span></a> for a starter tutorial on running notebooks in RStudio.</p>
+<p>See <a href="#sec-running-rstudio" class="quarto-xref"><span>Section 4.9.2</span></a> for a starter tutorial on running notebooks in RStudio.</p>
 <p>Click the Download link below to download this notebook to your computer.</p>
 <div id="nte-bill_in_rstudio" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -831,6 +847,7 @@ End of notebook: The Bill but in RStudio
 End of notebook.
 -->
 </section>
+</div>
 <!---
 End of R segment.
 -->
