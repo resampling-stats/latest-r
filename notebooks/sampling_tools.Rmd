@@ -143,6 +143,8 @@ vector_of_strings = c('Julian', 'Lincoln', 'Simon')
 vector_of_strings
 ```
 
+
+
 As for any vector, you can select elements with *indexing*. When you
 select an element with a given position (index), you get the *string* at
 at that position:

@@ -1,0 +1,669 @@
+# Simulating lymphoma trials
+
+
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code.html#nte-lymphoma">Note <span>5.1</span></a>.
+
+## 5.5 Simulate one trial with code
+
+We can use the computer to do something very similar to rolling 17
+10-sided dice, by asking the computer for 17 random whole numbers from 0
+through 9.
+
+**Note: Whole numbers**
+
+A whole number is a number that is not negative, and does not have
+fractional part (does not have anything after a decimal point). 0 and 1
+and 2 and 3 are whole numbers, but -1 and $\frac{3}{5}$ and 11.3 are
+not. The whole numbers from 0 through 9 are 0, 1, 2, 3, 4, 5, 6, 7, 8,
+9.
+
+**End of Note: Whole numbers**
+
+We have already discussed what we mean by *random* in
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_method.html#sec-randomness-computer"><span>Section 2.2</span></a>.
+
+## 5.6 From numbers to vectors
+
+We need to prepare the *sequence* of numbers that we want R to select
+from.
+
+We have already seen the idea that R has *values* that are individual
+numbers. Remember, a *variable* is a *named value*. Here we attach the
+name `a` to the value 1.
+
+```{r}
+a <- 1
+# Show the value of "a"
+a
+```
+
+R also allows *values* that are *sequences of numbers*. R calls these
+sequences *vectors*.
+
+The name *vector* sounds rather technical and mathematical, but the only
+important idea for us is that a *vector* stores a *sequence* of numbers.
+
+Here we make a vector that contains the 10 numbers we will select from:
+
+```{r}
+# Make a vector of numbers, store with the name "some_numbers".
+some_numbers <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+# Show the value of "some_numbers"
+some_numbers
+```
+
+Notice that the value for `some_numbers` is a vector, and that this
+value *contains* 10 numbers.
+
+Put another way, `some_numbers` is now the name we can use for this
+collection of 10 values.
+
+Vectors are very useful for simulations and data analysis, and we will
+be using these for nearly every example in this book.
+
+## 5.7 Functions
+
+*Functions* are another tool that we will be using everywhere, and that
+you seen already, although we have not introduced them until now.
+
+You can think of functions as named *production lines*.
+
+For example, consider the R *function* `round`
+
+`round` is the name for a simple production line, that takes in a
+number, and (by default) sends back the number rounded to the nearest
+*integer*.
+
+**Note: What is an integer?**
+
+An *integer* is a positive or negative *whole number*.
+
+In other words, a number is an *integer* if the number is *either* a
+whole number (0, 1, 2 …), *or* a negative whole number (-1, -2, -3 …).
+All of -208, -2, 0, 10, 105 are integers, but $\frac{3}{5}$, -10.3 and
+0.2 are not.
+
+We will use the term *integer* fairly often, because it is a convenient
+way to name all the positive and negative whole numbers.
+
+**End of Note: What is an integer?**
+
+Think of a function as a named *production line*. We sent the function
+(production line) raw material (components) to work on. The production
+line does some work on the components. A finished result comes off the
+other end.
+
+Therefore, think of `round` as the name of a production line, that takes
+in a *component* (in this case, any number), and does some work, and
+sends back the finished *result* (in this case, the number rounded to
+the nearest integer.
+
+The components we send to a function are called *arguments*. The
+finished result the function sends back is the *return value*.
+
+- **Arguments**: the value or values we send to a function.
+- **Return value**: the values the function sends back.
+
+See <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code.html#fig-round_function_pl">Figure <span>5.2</span></a> for an
+illustration of `round` as a production line.
+
+In the next few code chunks, you see examples where `round` takes in a
+not-integer number, as an *argument*, and sends back the nearest integer
+as the *return value*:
+
+```{r}
+# Put in 3.2, round sends back 3.
+round(3.2)
+```
+
+```{r}
+# Put in -2.7, round sends back -3.
+round(-2.7)
+```
+
+Like many functions, `round` can take more than one argument
+(component). You can send `round` the number of digits you want to round
+to, after the number of you want it to work on, like this (see
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code.html#fig-round_ndigits_pl">Figure <span>5.3</span></a>):
+
+```{r}
+# Put in 3.1415, and the number of digits to round to (2).
+# round sends back 3.14
+round(3.1415, 2)
+```
+
+Notice that the second argument — here 2 — is *optional*. We only have
+to send `round` one argument: the number we want it to round. But we can
+*optionally* send it a second argument — the number of decimal places we
+want it to round to. If we don’t specify the second argument, then
+`round` assumes we want to round to 0 decimal places, and therefore, to
+the nearest integer.
+
+## 5.8 Functions and named arguments
+
+In the example above, we sent `round` two arguments. `round` knows that
+we mean the first argument to be the number we want to round, and the
+second argument is the number of decimal places we want to round to. It
+knows which is which by the *position* of the arguments — the *first*
+argument is the *number* it should round, and *second* is the number of
+digits.
+
+In fact, internally, the `round` function also gives these arguments
+*names*. It calls the number it should round — `x` — and the number of
+digits it should round to — `digits`. This is useful, because it is
+often clearer and simpler to identify the argument we are specifying
+with its name, instead of just relying on its position.
+
+If we aren’t using the argument names, we call the round function as we
+did above:
+
+```{r}
+# Put in 3.1415, and the number of digits to round to (2).
+# round sends back 3.14
+round(3.1415, 2)
+```
+
+In this call, we relied on the fact that we, the people writing the
+code, and you, the person reading the code, remembers that the second
+argument (2) means the number of decimal places it should round to. But,
+we can also specify the argument using its name, like this (see
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code.html#fig-round_function_named">Figure <span>5.4</span></a>):
+
+```{r}
+# Put in 3.1415, and the number of digits to round to (2).
+# Use the name of the number-of-decimals argument for clarity:
+round(3.1415, digits=2)
+```
+
+Here R sees the *first* argument, as before, and assumes that it is the
+number we want to round. Then it sees the second, named argument —
+`digits=2` — and knows, *from the name*, that we mean this to be the
+number of decimals to round to.
+
+In fact, we could even specify *both* arguments by name, like this:
+
+```{r}
+# Put in 3.1415, and the number of digits to round to (2).
+# Name both arguments.
+round(x=3.1415, digits=2)
+```
+
+We don’t usually name both arguments for `round`, as we have above,
+because it is so obvious that the first argument is the thing we want to
+round, and so naming the argument does not make it any more clear what
+the code is doing. But — as so often in programming — whether to use the
+names, or let R work out which argument is which by position, is a
+judgment call. The judgment you are making is about the way to write the
+code to be most clear for your reader, where your most important reader
+may be you, coming back to the code in a week or a year.
+
+**Note: How do you know what names to use for the function arguments?**
+
+You can find the names of the function arguments in the help for the
+function, either online, or in the notebook interface. For example, to
+get the help for `round`, including the argument names, you could make a
+new chunk, and type `?round`, then execute the cell by running the
+chunk. This will show the help for the function in the notebook
+interface.
+
+**End of Note: How do you know what names to use for the function
+arguments?**
+
+## 5.9 Ranges
+
+Now let us return to the variable `some_numbers` that we created above:
+
+```{r}
+# Make a vector of numbers, store with the name "some_numbers".
+some_numbers <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+# Show the value of "some_numbers"
+some_numbers
+```
+
+In fact, we often need to do this: generate a sequence or *range* of
+integers, such as 0 through 9.
+
+**Note: Pick a number from 1 through 5**
+
+Ranges can be confusing in normal speech because it is not always clear
+whether they include their beginning and end. For example, if someone
+says “pick a number between 1 and 5”, do they mean to pick from *all* of
+the numbers, including the first and last (any of 1 or 2 or 3 or 4 or
+5)? Or do they mean only the numbers that are *between* 1 and 5 (so 2 or
+3 or 4)? Or do they mean all the numbers up to, but not including 5 (so
+1 or 2 or 3 or 4)?
+
+To avoid this confusion, we will nearly always use “from” and “through”
+in ranges, meaning that we do include both the start and the end number.
+For example, if we say “pick a number from 1 through 5” we mean one of 1
+or 2 or 3 or 4 or 5.
+
+**End of Note: Pick a number from 1 through 5**
+
+Creating ranges of numbers is so common that R has a special syntax to
+do that.
+
+
+
+R allows you to write a colon (`:`) between two values, to mean that you
+want a *vector* (sequence) that is all the integers from the first value
+(before the colon) *through* the second value (after the colon):
+
+```{r}
+# A vector containing all the integers from 0 through 9.
+some_integers = 0:9
+some_integers
+```
+
+Here are some more examples of the colon syntax:
+
+```{r}
+# All the integers from 10 through 14
+10:14
+```
+
+```{r}
+# All the integers from -1 through 5
+-1:5
+```
+
+## 5.10 Choosing values at random
+
+We can use the `sample` function to select a single value *at random*
+from the sequence of numbers in `some_integers`.
+
+**Note: More on sample**
+
+The `sample` function will be a fundamental tool for taking many kinds
+of samples, and we cover it in more detail in
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/sampling_tools.html"><span>Chapter 7</span></a>.
+
+**End of Note: More on sample**
+
+```{r}
+# Select 1 integer (the second argument) from the choices in some_integers
+# (the first argument).
+my_integer <- sample(some_integers, 1)
+# Show the value that results.
+my_integer
+```
+
+Like `round` (above), `sample` is a *function*.
+
+As you remember, a function is a named *production line*. In our case,
+the production line has the name the `sample` function.
+
+We sent the `sample` function. a value to work on — an *argument*. In
+this case, the argument was the value of `some_integers`.
+
+`sample` also needs the number of random values we should select from
+the first argument. We can send the number of values we want with the
+*second argument*.
+
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code.html#fig-sample_pl">Figure <span>5.5</span></a> is a diagram
+illustrating an example run of the `sample` function (production line).
+
+Here is the same code again, with new comments.
+
+```{r}
+# Send the value of "some_integers" to sample.
+# some_integers is the *argument*.  Ask sample to return 1 of the values.
+# Put the *return* value from the function into "my_number".
+my_number <- sample(some_integers, 1)
+# Show the value that results.
+my_number
+```
+
+## 5.11 Creating vectors with sampling
+
+In the code above, we asked R to select a single number at random — by
+sending 1 as the second argument to the function.
+
+As you can imagine, we can tell `sample` to select *any number of
+values* at random, by changing the second argument to the function.
+
+In our case, we would like R to select 17 numbers at random from the
+sequence of `some_integers`.
+
+But — there is a complication here. By default, `sample` selects numbers
+from the first argument *without replacement*, meaning that, by default,
+sample cannot select the same number twice, and in our case, where we
+want 17 numbers, that is bad, because `sample` is going to run out of
+numbers. To get the result we want, we must also add an extra argument:
+`replace=TRUE`. `replace=TRUE` tells R to sample `some_integers` *with
+replacement*, where `sample` can select the same number more than once
+in the same sample. Sampling with and without replacement is a
+fundamental distinction in probability and statistics.
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/sampling_tools.html"><span>Chapter 7</span></a> goes into
+much more detail about this, but for now, please take our word for it
+that using `replace=TRUE` for `sample` gives us the same effect as
+rolling several 10-sided dice.
+
+```{r}
+# Get 17 values from the *some_integers* vector.
+# Sample *with replacement*, so sample can select numbers more than once.
+# Store the 17 numbers with the name "a"
+a <- sample(some_integers, 17, replace=TRUE)
+# Show the result.
+a
+```
+
+As you can see, the function sent back (returned) 17 numbers. Because it
+is sending back more than one number, the thing it sends back is a
+vector, where the vector has 17 elements.
+
+### 5.11.1 `sum` — adding all the values
+
+Bear with us for a short diversion. You will see why we made this
+diversion soon.
+
+R has a function `sum` that will add up all the numbers in a vector.
+
+You can see the contents of `a` above.
+
+`sum` adds all the numbers in the vector together, to give the *sum* of
+the vector. The *sum* is just the result of adding all the values in the
+vector. Put another way, it is the result of adding the second element
+to the first, then adding third element to the result, and the fourth
+element to the result, and so on.
+
+```{r}
+sum(a)
+```
+
+## 5.12 Counting results
+
+We now have the code to do the equivalent of throwing 17 ten-sided dice.
+This is the basis for one simulated trial in the world of Saint
+Hypothetical General.
+
+Our next job is to get the code to count the number of numbers that are
+not zero in the vector `a`. That will give us the number of patients who
+were cured in simulated trial.
+
+Another way of asking this question, is to ask how many elements in `a`
+are greater than zero.
+
+### 5.12.1 Comparison
+
+To ask whether a number is greater than zero, we use *comparison*. Here
+is a *greater than zero* comparison on a single number:
+
+```{r}
+n <- 5
+# Is the value of n greater than 0?
+# Show the result of the comparison.
+n > 0
+```
+
+`&gt;` is a *comparison* — it *asks a question* about the numbers either
+side of it. In this case `&gt;` is asking the question “is the value of `n`
+(on the left hand side) greater than 0 (on the right hand side)?” The
+value of `n` is 5, so the question becomes, “is 5 greater than 0?” The
+answer is Yes, and R represents this Yes answer as the value `TRUE`.
+
+In contrast, the comparison below boils down to “is 0 greater than 0?”,
+to which the answer is No, and R represents this as `FALSE`.
+
+```{r}
+p <- 0
+# Is the value of p greater than 0?
+# Show the result of the comparison.
+p > 0
+```
+
+So far you have seen the results of comparison on a single number. Now
+say we do the same comparison on a vector. For example, say we ask the
+question “is the value of `a` greater than 0”? Remember, `a` is a vector
+containing 17 values. We are comparing 17 values to one value (0). What
+answer do you think R will give? You may want to think a little about
+this before you read on.
+
+As a reminder, here is the current value for `a`:
+
+```{r}
+# Show the current value for "a"
+a
+```
+
+Now you have had some time to think, here is what happens:
+
+```{r}
+# Is the value of "a" greater than 0?
+# Show the result of the comparison.
+a > 0
+```
+
+There are 17 values in `a`, so the comparison to 0 means there are 17
+comparisons, and 17 answers. R therefore returns *a vector* of 17
+elements, containing these 17 answers. The first answer is the answer to
+the question “is the value of the *first* element of `a` greater than
+0”, and the second is the answer to “is the value of the *second*
+element of `a` greater than 0”.
+
+Let us store the result of this comparison to work on:
+
+```{r}
+# Is the value of "a" greater than 0?
+# Store as another vector "q".
+q <- a > 0
+# Show the value of q
+q
+```
+
+## 5.13 Counting `TRUE` values with `sum`
+
+Notice above that there is one `TRUE` element in `q` for every element
+in `a` that was greater than 0. It only remains to *count* the number of
+`TRUE` values in `q`, to get the count of patients in our simulated
+trial who were cured.
+
+We can use the R function `sum` to count the number of `TRUE` elements
+in a vector. As you can see above, `sum` adds up all the elements in a
+vector, to give a single number. This will work as we want for the `q`
+vector, because R counts `FALSE` as equal to 0 and `TRUE` as equal to 1:
+
+```{r}
+# Question: is FALSE equal to 0?
+# Answer - Yes! (TRUE)
+FALSE == 0
+```
+
+```{r}
+# Question: is TRUE equal to 1?
+# Answer - Yes! (TRUE)
+TRUE == 1
+```
+
+Therefore, the function `sum`, when applied to a vector of `TRUE` and
+`FALSE` values, will count the number of `TRUE` values in the vector.
+
+To see this in action we can make a new vector of `TRUE` and `FALSE`
+values, and try using `sum` on the new array.
+
+```{r}
+# A vector containing three TRUE values and two FALSE values.
+trues_and_falses <- c(TRUE, FALSE, TRUE, TRUE, FALSE)
+# Show the new vector.
+trues_and_falses
+```
+
+The `sum` operation adds all the elements in the vector. Because `TRUE`
+counts as 1, and `FALSE` counts as 0, adding all the elements in
+`trues_and_falses` is the same as adding up the values 1 + 0 + 1 + 1 +
+0, to give 3.
+
+We can apply the same operation on `q` to count the number of `TRUE`
+values.
+
+```{r}
+# Count the number of TRUE values in "q"
+# This is the same as the number of values in "a" that are greater than 0.
+b <- sum(q)
+# Show the result
+b
+```
+
+## 5.14 The procedure for one simulated trial
+
+We now have the whole procedure for one simulated trial. We can put the
+whole procedure in one chunk:
+
+```{r}
+# Procedure for one simulated trial
+
+# Get 17 values from the *some_integers* vector.
+# Store the 17 numbers with the name "a"
+a <- sample(some_integers, 17, replace=TRUE)
+# Is the value of "a" greater than 0?
+q <- a > 0
+# Count the number of TRUE values in "q"
+b <- sum(q)
+# Show the result of this simulated trial.
+b
+```
+
+## 5.15 Repeating the trial
+
+Now we know how to do one simulated trial, we could just keep running
+the chunk above, and writing down the result each time. Once we had run
+the chunk 100 times, we would have 100 counts. Then we could look at the
+100 counts to see how many were equal to 17 (all 17 simulated patients
+cured on that trial). At least that would be much faster than rolling 17
+dice 100 times, but we would also like the computer to automate the
+process of repeating the trial, and keeping track of the counts.
+
+Please forgive us as we race ahead again, as we did in the last chapter.
+As in the last chapter, we will use a *results* vector called `z` to
+store the count for each trial. As in the last chapter, we will use a
+`for` loop to repeat the trial procedure many times. As in the last
+chapter, we will not explain the counts vector of the `for` loop in any
+detail, because we are going to cover those in the next chapter.
+
+Let us now imagine that we want to do 100 simulated trials at Saint
+Hypothetical General. This will give us 100 counts. We will want to
+store the count for each trial.
+
+To do this, we make a vector called `z` to hold the 100 counts. We have
+called the vector `z`, but we could have called it anything we liked,
+such as `counts` or `results` or `cecilia`.
+
+```{r}
+# A vector to hold the 100 count values.
+# Later, we will fill this in with real count values from simulated trials.
+z <- numeric(100)
+```
+
+Next we use a `for` loop to *repeat the single trial procedure*.
+
+Notice that the single trial procedure, inside this `for` loop, is the
+same as the single trial procedure above — the only two differences are:
+
+- The trial procedure is inside the loop, and
+- We are storing the count for each trial as we go.
+
+We will go into more detail on how this works in the next chapter.
+
+```{r}
+# Procedure for 100 simulated trials.
+
+# A vector to store the counts for each trial.
+z <- numeric(100)
+
+# Repeat the trial procedure 100 times.
+for (i in 1:100) {
+    # Get 17 values from the *some_integers* vector.
+    # Store the 17 numbers with the name "a"
+    a <- sample(some_integers, 17, replace=TRUE)
+    # Is the value of "a" greater than 0?
+    q <- a > 0
+    # Count the number of TRUE values in "q".
+    b <- sum(q)
+    # Store the result at the next position in the "z" vector.
+    z[i] = b
+    # Now go back and do the next trial until finished.
+}
+# Show the result of all 100 trials.
+z
+```
+
+Finally, we need to count how many of the trials results we stored in
+`z` gave a “cured” count of 17.
+
+We can ask the question whether a single number is equal to 17 using the
+*double equals* comparison: `==`.
+
+```{r}
+s <- 17
+# Is the value of s equal to 17?
+# Show the result of the comparison.
+s == 17
+```
+
+**Note**
+
+<div class="Python">
+
+## 5.16 Single and double equals
+
+Notice that the *double equals* `==` means something entirely different
+to Python than the single equals `=`. In the code above, Python reads
+`s = 17` to mean “Set the variable `s` to have the value 17”. In
+technical terms the single equals is called an *assignment* operator,
+because it means *assign* the value 17 to the variable `s`.
+
+The code `s == 17` has a completely different meaning.
+
+</div>
+
+## 5.17 Double equals
+
+The *double equals* `==` above is a *comparison* in R.
+
+It means “give `TRUE` if the value in `s` is equal to 17, and `FALSE`
+otherwise”. The `==` is a *comparison* operator — it is for comparing
+two values — here the value in `s` and the value 17. This comparison,
+like all comparisons, returns an answer that is either `TRUE` or
+`FALSE`. In our case `s` has the value 17, so the comparison becomes
+`17 == 17`, meaning “is 17 equal to 17?”, to which the answer is “Yes”,
+and R sends back `TRUE`.
+
+**End of Note**
+
+We can ask this question of *all 100 counts* by asking the question: is
+the vector `z` equal to 17, like this:
+
+```{r}
+# Is the value of z equal to 17?
+were_cured <- z == 17
+# Show the result of the comparison.
+were_cured
+```
+
+Finally we use `sum` to count the number of `TRUE` values in the
+`were_cured` vector, to give the number of trials where all 17 patients
+were cured.
+
+```{r}
+# Count the number of TRUE values in "were_cured"
+# This is the same as the number of values in "z" that are equal to 17.
+n_all_cured <- sum(were_cured)
+# Show the result of the comparison.
+n_all_cured
+```
+
+`n_all_cured` is the number of simulated trials for which all patients
+were cured. It only remains to get the proportion of trials for which
+this was true, and to do this, we divide by the number of trials.
+
+```{r}
+# Proportion of trials where all patients were cured.
+p <- n_all_cured / 100
+# Show the result
+p
+```
+
+From this experiment, we see that there is roughly a one-in-six chance
+that all 17 patients are cured when using a 90% effective treatment.
+

@@ -1,0 +1,563 @@
+# Simulating juries
+
+
+Find this notebook on the web at
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code2.html#nte-life_and_death">Note <span>6.1</span></a>.
+
+### 6.3.2 Using code to simulate a trial
+
+We use the same logic to simulate a trial with the computer. A little
+code makes the job easier, because we can ask R to give us 12 random
+numbers from 0 through 99, and to count how many of these numbers are in
+the range from 75 through 99. Numbers in the range from 75 through 99
+correspond to black jurors.
+
+### 6.3.3 Random numbers from 0 through 99
+
+We can now use R and `sample` from the last chapter to get 12 random
+numbers from 0 through 99.
+
+```{r}
+# Get 12 random numbers from 0 through 99
+a <- sample(0:99, size=12, replace=TRUE)
+
+# Show the result
+a
+```
+
+#### 6.3.3.1 Counting the jurors
+
+We use *comparison* and `sum` to count how many numbers are greater than
+74, and therefore, in the range from 75 through 99:
+
+```{r}
+# How many numbers are greater than 74?
+b <- sum(a > 74)
+# Show the result
+b
+```
+
+#### 6.3.3.2 A single simulated trial
+
+We assemble the pieces from the last few sections to make a chunk that
+simulates a single trial:
+
+```{r}
+# Get 12 random numbers from 0 through 99
+a <- sample(0:99, size=12, replace=TRUE)
+# How many are greater than 74?
+b <- sum(a > 74)
+# Show the result
+b
+```
+
+## 6.4 Three simulation steps
+
+Now we come back to the details of how we:
+
+1.  Repeat the simulated trial many times;
+2.  record the results for each trial;
+3.  calculate the required proportion as an estimate of the probability
+    we seek.
+
+Repeating the trial many times is the job of the `for` loop, and we will
+come to that soon.
+
+In order to record the results, we will store each trial result in a
+vector.
+
+### 6.4.1 More on vectors
+
+Since we will be working with vectors a lot, it is worth knowing more
+about them.
+
+A vector is a *container* that stores many elements of the same type.
+You have already seen, in
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_method.html"><span>Chapter 2</span></a>, how we
+can create a vector from a sequence of numbers using the `c()` function.
+
+```{r}
+# Make a vector of numbers, store with the name "some_numbers".
+some_numbers <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+# Show the value of "some_numbers"
+some_numbers
+```
+
+Another way that we can create vectors is to use the `numeric` function
+to make a new array where all the elements are 0.
+
+```{r}
+# Make a new vector containing 5 zeros.
+z <- numeric(5)
+# Show the value of "z"
+z
+```
+
+Notice the argument `5` to the `numeric` function. This tells the
+function how many zeros we want in the vector that the function will
+return.
+
+## 6.5 Vector length
+
+The are various useful things we can do with this vector container. One
+is to ask how many elements there are in the vector container. We can
+use the `length` function to calculate the number of elements in a
+vector:
+
+```{r}
+# Show the number of elements in "z"
+length(z)
+```
+
+## 6.6 Indexing into vectors with integers
+
+Another thing we can do with vectors is *set* the value for a particular
+element. To do this, we use square brackets following the vector value,
+on the left hand side of the equals sign, like this:
+
+```{r}
+# Set the value of the first element in the vector.
+z[1] = 99
+# Show the new contents of the vector.
+z
+```
+
+Read the first line of code as “the element at position 1 gets a value
+of 99”.
+
+For practice, let us also set the value of the third element in the
+vector:
+
+```{r}
+# Set the value of the third element in the vector.
+z[3] <- 99
+# Show the new contents of the vector.
+z
+```
+
+Read the first code line above as as “set the value at position 3 in the
+vector to have the value 99”.
+
+We can also *get* the value of the element at a given position, using
+the same square-bracket notation:
+
+```{r}
+# Get the value of the *first* element in the array.
+# Store the value with name "v"
+v = z[1]
+# Show the value we got
+v
+```
+
+Read the first code line here as “v gets the value at position 1 in the
+vector”.
+
+Using square brackets to get and set element values is called *indexing*
+into the vector.
+
+### 6.6.1 Repeating trials
+
+As a preview, let us now imagine that we want to do 50 simulated trials
+of Robert Swain’s jury in Hypothetical County. We will want to store the
+count for each trial, to give 50 counts.
+
+In order to do this, we make a vector to hold the 50 counts. Call this
+vector `z`.
+
+```{r}
+# A vector to hold the 50 count values.
+z <- numeric(50)
+```
+
+We could run a single trial to get a single simulated count. Here we
+just repeat the code chunk you saw above. Notice that we can get a
+different result each time we run this code, because the numbers in `a`
+are *random* choices from the range 0 through 99, and different random
+numbers will give different counts.
+
+```{r}
+# Get 12 random numbers from 0 through 99
+a <- sample(0:99, size=12, replace=TRUE)
+# How many are greater than 74?
+b <- sum(a == 9)
+# Show the result
+b
+```
+
+Now we have the result of a single trial, we can store it as the first
+number in the `z` vector:
+
+```{r}
+# Store the single trial count as the first value in the "z" vector.
+z[1] <- b
+# Show all the values in the "z" vector.
+z
+```
+
+Of course we could just keep doing this: run the chunk corresponding to
+a trial, above, to get a new count, and then store it at the next
+position in the `z` vector. For example, we could store the counts for
+the first three trials with:
+
+```{r}
+# First trial
+a <- sample(0:99, size=12, replace=TRUE)
+b <- sum(a == 9)
+# Store the result at the first position in z
+z[1] <- b
+
+# Second trial
+a <- sample(0:99, size=12, replace=TRUE)
+b <- sum(a == 9)
+# Store the result at the second position in z
+z[2] <- b
+
+# Third trial
+a <- sample(0:99, size=12, replace=TRUE)
+b <- sum(a == 9)
+# Store the result at the third position in z
+z[3] <- b
+
+# And so on ...
+```
+
+This would get terribly long and boring to type for 50 trials. Luckily
+computer code is very good at repeating the same procedure many times.
+For example, R can do this using a `for` loop. You have already seen a
+preview of the `for` loop in
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_method.html"><span>Chapter 2</span></a>. Here we
+dive into `for` loops in more depth.
+
+### 6.6.2 For-loops in R
+
+A for-loop is a way of asking R to:
+
+- Take a sequence of things, one by one, and
+- Do the same task on each one.
+
+We often use this idea when we are trying to explain a repeating
+procedure. For example, imagine we wanted to explain what the
+supermarket checkout person does for the items in your shopping basket.
+You might say that they do this:
+
+&gt; For each item of shopping in your basket, they take the item off the
+&gt; conveyor belt, scan it, and put it on the other side of the till.
+
+You could also break this description up into bullet points with
+indentation, to say the same thing:
+
+- For each item from your shopping basket, they:
+  - Take the item off the conveyor belt.
+  - Scan the item.
+  - Put it on the other side of the till.
+
+Notice the logic; the checkout person is repeating the same procedure
+for each of a series of items.
+
+This is the logic of the `for` loop in R. The procedure that R repeats
+is called the *body of the for loop*. In the example of the checkout
+person above, the repeating procedure is:
+
+- Take the item off the conveyor belt.
+- Scan the item.
+- Put it on the other side of the till.
+
+Now imagine we wanted to use R to print out the year of birth for each
+of the authors for the third edition of this book:
+
+| Author               | Year of birth |
+|----------------------|---------------|
+| Julian Lincoln Simon | 1932          |
+| Matthew Brett        | 1964          |
+| Stéfan van der Walt  | 1980          |
+
+We want to see this output:
+
+    Author birth year is 1932
+    Author birth year is 1964
+    Author birth year is 1980
+
+Of course, we could just ask R to print out these exact lines, like
+this:
+
+```{r}
+message('Author birth year is 1932')
+```
+
+```{r}
+message('Author birth year is 1964')
+```
+
+```{r}
+message('Author birth year is 1980')
+```
+
+We might instead notice that we are repeating the same procedure for
+each of the three birth years, and decide to do the same thing using a
+`for` loop:
+
+```{r}
+author_birth_years <- c(1932, 1964, 1980)
+
+# For each birth year
+for (birth_year in author_birth_years) {
+    # Repeat this procedure ...
+    message('Author birth year is ', birth_year)
+}
+```
+
+The `for` loop starts with a line where we tell it what items we want to
+repeat the procedure for:
+
+    for (birth_year in author_birth_years) {
+
+This *initial line* of the `for` loop ends with an *opening curly brace*
+`{`. The opening curly brace tells R that what follows, up until the
+matching closing curly brace `}`, is the procedure R should follow for
+each item. The lines between the opening `{` and closing `}` curly
+braces\* are the *body of the for loop*.
+
+The initial line of the `for` loop above tells R that it should take
+*each item* in `author_birth_years`, one by one — first 1932, then 1964,
+then 1980. For each of these numbers it will:
+
+- Put the number into the variable `birth_year`, then
+- Run the code between the curly braces.
+
+Just as the person at the supermarket checkout takes each item in turn,
+for each iteration (repeat) of the `for` loop, `birth_year` gets a new
+value from the sequence in `author_birth_years`. `birth_year` is called
+the *loop variable*, because it is the variable that gets a new value
+each time we begin a new iteration of the `for` loop procedure. As for
+any variable in R, we can call our loop variable anything we like. We
+used `birth_year` here, but we could have used `y` or `year` or some
+other name.
+
+Notice that R insists we put parentheses (round brackets) around: the
+loop variable; `in`; and the sequence that will fill the loop variable —
+like this:
+
+    for (birth_year in author_birth_years) {
+
+Do not forget these round brackets — R insists on them.
+
+Now you know what the `for` loop is doing, you can see that the `for`
+loop above is equivalent to the following code:
+
+```{r}
+birth_year <- 1932  # Set the loop variable to contain the first value.
+message('Author birth year is ', birth_year)  # Use the first value.
+```
+
+```{r}
+birth_year <- 1964  # Set the loop variable to contain the next value.
+message('Author birth year is ', birth_year)  # Use the second value.
+```
+
+```{r}
+birth_year <- 1980
+message('Author birth year is ', birth_year)
+```
+
+Writing the steps in the `for` loop out like this is called *unrolling*
+the loop. It can be a useful exercise to do this when you come across a
+`for` loop, in order to work through the logic of the loop. For example,
+you may want to write out the unrolled equivalent of the first couple of
+iterations, to see what the loop variable will be, and what will happen
+in the body of the loop.
+
+We often use `for` loops with ranges (see
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code.html#sec-ranges"><span>Section 5.9</span></a>). Here we use a loop
+to print out the numbers 1 through 4:
+
+```{r}
+for (n in 1:4) {
+    message('The loop variable n is ', n)
+}
+```
+
+Notice that the range ended at 4, and that means we repeat the loop body
+4 times. We can also use the loop variable value from the range as an
+*index*, to get or set the first, second, etc values from a vector.
+
+For example, maybe we would like to show the author position *and* the
+author year of birth.
+
+Remember our author birth years:
+
+```{r}
+author_birth_years
+```
+
+We can get (for example) the second author birth year with:
+
+```{r}
+author_birth_years[2]
+```
+
+Using the combination of looping over a range, and vector indexing, we
+can print out the author position *and* the author birth year:
+
+```{r}
+for (n in 1:3) {
+    year <- author_birth_years[n]
+    message('Birth year of author position ', n, ' is ', year)
+}
+```
+
+Just for practice, let us unroll the three iterations through this `for`
+loop, to remind ourselves what the code is doing:
+
+```{r}
+# Unrolling the for loop.
+n <- 1
+year <- author_birth_years[n]  # Will be 1932
+message('Birth year of author position ', n, ' is ', year)
+```
+
+```{r}
+n <- 2
+year <- author_birth_years[n]  # Will be 1964
+message('Birth year of author position ', n, ' is ', year)
+```
+
+```{r}
+n <- 3
+year <- author_birth_years[n]  # Will be 1980
+message('Birth year of author position ', n, ' is ', year)
+```
+
+### 6.6.3 Putting it all together
+
+Here is the code we worked out above, to implement a single trial:
+
+```{r}
+# Get 12 random numbers from 0 through 99
+a <- sample(0:99, size=12, replace=TRUE)
+# How many are greater than 74?
+b <- sum(a == 9)
+# Show the result
+b
+```
+
+We found that we could use vectors to store the results of these trials,
+and that we could use `for` loops to repeat the same procedure many
+times.
+
+Now we can put these parts together to do 50 simulated trials:
+
+```{r}
+# Procedure for 50 simulated trials.
+
+# A vector to store the counts for each trial.
+z <- numeric(50)
+
+# Repeat the trial procedure 50 times.
+for (i in 1:50) {
+    # Get 12 random numbers from 0 through 99
+    a <- sample(0:99, size=12, replace=TRUE)
+    # How many are greater than 74?
+    b <- sum(a > 74)
+    # Store the result at the next position in the "z" vector.
+    z[i] = b
+    # Now go back and do the next trial until finished.
+}
+# Show the result of all 50 trials.
+z
+```
+
+Finally, we need to count how many of the trials in `z` ended up with
+all-white juries. These are the trials with a `z` (count) value of 0.
+
+To do this, we can ask a vector which elements match a certain
+condition. E.g.:
+
+```{r}
+x <- c(2, 1, 3, 0)
+y = x < 2
+# Show the result
+y
+```
+
+We now use that same technique to ask, of *each of the 50 counts*,
+whether the vector `z` is equal to 0, like this:
+
+```{r}
+# Is the value of z equal to 0?
+all_white <- z == 0
+# Show the result of the comparison.
+all_white
+```
+
+We need to get the number of `TRUE` values in `all_white`, to find how
+many simulated trials gave all-white juries.
+
+```{r}
+# Count the number of True values in "all_white"
+# This is the same as the number of values in "z" that are equal to 0.
+n_all_white = sum(all_white)
+# Show the result of the comparison.
+n_all_white
+```
+
+`n_all_white` is the number of simulated trials for which all the jury
+members were white. It only remains to get the proportion of trials for
+which this was true, and to do this, we divide by the number of trials.
+
+```{r}
+# Proportion of trials where all jury members were white.
+p <- n_all_white / 50
+# Show the result
+p
+```
+
+From this initial simulation, it seems there is around a 4% chance that
+a jury selected randomly from the population, which was 26% black, would
+have no black jurors.
+
+## 6.7 Many many trials
+
+Our experiment above is only 50 simulated trials. The higher the number
+of trials, the more confident we can be of our estimate for `p` — the
+proportion of trials where we get an all-white jury.
+
+It is no extra trouble for us to tell the computer to do a very large
+number of trials. For example, we might want to run 10,000 trials
+instead of 50. All we have to do is to run the loop 10,000 times instead
+of 50 times. The computer has to do more work, but it is more than up to
+the job.
+
+Here is exactly the same code we ran above, but collected into one
+chunk, and using 10,000 trials instead of 50. We have left out the
+comments, to make the code more compact.
+
+```{r}
+# Full simulation procedure, with 10,000 trials.
+z <- numeric(10000)
+for (i in 1:10000) {
+    a <- sample(0:99, size=12, replace=TRUE)
+    b <- sum(a > 74)
+    z[i] = b
+}
+all_white <- z == 0
+n_all_white <- sum(all_white)
+p <- n_all_white / 10000
+p
+```
+
+We now have a new, more accurate estimate of the proportion of
+Hypothetical County juries that are all white. The proportion is 0.032,
+and so 3.2%.
+
+This proportion means that, for any one jury from Hypothetical County,
+there is a less than one in 20 chance that the jury would be all white.
+
+As we will see in more detail later, we might consider using the results
+from this experiment in Hypothetical County, to reflect on the result we
+saw in the real Talladega County. We might conclude, for example, that
+there was likely some systematic difference between Hypothetical County
+and Talledega County. Maybe the difference was that there was, in fact,
+some bias in the jury selection in Talledega county, and that the
+Supreme Court was wrong to reject this. You will hear more of this line
+of reasoning later in the book.
+
