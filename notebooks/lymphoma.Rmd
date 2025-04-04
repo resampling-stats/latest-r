@@ -165,7 +165,7 @@ round(3.1415, 2)
 ```
 
 In this call, we relied on the fact that we, the people writing the
-code, and you, the person reading the code, remembers that the second
+code, and you, the person reading the code, remember that the second
 argument (2) means the number of decimal places it should round to. But,
 we can also specify the argument using its name, like this (see
 <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code.html#fig-round_function_named">Figure <span>5.4</span></a>):
