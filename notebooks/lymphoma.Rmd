@@ -351,9 +351,10 @@ a <- sample(some_integers, 17, replace=TRUE)
 a
 ```
 
-As you can see, the function sent back (returned) 17 numbers. Because it
-is sending back more than one number, the thing it sends back is a
-vector, where the vector has 17 elements.
+As you can see, the function sent back (returned) 17 numbers.
+
+Because `sample` is sending back more than one number, the result is a
+vector with 17 elements
 
 ### 5.11.1 `sum` — adding all the values
 
@@ -540,7 +541,7 @@ Please forgive us as we race ahead again, as we did in the last chapter.
 As in the last chapter, we will use a *results* vector called `z` to
 store the count for each trial. As in the last chapter, we will use a
 `for` loop to repeat the trial procedure many times. As in the last
-chapter, we will not explain the counts vector of the `for` loop in any
+chapter, we will not explain the counts vector or the `for` loop in any
 detail, because we are going to cover those in the next chapter.
 
 Let us now imagine that we want to do 100 simulated trials at Saint
@@ -562,7 +563,8 @@ Next we use a `for` loop to *repeat the single trial procedure*.
 Notice that the single trial procedure, inside this `for` loop, is the
 same as the single trial procedure above — the only two differences are:
 
-- The trial procedure is inside the loop, and
+- The trial procedure is inside the loop (as indicated by the curly
+  brackets `{}`).
 - We are storing the count for each trial as we go.
 
 We will go into more detail on how this works in the next chapter.
@@ -615,7 +617,8 @@ to Python than the single equals `=`. In the code above, Python reads
 technical terms the single equals is called an *assignment* operator,
 because it means *assign* the value 17 to the variable `s`.
 
-The code `s == 17` has a completely different meaning.
+The code `s == 17` has a completely different meaning — and it is
+another example of a *comparison* — comparing the value in `s` to 17.
 
 </div>
 
@@ -623,13 +626,15 @@ The code `s == 17` has a completely different meaning.
 
 The *double equals* `==` above is a *comparison* in R.
 
-It means “give `TRUE` if the value in `s` is equal to 17, and `FALSE`
-otherwise”. The `==` is a *comparison* operator — it is for comparing
-two values — here the value in `s` and the value 17. This comparison,
-like all comparisons, returns an answer that is either `TRUE` or
-`FALSE`. In our case `s` has the value 17, so the comparison becomes
-`17 == 17`, meaning “is 17 equal to 17?”, to which the answer is “Yes”,
-and R sends back `TRUE`.
+`==` means: compare the thing on the left of the `==` to the thing on
+the right of the `==`, and give `TRUE` if the values are equal, and
+`FALSE` otherwise. In this case, `s == 17` means “give `TRUE` if the
+value in `s` is equal to 17, and `FALSE` otherwise”. The `==` is a
+*comparison* operator — it is for comparing two values — here the value
+in `s` and the value 17. This comparison, like all comparisons, returns
+an answer that is either `TRUE` or `FALSE`. In our case `s` has the
+value 17, so the comparison becomes `17 == 17`, meaning “is 17 equal to
+17?”, to which the answer is “Yes”, and R sends back `TRUE`.
 
 **End of Note**
 
@@ -666,6 +671,6 @@ p <- n_all_cured / 100
 p
 ```
 
-From this experiment, we see that there is roughly a one-in-six chance
-that all 17 patients are cured when using a 90% effective treatment.
+From this experiment, we see that there is roughly a 15% chance that all
+17 patients are cured when using a 90% effective treatment.
 

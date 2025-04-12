@@ -919,7 +919,10 @@ Figure&nbsp;5.5: Example run of the <code>sample</code> function
 <pre><code> [1] 5 3 5 8 4 4 7 1 6 4 4 1 5 3 1 2 8</code></pre>
 </div>
 </div>
-<p>As you can see, the function sent back (returned) 17 numbers. Because it is sending back more than one number, the thing it sends back is a vector, where the vector has 17 elements.</p>
+<p>As you can see, the function sent back (returned) 17 numbers.</p>
+<div class="r">
+<p>Because <code>sample</code> is sending back more than one number, the result is a vector with 17 elements</p>
+</div>
 <section id="sum-adding-all-the-values" class="level3" data-number="5.11.1">
 <h3 data-number="5.11.1" class="anchored" data-anchor-id="sum-adding-all-the-values">5.11.1 <code>sum</code> — adding all the values</h3>
 <p>Bear with us for a short diversion. You will see why we made this diversion soon.</p>
@@ -1063,7 +1066,7 @@ Figure&nbsp;5.5: Example run of the <code>sample</code> function
 <section id="repeating-the-trial" class="level2" data-number="5.15">
 <h2 data-number="5.15" class="anchored" data-anchor-id="repeating-the-trial">5.15 Repeating the trial</h2>
 <p>Now we know how to do one simulated trial, we could just keep running the chunk above, and writing down the result each time. Once we had run the chunk 100 times, we would have 100 counts. Then we could look at the 100 counts to see how many were equal to 17 (all 17 simulated patients cured on that trial). At least that would be much faster than rolling 17 dice 100 times, but we would also like the computer to automate the process of repeating the trial, and keeping track of the counts.</p>
-<p>Please forgive us as we race ahead again, as we did in the last chapter. As in the last chapter, we will use a <em>results</em> vector called <code>z</code> to store the count for each trial. As in the last chapter, we will use a <code>for</code> loop to repeat the trial procedure many times. As in the last chapter, we will not explain the counts vector of the <code>for</code> loop in any detail, because we are going to cover those in the next chapter.</p>
+<p>Please forgive us as we race ahead again, as we did in the last chapter. As in the last chapter, we will use a <em>results</em> vector called <code>z</code> to store the count for each trial. As in the last chapter, we will use a <code>for</code> loop to repeat the trial procedure many times. As in the last chapter, we will not explain the counts vector or the <code>for</code> loop in any detail, because we are going to cover those in the next chapter.</p>
 <p>Let us now imagine that we want to do 100 simulated trials at Saint Hypothetical General. This will give us 100 counts. We will want to store the count for each trial.</p>
 <p>To do this, we make a vector called <code>z</code> to hold the 100 counts. We have called the vector <code>z</code>, but we could have called it anything we liked, such as <code>counts</code> or <code>results</code> or <code>cecilia</code>.</p>
 <div class="cell" data-layout-align="center">
@@ -1074,7 +1077,7 @@ Figure&nbsp;5.5: Example run of the <code>sample</code> function
 <p>Next we use a <code>for</code> loop to <em>repeat the single trial procedure</em>.</p>
 <p>Notice that the single trial procedure, inside this <code>for</code> loop, is the same as the single trial procedure above — the only two differences are:</p>
 <ul>
-<li>The trial procedure is inside the loop, and</li>
+<li>The trial procedure is inside the loop (as indicated by the curly brackets <code>{}</code>).</li>
 <li>We are storing the count for each trial as we go.</li>
 </ul>
 <p>We will go into more detail on how this works in the next chapter.</p>
@@ -1130,12 +1133,12 @@ Note
 <section id="single-and-double-equals" class="level2 Python" data-number="5.16">
 <h2 data-number="5.16" class="anchored" data-anchor-id="single-and-double-equals">5.16 Single and double equals</h2>
 <p>Notice that the <em>double equals</em> <code>==</code> means something entirely different to Python than the single equals <code>=</code>. In the code above, Python reads <code>s = 17</code> to mean “Set the variable <code>s</code> to have the value 17”. In technical terms the single equals is called an <em>assignment</em> operator, because it means <em>assign</em> the value 17 to the variable <code>s</code>.</p>
-<p>The code <code>s == 17</code> has a completely different meaning.</p>
+<p>The code <code>s == 17</code> has a completely different meaning — and it is another example of a <em>comparison</em> — comparing the value in <code>s</code> to 17.</p>
 </section>
 <section id="double-equals" class="level2" data-number="5.17">
 <h2 data-number="5.17" class="anchored" data-anchor-id="double-equals">5.17 Double equals</h2>
 <p>The <em>double equals</em> <code>==</code> above is a <em>comparison</em> in R.</p>
-<p>It means “give <code>TRUE</code> if the value in <code>s</code> is equal to 17, and <code>FALSE</code> otherwise”. The <code>==</code> is a <em>comparison</em> operator — it is for comparing two values — here the value in <code>s</code> and the value 17. This comparison, like all comparisons, returns an answer that is either <code>TRUE</code> or <code>FALSE</code>. In our case <code>s</code> has the value 17, so the comparison becomes <code>17 == 17</code>, meaning “is 17 equal to 17?”, to which the answer is “Yes”, and R sends back <code>TRUE</code>.</p>
+<p><code>==</code> means: compare the thing on the left of the <code>==</code> to the thing on the right of the <code>==</code>, and give <code>TRUE</code> if the values are equal, and <code>FALSE</code> otherwise. In this case, <code>s == 17</code> means “give <code>TRUE</code> if the value in <code>s</code> is equal to 17, and <code>FALSE</code> otherwise”. The <code>==</code> is a <em>comparison</em> operator — it is for comparing two values — here the value in <code>s</code> and the value 17. This comparison, like all comparisons, returns an answer that is either <code>TRUE</code> or <code>FALSE</code>. In our case <code>s</code> has the value 17, so the comparison becomes <code>17 == 17</code>, meaning “is 17 equal to 17?”, to which the answer is “Yes”, and R sends back <code>TRUE</code>.</p>
 </section>
 </div>
 </div>
@@ -1178,7 +1181,7 @@ Note
 <pre><code>[1] 0.18</code></pre>
 </div>
 </div>
-<p>From this experiment, we see that there is roughly a one-in-six chance that all 17 patients are cured when using a 90% effective treatment.</p>
+<p>From this experiment, we see that there is roughly a 15% chance that all 17 patients are cured when using a 90% effective treatment.</p>
 <!---
 End of notebook.
 -->
@@ -1204,7 +1207,7 @@ End of notebook: Simulating lymphoma trials
 <p>We started with a question about the results of the NCI trial on the new drug. The question was — was the result of their trial — 17 out of 17 patients cured — surprising.</p>
 <p>Then, for reasons we did not explain in detail, we changed tack, and asked the same question about a hypothetical set of 17 patients getting the <em>standard</em> treatment in Saint Hypothetical General.</p>
 <p>That Hypothetical question turns out to be fairly easy to answer, because we can use simulation to estimate the chances that 17 out of 17 patients would be cured in such a hypothetical trial, on the assumption that each patient has a 90% chance of being cured with the standard treatment.</p>
-<p>The answer for Saint Hypothetical General was — we would be somewhat surprised, but not astonished. We only get 17 out of 17 patients cured about one time in six.</p>
+<p>The answer for Saint Hypothetical General was — we would be somewhat surprised, but not astonished. We only get 17 out of 17 patients cured about one time in six (around 15% of the time).</p>
 <p>Now let us return to the NCI trial. Should the trial authors be surprised by their results? If they assumed that their new treatment was <em>exactly as effective</em> as the standard treatment, the result of the trial is a bit unusual, just by chance. It is up to us to decide whether the result is unusual enough to make us think that the actual NCI treatment might in fact have been <em>more effective</em> than the standard treatment.</p>
 <p>You will see this move again and again as we go through the book.</p>
 <ul>
