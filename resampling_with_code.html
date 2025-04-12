@@ -512,7 +512,7 @@ window.Quarto = {
 <ul>
 <li><p>The problem we will work on is a little different from the ambulances problem from <a href="resampling_method.html" class="quarto-xref"><span>Chapter 2</span></a>. It is a real problem about deciding whether a new cancer treatment is better than the alternatives, and it introduces the idea of making a model of the world, to ask questions about chances and probabilities.</p></li>
 <li><p>We will slow down a little to emphasize the steps in solving this kind of problem. First we work out how to simulate a single <em>trial</em>. Then we work out how to run many simulated trials.</p></li>
-<li><p>We sprinted through the code in <a href="resampling_method.html" class="quarto-xref"><span>Chapter 2</span></a>, with the promise we would come back to the details. Here we go into more detail about some ideas from the code in the last chapter. These are:</p>
+<li><p>We sprinted through the code in <a href="resampling_method.html" class="quarto-xref"><span>Chapter 2</span></a>, with the promise we would come back to the details. Here we give more explanation for some ideas in the code in the last chapter. These are:</p>
 <ul>
 <li>Storing several values together in one place, with <span class="r">vectors</span>.</li>
 <li>Using <em>functions</em> (code recipes) to apply procedures.</li>
@@ -566,7 +566,7 @@ Check we have adapted text above to picture.
 <li>We work out a way to <em>simulate one trial</em>. Here we chose to throw 17 10-sided dice, and count the number of not zero values. This is the outcome from one simulation trial.</li>
 <li>We <em>repeat</em> the simulated trial procedure many times, and collect the results from each trial. Say we repeat the trial procedure 100 times; we will call this a <em>run</em> of 100 trials.</li>
 <li>We <em>count</em> the number of trials with an outcome that matches the outcome we are interested in. In this case we are interested in the outcome 17 out of 17 cured, so we count the number of trials with a score of 17. Say 15 out of the run of 100 trials had an outcome of 17 cured. That is our <em>count</em>.</li>
-<li>Finally we divide the count by the number of trials to get the <em>proportion</em>. From the example above, we divide 15 by 100 to 0.15 (15%). This is our estimate of the chance of seeing 17 out of 17 patients cured in any one trial. We can also call this an estimate of the <em>probability</em> that 17 out of 17 patients will be cured on any on trial.</li>
+<li>Finally we divide the count by the number of trials to get the <em>proportion</em>. From the example above, we divide 15 by 100 to get 0.15 (15%). This is our estimate of the chance of seeing 17 out of 17 patients cured in any one trial. We can also call this an estimate of the <em>probability</em> that 17 out of 17 patients will be cured on any on trial.</li>
 </ol>
 <p>Our next step is to work out the code for step 2: <em>simulate one trial</em>.</p>
 <div id="nte-lymphoma" class="callout callout-style-default callout-note callout-titled">
@@ -634,7 +634,7 @@ Whole numbers
 </div>
 <p>Notice that the value for <code>some_numbers</code> is a vector, and that this value <em>contains</em> 10 numbers.</p>
 <p>Put another way, <code>some_numbers</code> is now the name we can use for this collection of 10 values.</p>
-<p>Vectors are very useful for simulations and data analysis, and we will be using these for nearly every example in this book.</p>
+<p>Vectors are very useful for simulations and data analysis, and we will be using them for nearly every example in this book.</p>
 </section>
 <section id="sec-introducing-functions" class="level2" data-number="5.7">
 <h2 data-number="5.7" class="anchored" data-anchor-id="sec-introducing-functions">5.7 Functions</h2>
@@ -661,8 +661,8 @@ What is an integer?
 <p>Therefore, think of <code>round</code> as the name of a production line, that takes in a <em>component</em> (in this case, any number), and does some work, and sends back the finished <em>result</em> (in this case, the number rounded to the nearest integer.</p>
 <p>The components we send to a function are called <em>arguments</em>. The finished result the function sends back is the <em>return value</em>.</p>
 <ul>
-<li><strong>Arguments</strong>: the value or values we send to a function.</li>
-<li><strong>Return value</strong>: the values the function sends back.</li>
+<li><strong>Arguments</strong>: the value or values we send to a function. These are the components in the production line analogy.</li>
+<li><strong>Return value</strong>: the values the function sends back. This is the finished result in the production line analogy.</li>
 </ul>
 <p>See <a href="#fig-round_function_pl" class="quarto-xref">Figure&nbsp;<span>5.2</span></a> for an illustration of <code>round</code> as a production line.</p>
 <div class="cell" data-layout-align="center">
@@ -732,7 +732,7 @@ Figure&nbsp;5.3: <code>round</code> with optional arguments specifying number of
 <pre><code>[1] 3.14</code></pre>
 </div>
 </div>
-<p>In this call, we relied on the fact that we, the people writing the code, and you, the person reading the code, remember that the second argument (2) means the number of decimal places it should round to. But, we can also specify the argument using its name, like this (see <a href="#fig-round_function_named" class="quarto-xref">Figure&nbsp;<span>5.4</span></a>):</p>
+<p>In this call, we relied on the fact that we, the people writing the code, and you, the person reading the code, remembered that the second argument (2) means the number of decimal places it should round to. But we can also specify the argument using its name, like this (see <a href="#fig-round_function_named" class="quarto-xref">Figure&nbsp;<span>5.4</span></a>):</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Put in 3.1415, and the number of digits to round to (2).</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the name of the number-of-decimals argument for clarity:</span></span>

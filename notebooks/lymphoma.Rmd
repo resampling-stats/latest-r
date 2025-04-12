@@ -60,7 +60,7 @@ Put another way, `some_numbers` is now the name we can use for this
 collection of 10 values.
 
 Vectors are very useful for simulations and data analysis, and we will
-be using these for nearly every example in this book.
+be using them for nearly every example in this book.
 
 ## 5.7 Functions
 
@@ -102,8 +102,10 @@ the nearest integer.
 The components we send to a function are called *arguments*. The
 finished result the function sends back is the *return value*.
 
-- **Arguments**: the value or values we send to a function.
-- **Return value**: the values the function sends back.
+- **Arguments**: the value or values we send to a function. These are
+  the components in the production line analogy.
+- **Return value**: the values the function sends back. This is the
+  finished result in the production line analogy.
 
 See <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code.html#fig-round_function_pl">Figure <span>5.2</span></a> for an
 illustration of `round` as a production line.
@@ -165,8 +167,8 @@ round(3.1415, 2)
 ```
 
 In this call, we relied on the fact that we, the people writing the
-code, and you, the person reading the code, remember that the second
-argument (2) means the number of decimal places it should round to. But,
+code, and you, the person reading the code, remembered that the second
+argument (2) means the number of decimal places it should round to. But
 we can also specify the argument using its name, like this (see
 <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code.html#fig-round_function_named">Figure <span>5.4</span></a>):
 
