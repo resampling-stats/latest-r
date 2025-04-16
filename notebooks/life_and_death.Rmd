@@ -225,7 +225,8 @@ This would get terribly long and boring to type for 50 trials. Luckily
 computer code is very good at repeating the same procedure many times.
 For example, R can do this using a `for` loop. You have already seen a
 preview of the `for` loop in
-<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_method.html"><span>Chapter 2</span></a>. Here we
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_method.html"><span>Chapter 2</span></a> and
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code.html"><span>Chapter 5</span></a>. Here we
 dive into `for` loops in more depth.
 
 ### 6.6.2 For-loops in R
@@ -322,7 +323,7 @@ The initial line of the `for` loop above tells R that it should take
 then 1980. For each of these numbers it will:
 
 - Put the number into the variable `birth_year`, then
-- Run the code between the curly braces.
+- Run the codebetween the curly braces.
 
 Just as the person at the supermarket checkout takes each item in turn,
 for each iteration (repeat) of the `for` loop, `birth_year` gets a new

@@ -415,8 +415,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#randomness-from-physical-methods" id="toc-randomness-from-physical-methods" class="nav-link" data-scroll-target="#randomness-from-physical-methods"><span class="header-section-number">2.1.1</span> Randomness from physical methods</a></li>
   </ul></li>
   <li><a href="#sec-randomness-computer" id="toc-sec-randomness-computer" class="nav-link" data-scroll-target="#sec-randomness-computer"><span class="header-section-number">2.2</span> Randomness from your computer</a></li>
-  <li><a href="#solving-the-problem-using" id="toc-solving-the-problem-using" class="nav-link" data-scroll-target="#solving-the-problem-using"><span class="header-section-number">2.3</span> Solving the problem using R</a></li>
-  <li><a href="#sec-resamp-differs" id="toc-sec-resamp-differs" class="nav-link" data-scroll-target="#sec-resamp-differs">2.4 How resampling differs from the conventional approach</a></li>
+  <li><a href="#solving-the-problem-using" id="toc-solving-the-problem-using" class="nav-link" data-scroll-target="#solving-the-problem-using"><span class="header-section-number">2.3</span> Solving the problem using R</a>
+  <ul class="collapse">
+  <li><a href="#repeating-trials" id="toc-repeating-trials" class="nav-link" data-scroll-target="#repeating-trials">2.3.1 Repeating trials</a></li>
+  <li><a href="#the-solution" id="toc-the-solution" class="nav-link" data-scroll-target="#the-solution">2.3.2 The solution</a></li>
+  </ul></li>
+  <li><a href="#sec-resamp-differs" id="toc-sec-resamp-differs" class="nav-link" data-scroll-target="#sec-resamp-differs"><span class="header-section-number">2.4</span> How resampling differs from the conventional approach</a></li>
   </ul>
 </nav>
     </div>
@@ -1625,6 +1629,8 @@ Note&nbsp;2.2: Comments in code
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># R will completely ignore this text.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Because R ignores lines beginning with <code>#</code>, the text after the <code>#</code> is just for us, the humans reading the code. The person writing the code will often use comments to explain what the code is doing. :::</p>
+</div>
+</div>
 <p>Our next task is to use R to simulate a single day of ambulances. We will again represent each ambulance by a random number from 0 through 9. 16 of these numbers represents a simulation of all 16 ambulances available to the contractor. We call a simulation of all ambulances for a specific day — one <em>trial</em>.</p>
 <p>Recall that we want 16 10-sided dice — one per ambulance. Our dice should be 10-sided, because each ambulance has a 1-in-10 chance of being out of order.</p>
 <p>The program to simulate one trial of the ambulances problem therefore begins with these commands:</p>
@@ -1646,7 +1652,7 @@ Note&nbsp;2.2: Comments in code
 </div>
 </div>
 <p>The commands above ask the computer to store the results of the random drawing in a location in the computer’s memory to which we give a name such as <code>a</code> or <code>ambulances</code> or <code>aardvark</code> — the name is up to us.</p>
-<p>Next, we need to count the number of defective ambulances:</p>
+<p>Next we need to count the number of defective ambulances:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count the number of nines in the random numbers.</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The "a == 9" part identifies all the numbers equal to 9.</span></span>
@@ -1773,7 +1779,20 @@ Hello</code></pre>
 <pre><code>0.214</code></pre>
 </div>
 </div>
-</section>
+<div class="nb-end">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of notebook: Ambulances
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>ambulances</code> starts at <a href="#nte-ambulances" class="quarto-xref">Note&nbsp;<span>2.1</span></a>.</p>
 </div>
 </div>
 <!---
@@ -1797,8 +1816,9 @@ Randomness in estimates
 <p>Don’t worry about the detail of how each of these commands works — we will cover those details gradually, over the next few chapters. But, we hope that you can see, in principle, how each of the operations that the computer carries out are analogous to the operations that you yourself executed when you solved this problem using the ten-sided dice. This is exactly the procedure that we will use to solve every problem in probability and statistics that we must deal with.</p>
 <p>While writing programs like these take a bit of getting used to, it is vastly simpler than the older, more conventional approaches to such problems routinely taught to students.</p>
 </section>
+</section>
 <section id="sec-resamp-differs" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="sec-resamp-differs">2.4 How resampling differs from the conventional approach</h2>
+<h2 data-number="2.4" class="anchored" data-anchor-id="sec-resamp-differs"><span class="header-section-number">2.4</span> How resampling differs from the conventional approach</h2>
 <p>In the standard approach the student learns to choose and solve a formula. Doing the algebra and arithmetic is quick and easy. The difficulty is in choosing the correct formula. Unless you are a professional statistician, it may take you quite a while to arrive at the correct formula — considerable hard thinking, and perhaps some digging in textbooks. More important than the labor, however, is that you may come up with the wrong formula, and hence obtain the wrong answer. And how would you know if you were wrong?</p>
 <p>Most students who have had a standard course in probability and statistics are quick to tell you that it is not easy to find the correct formula, even immediately after finishing a course (or several courses) on the subject. After leaving school or university, it is harder still to choose the right formula. Even many people who have taught statistics at the university level (including this writer) must look at a book to get the correct formula for a problem as simple as the ambulances, and then we are often still not sure we have the right answer. This is the grave disadvantage of the standard approach.</p>
 <p>In the past few decades, resampling and other Monte Carlo simulation methods have come to be used extensively in scientific research. But in contrast to the material in this book, simulation has mostly been used in situations so complex that mathematical methods have not yet been developed to handle them. Here are examples of such situations:</p>
@@ -1825,22 +1845,6 @@ This might be "Percentage baseball" (1966) or "Percentage baseball and the compu
 <p>We hope you will find, as you read through the chapters, that the resampling way of thinking is a good way to think about the more traditional statistical methods that some of you may already know. Our approach will be to use resampling to understand the ideas, and then apply this understanding to reason about traditional methods. You may also find that the resampling methods are not only easier to understand — they are often more useful, because they are so general in their application.</p>
 
 
-<div class="nb-end">
-
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-End of notebook: Ambulances
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>ambulances</code> starts at <a href="#nte-ambulances" class="quarto-xref">Note&nbsp;<span>2.1</span></a>.</p>
-</div>
-</div>
 </section>
 
 </main> <!-- /main -->
