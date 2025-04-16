@@ -246,7 +246,7 @@ are_black
 ```
 
 Finally, we can `sum` to find the number of black jurors
-(<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code.html#sec-count-with-sum"><span>Section 5.13</span></a>):
+(<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code.html#sec-count-with-sum"><span>Section 5.14</span></a>):
 
 ```{r}
 # Number of black jurors in this simulated jury.

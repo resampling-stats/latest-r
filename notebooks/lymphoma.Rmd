@@ -445,20 +445,87 @@ the question “is the value of the *first* element of `a` greater than
 0”, and the second is the answer to “is the value of the *second*
 element of `a` greater than 0”.
 
-Let us store the result of this comparison to work on:
+## 5.13 More comparisons
+
+While we are here, let us carry on the theme of comparisons. A
+comparison, such as `&gt;` (greater than) above, asks a question of the
+values to its left and right. You have already seen:
+
+```{r}
+p <- 0
+# Is the value of p greater than 0?
+# Show the result of the comparison.
+p > 0
+```
+
+It won’t surprise you to know that `&lt;` (less than) is another comparison
+operator. It asks “is the value to the right less than the value to
+left?”.
+
+```{r}
+p <- 0
+# Is the value of p less than 0?
+# Show the result of the comparison.
+p < 0
+```
+
+As for `&gt;` above, `&lt;` applied to a vector, gives a new vector, with one
+answer for each element in the vector:
+
+```{r}
+# Is the value of "a" less than 6?
+# Show the result.
+a < 6
+```
+
+`&gt;` asks “is right greater than left?”. `&lt;` asks “is right less than
+left?”. We will also have use for a comparison that asks “is right equal
+to left?”. R uses `==` (double equals) to do this comparison.
+
+```{r}
+p <- 17
+# Is the value of p equal to 17?
+# Show the result of the comparison.
+p == 17
+```
+
+**Note: Double equals**
+
+The *double equals* `==` above is a *comparison* in R.
+
+Like `&lt;` and `&gt;`, `==` is a *comparison operator*. It specifies that R
+should *operate* on the values to its left and to its right. Comparison
+operators like `&lt;` and `==` are for comparing two values — here the
+value in `p` and the value 17. This comparison, like all comparisons,
+returns an answer that is either `TRUE` or `FALSE`. In our case `p` has
+the value 17, so the comparison becomes `17 == 17`, meaning “is 17 equal
+to 17?”, to which the answer is “Yes”, and R sends back `TRUE`.
+
+**End of Note: Double equals**
+
+As you can imagine, and as for `&lt;` and `&gt;`, `==` applied to a vector
+does the comparison for each element of the vector:
+
+```{r}
+# Is the value of "a" less than 6?
+# Show the result.
+a == 6
+```
+
+## 5.14 Counting `TRUE` values with `sum`
+
+Let us return to the `&gt;` comparison:
 
 ```{r}
 # Is the value of "a" greater than 0?
-# Store as another vector "q".
+# Store the result in q.
 q <- a > 0
-# Show the value of q
+# Show the result.
 q
 ```
 
-## 5.13 Counting `TRUE` values with `sum`
-
-Notice above that there is one `TRUE` element in `q` for every element
-in `a` that was greater than 0. It only remains to *count* the number of
+Notice that there is one `TRUE` element in `q` for every element in `a`
+that was greater than 0. The next task is to *count* the number of
 `TRUE` values in `q`, to get the count of patients in our simulated
 trial who were cured.
 
@@ -508,7 +575,7 @@ b <- sum(q)
 b
 ```
 
-## 5.14 The procedure for one simulated trial
+## 5.15 The procedure for one simulated trial
 
 We now have the whole procedure for one simulated trial. We can put the
 whole procedure in one chunk:
@@ -527,7 +594,7 @@ b <- sum(q)
 b
 ```
 
-## 5.15 Repeating the trial
+## 5.16 Repeating the trial
 
 Now we know how to do one simulated trial, we could just keep running
 the chunk above, and writing down the result each time. Once we had run
@@ -535,7 +602,7 @@ the chunk 100 times, we would have 100 counts. Then we could look at the
 100 counts to see how many were equal to 17 (all 17 simulated patients
 cured on that trial). At least that would be much faster than rolling 17
 dice 100 times, but we would also like the computer to automate the
-process of repeating the trial, and keeping track of the counts.
+process of repeating the trial, while keeping track of the counts.
 
 Please forgive us as we race ahead again, as we did in the last chapter.
 As in the last chapter, we will use a *results* vector called `z` to
@@ -595,51 +662,8 @@ z
 Finally, we need to count how many of the trials results we stored in
 `z` gave a “cured” count of 17.
 
-We can ask the question whether a single number is equal to 17 using the
-*double equals* comparison: `==`.
-
-```{r}
-s <- 17
-# Is the value of s equal to 17?
-# Show the result of the comparison.
-s == 17
-```
-
-**Note**
-
-<div class="Python">
-
-## 5.16 Single and double equals
-
-Notice that the *double equals* `==` means something entirely different
-to Python than the single equals `=`. In the code above, Python reads
-`s = 17` to mean “Set the variable `s` to have the value 17”. In
-technical terms the single equals is called an *assignment* operator,
-because it means *assign* the value 17 to the variable `s`.
-
-The code `s == 17` has a completely different meaning — and it is
-another example of a *comparison* — comparing the value in `s` to 17.
-
-</div>
-
-## 5.17 Double equals
-
-The *double equals* `==` above is a *comparison* in R.
-
-`==` means: compare the thing on the left of the `==` to the thing on
-the right of the `==`, and give `TRUE` if the values are equal, and
-`FALSE` otherwise. In this case, `s == 17` means “give `TRUE` if the
-value in `s` is equal to 17, and `FALSE` otherwise”. The `==` is a
-*comparison* operator — it is for comparing two values — here the value
-in `s` and the value 17. This comparison, like all comparisons, returns
-an answer that is either `TRUE` or `FALSE`. In our case `s` has the
-value 17, so the comparison becomes `17 == 17`, meaning “is 17 equal to
-17?”, to which the answer is “Yes”, and R sends back `TRUE`.
-
-**End of Note**
-
-We can ask this question of *all 100 counts* by asking the question: is
-the vector `z` equal to 17, like this:
+We can ask this question of *all 100 counts* by asking the question: “is
+the vector `z` equal to 17?”, using `==`:
 
 ```{r}
 # Is the value of z equal to 17?
