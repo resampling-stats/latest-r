@@ -19,7 +19,7 @@ of a comment:
 
 Because R ignores lines beginning with `#`, the text after the `#` is
 just for us, the humans reading the code. The person writing the code
-will often use comments to explain what the code is doing. :::
+will often use comments to explain what the code is doing.
 
 **End of Note: Comments in code**
 
