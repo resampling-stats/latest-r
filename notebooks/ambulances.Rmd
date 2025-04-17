@@ -229,8 +229,8 @@ notebook</span></span>
 <span class="chapter-title">Tools for samples and sampling</span></span>
 <span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/probability_theory_1a.html&lt;span-class='chapter-number'&gt;8&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Probability-Theory,-Part-1&lt;/span&gt;"><span class="chapter-number">8</span> 
 <span class="chapter-title">Probability Theory, Part 1</span></span>
-<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/probability_theory_1b.html&lt;span-class='chapter-number'&gt;9&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Probability-Theory-Part-I-(continued)&lt;/span&gt;"><span class="chapter-number">9</span> 
-<span class="chapter-title">Probability Theory Part I
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/probability_theory_1b.html&lt;span-class='chapter-number'&gt;9&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Probability-Theory-Part-1-(continued)&lt;/span&gt;"><span class="chapter-number">9</span> 
+<span class="chapter-title">Probability Theory Part 1
 (continued)</span></span>
 <span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/more_sampling_tools.html&lt;span-class='chapter-number'&gt;10&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Two-puzzles-and-more-tools&lt;/span&gt;"><span class="chapter-number">10</span> 
 <span class="chapter-title">Two puzzles and more tools</span></span>
