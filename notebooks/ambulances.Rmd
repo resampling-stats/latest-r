@@ -66,190 +66,257 @@ b <- sum(a == 9)
 b
 ```
 
-You see that we have code like this:
 
-```{r}
-sum(a == 9)
-```
 
-to count the number of values equal to 9 in the sequence `a`. For now
-just read sum(a == 9 as “count the number of 9s in `a`”. We will explain
-how this code works fairly soon
-(<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code.html#sec-counting-results"><span>Section 5.12</span></a>).
+Notice that the code above is *exactly* the same as the code we built up
+in steps. But notice too, that the answer we got from this code was
+slightly different from the answer we got first.
 
-The `sum` command is a *counting* operation. It asks the computer to
-*count* the number of `9`s among the 16 numbers that are in location `a`
-following the random draw carried out by the `sample` operation. The
-result of the `sum` operation will be somewhere between 0 and 16, the
-number of simulated ambulances that were out-of-order on a given
-simulated day. The result is then placed in another location in the
-computer’s memory that we label `b`.
+Why did we get a different answer from the same code? See if you can
+come up with a good answer before reading the explanation below.
 
-Above you see that we have worked out how to tell the computer to do a
-single trial — one simulated day.
+**Note: Randomness in estimates**
 
-### 2.3.1 Repeating trials
+This is an essential point — our code uses *random numbers* to get an
+*estimate* of the quantity we want — in this case, the probability of
+three or more ambulances being out of order. Every run of our code block
+above will use a different set of random numbers. Therefore, every run
+of the code will give us a very slightly different number. As you will
+soon see, we can make our estimate more and more accurate, and less and
+less different between each run, by doing many trials in each run. Here
+we did 1000 trials, but we will usually do 10000 trials, to give us a
+good estimate, that does not vary much from run to run.
 
-We could run the code above for one trial over and over, and write down
-the result on a piece of paper. If we did this 100 times we would have
-100 counts of the number of simulated ambulances that had broken down
-for each simulated day. To answer our question, we will then count the
-number of times the count was three or more, and divide by 100, to get
-an estimate of the proportion of days with three or more out-of-order
-ambulances.
+**End of Note: Randomness in estimates**
 
-One of the most useful things about the computer is that it is very good
-at repeating tasks many times. Our next job is to ask the computer to
-repeat the single trial many times — say 1000 times — and count up the
-results for us.
+Don’t worry about the detail of how each of these commands works — we
+will cover those details gradually, over the next few chapters. But, we
+hope that you can see, in principle, how each of the operations that the
+computer carries out are analogous to the operations that you yourself
+executed when you solved this problem using the ten-sided dice. This is
+exactly the procedure that we will use to solve every problem in
+probability and statistics that we must deal with.
 
-Of course R is very good at repeating things, but the instructions to
-tell R to repeat things will take a little while to get used to. Soon,
-we will spend some time going over it in more detail. For now though, we
-show you how what it looks like, and ask you to take our word for it.
+While writing programs like these take a bit of getting used to, it is
+vastly simpler than the older, more conventional approaches to such
+problems routinely taught to students.
 
-The standard way to repeat steps in R is a `for` loop. For example, let
-us say we wanted to display “Hello” five times. Here is how we would do
-that with a `for` loop:
+## 2.4 How resampling differs from the conventional approach
 
-```{r}
-# Read the next line as "repeat the following steps five times".
-for (i in 1:5) {
-    # The stuff between the curly brackets is the code we
-    # repeat five times.
-    # Print "Hello" to the screen.
-    message("Hello")
-}
-```
+In the standard approach the student learns to choose and solve a
+formula. Doing the algebra and arithmetic is quick and easy. The
+difficulty is in choosing the correct formula. Unless you are a
+professional statistician, it may take you quite a while to arrive at
+the correct formula — considerable hard thinking, and perhaps some
+digging in textbooks. More important than the labor, however, is that
+you may come up with the wrong formula, and hence obtain the wrong
+answer. And how would you know if you were wrong?
 
-You can probably see where we are going here. We are going to put the
-code for one trial inside a `for` loop, to repeat that trial code many
-times.
+Most students who have had a standard course in probability and
+statistics are quick to tell you that it is not easy to find the correct
+formula, even immediately after finishing a course (or several courses)
+on the subject. After leaving school or university, it is harder still
+to choose the right formula. Even many people who have taught statistics
+at the university level (including this writer) must look at a book to
+get the correct formula for a problem as simple as the ambulances, and
+then we are often still not sure we have the right answer. This is the
+grave disadvantage of the standard approach.
 
-Our next job is to *store* the results of each trial. If we are going to
-run 1000 trials, we need to store 1000 results.
+In the past few decades, resampling and other Monte Carlo simulation
+methods have come to be used extensively in scientific research. But in
+contrast to the material in this book, simulation has mostly been used
+in situations so complex that mathematical methods have not yet been
+developed to handle them. Here are examples of such situations:
 
-To do this, we start with a sequence of 1000 zeros, that we will fill in
-later, like this:
 
-```{r}
-# Ask R to make a sequence of 1000 zeros that we will use
-# to store the results of our 1000 trials.
-# Call this sequence "z"
-z <- numeric(1000)
-```
 
-For now, `z` contains 1000 zeros, but we will soon use a `for` loop to
-execute 1000 trials. For each trial we will calculate our result (the
-number of broken-down ambulances), and we will store the result in the
-`z` store. We end up with 1000 trial results stored in `z`.
+1.  Imagine a large train station such as Grand Central Terminal in New
+    York or King’s Cross in London. We are responsible for planning the
+    new station layout so that passengers can move as quickly as
+    possible to and from their trains in rush-hour. It will likely be
+    far too complicated to make formulas to represent the passenger
+    flows, but we could use the computer to simulate passengers, and
+    their movements, and try different potential layouts within the
+    simulation.
 
-With these parts, we are now ready to solve the ambulance problem, using
-R.
+2.  The Navy might want to know how long the average ship will have to
+    wait for dock facilities. The time of completion varies from ship to
+    ship, and the number of ships waiting in line for dock work varies
+    over time. This problem can be handled quite easily with the
+    experimental simulation method, but formal mathematical analysis
+    would be difficult or impossible.
 
-### 2.3.2 The solution
+3.  What are the best tactics in baseball? Should one bunt? Should one
+    put the best hitter up first, or later? By trying out various
+    tactics with dice or random numbers, Earnshaw Cook (in his book
+    *Percentage Baseball*), found that it is best never to bunt, and the
+    highest-average hitter should be put up first, in contrast to usual
+    practice. Finding this answer would have been much more difficult
+    with the analytic method.
 
-This is our big moment! We will combine the elements shown above to
-perform our ambulance simulation over, say, 1000 days. Just a quick
-reminder: we do not expect you to understand all the detail of the code
-below; we will cover that later. For now, see if you can follow along
-with the gist of it.
 
-To solve resampling problems, we typically proceed as we have done
-above. We figure out the structure of a single trial and then place that
-trial in a `for` loop that executes it multiple times (once for each
-day, in our case).
 
-Now, let us apply this procedure to our ambulance problem. We simulate
-1000 days. You will see that we have just taken the parts above, and put
-them together. The only new part here, is the step at the end, where we
-store the result of the trial. Bear with us for that; we will come to it
-soon.
+4.  Which search pattern will yield the best results for a ship
+    searching for a school of fish? Trying out “models” of various
+    search patterns with simulation can provide a fast answer.
 
-```{r}
-# Ask R to make a sequence of 1000 zeros that we will use
-# to store the results of our 1000 trials.
-# Call this sequence "z"
-z <- numeric(1000)
+5.  What strategy in the game of Monopoly will be most likely to win?
+    The simulation method systematically plays many games (with a
+    computer) testing various strategies to find the best one.
 
-# These are the numbers we will ask R to select from.
-numbers <- 0:9
+But those five examples are all complex problems. This book and its
+earlier editions break new ground by using this method for *simple
+rather than complex problems*, especially in statistics rather than pure
+probability, and in teaching *beginning rather than advanced* students
+to solve problems this way. (Here it is necessary to emphasize that the
+resampling method is used to *solve the problems themselves rather than
+as a demonstration device to teach the notions found in the standard
+conventional approach*. Simulation has been used in elementary courses
+in the past, but only to demonstrate the operation of the analytical
+mathematical ideas. That is very different than using the resampling
+approach to solve statistics problems themselves, as is done here.)
 
-# Read the next line as "repeat the following steps 1000 times".
-for (i in 1:1000) {
-    # The stuff between the curly brackets is the code we
-    # repeat 1000 times.
+Once we get rid of the formulas and tables, we can see that statistics
+is a matter of *clear thinking, not fancy mathematics*. Then we can get
+down to the business of learning how to do that clear statistical
+thinking, and putting it to work for you. *The study of probability* is
+purely mathematics (though not necessarily formulas) and technique. But
+*statistics has to do with meaning*. For example, what is the meaning of
+data showing an association just discovered between a type of behavior
+and a disease? Of differences in the pay of men and women in your firm?
+Issues of causation, acceptability of control, and design of experiments
+cannot be reduced to technique. This is “philosophy” in the fullest
+sense. Probability and statistics calculations are just one input.
+Resampling simulation enables us to get past issues of mathematical
+technique and focus on the crucial statistical elements of statistical
+problems.
 
-    # Get 16 values from the *numbers* sequence.
-    # Store the 16 numbers with the name "a"
-    a <- sample(numbers, 16, replace=TRUE)
+We hope you will find, as you read through the chapters, that the
+resampling way of thinking is a good way to think about the more
+traditional statistical methods that some of you may already know. Our
+approach will be to use resampling to understand the ideas, and then
+apply this understanding to reason about traditional methods. You may
+also find that the resampling methods are not only easier to understand
+— they are often more useful, because they are so general in their
+application.
 
-    # Count the number of nines in the random numbers.
-    # The "a == 9" part identifies all the numbers equal to 9.
-    # The "sum" part counts how many numbers "a == 9" found.
-    b <- sum(a == 9)
-
-    # Store the result from this trial in the sequence "z"
-    z[i] <- b
-
-    # Now go back and repeat the trial, until done.
-}
-```
-
-The `z[i] &lt;- b` statement that follows the `sum` *counting* operation
-simply keeps track of the results of each trial, placing the number of
-defective ambulances for each trial inside the sequence called `z`. The
-sequence has 1000 positions: one for each trial.
-
-When we have run the code above, we have stored 1000 trial results in
-the sequence `z`. These are 1000 counts of out-of-order ambulances, one
-for each of our simulated days. Our last task is to calculate the
-proportion of these days for which we had more than three broken-down
-ambulances.
-
-Since our aim is to count the number of days in which three or more
-defective ambulances occur, we use another *counting* `sum` command at
-the end of the 1000 trials. This command *counts* how many times three
-or more defects occurred in the 1000 days recorded in our `z` sequence,
-and we place the result in another location, `k`. The value of `k` gives
-us the total number of days where 3 or more defective ambulances are
-seen to occur. Then we divide the number in `k` by 1000, the number of
-trials. Thus we obtain an estimate of the chance, expressed as a
-probability between 0 and 1, that 3 or more ambulances will be defective
-on a given day. And we store that result in a location that we call
-`kk`, which R subsequently prints to the screen.
-
-```{r}
-# How many trials resulted in 3 or more ambulances being out of order?
-# (The test counts the number of days where the out-of-order count was greater
-# than or equal to 3, written as ">= 3").
-k <- sum(z >= 3)
-
-# Convert to a proportion.
-kk <- k / 1000
-
-# Show the result.
-message(kk)
-```
-
-This is the estimate we wanted; the proportion of days where three or
-more ambulances were out of action.
-
-We have crept up on the solution, so it might not be clear to you how
-few steps you needed to do this task. Here is the whole solution to the
-problem, without the comments:
-
-```{r}
-z <- numeric(1000)
-numbers <- 0:9
-
-for (i in 1:1000) {
-    a <- sample(numbers, 16, replace=TRUE)
-    b <- sum(a == 9)
-    z[i] <- b
-}
-
-k <- sum(z >= 3)
-kk <- k / 1000
-message(kk)
-```
+<div class="hidden" id="quarto-navigation-envelope">
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar-title">Resampling statistics</span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-navbar-title">Resampling statistics</span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-next"><span class="chapter-number">3</span> 
+<span class="chapter-title">What is probability?</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-prev"><span class="chapter-number">1</span> 
+<span class="chapter-title">Introduction</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/index.html{{&lt;-var-lang-&gt;}}-version">R
+version</span> <span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/preface_third.htmlPreface-to-the-third-edition">Preface
+to the third edition</span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/preface_second.htmlPreface-to-the-second-edition">Preface
+to the second edition</span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/intro.html&lt;span-class='chapter-number'&gt;1&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Introduction&lt;/span&gt;"><span class="chapter-number">1</span> 
+<span class="chapter-title">Introduction</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/resampling_method.html&lt;span-class='chapter-number'&gt;2&lt;/span&gt;--&lt;span-class='chapter-title'&gt;The-resampling-method&lt;/span&gt;"><span class="chapter-number">2</span> 
+<span class="chapter-title">The resampling method</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/what_is_probability.html&lt;span-class='chapter-number'&gt;3&lt;/span&gt;--&lt;span-class='chapter-title'&gt;What-is-probability?&lt;/span&gt;"><span class="chapter-number">3</span> 
+<span class="chapter-title">What is probability?</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/about_technology.html&lt;span-class='chapter-number'&gt;4&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Introducing-{{&lt;-var-lang-&gt;}}-and-the-Jupyter-notebook&lt;/span&gt;"><span class="chapter-number">4</span> 
+<span class="chapter-title">Introducing R and the Jupyter
+notebook</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/resampling_with_code.html&lt;span-class='chapter-number'&gt;5&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Resampling-with-code&lt;/span&gt;"><span class="chapter-number">5</span> 
+<span class="chapter-title">Resampling with code</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/resampling_with_code2.html&lt;span-class='chapter-number'&gt;6&lt;/span&gt;--&lt;span-class='chapter-title'&gt;More-resampling-with-code&lt;/span&gt;"><span class="chapter-number">6</span> 
+<span class="chapter-title">More resampling with code</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/sampling_tools.html&lt;span-class='chapter-number'&gt;7&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Tools-for-samples-and-sampling&lt;/span&gt;"><span class="chapter-number">7</span> 
+<span class="chapter-title">Tools for samples and sampling</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/probability_theory_1a.html&lt;span-class='chapter-number'&gt;8&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Probability-Theory,-Part-1&lt;/span&gt;"><span class="chapter-number">8</span> 
+<span class="chapter-title">Probability Theory, Part 1</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/probability_theory_1b.html&lt;span-class='chapter-number'&gt;9&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Probability-Theory-Part-I-(continued)&lt;/span&gt;"><span class="chapter-number">9</span> 
+<span class="chapter-title">Probability Theory Part I
+(continued)</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/more_sampling_tools.html&lt;span-class='chapter-number'&gt;10&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Two-puzzles-and-more-tools&lt;/span&gt;"><span class="chapter-number">10</span> 
+<span class="chapter-title">Two puzzles and more tools</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/probability_theory_2_compound.html&lt;span-class='chapter-number'&gt;11&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Probability-Theory,-Part-2:-Compound-Probability&lt;/span&gt;"><span class="chapter-number">11</span> 
+<span class="chapter-title">Probability Theory, Part 2: Compound
+Probability</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/probability_theory_3.html&lt;span-class='chapter-number'&gt;12&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Probability-Theory,-Part-3&lt;/span&gt;"><span class="chapter-number">12</span> 
+<span class="chapter-title">Probability Theory, Part 3</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/probability_theory_4_finite.html&lt;span-class='chapter-number'&gt;13&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Probability-Theory,-Part-4:-Estimating-Probabilities-from-Finite-Universes&lt;/span&gt;"><span class="chapter-number">13</span> 
+<span class="chapter-title">Probability Theory, Part 4: Estimating
+Probabilities from Finite Universes</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/sampling_variability.html&lt;span-class='chapter-number'&gt;14&lt;/span&gt;--&lt;span-class='chapter-title'&gt;On-Variability-in-Sampling&lt;/span&gt;"><span class="chapter-number">14</span> 
+<span class="chapter-title">On Variability in Sampling</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/monte_carlo.html&lt;span-class='chapter-number'&gt;15&lt;/span&gt;--&lt;span-class='chapter-title'&gt;The-Procedures-of-Monte-Carlo-Simulation-(and-Resampling)&lt;/span&gt;"><span class="chapter-number">15</span> 
+<span class="chapter-title">The Procedures of Monte Carlo Simulation
+(and Resampling)</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/standard_scores.html&lt;span-class='chapter-number'&gt;16&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Ranks,-Quantiles-and-Standard-Scores&lt;/span&gt;"><span class="chapter-number">16</span> 
+<span class="chapter-title">Ranks, Quantiles and Standard
+Scores</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/inference_ideas.html&lt;span-class='chapter-number'&gt;17&lt;/span&gt;--&lt;span-class='chapter-title'&gt;The-Basic-Ideas-in-Statistical-Inference&lt;/span&gt;"><span class="chapter-number">17</span> 
+<span class="chapter-title">The Basic Ideas in Statistical
+Inference</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/inference_intro.html&lt;span-class='chapter-number'&gt;18&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Introduction-to-Statistical-Inference&lt;/span&gt;"><span class="chapter-number">18</span> 
+<span class="chapter-title">Introduction to Statistical
+Inference</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/point_estimation.html&lt;span-class='chapter-number'&gt;19&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Point-Estimation&lt;/span&gt;"><span class="chapter-number">19</span> 
+<span class="chapter-title">Point Estimation</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/framing_questions.html&lt;span-class='chapter-number'&gt;20&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Framing-Statistical-Questions&lt;/span&gt;"><span class="chapter-number">20</span> 
+<span class="chapter-title">Framing Statistical Questions</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/testing_counts_1.html&lt;span-class='chapter-number'&gt;21&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Hypothesis-Testing-with-Counted-Data,-Part-1&lt;/span&gt;"><span class="chapter-number">21</span> 
+<span class="chapter-title">Hypothesis-Testing with Counted Data, Part
+1</span></span> <span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/significance.html&lt;span-class='chapter-number'&gt;22&lt;/span&gt;--&lt;span-class='chapter-title'&gt;The-Concept-of-Statistical-Significance-in-Testing-Hypotheses&lt;/span&gt;"><span class="chapter-number">22</span> 
+<span class="chapter-title">The Concept of Statistical Significance in
+Testing Hypotheses</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/testing_counts_2.html&lt;span-class='chapter-number'&gt;23&lt;/span&gt;--&lt;span-class='chapter-title'&gt;The-Statistics-of-Hypothesis-Testing-with-Counted-Data,-Part-2&lt;/span&gt;"><span class="chapter-number">23</span> 
+<span class="chapter-title">The Statistics of Hypothesis-Testing with
+Counted Data, Part 2</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/testing_measured.html&lt;span-class='chapter-number'&gt;24&lt;/span&gt;--&lt;span-class='chapter-title'&gt;The-Statistics-of-Hypothesis-Testing-With-Measured-Data&lt;/span&gt;"><span class="chapter-number">24</span> 
+<span class="chapter-title">The Statistics of Hypothesis-Testing With
+Measured Data</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/testing_procedures.html&lt;span-class='chapter-number'&gt;25&lt;/span&gt;--&lt;span-class='chapter-title'&gt;General-Procedures-for-Testing-Hypotheses&lt;/span&gt;"><span class="chapter-number">25</span> 
+<span class="chapter-title">General Procedures for Testing
+Hypotheses</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/confidence_1.html&lt;span-class='chapter-number'&gt;26&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Confidence-Intervals,-Part-1:-Assessing-the-Accuracy-of-Samples&lt;/span&gt;"><span class="chapter-number">26</span> 
+<span class="chapter-title">Confidence Intervals, Part 1: Assessing the
+Accuracy of Samples</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/confidence_2.html&lt;span-class='chapter-number'&gt;27&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Confidence-Intervals,-Part-2:-The-Two-Approaches-to-Estimating-Confidence-Intervals&lt;/span&gt;"><span class="chapter-number">27</span> 
+<span class="chapter-title">Confidence Intervals, Part 2: The Two
+Approaches to Estimating Confidence Intervals</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/reliability_average.html&lt;span-class='chapter-number'&gt;28&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Some-Last-Words-About-the-Reliability-of-Sample-Averages&lt;/span&gt;"><span class="chapter-number">28</span> 
+<span class="chapter-title">Some Last Words About the Reliability of
+Sample Averages</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/correlation_causation.html&lt;span-class='chapter-number'&gt;29&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Correlation-and-Causation&lt;/span&gt;"><span class="chapter-number">29</span> 
+<span class="chapter-title">Correlation and Causation</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/how_big_sample.html&lt;span-class='chapter-number'&gt;30&lt;/span&gt;--&lt;span-class='chapter-title'&gt;How-Large-a-Sample?&lt;/span&gt;"><span class="chapter-number">30</span> 
+<span class="chapter-title">How Large a Sample?</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/bayes_simulation.html&lt;span-class='chapter-number'&gt;31&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Bayesian-Analysis-by-Simulation&lt;/span&gt;"><span class="chapter-number">31</span> 
+<span class="chapter-title">Bayesian Analysis by
+Simulation</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/references.htmlReferences">References</span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:quarto-sidebar-section-1">Appendices</span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/exercise_solutions.html&lt;span-class='chapter-number'&gt;A&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Exercise-Solutions&lt;/span&gt;"><span class="chapter-number">A</span> 
+<span class="chapter-title">Exercise Solutions</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/technical_note.html&lt;span-class='chapter-number'&gt;B&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Technical-Note-to-the-Professional-Reader&lt;/span&gt;"><span class="chapter-number">B</span> 
+<span class="chapter-title">Technical Note to the Professional
+Reader</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/acknowlegements.html&lt;span-class='chapter-number'&gt;C&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Acknowledgements&lt;/span&gt;"><span class="chapter-number">C</span> 
+<span class="chapter-title">Acknowledgements</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/code_topics.html&lt;span-class='chapter-number'&gt;D&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Code-topics&lt;/span&gt;"><span class="chapter-number">D</span> 
+<span class="chapter-title">Code topics</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-int-sidebar:/errors_suggestions.html&lt;span-class='chapter-number'&gt;E&lt;/span&gt;--&lt;span-class='chapter-title'&gt;Errors-and-suggestions&lt;/span&gt;"><span class="chapter-number">E</span> 
+<span class="chapter-title">Errors and suggestions</span></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-breadcrumbs-&lt;span-class='chapter-number'&gt;2&lt;/span&gt;--&lt;span-class='chapter-title'&gt;The-resampling-method&lt;/span&gt;"><span class="chapter-number">2</span> 
+<span class="chapter-title">The resampling method</span></span>
+</div>
+<div class="hidden" id="quarto-meta-markdown">
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-metatitle"><span class="quarto-section-identifier" id="sec-resampling-method"><span class="chapter-number">2</span> 
+<span class="chapter-title">The resampling method</span></span> –
+Resampling statistics</span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-twittercardtitle"><span class="quarto-section-identifier" id="sec-resampling-method"><span class="chapter-number">2</span> 
+<span class="chapter-title">The resampling method</span></span> –
+Resampling statistics</span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-ogcardtitle"><span class="quarto-section-identifier" id="sec-resampling-method"><span class="chapter-number">2</span> 
+<span class="chapter-title">The resampling method</span></span> –
+Resampling statistics</span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-metasitename">Resampling statistics</span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-twittercarddesc"></span>
+<span class="hidden quarto-markdown-envelope-contents" render-id="quarto-ogcardddesc"></span>
+</div>
