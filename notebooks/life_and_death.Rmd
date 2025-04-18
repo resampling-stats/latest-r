@@ -368,7 +368,7 @@ iterations, to see what the loop variable will be, and what will happen
 in the body of the loop.
 
 We often use `for` loops with ranges (see
-<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code.html#sec-ranges"><span>Section 5.9</span></a>). Here we use a loop
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code.html#sec-ranges"><span>Section 5.10</span></a>). Here we use a loop
 to print out the numbers 1 through 4:
 
 ```{r}

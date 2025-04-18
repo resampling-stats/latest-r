@@ -108,35 +108,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="font-awesome.min.css">
@@ -443,8 +414,7 @@ window.Quarto = {
   <li><a href="#sec-intro-to-strings" id="toc-sec-intro-to-strings" class="nav-link" data-scroll-target="#sec-intro-to-strings">7.4 String values</a></li>
   <li><a href="#strings-in-s" id="toc-strings-in-s" class="nav-link" data-scroll-target="#strings-in-s">7.5 Strings in vectors</a></li>
   <li><a href="#sec-repeating" id="toc-sec-repeating" class="nav-link" data-scroll-target="#sec-repeating">7.6 Repeating elements</a></li>
-  <li><a href="#resampling-with-and-without-replacement" id="toc-resampling-with-and-without-replacement" class="nav-link" data-scroll-target="#resampling-with-and-without-replacement">7.7 Resampling with and without replacement</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">7.8</span> Conclusion</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">7.7 Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -631,225 +601,28 @@ End of R section.
 <p>We started with the strategy of using numbers 0 through 25 to mean “black” jurors, and 26 through 99 to mean “white” jurors. We selected values at random from 0 through 99, and then worked out whether the number meant a “black” juror (was less than 26) or a “white” juror (was greater than 25).</p>
 <p>It would be good to use strings instead of numbers to identify the potential jurors. Then we would not have to remember our coding of 0 through 25 and 26 through 99.</p>
 <p>If only there was a way to make a vector of 100 strings, where 26 of the strings were “black” and 74 were “white”. Then we could select randomly from that array, and it would be immediately obvious that we had a “black” or “white” juror.</p>
-<p>Luckily, of course, we can do that, by using the <code>rep</code> function to construct the vector.</p>
-<p>Here is how that works:</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The values that we will repeat to fill up the larger array.</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>juror_types <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'black'</span>, <span class="st">'white'</span>)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># The number of times we want to repeat "black" and "white".</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>repeat_nos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">26</span>, <span class="dv">74</span>)</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Repeat "black" 26 times and "white" 74 times.</span></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>jury_pool <span class="ot">&lt;-</span> <span class="fu">rep</span>(juror_types, repeat_nos)</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the result</span></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>jury_pool</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  [1] "black" "black" "black" "black" "black" "black" "black" "black" "black"
- [10] "black" "black" "black" "black" "black" "black" "black" "black" "black"
- [19] "black" "black" "black" "black" "black" "black" "black" "black" "white"
- [28] "white" "white" "white" "white" "white" "white" "white" "white" "white"
- [37] "white" "white" "white" "white" "white" "white" "white" "white" "white"
- [46] "white" "white" "white" "white" "white" "white" "white" "white" "white"
- [55] "white" "white" "white" "white" "white" "white" "white" "white" "white"
- [64] "white" "white" "white" "white" "white" "white" "white" "white" "white"
- [73] "white" "white" "white" "white" "white" "white" "white" "white" "white"
- [82] "white" "white" "white" "white" "white" "white" "white" "white" "white"
- [91] "white" "white" "white" "white" "white" "white" "white" "white" "white"
-[100] "white"</code></pre>
-</div>
-</div>
-<p>We can use this vector of repeats of strings, to sample from. The result is easier to grasp, because we are using the string labels, instead of numbers:</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select one juror at random from the black / white pool.</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co"># replace=TRUE is redundant here, but we leave it for consistency.</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>one_juror <span class="ot">&lt;-</span> <span class="fu">sample</span>(jury_pool, <span class="dv">1</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>one_juror</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "black"</code></pre>
-</div>
-</div>
-<p>We can select our full jury of 12 jurors, and see the results in a more obvious form:</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select one juror at random from the black / white pool.</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>one_jury <span class="ot">&lt;-</span> <span class="fu">sample</span>(jury_pool, <span class="dv">12</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>one_jury</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "white" "white" "white" "white" "white" "white" "white" "black" "black"
-[10] "white" "white" "black"</code></pre>
-</div>
-</div>
+<p>Luckily we can do that, by using the <code>rep</code> function to construct the vector.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Using the <code>size</code> argument to <code>sample</code>
+With or without replacement for the original jury selection
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In the code above, we have specified the <em>size</em> of the sample we want (12) with the second argument to <code>sample</code>. As you saw in <a href="resampling_with_code.html#sec-named-arguments" class="quarto-xref"><span>Section 5.8</span></a>, we can also give names to the function arguments, in this case, to make it clearer what we mean by “12” in the code above. In fact, from now on, that is what we will do; we will specify the <em>size</em> of our sample by using the <em>name</em> for the function argument to <code>sample</code> — <code>size</code> — like this:</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select one juror at random from the black / white pool.</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify the sample size using the "size" named argument.</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>one_jury <span class="ot">&lt;-</span> <span class="fu">sample</span>(jury_pool, <span class="at">size=</span><span class="dv">12</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>one_jury</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "white" "white" "white" "white" "white" "black" "white" "white" "white"
-[10] "white" "white" "white"</code></pre>
-</div>
-</div>
-</div>
-</div>
-<p>We can use <code>==</code> on the vector to get <code>TRUE</code> values where the juror was “black” and <code>FALSE</code> values otherwise:</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>are_black <span class="ot">&lt;-</span> one_jury <span class="sc">==</span> <span class="st">'black'</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>are_black</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
-</div>
-</div>
-<p>Finally, we can <code>sum</code> to find the number of black jurors (<a href="resampling_with_code.html#sec-count-with-sum" class="quarto-xref"><span>Section 5.14</span></a>):</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of black jurors in this simulated jury.</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>n_black <span class="ot">&lt;-</span> <span class="fu">sum</span>(are_black)</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>n_black</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1</code></pre>
-</div>
-</div>
-<p>Putting that all together, this is our new procedure to select one jury and count the number of black jurors:</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>one_jury <span class="ot">&lt;-</span> <span class="fu">sample</span>(jury_pool, <span class="at">size=</span><span class="dv">12</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>are_black <span class="ot">&lt;-</span> one_jury <span class="sc">==</span> <span class="st">'black'</span></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>n_black <span class="ot">&lt;-</span> <span class="fu">sum</span>(are_black)</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>n_black</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
-</div>
-</div>
-<p>Or we can be even more compact by putting several statements together into one line:</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The same as above, but on one line.</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>n_black <span class="ot">=</span> <span class="fu">sum</span>(<span class="fu">sample</span>(jury_pool, <span class="at">size=</span><span class="dv">12</span>, <span class="at">replace=</span><span class="cn">TRUE</span>) <span class="sc">==</span> <span class="st">'black'</span>)</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>n_black</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
+<p>You may have noticed in <a href="resampling_with_code2.html" class="quarto-xref"><span>Chapter 6</span></a> that we were sampling Robert Swain’s jury from the eligible pool of jurors, <em>with replacement</em>. You might reasonably ask whether we should have selected from the eligible jurors <em>without replacement</em>, given that the same juror cannot serve more than once in the same jury, and therefore, the same argument applies there as here.</p>
+<p>The trick there was that we were selecting from a very large pool of many thousand eligible jurors, of whom 26% were black. Let’s say there were 10,000 eligible jurors, of whom 2,600 were black. When selecting the first juror, there is exactly a 2,600 in 10,000 chance of getting a black juror — 26%. If we do get a black juror first, then the chance that the second juror will be black has changed slightly, 2,599 in 9,999. But these changes are very small; even if we select eleven black jurors out of eleven, when we come to the twelfth juror, we still have a 2,589 out of 9,989 chance of getting another black juror, and that works out at a 25.92% chance — hardly changed from the original 26%. So yes, you’d be right, we really should have compiled our population of 2,600 black jurors and 7,400 white jurors, and then sampled without replacement from that population, but as the resulting sample probabilities will be very similar to the simpler sampling with replacement, we chose to try and slide that one quietly past you, in the hope you would forgive us when you realized.</p>
 </div>
 </div>
 </section>
-<section id="resampling-with-and-without-replacement" class="level2" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="resampling-with-and-without-replacement">7.7 Resampling with and without replacement</h2>
-<p>Now let us return to the details of Robert Swain’s case, that you first saw in <a href="resampling_with_code2.html" class="quarto-xref"><span>Chapter 6</span></a>.</p>
-<p>We looked at the composition of Robert Swain’s 12-person jury — but in fact, by law, that does not have to be representative of the eligible jurors. The 12-person jury is drawn from a jury <em>panel</em>, of 100 people, and this should, in turn, be drawn from the population of all eligible jurors in the county, consisting, at the time, of “all male citizens in the community over 21 who are reputed to be honest, intelligent men and are esteemed for their integrity, good character and sound judgment.” So, unless there was some bias against black jurors, we might expect the 100-person jury panel to be a plausibly random sample of the eligible jurors, of whom 26% were black. See <a href="https://supreme.justia.com/cases/federal/us/380/202">the Supreme Court case judgement</a> for details.</p>
-<p>In fact, in Robert Swain’s trial, there were 8 black members in the 100-person jury panel. We will leave it to you to adapt the simulation from <a href="resampling_with_code2.html" class="quarto-xref"><span>Chapter 6</span></a> to ask the question — is 8% surprising as a random sample from a population with 26% black people?</p>
-<p>But we have a different question: given that 8 out of 100 of the jury panel were black, is it surprising that none of the 12-person jury were black? As usual, we can answer that question with simulation.</p>
-<p>Let’s think about what a single simulated jury selection would look like.</p>
-<p>First we compile a representation of the actual jury panel, using the tools we have used above.</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>juror_types <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'black'</span>, <span class="st">'white'</span>)</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co"># in fact there were 8 black jurors and 92 white jurors.</span></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>panel_nos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">92</span>)</span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>jury_panel <span class="ot">&lt;-</span> <span class="fu">rep</span>(juror_types, panel_nos)</span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the result</span></span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>jury_panel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  [1] "black" "black" "black" "black" "black" "black" "black" "black" "white"
- [10] "white" "white" "white" "white" "white" "white" "white" "white" "white"
- [19] "white" "white" "white" "white" "white" "white" "white" "white" "white"
- [28] "white" "white" "white" "white" "white" "white" "white" "white" "white"
- [37] "white" "white" "white" "white" "white" "white" "white" "white" "white"
- [46] "white" "white" "white" "white" "white" "white" "white" "white" "white"
- [55] "white" "white" "white" "white" "white" "white" "white" "white" "white"
- [64] "white" "white" "white" "white" "white" "white" "white" "white" "white"
- [73] "white" "white" "white" "white" "white" "white" "white" "white" "white"
- [82] "white" "white" "white" "white" "white" "white" "white" "white" "white"
- [91] "white" "white" "white" "white" "white" "white" "white" "white" "white"
-[100] "white"</code></pre>
-</div>
-</div>
-<p>Now consider taking a 12-person jury at random from this panel. We select the first juror at random, so that juror has an 8 out of 100 chance of being black. But when we select the second jury member, the situation has changed slightly. We can’t select the first juror again, so our panel is now 99 people. If our first juror was black, then the chances of selecting another black juror next are not 8 out of 100, but 7 out of 99 — a smaller chance. The problem is, as we shall see in more detail later, the chances of getting a black juror as the second, and third and fourth members of the jury depend on whether we selected a black juror as the first and second and third jury members. At its most extreme, imagine we had already selected eight jurors, and by some strange chance, all eight were black. Now our chances of selecting a black juror as the ninth juror are zero — there are no black jurors left to select from the panel.</p>
-<p>In this case we are selecting jurors from the panel <em>without replacement</em>, meaning, that once we have selected a particular juror, we cannot select them again, and we do not put them back into the panel when we select our next juror.</p>
-<p>This is the probability equivalent of the situation when you are dealing a hand of cards. Let’s say someone is dealing you, and you only, a hand of five cards. You get an ace as your first card. Your chances of getting an ace as your first card were just the number of aces in the deck divided by the number of cards — four in 52 – <span class="math inline">\(\frac{4}{52}\)</span>. But for your second card, the probability has changed, because there is one less ace remaining in the pack, and one less card, so your chances of getting an ace as your second card are now <span class="math inline">\(\frac{3}{51}\)</span>. This is sampling without replacement — in a normal game, you can’t get the same card twice. Of course, you could imagine getting a hand where you sampled <em>with replacement</em>. In that case, you’d get a card, you’d write down what it was, and you’d give the card back to the dealer, who would <em>replace</em> the card in the deck, shuffle again, and give you another card.</p>
-<p>As you can see, the chances change if you are sampling with or without replacement, and the kind of sampling you do, will dictate how you model your chances in your simulations.</p>
-<p>Because this distinction is so common, and so important, the machinery you have already seen in <code>sample</code> has simple ways for you to select your sampling type. You have already seen sampling <em>with replacement</em>, and it looks like this:</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Take a sample of 12 jurors from the panel *with replacement*</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>strange_jury <span class="ot">&lt;-</span> <span class="fu">sample</span>(jury_panel, <span class="at">size=</span><span class="dv">12</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>strange_jury</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "white" "white" "white" "white" "black" "white" "white" "white" "white"
-[10] "white" "white" "white"</code></pre>
-</div>
-</div>
-<p>This is a strange jury, because it can select any member of the jury pool more than once. Perhaps that juror would have to fill two (or more!) seats, or run quickly between them. But of course, that is not how juries are selected. They are selected <em>without replacement</em>:</p>
-<div class="r">
-<p>Thus far, we have always done sampling <em>with replacement</em>, and, in order to do that with <code>sample</code>, we pass the argument <code>replace=TRUE</code>. We do that because the default for <code>sample</code> is <code>replace=FALSE</code>, that is, by default, <code>sample</code> does sampling without replacement. If you want to do sampling without replacement, you can just omit the <code>replace=TRUE</code> argument to <code>sample</code>, or you can specify <code>replace=FALSE</code> explicitly, perhaps to remind yourself that this is sampling without replacement. Whether you omit the <code>replace</code> argument, or specify <code>replace=FALSE</code>, the behavior is the same.</p>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Take a sample of 12 jurors from the panel *with replacement*</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="co"># replace=FALSE is the default for sample.</span></span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>ok_jury <span class="ot">&lt;-</span> <span class="fu">sample</span>(jury_panel, <span class="at">size=</span><span class="dv">12</span>)</span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>ok_jury</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "white" "white" "black" "white" "black" "white" "white" "white" "black"
-[10] "white" "white" "white"</code></pre>
-</div>
-</div>
-<div id="nte-eol-comments" class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note&nbsp;7.2: Comments at the end of lines
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You have already seen comment lines. These are lines beginning with <code>#</code>, to signal to R that the rest of the line is text for humans to read, but R to ignore.</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a comment.  R ignores this line.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>You can also put comments at the <em>end of code lines</em>, by finishing the code part of the line, and then putting a <code>#</code>, followed by more text. Again, R will ignore everything after the <code>#</code> as a text for humans, but not for R.</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">'Hello'</span>)  <span class="co"># This is a comment at the end of the line.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Hello</code></pre>
-</div>
-</div>
-</div>
-</div>
-<p>To finish the procedure for simulating a single jury selection, we count the number of black jurors:</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>n_black <span class="ot">&lt;-</span> <span class="fu">sum</span>(ok_jury <span class="sc">==</span> <span class="st">'black'</span>)  <span class="co"># How many black jurors?</span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>n_black</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3</code></pre>
-</div>
-</div>
-<p>Now we have the procedure for one simulated trial, here is the procedure for 10000 simulated trials.</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>counts <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10000</span>)</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>) {</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Single trial procedure</span></span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>    jury <span class="ot">&lt;-</span> <span class="fu">sample</span>(jury_panel, <span class="at">size=</span><span class="dv">12</span>)  <span class="co"># replace=FALSE is the default.</span></span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>    n_black <span class="ot">&lt;-</span> <span class="fu">sum</span>(jury <span class="sc">==</span> <span class="st">'black'</span>)  <span class="co"># How many black jurors?</span></span>
-<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Store the result</span></span>
-<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>    counts[i] <span class="ot">&lt;-</span> n_black</span>
-<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of juries with 0 black jurors.</span></span>
-<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>zero_black <span class="ot">&lt;-</span> <span class="fu">sum</span>(counts <span class="sc">==</span> <span class="dv">0</span>)</span>
-<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Proportion</span></span>
-<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a>p_zero_black <span class="ot">&lt;-</span> zero_black <span class="sc">/</span> <span class="dv">10000</span></span>
-<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(p_zero_black)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>0.3375</code></pre>
-</div>
-</div>
-<p>We have found that, when there are only 8% black jurors in the jury panel, having no black jurors in the final jury happens about 34% of the time, even in this case, where the jury is selected completely at random from the jury panel.</p>
-<p>We should look for the main source of bias in the initial selection of the jury panel, not in the selection of the jury from the panel.</p>
-<!---
-End of notebook
--->
+<section id="conclusion" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="conclusion">7.7 Conclusion</h2>
+<p>This chapter introduced you to the idea of strings — values in R that store bits of text. Strings are very useful as labels for the entities we are sampling from, when we do our simulations. Strings are particularly useful when we use them with vectors, and one way we often do that is to build up vectors of strings to sample from, using the <code>rep</code> function.</p>
+<p>There is a fundamental distinction between two different types of sampling — sampling <em>with replacement</em>, where we draw an element from a larger pool, then put that element back before drawing again, and sampling <em>without replacement</em>, where we remove the element from the remaining pool when we draw it into the sample. As we will see later, it is often a judgment call which of these two types of sampling is a more reasonable model of the world you are trying to simulate.</p>
+
+
 <div class="nb-end">
 
 </div>
@@ -866,27 +639,6 @@ End of notebook: Sampling tools
 <p><code>sampling_tools</code> starts at <a href="#nte-sampling_tools" class="quarto-xref">Note&nbsp;<span>7.1</span></a>.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-With or without replacement for the original jury selection
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You may have noticed in <a href="resampling_with_code2.html" class="quarto-xref"><span>Chapter 6</span></a> that we were sampling Robert Swain’s jury from the eligible pool of jurors, <em>with replacement</em>. You might reasonably ask whether we should have selected from the eligible jurors <em>without replacement</em>, given that the same juror cannot serve more than once in the same jury, and therefore, the same argument applies there as here.</p>
-<p>The trick there was that we were selecting from a very large pool of many thousand eligible jurors, of whom 26% were black. Let’s say there were 10,000 eligible jurors, of whom 2,600 were black. When selecting the first juror, there is exactly a 2,600 in 10,000 chance of getting a black juror — 26%. If we do get a black juror first, then the chance that the second juror will be black has changed slightly, 2,599 in 9,999. But these changes are very small; even if we select eleven black jurors out of eleven, when we come to the twelfth juror, we still have a 2,589 out of 9,989 chance of getting another black juror, and that works out at a 25.92% chance — hardly changed from the original 26%. So yes, you’d be right, we really should have compiled our population of 2,600 black jurors and 7,400 white jurors, and then sampled without replacement from that population, but as the resulting sample probabilities will be very similar to the simpler sampling with replacement, we chose to try and slide that one quietly past you, in the hope you would forgive us when you realized.</p>
-</div>
-</div>
-</section>
-<section id="conclusion" class="level2" data-number="7.8">
-<h2 data-number="7.8" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">7.8</span> Conclusion</h2>
-<p>This chapter introduced you to the idea of strings — values in R that store bits of text. Strings are very useful as labels for the entities we are sampling from, when we do our simulations. Strings are particularly useful when we use them with vectors, and one way we often do that is to build up vectors of strings to sample from, using the <span class="r"><code>rep</code></span> function.</p>
-<p>There is a fundamental distinction between two different types of sampling — sampling <em>with replacement</em>, where we draw an element from a larger pool, then put that element back before drawing again, and sampling <em>without replacement</em>, where we remove the element from the remaining pool when we draw it into the sample. As we will see later, it is often a judgment call which of these two types of sampling is a more reasonable model of the world you are trying to simulate.</p>
-
-
 </section>
 
 </main> <!-- /main -->

@@ -1581,11 +1581,13 @@ Figure&nbsp;12.2: Whiskey prices by state category
 <p>The probability that the postulated universe would produce a difference between groups as large or larger than observed in 1961 is estimated by how frequently the mean of the group of randomly-chosen sixteen prices from the simulated state-ownership universe is less than (or equal to) the mean of the actual sixteen state-ownership prices. The following notebook performs the operations described above.</p>
 <section id="sec-concatenate" class="level3" data-number="12.15.1">
 <h3 data-number="12.15.1" class="anchored" data-anchor-id="sec-concatenate"><span class="header-section-number">12.15.1</span> Concatenating vectors</h3>
-<p>Before we start the simulation, we need a little extra R machinery.</p>
+<div class="r">
+<p>Before we start, we need to return to the <code>c()</code> function in R: <a href="resampling_with_code.html#sec-r-c" class="quarto-xref"><span>Section 5.9</span></a>.</p>
+</div>
 <p>In what follows, we are going to make a vector for the 26 <em>private</em> prices, and another vector for the 16 <em>government</em> prices, and then concatenate these two vectors to make a new vector with 26 + 16 = 42 elements, where the first 26 elements are the private prices and the last 16 elements are the government prices.</p>
 <p>You will see that in action below, but this is what that <em>concatenation</em> looks like in R for some example vectors.</p>
 <div class="r">
-<p>We have already seen R’s concatenation function in action. It is the function named <code>c</code>. For example, we use <code>c(1, 2, 3)</code> to <em>concatenate</em> the single numbers 1, 2, and 3 into a combined (concatenated) <em>vector</em> with elements 1, 2, 3:</p>
+<p>We have already seen R’s <code>c()</code> (concatenation) function in action (<a href="resampling_with_code.html#sec-r-c" class="quarto-xref"><span>Section 5.9</span></a>). For example, we use <code>c(1, 2, 3)</code> to <em>concatenate</em> the single numbers 1, 2, and 3 into a combined (concatenated) <em>vector</em> with elements 1, 2, 3:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>vec_a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>vec_a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

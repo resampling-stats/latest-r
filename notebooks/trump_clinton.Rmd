@@ -31,7 +31,7 @@ going to set the bins for the histogram using advanced ranges.
 
 **Note: Advanced ranges**
 
-So far (<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code.html#sec-ranges"><span>Section 5.9</span></a>) we have used the
+So far (<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code.html#sec-ranges"><span>Section 5.10</span></a>) we have used the
 colon syntax to make regular sequences of integers. For example, to make
 a vector of the sequential integers from 3 through 12, we could use:
 
