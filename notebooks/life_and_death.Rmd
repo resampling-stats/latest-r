@@ -75,6 +75,8 @@ A vector is a *container* that stores many elements of the same type.
 You have already seen, in
 <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_method.html"><span>Chapter 2</span></a>, how we
 can create a vector from a sequence of numbers using the `c()` function.
+(See <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/resampling_with_code.html#sec-r-c"><span>Section 5.9</span></a> for more on the `c()`
+function).
 
 ```{r}
 # Make a vector of numbers, store with the name "some_numbers".
