@@ -13,7 +13,7 @@ problem is a compound of two or more simpler problems.
 
 A natural way to handle such a compound problem is in stages, as we saw
 in the archery problem of
-<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_3.html#sec-one-black-archery"><span>Section 12.9</span></a>. If a
+<a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_3.html#sec-one-black-archery"><span>Section 12.10</span></a>. If a
 “success” is achieved in the first stage, go on to the second stage; if
 not, don’t go on. More specifically in this example:
 

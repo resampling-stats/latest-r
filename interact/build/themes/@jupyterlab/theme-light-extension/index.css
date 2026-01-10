@@ -94,6 +94,14 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-inverse-border-color: var(--md-grey-600, #757575);
   --jp-border-radius: 2px;
 
+  /* shortcut buttons
+   *
+   * The following css variables are used to specify the visual
+   * styling of the keyboard shortcut buttons
+   */
+  --jp-shortcuts-button-background: var(--jp-brand-color3);
+  --jp-shortcuts-button-hover-background: var(--jp-brand-color2);
+
   /* UI Fonts
    *
    * The UI font CSS variables are used for the typography all of the JupyterLab
@@ -288,6 +296,17 @@ all of MD as it is not optimized for dense, information rich UIs.
       var(--jp-code-padding) - var(--jp-cell-padding) - 1px
   );
 
+  /* The scroll padding is calculated to provide enough space at the bottom of
+     a text editor to allow the last line of code to be positioned at the top
+     of the viewport when the editor is scrolled all the way down. We also
+     subtract one pixel to avoid showing a scrollbar when the file contains
+     only a single line. This padding enables a 'scroll past end' feature in
+     text editors. */
+  --jp-editor-scroll-padding: calc(
+    100% - var(--jp-code-font-size) * var(--jp-code-line-height) -
+      var(--jp-code-padding) - 1px
+  );
+
   /* Rendermime styles */
 
   --jp-rendermime-error-background: #fdd;
@@ -342,7 +361,7 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-mirror-editor-variable-3-color: #085;
   --jp-mirror-editor-punctuation-color: #05a;
   --jp-mirror-editor-property-color: #05a;
-  --jp-mirror-editor-operator-color: #a2f;
+  --jp-mirror-editor-operator-color: #7800c2;
   --jp-mirror-editor-comment-color: #408080;
   --jp-mirror-editor-string-color: #ba2121;
   --jp-mirror-editor-string-2-color: #708;

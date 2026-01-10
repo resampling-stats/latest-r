@@ -49,7 +49,7 @@ a_weights
 
 We will use the `a_weights` and `b_weights` vectors for our simulation.
 We are going to shuffle these weights, so we first *concatenate* the two
-vectors (see <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_3.html#sec-concatenate"><span>Section 12.15.1</span></a>) so we can
+vectors (see <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_3.html#sec-concatenate"><span>Section 12.16.1</span></a>) so we can
 shuffle them:
 
 ```{r}

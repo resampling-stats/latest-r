@@ -447,7 +447,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction" class="level2" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">11.1</span> Introduction</h2>
-<p>In this chapter we will deal with what are usually called “probability problems” rather than the “statistical inference problems” discussed in later chapters. The difference is that for probability problems we begin with a knowledge of the properties of the universe with which we are working. (See <a href="probability_theory_1a.html#sec-what-is-resampling" class="quarto-xref"><span>Section 8.9</span></a> on the definition of resampling.)</p>
+<p>In this chapter we will deal with what are usually called “probability problems” rather than the “statistical inference problems” discussed in later chapters. The difference is that for probability problems we begin with a knowledge of the properties of the universe with which we are working. (See <a href="probability_theory_1a.html#sec-what-is-resampling" class="quarto-xref"><span>Section 8.10</span></a> on the definition of resampling.)</p>
 <p>We start with some basic problems in probability. To make sure we do know the properties of the universe we are working with, we start with poker, and a pack of cards. Working with some poker problems, we rediscover the fundamental distinction between sampling <em>with</em> and <em>without</em> replacement.</p>
 </section>
 <section id="sec-one-pair" class="level2" data-number="11.2">
@@ -766,7 +766,7 @@ Table&nbsp;11.1: Results of 25 hands for the problem “one pair”
 <h2 data-number="11.4" class="anchored" data-anchor-id="sec-shuffling-deck"><span class="header-section-number">11.4</span> Shuffling the deck with R</h2>
 <p>At this point we have a complete deck in the variable <code>deck</code> . But that “deck” is <span class="r">in the same order as a new deck of cards</span> . If we do not shuffle the deck, the results will be predictable. Therefore, we would like to select five of these “cards” (52 values) at random. There are two ways of doing this. The first is to use the <span class="r"><code>sample</code></span>’rnd.choice`]{.python} tool in the familiar way, to choose 5 values at random from this strictly ordered deck. We want to draw these cards <em>without replacement</em> (of which more later). <em>Without replacement</em> means that once we have drawn a particular value, we cannot draw that value a second time — just as you cannot get the same card twice in a hand when the dealer deals you a hand of five cards.</p>
 <div class="r">
-<p>As you saw in <a href="probability_theory_1a.html#sec-shuffling" class="quarto-xref"><span>Section 8.14</span></a>, the <em>default</em> behavior of <code>sample</code> is to sample <em>without replacement</em>, so simply omit the <code>replace=TRUE</code> argument to <code>sample</code> to get sampling without replacement:</p>
+<p>As you saw in <a href="probability_theory_1a.html#sec-shuffling" class="quarto-xref"><span>Section 8.15</span></a>, the <em>default</em> behavior of <code>sample</code> is to sample <em>without replacement</em>, so simply omit the <code>replace=TRUE</code> argument to <code>sample</code> to get sampling without replacement:</p>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># One hand, sampling from the deck without replacement.</span></span>
@@ -776,7 +776,7 @@ Table&nbsp;11.1: Results of 25 hands for the problem “one pair”
 <pre><code>[1]  6 10 12 11 12</code></pre>
 </div>
 </div>
-<p>The above is one way to get a random hand of five cards from the deck. Another way is to use <span class="r"><code>sample</code></span> to shuffle the whole <code>deck</code> of 52 “cards” into a random order, just as a dealer would shuffle the deck before dealing. Then we could take — for example — the first five cards from the shuffled deck to give a random hand. See <a href="probability_theory_1a.html#sec-shuffling" class="quarto-xref"><span>Section 8.14</span></a> for more on <span class="r">this use of <code>sample</code></span>.</p>
+<p>The above is one way to get a random hand of five cards from the deck. Another way is to use <span class="r"><code>sample</code></span> to shuffle the whole <code>deck</code> of 52 “cards” into a random order, just as a dealer would shuffle the deck before dealing. Then we could take — for example — the first five cards from the shuffled deck to give a random hand. See <a href="probability_theory_1a.html#sec-shuffling" class="quarto-xref"><span>Section 8.15</span></a> for more on <span class="r">this use of <code>sample</code></span>.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Shuffle the whole 52 card deck.</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>shuffled <span class="ot">&lt;-</span> <span class="fu">sample</span>(deck)</span>

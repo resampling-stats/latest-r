@@ -26,7 +26,7 @@ Here is a procedure that responds to that question:
     more in favor of Clinton.
 
 Before we come to the simulation, we need some new code to tune our
-histograms (see <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_3.html#sec-on-histograms"><span>Section 12.15.2</span></a>). We are
+histograms (see <a class="quarto-xref" href="https://resampling-stats.github.io/latest-r/probability_theory_3.html#sec-on-histograms"><span>Section 12.16.2</span></a>). We are
 going to set the bins for the histogram using advanced ranges.
 
 **Note: Advanced ranges**
